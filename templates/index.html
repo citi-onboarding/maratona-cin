@@ -9,6 +9,12 @@
   <link rel="stylesheet"  href="{% static 'css/main.css' %}" >
 </head>
 <body>
-  <h1>Hello Maratona</h1>
+  <h1>Posts</h1>
+  <div>
+    {% for post in posts %}
+    <h2>{{ post.title }}</h2>
+    <p>{{ post.text }}</p>
+    {% endfor %}
+  </div>
 </body>
 </html>
