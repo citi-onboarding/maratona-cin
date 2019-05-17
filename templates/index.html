@@ -7,15 +7,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Maratona CIn</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="{% sass_src 'main.scss' %}" rel="stylesheet" type="text/css" />
 </head>
 <body>
-  <h1>Posts</h1>
+  <div class="banner">
+    <div id="icons">
+      <a href="#" class="fa fa-facebook"></a>
+      <a href="#" class="fa fa-instagram"></a>
+    </div>
+    <div id="image-container">
+      <img src="{% static 'media/logo.png'%}" alt="logo" id="logo">
+    </div>
+    <div class="ball-container">
+      <a class="ball" id="blue"></a>
+      <a class="ball" id="yellow"></a>
+      <a class="ball" id="red"></a>
+    </div>
+  </div>
+  <!-- <h1>Posts</h1>
   <div>
     {% for post in posts %}
     <h2>{{ post.title }}</h2>
     <p>{{ post.text }}</p>
     {% endfor %}
-  </div>
+  </div> -->
+  <script src="{% static 'js/app.js' %}"></script>
 </body>
 </html>

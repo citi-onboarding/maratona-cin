@@ -1,0 +1,16 @@
+$blue: #479EFC;
+$yellow: #FCDA33;
+$red: #DE392D;
+
+@mixin border-radius($radius, $args) {
+  #{$args}-radius: $radius;
+  -webkit-#{$args}-radius: $radius;
+  -moz-#{$args}-radius: $radius;
+  -ms-#{$args}-radius: $radius;
+}
+
+@mixin flex($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}

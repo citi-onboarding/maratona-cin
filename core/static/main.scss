@@ -1,11 +1,6 @@
-h1 {
-  color: red;
-}
-div {
-  h2 {
-    color: blue;
-  }
-  p{
-    color: green;
-  }
+@import './refs.scss';
+@import './banner.scss';
+
+body, html {
+  margin: 0;
 }

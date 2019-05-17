@@ -1,10 +1,62 @@
-h1 {
-  color: red; }
+.banner {
+  height: 100vh;
+  display: flex;
+  flex-direction: column; }
+  .banner #icons {
+    flex: 1;
+    margin: 40px 0 0 80px; }
+    .banner #icons .fa {
+      text-decoration: none; }
+      .banner #icons .fa:hover {
+        opacity: 0.7; }
+    .banner #icons .fa-facebook {
+      margin: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      width: 19px;
+      height: 19px;
+      border-radius: 28%;
+      -webkit-border-radius: 28%;
+      -moz-border-radius: 28%;
+      -ms-border-radius: 28%;
+      box-shadow: 0 0 0 6px #479EFC;
+      font-size: 40px;
+      float: left;
+      color: #479EFC; }
+    .banner #icons .fa-instagram {
+      margin: 10px;
+      font-size: 80px;
+      color: #FCDA33; }
+  .banner #image-container {
+    flex: 1; }
+    .banner #image-container #logo {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; }
+  .banner .ball-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; }
+    .banner .ball-container .ball {
+      display: block;
+      width: 40px;
+      height: 40px;
+      margin: 0 10px 50px 10px;
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%; }
+    .banner .ball-container #blue {
+      background-color: #479EFC; }
+    .banner .ball-container #yellow {
+      background-color: #FCDA33; }
+    .banner .ball-container #red {
+      background-color: #DE392D; }
 
-div h2 {
-  color: blue; }
-
-div p {
-  color: green; }
+body, html {
+  margin: 0; }
 
 /*# sourceMappingURL=main.css.map */

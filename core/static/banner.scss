@@ -1,0 +1,62 @@
+.banner {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  #icons {
+    flex: 1;
+    margin: 40px 0 0 80px;
+    .fa {
+      text-decoration: none;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+    
+    .fa-facebook {
+      margin: 20px;
+      @include flex(center, center);
+      padding: 20px;
+      width: 19px;
+      height: 19px;
+      @include border-radius(28%, border);
+      box-shadow: 0 0 0 6px $blue;
+      font-size: 40px;
+      float:left;
+      color: $blue;
+    }
+    
+    .fa-instagram {
+      margin: 10px;
+      font-size: 80px;
+      color: $yellow;
+    }
+  }
+  #image-container {
+    flex: 1;
+    #logo {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  .ball-container {
+    flex: 1;
+    @include flex(center, flex-end);
+    .ball {
+      display: block;
+      width: 40px;
+      height: 40px;
+      margin: 0 10px 50px 10px;
+      @include border-radius(50%, border);
+    }
+    #blue {
+      background-color: $blue;
+    }
+    #yellow {
+      background-color: $yellow;
+    }
+    #red {
+      background-color: $red;
+    }
+  }
+}
