@@ -56,7 +56,7 @@ Para instalar o Python na sua máquina:
 * [Heroku](https://www.heroku.com/platform) - A plataforma utilizada pra deploy
 * [libsass](https://sass-lang.com/libsass) - Uma biblioteca para estilos
 
-## Authors
+## Autores
 
 * **Bruno Oliveira** - [brunofariasdo](https://github.com/brunofariasdo)
 * **Edgar Marques** - [Jorrmungandr](https://github.com/Jorrmungandr)
