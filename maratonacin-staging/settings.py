@@ -1,4 +1,4 @@
-import django_heroku
+
 
 import os
 
@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
+    'sass_processor',
 ]
 
 MIDDLEWARE = [
@@ -111,14 +112,24 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# Django Sass
+SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR,'static')
+
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'assets'),
+    # os.path.join(BASE_DIR, 'assets'),
     os.path.join(BASE_DIR, 'static'),
+]
+
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'sass_processor.finders.CssFinder',
 ]
 
 # Media files
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+import django_heroku
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
