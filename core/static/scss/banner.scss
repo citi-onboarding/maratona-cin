@@ -35,8 +35,9 @@
     flex: 1;
     #logo {
       display: block;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 0 auto 0 auto;
+      width: 100%;
+      max-width: 400px;
     }
   }
   .ball-container {

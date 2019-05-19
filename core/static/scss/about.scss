@@ -1,41 +1,69 @@
-.carousel {
-  width:50%;
-  margin: auto;
+.about {
   display: flex;
+  // flex-direction: row;
   flex-wrap: wrap;
-  .slick-slide {
-    margin: 10px;
-    img {
-      width: 100%;
-      border: 2px solid black;
-      margin: auto;
-    }
-  }
-  .slick-dots{
-    bottom: 30px;
-    max-height: 20px;
-    @include flex(center, center);
-    li {
-      @include flex(center, center);
-      .dot {
-        @include absolutewh(20px,20px);
-        @include border-radius(50%, border);
+  .text-wrapper {
+    width: 50%;
+    .text-container {
+      width: 70%;
+      margin: 100px auto;
+      .image-container {
+        min-width: 100%;
+        min-height: 100%;
+        img {
+          @include test();
+        }
+      }
+      h2 {
+        color: $red;
+        font-size: 3rem;
+        margin-bottom: 10px;
       }
     }
-    li:first-child .dot {
-      border: 2px solid $blue;
-      background-color: $blue;
+  }
+  .carousel {
+    width:50%;
+    // margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    // padding: 0;
+    .slick-slide {
+      margin: 0;
+      // box-sizing: border-box;
+      img {
+        height: 100%;
+        width: 100%;
+        margin: auto;
+      }
     }
-    li:nth-child(2) .dot {
-      border: 2px solid $yellow;
-      background-color: $yellow;
-    }
-    li:nth-child(3) .dot {
-      border: 2px solid $red;
-      background-color: $red;
-    }
-    .slick-active .dot {
-      background-color: transparent !important
+    .slick-dots{
+      bottom: 50px;
+      max-height: 20px;
+      @include flex(center, center);
+      li {
+        @include flex(center, center);
+        margin: 15px;
+        .dot {
+          @include absolutewh(30px,30px);
+          @include border-radius(50%, border);
+        }
+      }
+      li:first-child .dot {
+        border: 2px solid $blue;
+        background-color: $blue;
+      }
+      li:nth-child(2) .dot {
+        border: 2px solid $yellow;
+        background-color: $yellow;
+      }
+      li:nth-child(3) .dot {
+        border: 2px solid $red;
+        background-color: $red;
+      }
+      .slick-active .dot {
+        background-color: transparent !important
+      }
     }
   }
 }
