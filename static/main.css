@@ -56,6 +56,39 @@
     .banner .ball-container #red {
       background-color: #DE392D; }
 
+.navbar {
+  background-color: #E63838;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: relative; }
+
+.navbar::after {
+  content: '';
+  display: table;
+  clear: both; }
+
+#navbar-logo {
+  width: 180px;
+  height: 90px; }
+
+.menu {
+  float: right;
+  padding-right: 10%; }
+
+.menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+.menu li {
+  display: inline-block;
+  margin-left: 80px;
+  padding-top: 20px; }
+
+.menu a {
+  color: white;
+  text-decoration: none; }
+
 body, html {
   margin: 0; }
 

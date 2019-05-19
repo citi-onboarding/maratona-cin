@@ -11,6 +11,7 @@
   <link href="{% sass_src 'main.scss' %}" rel="stylesheet" type="text/css" />
 </head>
 <body>
+
   <div class="banner">
     <div id="icons">
       <a href="#" class="fa fa-facebook"></a>
@@ -25,6 +26,21 @@
       <a class="ball" id="red"></a>
     </div>
   </div>
+
+  <section class = "navbar">
+    <div class = "menu">
+      <ul>
+        <li><img src="{% static 'media/logo-sem-fundo.png'%}" alt="logo" id="navbar-logo">
+        <li><a href="#">Quem Somos?</a></li>
+        <li><a href="#">Nossa Jornada</a></li>
+        <li><a href="#">Depoimentos/Notícias</a></li>
+        <li><a href="#">Hall da Fama</a></li>
+        <li><a href="#">Estudo</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+    </div>
+  </section>
   <script src="{% static 'js/app.js' %}"></script>
+
 </body>
 </html>

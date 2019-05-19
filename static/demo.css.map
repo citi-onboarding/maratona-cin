@@ -1,9 +1,0 @@
-{
-	"version": 3,
-	"file": "demo.css",
-	"sources": [
-		"demo.scss"
-	],
-	"names": [],
-	"mappings": "AAAA,AAAA,EAAE,CAAC;EACD,KAAK,EAAE,GAAG,GACX;;AACD,AACE,GADC,CACD,EAAE,CAAC;EACD,KAAK,EAAE,IAAI,GACZ;;AAHH,AAIE,GAJC,CAID,CAAC,CAAA;EACC,KAAK,EAAE,KAAK,GACb"
-}
