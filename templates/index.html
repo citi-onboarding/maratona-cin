@@ -2,19 +2,24 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Maratona CIn</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick-theme.css" />
   <link href="{% sass_src 'main.scss' %}" rel="stylesheet" type="text/css" />
 </head>
+
 <body>
 
   <div class="banner">
     <div id="icons">
-      <a href="#" class="fa fa-facebook"></a>
+      <a href="#" class="fa fa-facebook-square"></a>
       <a href="#" class="fa fa-instagram"></a>
     </div>
     <div id="image-container">
@@ -42,7 +47,43 @@
       </ul>
     </div>
   </section>
+  <div class="about">
+    <div class="text-wrapper">
+      <div class="text-container">
+        <div class="image-container">
+          <img src="{% static 'media/logo.png' %}" alt="">
+        </div>
+        <h1>Por trás do códigos</h1>
+        <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
+        </p>
+      </div>
+    </div>
+    <div id="carousel-wrapper">
+      <div class="carousel">
+        <div><img
+            src="https://www.mobygames.com/images/covers/l/444057-darksiders-ii-abyssal-forge-playstation-3-front-cover.jpg"
+            alt="darksiders2" /></div>
+        <div><img
+            src="https://img.discogs.com/NMRgqMru-hDeZsEpizxi66vCbwE=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-10962093-1507571072-9130.jpeg.jpg"
+            alt="grand-theft-auto-san-andreas" /></div>
+        <div><img src="https://www.mobygames.com/images/covers/l/274542-terraria-ps-vita-front-cover.jpg"
+            alt="terraria" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <h1>Posts</h1>
+  <div>
+    {% for post in posts %}
+    <h2>{{ post.title }}</h2>
+    <p>{{ post.text }}</p>
+    {% endfor %}
+  </div> -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.js"></script>
   <script src="{% static 'js/app.js' %}"></script>
 
 </body>
+
 </html>

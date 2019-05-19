@@ -2,6 +2,10 @@ $blue: #479EFC;
 $yellow: #FCDA33;
 $red: #DE392D;
 
+@mixin test(){
+  margin: 1px solid red;
+}
+
 @mixin border-radius($radius, $args) {
   #{$args}-radius: $radius;
   -webkit-#{$args}-radius: $radius;
@@ -13,4 +17,11 @@ $red: #DE392D;
   display: flex;
   justify-content: $justify;
   align-items: $align;
+}
+
+@mixin absolutewh($width, $height) {
+  min-width: $width;
+  max-width: $width;
+  min-height: $height;
+  max-height: $height;
 }
