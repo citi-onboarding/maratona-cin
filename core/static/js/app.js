@@ -8,6 +8,6 @@ $(document).ready(() => {
     customPaging: function (slider, i) {
       return '<div class="dot" id=' + i + "></div>";
     },
-    // arrows : false,
+    arrows : false,
   });
 });
