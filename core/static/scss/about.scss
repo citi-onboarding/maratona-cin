@@ -1,0 +1,41 @@
+.carousel {
+  width:50%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  .slick-slide {
+    margin: 10px;
+    img {
+      width: 100%;
+      border: 2px solid black;
+      margin: auto;
+    }
+  }
+  .slick-dots{
+    bottom: 30px;
+    max-height: 20px;
+    @include flex(center, center);
+    li {
+      @include flex(center, center);
+      .dot {
+        @include absolutewh(20px,20px);
+        @include border-radius(50%, border);
+      }
+    }
+    li:first-child .dot {
+      border: 2px solid $blue;
+      background-color: $blue;
+    }
+    li:nth-child(2) .dot {
+      border: 2px solid $yellow;
+      background-color: $yellow;
+    }
+    li:nth-child(3) .dot {
+      border: 2px solid $red;
+      background-color: $red;
+    }
+    .slick-active .dot {
+      background-color: transparent !important
+    }
+  }
+}

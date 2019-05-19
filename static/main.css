@@ -56,6 +56,48 @@
     .banner .ball-container #red {
       background-color: #DE392D; }
 
+.carousel {
+  width: 50%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap; }
+  .carousel .slick-slide {
+    margin: 10px; }
+    .carousel .slick-slide img {
+      width: 100%;
+      border: 2px solid black;
+      margin: auto; }
+  .carousel .slick-dots {
+    bottom: 30px;
+    max-height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .carousel .slick-dots li {
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .carousel .slick-dots li .dot {
+        min-width: 20px;
+        max-width: 20px;
+        min-height: 20px;
+        max-height: 20px;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%; }
+    .carousel .slick-dots li:first-child .dot {
+      border: 2px solid #479EFC;
+      background-color: #479EFC; }
+    .carousel .slick-dots li:nth-child(2) .dot {
+      border: 2px solid #FCDA33;
+      background-color: #FCDA33; }
+    .carousel .slick-dots li:nth-child(3) .dot {
+      border: 2px solid #DE392D;
+      background-color: #DE392D; }
+    .carousel .slick-dots .slick-active .dot {
+      background-color: transparent !important; }
+
 body, html {
   margin: 0; }
 

@@ -14,3 +14,10 @@ $red: #DE392D;
   justify-content: $justify;
   align-items: $align;
 }
+
+@mixin absolutewh($width, $height) {
+  min-width: $width;
+  max-width: $width;
+  min-height: $height;
+  max-height: $height;
+}
