@@ -16,69 +16,14 @@
 </head>
 
 <body>
+  {% block CONTENT %}
+  <header>
+    {% include "includes/banner.html" %}
+    {% include "includes/navbar.html" %}
+  </header>
+  {% include "includes/about.html" %}
 
-  <div class="banner">
-    <div id="icons">
-      <a href="#" class="fa fa-facebook-square"></a>
-      <a href="#" class="fa fa-instagram"></a>
-    </div>
-    <div id="image-container">
-      <img src="media/logo.png" alt="logo" id="logo">
-    </div>
-    <div class="ball-container">
-      <a class="ball" id="blue"></a>
-      <a class="ball" id="yellow"></a>
-      <a class="ball" id="red"></a>
-    </div>
-  </div>
-
-  <section class = "navbar">
-    <div class = "logo">
-      <img src="media/logo-sem-fundo.png" alt="logo" id="navbar-logo">
-    </div>
-    <div class = "menu">
-      <ul>
-        <li><a href="#">Quem Somos?</a></li>
-        <li><a href="#">Nossa Jornada</a></li>
-        <li><a href="#">Depoimentos/Notícias</a></li>
-        <li><a href="#">Hall da Fama</a></li>
-        <li><a href="#">Estudo</a></li>
-        <li><a href="#">Contato</a></li>
-      </ul>
-    </div>
-  </section>
-  <div class="about">
-    <div class="text-wrapper">
-      <div class="text-container">
-        <div class="image-container">
-          <img src="media/logo.png" alt="">
-        </div>
-        <h1>Por trás do códigos</h1>
-        <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-        </p>
-      </div>
-    </div>
-    <div id="carousel-wrapper">
-      <div class="carousel">
-        <div><img
-            src="https://www.mobygames.com/images/covers/l/444057-darksiders-ii-abyssal-forge-playstation-3-front-cover.jpg"
-            alt="darksiders2" /></div>
-        <div><img
-            src="https://img.discogs.com/NMRgqMru-hDeZsEpizxi66vCbwE=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-10962093-1507571072-9130.jpeg.jpg"
-            alt="grand-theft-auto-san-andreas" /></div>
-        <div><img src="https://www.mobygames.com/images/covers/l/274542-terraria-ps-vita-front-cover.jpg"
-            alt="terraria" />
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- <h1>Posts</h1>
-  <div>
-    {% for post in posts %}
-    <h2>{{ post.title }}</h2>
-    <p>{{ post.text }}</p>
-    {% endfor %}
-  </div> -->
+  {% endblock CONTENT %}
   <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
   <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.js"></script>
