@@ -1,39 +1,48 @@
 .navbar{
-    background-color: #E63838;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    position:relative;
+	@include flex(center, center);
+  background-color: #E63838;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position:relative;
+
+  .logo{
+		float:left;
+		
+		#navbar-logo{
+			width: 180px;
+			height: 90px;
+		}
+	}
+	.menu{
+		ul{
+			display: flex;
+			align-items: center;
+			flex-direction: row;
+			li{
+				list-style-type: none;
+				a {
+					display: block;
+					padding: 0 40px 0 40px;
+					text-decoration: none;	
+					color: white;
+					font-size: 1.2rem;
+				&:hover {
+					opacity: 0.7;
+				}	
+				}
+			}
+		}    
+	}
 }
 
-.navbar::after{
-    content: '';
-    display: table;
-    clear: both;
-}
 
-#navbar-logo{
-    width: 180px;
-    height: 90px;
-}
 
-.menu{
-    float: right;
-    padding-right: 10%;
-}
 
-.menu ul{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
 
-.menu li{
-    display: inline-block;
-    margin-left: 80px;
-    padding-top: 20px;
-}
 
-.menu a {
-    color: white;
-    text-decoration: none;
-}
+
+
+
+
+
+
