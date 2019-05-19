@@ -116,7 +116,7 @@ STATIC_URL = '/static/'
 SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR,'static')
 
 STATICFILES_DIRS = [
-    # os.path.join(BASE_DIR, 'assets'),
+    # os.path.join(BASE_DIR, 'media'),
     os.path.join(BASE_DIR, 'static'),
 ]
 
@@ -126,10 +126,10 @@ STATICFILES_FINDERS = [
 ]
 
 # Media files
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-import django_heroku
+# import django_heroku
 
 # Activate Django-Heroku.
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
