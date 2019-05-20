@@ -54,6 +54,35 @@
   #icons {
     margin: 40px 0 0 80px; } }
 
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #E63838;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: relative; }
+  .navbar .logo {
+    float: left; }
+    .navbar .logo #navbar-logo {
+      width: 180px;
+      height: 90px; }
+  .navbar .menu ul {
+    display: flex;
+    align-items: center;
+    flex-direction: row; }
+    .navbar .menu ul li {
+      list-style-type: none; }
+      .navbar .menu ul li a {
+        display: block;
+        padding: 0 40px 0 40px;
+        text-decoration: none;
+        color: white;
+        font-size: 1.2rem;
+        font-family: "Nexa Light", sans-serif; }
+        .navbar .menu ul li a:hover {
+          font-family: "Nexa Bold", sans-serif; }
+
 .about {
   display: flex;
   flex-direction: row;
@@ -134,5 +163,17 @@
 
 body, html {
   margin: 0; }
+
+@font-face {
+  font-family: "Nexa Bold";
+  src: url("../static/font/Nexa Bold.otf");
+  font-weight: 300;
+  font-style: bold; }
+
+@font-face {
+  font-family: "Nexa Light";
+  src: url("../static/font/Nexa Light.otf");
+  font-weight: 300;
+  font-style: normal; }
 
 /*# sourceMappingURL=main.css.map */

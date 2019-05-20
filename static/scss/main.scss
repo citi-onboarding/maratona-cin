@@ -1,0 +1,22 @@
+@import 'refs.scss';
+@import 'banner.scss';
+@import 'navbar.scss';
+@import 'about.scss';
+
+body, html {
+  margin: 0;
+}
+
+@font-face {
+  font-family: "Nexa Bold";
+  src:url("../static/font/Nexa\ Bold.otf");
+  font-weight: 300;
+  font-style: bold;
+}
+
+@font-face {
+  font-family: "Nexa Light";
+  src:url("../static/font/Nexa\ Light.otf");
+  font-weight: 300;
+  font-style: normal;
+}

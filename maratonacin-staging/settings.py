@@ -15,7 +15,7 @@ SECRET_KEY = '*%1)_4js25^cyo(*ybh7y*5m9+jyxuclgno=9q!307&j0rij_p'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -112,24 +112,36 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# Django Sass
-SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR,'static')
-
-STATICFILES_DIRS = [
-    # os.path.join(BASE_DIR, 'media'),
-    os.path.join(BASE_DIR, 'static'),
-]
-
 STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'sass_processor.finders.CssFinder',
 ]
 
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Django Sass
+
+SASS_PROCESSOR_INCLUDE_DIRS = [
+    os.path.join(BASE_DIR, 'extra-styles/scss'),
+    os.path.join(BASE_DIR, 'node_modules'),
+]
+
+# print(SASS_PROCESSOR_ROOT)
+
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+
+
+
 # Media files
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-# import django_heroku
+import django_heroku
 
 # Activate Django-Heroku.
-# django_heroku.settings(locals())
+django_heroku.settings(locals())
