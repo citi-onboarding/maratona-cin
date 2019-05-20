@@ -78,10 +78,7 @@
         padding: 0 40px 0 40px;
         text-decoration: none;
         color: white;
-        font-size: 1.2rem;
-        font-family: "Nexa Light", sans-serif; }
-        .navbar .menu ul li a:hover {
-          font-family: "Nexa Bold", sans-serif; }
+        font-size: 1.2rem; }
 
 .about {
   display: flex;
@@ -163,17 +160,5 @@
 
 body, html {
   margin: 0; }
-
-@font-face {
-  font-family: "Nexa Bold";
-  src: url("../static/font/Nexa-Bold.otf");
-  font-weight: 300;
-  font-style: bold; }
-
-@font-face {
-  font-family: "Nexa Light";
-  src: url("../static/font/Nexa-Light.otf");
-  font-weight: 300;
-  font-style: normal; }
 
 /*# sourceMappingURL=main.css.map */
