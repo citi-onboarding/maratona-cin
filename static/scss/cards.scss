@@ -1,0 +1,19 @@
+#cards {
+  .carousel-wrapper {
+    .carousel-cards {
+      margin: auto;
+      .card {
+        text-align: center;
+        border: 1px solid black;
+        margin: 0 20px 0 20px;
+        p {
+          width: 80%;
+          margin: auto;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1100) {
+}

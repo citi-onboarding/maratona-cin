@@ -162,6 +162,16 @@
   #carousel-wrapper {
     width: 50%; } }
 
+#cards .carousel-wrapper .carousel-cards {
+  margin: auto; }
+  #cards .carousel-wrapper .carousel-cards .card {
+    text-align: center;
+    border: 1px solid black;
+    margin: 0 20px 0 20px; }
+    #cards .carousel-wrapper .carousel-cards .card p {
+      width: 80%;
+      margin: auto; }
+
 body, html {
   margin: 0; }
 
