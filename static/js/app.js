@@ -1,7 +1,6 @@
 $('.carousel').slick({
   slidesToShow: 1,
   dots: true,
-  // variableWidth: true,
   autoplay: true,
   autoplaySpeed: 2000,
   customPaging: function (slider, i) {
@@ -10,32 +9,23 @@ $('.carousel').slick({
   arrows: false,
 })
 
-$('.carousel-cards').slick({
-  infinite: true,
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  arrows: true,
-  autoplay: true,
-  autoplaySpeed: 2000,
-  responsive: [
-    {
-      breakpoint: 1008,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 1
-      }
-    },
-    {
-      breakpoint: 600,
-      settings: 'unslick',
-    },
-  ]
-});
+const slick = () => {
+  let carousel = $('.carousel-cards');
+  if (window.innerWidth <= 960) {
+    carousel.slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      dots: true,
+      arrows: false,
+      centerMode: true,
+      customPaging: function (slider, i) {
+        return '<div class="dot" id=' + i + "></div>";
+      },
+    });
+  } else if (carousel.slick){
+    carousel.slick('unslick');
+  }
+}
 
-$(window).resize(() => {
-  $('.js-slider').not('.slick-initialized').slick('resize');
-});
-
-$(window).on('orientationchange', () => {
-  $('.js-slider').not('.slick-initialized').slick('resize');
-});
+window.addEventListener('resize', slick);
+window.addEventListener('load', slick);
