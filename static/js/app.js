@@ -17,6 +17,7 @@ const slick = () => {
       slidesToScroll: 1,
       dots: true,
       arrows: false,
+      centerMode: true,
       customPaging: function (slider, i) {
         return '<div class="dot" id=' + i + "></div>";
       },
