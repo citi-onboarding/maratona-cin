@@ -2,6 +2,7 @@
 @import 'banner.scss';
 @import 'navbar.scss';
 @import 'about.scss';
+@import 'cards.scss';
 
 body, html {
   margin: 0;
@@ -17,6 +18,13 @@ body, html {
 @font-face {
   font-family: "Nexa Light";
   src:url("../font/Nexa-Light.otf");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src:url("../font/AvenirLTStd-Book.otf");
   font-weight: 300;
   font-style: normal;
 }
