@@ -31,6 +31,9 @@
         // @include absolutewh(25%,100%);
         max-width: 25%;
         padding: 10px;
+        h2 {
+          font-size: 2.2rem;
+        }
       }
       .slick-dots{
         max-height: 20px;
@@ -76,8 +79,17 @@
 }
 
 @media screen and (max-width: 680px) {
+  #cards {
+    width: 100%;
+  }
   .card{
     margin: 20px;
+    h2 {
+      font-size: 2rem;
+    }
+    p {
+      font-size: 0.8rem;
+    }
   }
   .text-container {
     text-align: center;
