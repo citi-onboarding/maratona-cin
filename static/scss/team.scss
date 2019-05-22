@@ -11,22 +11,53 @@
     margin: auto;
     display: flex;
     align-items: center;
-    .participant {
-      margin: 10px;
-      img {
-        max-width: 100%;
-        @include border-radius(50%);
-      }
-      p {
-        font-family: "Avenir", sans-serif;
-        text-align: center;
+    .participant-container {
+      display: flex;
+      .participant {
+        margin: auto;
+        max-width: 20%;
+        img {
+          width: 100%;
+          max-width: 200px;
+          @include border-radius(50%);
+          margin: auto;
+        }
+        p {
+          font-family: "Avenir", sans-serif;
+          text-align: center;
+        }
       }
     }
     .arrow {
       color: $red;
       margin: 10px;
       cursor: pointer;
-      font-size: 3rem;
+      font-size: 5rem;
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  #team {
+    width: 100%;
+    .carousel-team {
+      width: 100%;
+      .participant-container {
+        flex-wrap: wrap;
+        margin: 15px;
+        .participant {
+          display: flex;
+          max-height: 150px !important;
+          align-items: center;
+          max-width: 100%;
+          img {
+            max-width: 100px;
+          }
+        }
+        .participant:nth-child(2n+0) {
+          flex-direction: row-reverse;
+        }
+      }
     }
   }
 }

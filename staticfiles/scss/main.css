@@ -301,22 +301,45 @@
     margin: auto;
     display: flex;
     align-items: center; }
-    #team .carousel-team .participant {
-      margin: 10px; }
-      #team .carousel-team .participant img {
-        max-width: 100%;
-        border-radius: 50%;
-        -webkit-border-radius: 50%;
-        -moz-border-radius: 50%;
-        -ms-border-radius: 50%; }
-      #team .carousel-team .participant p {
-        font-family: "Avenir", sans-serif;
-        text-align: center; }
+    #team .carousel-team .participant-container {
+      display: flex; }
+      #team .carousel-team .participant-container .participant {
+        margin: auto;
+        max-width: 20%; }
+        #team .carousel-team .participant-container .participant img {
+          width: 100%;
+          max-width: 200px;
+          border-radius: 50%;
+          -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          -ms-border-radius: 50%;
+          margin: auto; }
+        #team .carousel-team .participant-container .participant p {
+          font-family: "Avenir", sans-serif;
+          text-align: center; }
     #team .carousel-team .arrow {
       color: #DE392D;
       margin: 10px;
       cursor: pointer;
-      font-size: 3rem; }
+      font-size: 5rem; }
+
+@media screen and (max-width: 960px) {
+  #team {
+    width: 100%; }
+    #team .carousel-team {
+      width: 100%; }
+      #team .carousel-team .participant-container {
+        flex-wrap: wrap;
+        margin: 15px; }
+        #team .carousel-team .participant-container .participant {
+          display: flex;
+          max-height: 150px !important;
+          align-items: center;
+          max-width: 100%; }
+          #team .carousel-team .participant-container .participant img {
+            max-width: 100px; }
+        #team .carousel-team .participant-container .participant:nth-child(2n+0) {
+          flex-direction: row-reverse; } }
 
 body, html {
   margin: 0; }
