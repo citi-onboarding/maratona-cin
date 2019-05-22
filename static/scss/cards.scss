@@ -22,17 +22,38 @@
   .carousel-wrapper {
     margin:50px auto;
     .carousel-cards {
-      @include flex(space-between, center);
-      // margin: auto;
+      @include flex(space-between, center, row, wrap);
       .card {
         text-align: center;
-        @include border-radius(25px, border);
-        // margin: 30px;
-        // @include absolutewh(25%,100%);
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        @include border-radius(25px);
         max-width: 25%;
         padding: 10px;
         h2 {
-          font-size: 2.2rem;
+          font-size: 2.1rem;
+          font-family: "Nexa Bold", sans-serif;
+        }
+        p {
+          width: 90%;
+          margin: 0 auto 0 auto;
+          font-family: "Avenir", sans-serif;
+          height: 100% !important;
+        }
+      }
+      $card-colors: (
+        "blue": $blue, 
+        "yellow": $yellow, 
+        "red": $red
+      );
+
+      @each $class, $color in $card-colors {
+        .#{$class} {
+          @include box-shadow(0 0 0 .3em #{$color});
+          h2 {
+            color: #{$color};
+          }
         }
       }
       .slick-dots{
@@ -43,7 +64,7 @@
           margin: 15px;
           .dot {
             @include absolutewh(1.3rem,1.3rem);
-            @include border-radius(50%, border);
+            @include border-radius(50%);
           }
         }
         $dot-colors: ('1': $blue, '2': $yellow, '3': $red);
@@ -57,28 +78,11 @@
           background-color: transparent !important;
         }
       }
-
-      $card-colors: ('blue': $blue, 'yellow': $yellow, 'red': $red);
-
-      @each $class, $color in $card-colors {
-        .#{$class} {
-          box-shadow: 0 0 0 .3em #{$color};
-          h2 {
-            color: #{$color};
-            font-family: "Nexa Bold", sans-serif;
-          }
-        }
-      }
-      p {
-        width: 80%;
-        margin: auto;
-        font-family: "Avenir", sans-serif;
-      }
     }
   }
 }
 
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 960px) {
   #cards {
     width: 100%;
   }
@@ -93,5 +97,11 @@
   }
   .text-container {
     text-align: center;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .card {
+    height: 320px;
   }
 }

@@ -3,29 +3,25 @@ $('.carousel').slick({
   dots: true,
   autoplay: true,
   autoplaySpeed: 2000,
-  customPaging: function (slider, i) {
-    return '<div class="dot" id=' + i + "></div>";
-  },
+  customPaging: (slider, i) => `<div class="dot" id=${i}></div>`,
   arrows: false,
 })
 
-const slick = () => {
+const addSlick = () => {
   let carousel = $('.carousel-cards');
-  if (window.innerWidth <= 960) {
+  if (window.innerWidth < 960) {
     carousel.slick({
       slidesToShow: 1,
       slidesToScroll: 1,
       dots: true,
-      arrows: false,
       centerMode: true,
-      customPaging: function (slider, i) {
-        return '<div class="dot" id=' + i + "></div>";
-      },
+      customPaging: (slider, i) => `<div class="dot" id=${i}></div>`,
+      arrows: false,
     });
   } else if (carousel.slick){
     carousel.slick('unslick');
   }
 }
 
-window.addEventListener('resize', slick);
-window.addEventListener('load', slick);
+window.addEventListener('resize', addSlick);
+window.addEventListener('load', addSlick);

@@ -28,7 +28,9 @@
     flex: 1;
     display: flex;
     justify-content: center;
-    align-items: flex-end; }
+    align-items: flex-end;
+    flex-direction: row;
+    flex-wrap: nowrap; }
     .banner .ball-container .ball {
       width: 1.5rem;
       height: 1.5rem;
@@ -58,6 +60,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
   background-color: #E63838;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -92,6 +96,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
     margin: auto; }
     .about .text-wrapper .text-container .image-container {
       width: 70%;
@@ -127,11 +133,15 @@
         max-height: 20px;
         display: flex;
         justify-content: center;
-        align-items: center; }
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: nowrap; }
         .about #carousel-wrapper .carousel .slick-dots li {
           display: flex;
           justify-content: center;
           align-items: center;
+          flex-direction: row;
+          flex-wrap: nowrap;
           margin: 15px; }
           .about #carousel-wrapper .carousel .slick-dots li .dot {
             min-width: 1.3rem;
@@ -178,7 +188,9 @@
     font-family: "Avenir", sans-serif;
     display: flex;
     justify-content: space-between;
-    align-items: center; }
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap; }
     #cards .text-container .text-wrapper p {
       max-width: 45%; }
   #cards .carousel-wrapper {
@@ -186,9 +198,14 @@
     #cards .carousel-wrapper .carousel-cards {
       display: flex;
       justify-content: space-between;
-      align-items: center; }
+      align-items: center;
+      flex-direction: row;
+      flex-wrap: wrap; }
       #cards .carousel-wrapper .carousel-cards .card {
         text-align: center;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
         border-radius: 25px;
         -webkit-border-radius: 25px;
         -moz-border-radius: 25px;
@@ -196,16 +213,44 @@
         max-width: 25%;
         padding: 10px; }
         #cards .carousel-wrapper .carousel-cards .card h2 {
-          font-size: 2.2rem; }
+          font-size: 2.1rem;
+          font-family: "Nexa Bold", sans-serif; }
+        #cards .carousel-wrapper .carousel-cards .card p {
+          width: 90%;
+          margin: 0 auto 0 auto;
+          font-family: "Avenir", sans-serif;
+          height: 100% !important; }
+      #cards .carousel-wrapper .carousel-cards .blue {
+        -webkit-box-shadow: 0 0 0 0.3em #479EFC;
+        -moz-box-shadow: 0 0 0 0.3em #479EFC;
+        box-shadow: 0 0 0 0.3em #479EFC; }
+        #cards .carousel-wrapper .carousel-cards .blue h2 {
+          color: #479EFC; }
+      #cards .carousel-wrapper .carousel-cards .yellow {
+        -webkit-box-shadow: 0 0 0 0.3em #FCDA33;
+        -moz-box-shadow: 0 0 0 0.3em #FCDA33;
+        box-shadow: 0 0 0 0.3em #FCDA33; }
+        #cards .carousel-wrapper .carousel-cards .yellow h2 {
+          color: #FCDA33; }
+      #cards .carousel-wrapper .carousel-cards .red {
+        -webkit-box-shadow: 0 0 0 0.3em #DE392D;
+        -moz-box-shadow: 0 0 0 0.3em #DE392D;
+        box-shadow: 0 0 0 0.3em #DE392D; }
+        #cards .carousel-wrapper .carousel-cards .red h2 {
+          color: #DE392D; }
       #cards .carousel-wrapper .carousel-cards .slick-dots {
         max-height: 20px;
         display: flex;
         justify-content: center;
-        align-items: center; }
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: nowrap; }
         #cards .carousel-wrapper .carousel-cards .slick-dots li {
           display: flex;
           justify-content: center;
           align-items: center;
+          flex-direction: row;
+          flex-wrap: nowrap;
           margin: 15px; }
           #cards .carousel-wrapper .carousel-cards .slick-dots li .dot {
             min-width: 1.3rem;
@@ -227,27 +272,8 @@
           background-color: #DE392D; }
         #cards .carousel-wrapper .carousel-cards .slick-dots .slick-active .dot {
           background-color: transparent !important; }
-      #cards .carousel-wrapper .carousel-cards .blue {
-        box-shadow: 0 0 0 0.3em #479EFC; }
-        #cards .carousel-wrapper .carousel-cards .blue h2 {
-          color: #479EFC;
-          font-family: "Nexa Bold", sans-serif; }
-      #cards .carousel-wrapper .carousel-cards .yellow {
-        box-shadow: 0 0 0 0.3em #FCDA33; }
-        #cards .carousel-wrapper .carousel-cards .yellow h2 {
-          color: #FCDA33;
-          font-family: "Nexa Bold", sans-serif; }
-      #cards .carousel-wrapper .carousel-cards .red {
-        box-shadow: 0 0 0 0.3em #DE392D; }
-        #cards .carousel-wrapper .carousel-cards .red h2 {
-          color: #DE392D;
-          font-family: "Nexa Bold", sans-serif; }
-      #cards .carousel-wrapper .carousel-cards p {
-        width: 80%;
-        margin: auto;
-        font-family: "Avenir", sans-serif; }
 
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 960px) {
   #cards {
     width: 100%; }
   .card {
@@ -258,6 +284,10 @@
       font-size: 0.8rem; }
   .text-container {
     text-align: center; } }
+
+@media screen and (min-width: 960px) {
+  .card {
+    height: 320px; } }
 
 body, html {
   margin: 0; }
