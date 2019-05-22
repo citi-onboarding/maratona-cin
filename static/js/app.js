@@ -1,4 +1,4 @@
-$('.carousel').slick({
+$('.carousel-about').slick({
   slidesToShow: 1,
   dots: true,
   autoplay: true,
@@ -25,3 +25,11 @@ const addSlick = () => {
 
 window.addEventListener('resize', addSlick);
 window.addEventListener('load', addSlick);
+
+$('.carousel-team').slick({
+  slidesToShow: 4,
+  slidesToScroll: 4,
+  dots: false,
+  prevArrow: '<a class="prev arrow fa fa-angle-left"></a>',
+  nextArrow: '<a class="next arrow fa fa-angle-right"></a>',
+})

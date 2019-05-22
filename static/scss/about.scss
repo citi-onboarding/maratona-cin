@@ -31,7 +31,7 @@
   }
   #carousel-wrapper {
     max-width: 100%;
-    .carousel {
+    .carousel-about {
       display: flex;
       flex-wrap: wrap;  
       margin: 0;
@@ -81,8 +81,10 @@
   .text-wrapper {
     width: 50%;
   }
-  #carousel-wrapper {
-    width: 50%;
+  .about {
+    #carousel-wrapper {
+      width: 50%;
+    }
   }
 }
 

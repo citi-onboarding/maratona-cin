@@ -1,0 +1,32 @@
+#team {
+  width: 80%;
+  margin: auto;
+  h1 {
+    color: $red;
+    font-size: 2.3rem;
+    font-family: "Nexa Bold", sans-serif;
+  }
+  .carousel-team {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    .participant {
+      margin: 10px;
+      img {
+        max-width: 100%;
+        @include border-radius(50%);
+      }
+      p {
+        font-family: "Avenir", sans-serif;
+        text-align: center;
+      }
+    }
+    .arrow {
+      color: $red;
+      margin: 10px;
+      cursor: pointer;
+      font-size: 3rem;
+    }
+  }
+}
