@@ -3,54 +3,51 @@
   <h1>Time Atual</h1>
   <div class="carousel-team">
     <div class="participant-container">
+      {% for participant in participants %}
+      {% if participant.id < 5 %}
       <div class="participant">
         <img src="media/participant.png" alt="participant">
-        <p>Texto sobre o participante Texto sobre o participante Texto sobre o participante Texto sobre o participante </p>
+        <div class="text-container">
+          <p>Nome:{{ participant.name }}</p>
+          <p>Email:{{ participant.email }}</p>
+          <p>Github: <a href="{{ participant.github }}" target="_blank">{{ participant.github_nickname }}</a></p>
+          <p>CodeForces: <a href="{{ participant.codeforces }}" target="_blank">{{ participant.codeforces_nickname }}</a></p>
+        </div>
       </div>
-      <div class="participant">
-        <img src="media/participant.png" alt="participant">
-        <p>Texto sobre o participante Texto sobre o participante Texto sobre o participante Texto sobre o participante </p>
-      </div>
-      <div class="participant">
-        <img src="media/participant.png" alt="participant">
-        <p>Texto sobre o participante Texto sobre o participante Texto sobre o participante Texto sobre o participante </p>
-      </div>
-      <div class="participant">
-        <img src="media/participant.png" alt="participant">
-        <p>Texto sobre o participante Texto sobre o participante Texto sobre o participante Texto sobre o participante </p>
-      </div>
+      {% endif %}
+      {% endfor %}
     </div>
     <div class="participant-container">
+      {% for participant in participants %}
+      {% if participant.id > 4 and participant.id < 9 %}
       <div class="participant">
         <img src="media/participant.png" alt="participant">
-        <p>Texto sobre o participante Texto sobre o participante Texto sobre o participante Texto sobre o participante </p>
+        <div class="text-container">
+          <p>Nome:{{ participant.name }}</p>
+          <p>Email:{{ participant.email }}</p>
+          <p>Github: <a href="{{ participant.github }}" target="_blank">{{ participant.github_nickname }}</a></p>
+          <p>CodeForces: <a href="{{ participant.codeforces }}" target="_blank">{{ participant.codeforces_nickname }}</a></p>
+        </div>
       </div>
-      <div class="participant">
-        <img src="media/participant.png" alt="participant">
-        <p>Texto sobre o participante Texto sobre o participante Texto sobre o participante Texto sobre o participante </p>
-      </div>
-      <div class="participant">
-        <img src="media/participant.png" alt="participant">
-        <p>Texto sobre o participante Texto sobre o participante Texto sobre o participante Texto sobre o participante </p>
-      </div>
-      <div class="participant">
-        <img src="media/participant.png" alt="participant">
-        <p>Texto sobre o participante Texto sobre o participante Texto sobre o participante Texto sobre o participante </p>
-      </div>
+      {% endif %}
+      {% endfor %}
     </div>
     <div class="participant-container">
+      {% for participant in participants %}
+      {% if participant.id > 8 and participant.id < 13 %}
       <div class="participant">
         <img src="media/participant.png" alt="participant">
-        <p>Texto sobre o participante Texto sobre o participante Texto sobre o participante Texto sobre o participante </p>
+        <div class="text-container">
+          <p>Nome:{{ participant.name }}</p>
+          <p>Email:{{ participant.email }}</p>
+          <p>Github: <a href="{{ participant.github }}" target="_blank">{{ participant.github_nickname }}</a></p>
+          <p>CodeForces: <a href="{{ participant.codeforces }}" target="_blank">{{ participant.codeforces_nickname }}</a></p>
+        </div>
       </div>
-      <div class="participant">
-        <img src="media/participant.png" alt="participant">
-        <p>Texto sobre o participante Texto sobre o participante Texto sobre o participante Texto sobre o participante </p>
-      </div>
-      <div class="participant">
-        <img src="media/participant.png" alt="participant">
-        <p>Texto sobre o participante Texto sobre o participante Texto sobre o participante Texto sobre o participante </p>
-      </div>
+      {% endif %}
+      {% endfor %}
     </div>
+  </div>
+  </div>
   </div>
 </section>
