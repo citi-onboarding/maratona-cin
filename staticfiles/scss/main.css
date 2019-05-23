@@ -405,6 +405,22 @@
   .participant .text-container p {
     font-size: 3vw; } }
 
+.schedule {
+  width: 80%;
+  margin: auto;
+  margin-bottom: 100px; }
+  .schedule h1 {
+    color: #DE392D;
+    font-size: 2.3rem;
+    font-family: "Nexa Bold", sans-serif; }
+  .schedule .schedule-container {
+    text-align: center; }
+    .schedule .schedule-container .schedule-table {
+      width: 90%;
+      height: 200px;
+      background-color: #DE392D;
+      display: inline-block; }
+
 body, html {
   margin: 0;
   scroll-behavior: smooth; }

@@ -1,0 +1,21 @@
+.schedule{
+  width: 80%;
+  margin: auto;
+  margin-bottom: 100px;
+  
+  h1 {
+    color: $red;
+    font-size: 2.3rem;
+    font-family: "Nexa Bold", sans-serif;
+  }
+  .schedule-container{
+    text-align: center;
+
+    .schedule-table{
+      width:90%;
+      height: 200px;
+      background-color:$red;
+      display: inline-block;
+    }
+  }
+}
