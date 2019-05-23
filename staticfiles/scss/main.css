@@ -62,31 +62,85 @@
   align-items: center;
   flex-direction: row;
   flex-wrap: nowrap;
-  background-color: #E63838;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  position: relative; }
-  .navbar .logo {
-    float: left; }
-    .navbar .logo #navbar-logo {
-      width: 180px;
-      height: 90px; }
-  .navbar .menu ul {
+  background-color: #DE392D; }
+  .navbar .logo-container #navbar-logo {
+    width: 180px;
+    height: 90px; }
+  .navbar .show-menu {
     display: flex;
+    justify-content: center;
     align-items: center;
-    flex-direction: row; }
-    .navbar .menu ul li {
-      list-style-type: none; }
-      .navbar .menu ul li a {
+    flex-direction: row;
+    flex-wrap: nowrap; }
+  .navbar .menu-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap; }
+    .navbar .menu-container .menu {
+      display: flex;
+      align-items: center; }
+      .navbar .menu-container .menu li {
+        list-style-type: none; }
+        .navbar .menu-container .menu li a {
+          padding: 0 20px 0 20px;
+          text-decoration: none;
+          color: white;
+          font-size: 1.2rem;
+          font-family: "Nexa Light", sans-serif; }
+          .navbar .menu-container .menu li a:hover {
+            opacity: 0.7;
+            font-family: "Nexa Bold", sans-serif; }
+    .navbar .menu-container a i {
+      color: white; }
+
+.fixed {
+  width: 100%;
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0; }
+
+@media only screen and (max-width: 1050px) {
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap; }
+    .navbar .menu-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      width: 100%; }
+      .navbar .menu-wrapper .logo-container {
+        margin: 0 30px 0 30px; }
+      .navbar .menu-wrapper > a {
+        margin: 0 30px 0 30px;
         display: block;
-        padding: 0 40px 0 40px;
-        text-decoration: none;
-        color: white;
-        font-size: 1.2rem;
-        font-family: "Nexa Light", sans-serif; }
-        .navbar .menu ul li a:hover {
-          opacity: 0.7;
-          font-family: "Nexa Bold", sans-serif; }
+        font-size: 2rem;
+        cursor: pointer; }
+    .navbar .menu-container {
+      height: 0;
+      width: 100%;
+      left: 0;
+      background-color: #DE392D;
+      overflow-y: hidden;
+      -webkit-transition: height 0.5s;
+      transition: height 0.5s; }
+      .navbar .menu-container .menu {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: nowrap; } }
+
+@media screen and (min-width: 1050px) {
+  .navbar .menu-wrapper > a {
+    display: none; } }
 
 .about {
   display: flex;
@@ -352,7 +406,8 @@
     font-size: 3vw; } }
 
 body, html {
-  margin: 0; }
+  margin: 0;
+  scroll-behavior: smooth; }
 
 @font-face {
   font-family: "Nexa Bold";
