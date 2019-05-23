@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core',
     'sass_processor',
+    'mathfilters',
 ]
 
 MIDDLEWARE = [
