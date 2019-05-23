@@ -5,6 +5,7 @@ from django.utils import timezone
 class Participant(models.Model):
     author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
+    picture = models.ImageField(null=True, blank=True, upload_to="team-pictures/")
     email = models.CharField(max_length=200)
     github = models.CharField(max_length=200)
     github_nickname = models.CharField(max_length=200)

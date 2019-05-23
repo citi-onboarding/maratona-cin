@@ -6,7 +6,7 @@
       {% for participant in participants %}
       {% if participant.id < 5 %}
       <div class="participant">
-        <img src="media/participant.png" alt="participant">
+        <img src="media/{{ participant.picture }}" alt="participant">
         <div class="text-container">
           <p>Nome:{{ participant.name }}</p>
           <p>Email:{{ participant.email }}</p>
@@ -21,7 +21,7 @@
       {% for participant in participants %}
       {% if participant.id > 4 and participant.id < 9 %}
       <div class="participant">
-        <img src="media/participant.png" alt="participant">
+        <img src="media/{{ participant.picture }}" alt="participant">
         <div class="text-container">
           <p>Nome:{{ participant.name }}</p>
           <p>Email:{{ participant.email }}</p>
@@ -36,7 +36,7 @@
       {% for participant in participants %}
       {% if participant.id > 8 and participant.id < 13 %}
       <div class="participant">
-        <img src="media/participant.png" alt="participant">
+        <img src="media/{{ participant.picture }}" alt="participant">
         <div class="text-container">
           <p>Nome:{{ participant.name }}</p>
           <p>Email:{{ participant.email }}</p>
