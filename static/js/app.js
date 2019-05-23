@@ -44,26 +44,25 @@ const getHeight = element => document.querySelector(element).clientHeight;
 let heights = {
   navbar: getHeight('.navbar'),
   banner: getHeight('.banner'),
-  // information: getHeight('#information') + 40,
-  // journey: getHeight('#journey'),
-  // testimonials: getHeight('.testimonials-news'),
-  // sucess: getHeight('.results'),
-  // partners: getHeight('#partners')
+  about: getHeight('.about'),
+  cards: getHeight('#cards'),
+  team: getHeight('#team'),
 }
 
 const navbar = document.querySelector('.navbar');
 const menu = document.querySelector('.menu-container');
 
+// Show menu animation
 document.querySelector('.show-menu').addEventListener('click', () => {
   menu.clientHeight === 0 ?  menu.style.height = '200px' : menu.style.height = '0px' ;
 })
 
+// Fix navbar to top of the page
 document.addEventListener('scroll', event => {
   if (window.scrollY >= heights.banner) {
     if (navbar.className.indexOf('fixed') == -1) {
       navbar.className += ' fixed';
     }
-    console.log(navbar.className);
   } else {
     navbar.className = navbar.className.split('fixed').join('');
   }
