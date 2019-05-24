@@ -363,14 +363,14 @@ nav {
     font-size: 2.3rem;
     font-family: "Nexa Bold", sans-serif; }
   #team .carousel-team {
-    width: 80%;
+    width: 95%;
     margin: auto;
     display: flex;
     align-items: center; }
     #team .carousel-team .participant-container {
       display: flex; }
       #team .carousel-team .participant-container .participant {
-        margin: auto;
+        margin: 0 auto 0 auto;
         max-width: 20%; }
         #team .carousel-team .participant-container .participant img {
           width: 100%;
@@ -381,7 +381,7 @@ nav {
           -ms-border-radius: 50%;
           margin: auto; }
         #team .carousel-team .participant-container .participant .text-container p {
-          margin: 10px;
+          margin: 10px 0 10px 0;
           font-family: "Avenir", sans-serif;
           text-align: left; }
     #team .carousel-team .arrow {

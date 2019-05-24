@@ -7,14 +7,14 @@
     font-family: "Nexa Bold", sans-serif;
   }
   .carousel-team {
-    width: 80%;
+    width: 95%;
     margin: auto;
     display: flex;
     align-items: center;
     .participant-container {
       display: flex;
       .participant {
-        margin: auto;
+        margin: 0 auto 0 auto;
         max-width: 20%;
         img {
           width: 100%;
@@ -24,7 +24,7 @@
         }
         .text-container {
           p {
-            margin: 10px;
+            margin: 10px 0 10px 0;
             font-family: "Avenir", sans-serif;
             text-align: left;
           }
