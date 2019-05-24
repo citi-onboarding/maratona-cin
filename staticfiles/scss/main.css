@@ -418,7 +418,8 @@ nav {
     font-size: 3vw; } }
 
 body, html {
-  margin: 0; }
+  margin: 0;
+  scroll-behavior: smooth; }
 
 @font-face {
   font-family: "Nexa Bold";

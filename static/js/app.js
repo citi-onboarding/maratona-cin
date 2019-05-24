@@ -69,4 +69,14 @@ document.addEventListener('scroll', event => {
   } else {
     navbar.className = navbar.className.split('fixed').join('');
   }
+  
 })
+
+var lastScrollTop = 0;
+$(window).scroll(function(event){
+   var st = $(this).scrollTop();
+   if (st > lastScrollTop && gel('nav').clientHeight > 200){
+      gel('.show-menu').click();
+   } 
+   lastScrollTop = st;
+});
