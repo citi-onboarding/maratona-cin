@@ -57,43 +57,49 @@
     margin: 40px 0 0 80px; } }
 
 .navbar {
+  display: flex; }
+  .navbar .navbar-ghost {
+    width: 0px; }
+
+nav {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
   flex-wrap: nowrap;
-  background-color: #DE392D; }
-  .navbar .logo-container #navbar-logo {
+  background-color: #DE392D;
+  width: 100%; }
+  nav .logo-container #navbar-logo {
     width: 180px;
     height: 90px; }
-  .navbar .show-menu {
+  nav .show-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    color: white; }
+  nav .menu-container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
     flex-wrap: nowrap; }
-  .navbar .menu-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    flex-wrap: nowrap; }
-    .navbar .menu-container .menu {
+    nav .menu-container .menu {
       display: flex;
       align-items: center; }
-      .navbar .menu-container .menu li {
-        list-style-type: none; }
-        .navbar .menu-container .menu li a {
-          padding: 0 20px 0 20px;
+      nav .menu-container .menu li {
+        list-style-type: none;
+        margin: 5px 0 5px 0; }
+        nav .menu-container .menu li a {
+          padding: 10px 20px 10px 20px;
           text-decoration: none;
           color: white;
           font-size: 1.2rem;
-          font-family: "Nexa Light", sans-serif; }
-          .navbar .menu-container .menu li a:hover {
-            opacity: 0.7;
+          font-family: "Nexa Light", sans-serif;
+          cursor: pointer; }
+          nav .menu-container .menu li a:hover {
             font-family: "Nexa Bold", sans-serif; }
-    .navbar .menu-container a i {
-      color: white; }
 
 .fixed {
   width: 100%;
@@ -103,43 +109,49 @@
   left: 0; }
 
 @media only screen and (max-width: 1050px) {
-  .navbar {
+  nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
     flex-wrap: nowrap; }
-    .navbar .menu-wrapper {
+    nav .menu-wrapper {
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-direction: row;
       flex-wrap: nowrap;
       width: 100%; }
-      .navbar .menu-wrapper .logo-container {
+      nav .menu-wrapper .logo-container {
         margin: 0 30px 0 30px; }
-      .navbar .menu-wrapper > a {
+      nav .menu-wrapper > a {
         margin: 0 30px 0 30px;
         display: block;
         font-size: 2rem;
         cursor: pointer; }
-    .navbar .menu-container {
+    nav .menu-container {
       height: 0;
       width: 100%;
       left: 0;
       background-color: #DE392D;
       overflow-y: hidden;
       -webkit-transition: height 0.5s;
-      transition: height 0.5s; }
-      .navbar .menu-container .menu {
+      transition: height 0.5s;
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      flex-direction: row;
+      flex-wrap: nowrap; }
+      nav .menu-container .menu {
         display: flex;
         justify-content: flex-start;
         align-items: center;
         flex-direction: column;
-        flex-wrap: nowrap; } }
+        flex-wrap: nowrap;
+        padding: 0; } }
 
 @media screen and (min-width: 1050px) {
-  .navbar .menu-wrapper > a {
+  nav .menu-wrapper > a {
     display: none; } }
 
 .about {
@@ -405,75 +417,53 @@
   .participant .text-container p {
     font-size: 3vw; } }
 
-.schedule {
+.schedule-container {
   width: 80%;
   margin: auto;
   margin-bottom: 100px; }
-  .schedule h1 {
-    display: inline-block;
+  .schedule-container h1 {
     color: #DE392D;
     font-size: 2rem;
     font-family: "Nexa Bold", sans-serif; }
-  .schedule .schedule-container {
-    width: 90%;
-    text-align: center; }
-    .schedule .schedule-container .schedule-table {
-      padding: 0;
-      margin: 0;
+  .schedule-container .schedule-table {
+    width: 100%;
+    border: 5px solid #DE392D;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px; }
+    .schedule-container .schedule-table .schedule {
       width: 100%;
-      border: 5px solid #DE392D; }
-      .schedule .schedule-container .schedule-table .schedule-dayone, .schedule .schedule-container .schedule-table .schedule-daythree {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: column;
+      flex-wrap: nowrap; }
+      .schedule-container .schedule-table .schedule .title-wrapper {
         width: 100%;
-        background-color: #DE392D;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        flex-direction: row;
-        flex-wrap: nowrap; }
-        .schedule .schedule-container .schedule-table .schedule-dayone h1, .schedule .schedule-container .schedule-table .schedule-daythree h1 {
+        background-color: #DE392D; }
+        .schedule-container .schedule-table .schedule .title-wrapper h1 {
           text-align: left;
           color: white;
           margin-left: 20px; }
-        .schedule .schedule-container .schedule-table .schedule-dayone .schedule-dayone-details, .schedule .schedule-container .schedule-table .schedule-dayone .schedule-daythree-details, .schedule .schedule-container .schedule-table .schedule-daythree .schedule-dayone-details, .schedule .schedule-container .schedule-table .schedule-daythree .schedule-daythree-details {
-          margin: 0 100px 0  100px; }
-          .schedule .schedule-container .schedule-table .schedule-dayone .schedule-dayone-details p, .schedule .schedule-container .schedule-table .schedule-dayone .schedule-daythree-details p, .schedule .schedule-container .schedule-table .schedule-daythree .schedule-dayone-details p, .schedule .schedule-container .schedule-table .schedule-daythree .schedule-daythree-details p {
-            padding: 8px 0 8px 0;
-            font-family: "Nexa Bold", sans-serif;
-            font-size: 1.3rem;
-            color: #DE392D;
-            border: 3px;
-            border-style: solid;
-            border-color: #DE392D;
-            border-radius: 15px;
-            -webkit-border-radius: 15px;
-            -moz-border-radius: 15px;
-            -ms-border-radius: 15px; }
-      .schedule .schedule-container .schedule-table .schedule-daytwo {
-        background-color: #479EFC;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        flex-direction: row;
-        flex-wrap: nowrap; }
-        .schedule .schedule-container .schedule-table .schedule-daytwo h1 {
-          text-align: left;
-          color: white;
-          margin-left: 20px; }
-        .schedule .schedule-container .schedule-table .schedule-daytwo .schedule-daytwo-details {
-          margin: 0 100px 0  100px;
-          color: #479EFC; }
-          .schedule .schedule-container .schedule-table .schedule-daytwo .schedule-daytwo-details p {
-            padding: 8px 0 8px 0;
-            font-family: "Nexa Bold", sans-serif;
-            font-size: 1.3rem;
-            color: #479EFC;
-            border: 3px;
-            border-style: solid;
-            border-color: #479EFC;
-            border-radius: 20px;
-            -webkit-border-radius: 20px;
-            -moz-border-radius: 20px;
-            -ms-border-radius: 20px; }
+      .schedule-container .schedule-table .schedule .text-container {
+        width: 50%; }
+        .schedule-container .schedule-table .schedule .text-container p {
+          text-align: center;
+          color: #DE392D;
+          border: 3px solid #DE392D;
+          padding: 8px 0 8px 0;
+          font-family: "Nexa Bold", sans-serif;
+          font-size: 1.3rem;
+          border-radius: 15px;
+          -webkit-border-radius: 15px;
+          -moz-border-radius: 15px;
+          -ms-border-radius: 15px; }
+    .schedule-container .schedule-table .schedule:nth-child(2n) .title-wrapper {
+      background-color: #479EFC; }
+    .schedule-container .schedule-table .schedule:nth-child(2n) .text-container p {
+      color: #479EFC;
+      border: 3px solid #479EFC; }
 
 body, html {
   margin: 0;

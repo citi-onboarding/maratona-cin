@@ -39,7 +39,8 @@ $('.carousel-team').slick({
 
 // Navbar
 
-const getHeight = element => document.querySelector(element).clientHeight;
+const gel = element => document.querySelector(element);
+const getHeight = element => gel(element).clientHeight;
 
 let heights = {
   navbar: getHeight('.navbar'),
@@ -49,21 +50,33 @@ let heights = {
   team: getHeight('#team'),
 }
 
-const navbar = document.querySelector('.navbar');
-const menu = document.querySelector('.menu-container');
+const navbar =gel('nav');
+const menu = gel('.menu-container');
 
 // Show menu animation
-document.querySelector('.show-menu').addEventListener('click', () => {
+gel('.show-menu').addEventListener('click', () => {
   menu.clientHeight === 0 ?  menu.style.height = '200px' : menu.style.height = '0px' ;
+  gel('.navbar-ghost').style.height = heights.navbar + 'px';
 })
 
 // Fix navbar to top of the page
 document.addEventListener('scroll', event => {
   if (window.scrollY >= heights.banner) {
     if (navbar.className.indexOf('fixed') == -1) {
+      gel('.navbar-ghost').style.height = getHeight('.navbar') + 'px';
       navbar.className += ' fixed';
     }
   } else {
     navbar.className = navbar.className.split('fixed').join('');
   }
+  
 })
+
+var lastScrollTop = 0;
+$(window).scroll(function(event){
+   var st = $(this).scrollTop();
+   if (st > lastScrollTop && gel('nav').clientHeight > 200){
+      gel('.show-menu').click();
+   } 
+   lastScrollTop = st;
+});

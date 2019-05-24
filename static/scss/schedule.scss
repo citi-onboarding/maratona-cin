@@ -1,79 +1,51 @@
-.schedule{
+.schedule-container {
   width: 80%;
   margin: auto;
   margin-bottom: 100px;
-  
   h1 {
-    display: inline-block;
     color: $red;
     font-size: 2rem;
     font-family: "Nexa Bold", sans-serif;
   }
-  .schedule-container{
-    width: 90%;
-    text-align: center;
-
-    .schedule-table{
-      padding: 0;
-      margin: 0;
-      width:100%;
-      border: 5px solid $red;
-      // @include border-radius(20px);
-      
-      .schedule-dayone, .schedule-daythree{
+  .schedule-table{
+    width:100%;
+    border: 5px solid $red;
+    @include border-radius(20px);
+    .schedule {
+      width: 100%;
+      @include flex (flex-start,center, column);
+      .title-wrapper {
         width: 100%;
         background-color: $red;
-        @include flex (flex-start,center);
         h1{
           text-align: left;
           color: white;
           margin-left: 20px;
         }
-
-        .schedule-dayone-details, .schedule-daythree-details{
-          margin: 0 100px 0  100px;
-  
-          p{
+      }
+      .text-container {
+        width: 50%;
+        p {
+          text-align: center;
+          color: $red;
+          border: 3px solid $red;
           padding: 8px 0 8px 0;
           font-family: "Nexa Bold", sans-serif;
           font-size: 1.3rem;
-          color: $red;
-          border: 3px;
-          border-style: solid;
-          border-color:$red;
           @include border-radius(15px);
-          }
         }
       }
-
-      .schedule-daytwo{
+    }
+    .schedule:nth-child(2n) {
+      .title-wrapper {
         background-color: $blue;
-        @include flex (flex-start,center);
-
-        h1{
-          text-align: left;
-          color: white;
-          margin-left: 20px;
-        }
-
-        .schedule-daytwo-details{
-          margin: 0 100px 0  100px;
+      }
+      .text-container {
+        p {
           color: $blue;
-          p{
-            padding: 8px 0 8px 0;
-            font-family: "Nexa Bold", sans-serif;
-            font-size: 1.3rem;
-            color: $blue;
-            border: 3px;
-            border-style: solid;
-            border-color:$blue;
-            @include border-radius(20px);
-          }
+          border: 3px solid $blue;
         }
       }
-      
-      
-      
     }
   }
 }

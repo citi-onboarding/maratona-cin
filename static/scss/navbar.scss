@@ -1,6 +1,13 @@
-.navbar{
+.navbar {
+  display: flex;
+  .navbar-ghost {
+    width: 0px;
+  }
+}
+nav {
 	@include flex(center, center);
-	background-color: $red;
+  background-color: $red;
+  width: 100%;
   .logo-container{
 		#navbar-logo{
 			width: 180px;
@@ -8,33 +15,30 @@
 		}
 	}
 	.show-menu {
-		@include flex(center, center)
-	}
+    @include flex(center, center);
+    color: white;
+  }
 	.menu-container{
 		@include flex(center, center);
 		.menu {
 			display: flex;
 			align-items: center;
 			li{
-				list-style-type: none;
+        list-style-type: none;
+        margin: 5px 0 5px 0;
 				a {
-					padding: 0 20px 0 20px;
+					padding: 10px 20px 10px 20px;
 					text-decoration: none;	
 					color: white;
 					font-size: 1.2rem;
-					font-family: "Nexa Light", sans-serif;
+          font-family: "Nexa Light", sans-serif;
+          cursor: pointer;
 				&:hover {
-					opacity: 0.7;
-					font-family: "Nexa Bold", sans-serif;
-				}	
+          font-family: "Nexa Bold", sans-serif;
+				  }	
 				}
 			}
-		}  
-		a {
-			i {
-				color: white;
-			}
-		}  
+		}   
 	}
 }
 
@@ -47,11 +51,11 @@
 }
 
 @media only screen and (max-width: 1050px) {
-	.navbar {
+	nav {
 		@include flex(space-between, center, column);
 		.menu-wrapper {
 			@include flex(space-between, center);
-			width: 100%;
+      width: 100%;
 			.logo-container {
 				margin: 0 30px 0 30px;
 			}
@@ -69,16 +73,18 @@
   		background-color: $red;
 			overflow-y: hidden;
 			-webkit-transition: height 0.5s;
-			transition: height 0.5s;
+      transition: height 0.5s;
+      @include flex(center);
 			.menu {
-			@include flex(flex-start, center, column);
+      @include flex(flex-start, center, column);
+        padding: 0;
 			}
 		}
 	}
 }
 
 @media screen and (min-width: 1050px) {
-	.navbar {
+	nav {
 		.menu-wrapper {
 			> a {
 				display: none;
@@ -86,30 +92,3 @@
 		}
 	}
 }
-
-// @media only screen and (max-width: 768px) {
-//   .navbar {
-// 		flex-direction: column;
-// 		.logo{
-
-// 		}
-//   }
-//   .menu {
-// 		display:none;
-// 		ul{
-// 			display:none;
-// 		}
-// 	}
-// }
-
-
-
-
-
-
-
-
-
-
-
-
