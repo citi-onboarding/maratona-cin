@@ -1,3 +1,7 @@
+const gel = element => document.querySelector(element);
+const getHeight = element => gel(element).clientHeight;
+
+
 // About section
 $('.carousel-about').slick({
   slidesToShow: 1,
@@ -20,13 +24,28 @@ const addSlick = () => {
       customPaging: (slider, i) => `<div class="dot" id=${i}></div>`,
       arrows: false,
     });
-  } else if (carousel.slick){
+  } else if (carousel.slick) {
     carousel.slick('unslick');
   }
+  let maxHeight = 0;
+  
+  [...document.querySelectorAll('.card')].forEach(card => {
+    let childrenHeight = 0;
+    [...card.childNodes].forEach(text => {
+      if (text.clientHeight) childrenHeight += text.clientHeight + 20;
+    })
+    if (childrenHeight >= maxHeight) maxHeight = childrenHeight;
+  });
+  
+  [...document.querySelectorAll('.card')].forEach(each => {
+    console.log(maxHeight);
+    each.style.minHeight = `${maxHeight}px`;
+  });
 };
 
 window.addEventListener('resize', addSlick);
 window.addEventListener('load', addSlick);
+
 
 // Team section
 $('.carousel-team').slick({
@@ -39,8 +58,6 @@ $('.carousel-team').slick({
 
 // Navbar
 
-const gel = element => document.querySelector(element);
-const getHeight = element => gel(element).clientHeight;
 
 let heights = {
   navbar: getHeight('.navbar'),
@@ -50,17 +67,17 @@ let heights = {
   team: getHeight('#team'),
 }
 
-const navbar =gel('nav');
+const navbar = gel('nav');
 const menu = gel('.menu-container');
 
 // Show menu animation
 gel('.show-menu').addEventListener('click', () => {
-  menu.clientHeight === 0 ?  menu.style.height = '200px' : menu.style.height = '0px' ;
+  menu.clientHeight === 0 ? menu.style.height = '200px' : menu.style.height = '0px';
   gel('.navbar-ghost').style.height = heights.navbar + 'px';
 })
 
 // Fix navbar to top of the page
-document.addEventListener('scroll', event => {
+document.addEventListener('scroll', () => {
   if (window.scrollY >= heights.banner) {
     if (navbar.className.indexOf('fixed') == -1) {
       gel('.navbar-ghost').style.height = getHeight('.navbar') + 'px';
@@ -69,14 +86,14 @@ document.addEventListener('scroll', event => {
   } else {
     navbar.className = navbar.className.split('fixed').join('');
   }
-  
+
 })
 
-var lastScrollTop = 0;
-$(window).scroll(function(event){
-   var st = $(this).scrollTop();
-   if (st > lastScrollTop && gel('nav').clientHeight > 200){
-      gel('.show-menu').click();
-   } 
-   lastScrollTop = st;
+let lastScrollTop = 0;
+document.addEventListener('scroll', () => {
+  let st = $(this).scrollTop();
+  if (st > lastScrollTop && gel('nav').clientHeight > 200) {
+    gel('.show-menu').click();
+  }
+  lastScrollTop = st;
 });

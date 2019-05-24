@@ -167,7 +167,12 @@ nav {
     margin: auto; }
     .about .text-wrapper .text-container .image-container {
       width: 70%;
-      margin: 10px auto 10px auto; }
+      margin: 10px auto 10px auto;
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      flex-direction: row;
+      flex-wrap: nowrap; }
       .about .text-wrapper .text-container .image-container img {
         width: 100%;
         max-width: 400px; }
@@ -189,11 +194,11 @@ nav {
       flex-wrap: wrap;
       margin: 0; }
       .about #carousel-wrapper .carousel-about .slick-slide {
-        margin: 0; }
+        margin: 0;
+        overflow: hidden; }
         .about #carousel-wrapper .carousel-about .slick-slide img {
           height: 100%;
-          width: 100%;
-          margin: auto; }
+          width: 100%; }
       .about #carousel-wrapper .carousel-about .slick-dots {
         bottom: 50px;
         max-height: 20px;
@@ -269,23 +274,21 @@ nav {
       flex-wrap: wrap; }
       #cards .carousel-wrapper .carousel-cards .card {
         text-align: center;
-        display: flex;
-        justify-content: center;
         flex-direction: column;
         border-radius: 25px;
         -webkit-border-radius: 25px;
         -moz-border-radius: 25px;
         -ms-border-radius: 25px;
-        max-width: 25%;
-        padding: 10px; }
+        max-width: 25%; }
         #cards .carousel-wrapper .carousel-cards .card h2 {
+          margin: 20px 0 20px 0;
           font-size: 2.1rem;
           font-family: "Nexa Bold", sans-serif; }
         #cards .carousel-wrapper .carousel-cards .card p {
           width: 90%;
           margin: 0 auto 0 auto;
-          font-family: "Avenir", sans-serif;
-          height: 100% !important; }
+          padding-bottom: 30px;
+          font-family: "Avenir", sans-serif; }
       #cards .carousel-wrapper .carousel-cards .blue {
         -webkit-box-shadow: 0 0 0 0.3em #479EFC;
         -moz-box-shadow: 0 0 0 0.3em #479EFC;
@@ -351,10 +354,6 @@ nav {
   .text-container {
     text-align: center; } }
 
-@media screen and (min-width: 960px) {
-  .card {
-    height: 320px; } }
-
 #team {
   width: 80%;
   margin: auto; }
@@ -363,15 +362,15 @@ nav {
     font-size: 2.3rem;
     font-family: "Nexa Bold", sans-serif; }
   #team .carousel-team {
-    width: 80%;
+    width: 95%;
     margin: auto;
     display: flex;
     align-items: center; }
     #team .carousel-team .participant-container {
       display: flex; }
       #team .carousel-team .participant-container .participant {
-        margin: auto;
-        max-width: 30%; }
+        margin: 0 auto 0 auto;
+        max-width: 20%; }
         #team .carousel-team .participant-container .participant img {
           width: 100%;
           max-width: 200px;
@@ -381,7 +380,7 @@ nav {
           -ms-border-radius: 50%;
           margin: auto; }
         #team .carousel-team .participant-container .participant .text-container p {
-          margin: 5px;
+          margin: 10px 0 10px 0;
           font-family: "Avenir", sans-serif;
           text-align: left; }
     #team .carousel-team .arrow {
@@ -416,6 +415,54 @@ nav {
     width: 30%; }
   .participant .text-container p {
     font-size: 3vw; } }
+
+.schedule-container {
+  width: 80%;
+  margin: auto;
+  margin-bottom: 100px; }
+  .schedule-container h1 {
+    color: #DE392D;
+    font-size: 2rem;
+    font-family: "Nexa Bold", sans-serif; }
+  .schedule-container .schedule-table {
+    width: 100%;
+    border: 5px solid #DE392D;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px; }
+    .schedule-container .schedule-table .schedule {
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: column;
+      flex-wrap: nowrap; }
+      .schedule-container .schedule-table .schedule .title-wrapper {
+        width: 100%;
+        background-color: #DE392D; }
+        .schedule-container .schedule-table .schedule .title-wrapper h1 {
+          text-align: left;
+          color: white;
+          margin-left: 20px; }
+      .schedule-container .schedule-table .schedule .text-container {
+        width: 50%; }
+        .schedule-container .schedule-table .schedule .text-container p {
+          text-align: center;
+          color: #DE392D;
+          border: 3px solid #DE392D;
+          padding: 8px 0 8px 0;
+          font-family: "Nexa Bold", sans-serif;
+          font-size: 1.3rem;
+          border-radius: 15px;
+          -webkit-border-radius: 15px;
+          -moz-border-radius: 15px;
+          -ms-border-radius: 15px; }
+    .schedule-container .schedule-table .schedule:nth-child(2n) .title-wrapper {
+      background-color: #479EFC; }
+    .schedule-container .schedule-table .schedule:nth-child(2n) .text-container p {
+      color: #479EFC;
+      border: 3px solid #479EFC; }
 
 body, html {
   margin: 0;

@@ -1,0 +1,51 @@
+.schedule-container {
+  width: 80%;
+  margin: auto;
+  margin-bottom: 100px;
+  h1 {
+    color: $red;
+    font-size: 2rem;
+    font-family: "Nexa Bold", sans-serif;
+  }
+  .schedule-table{
+    width:100%;
+    border: 5px solid $red;
+    @include border-radius(20px);
+    .schedule {
+      width: 100%;
+      @include flex (flex-start,center, column);
+      .title-wrapper {
+        width: 100%;
+        background-color: $red;
+        h1{
+          text-align: left;
+          color: white;
+          margin-left: 20px;
+        }
+      }
+      .text-container {
+        width: 50%;
+        p {
+          text-align: center;
+          color: $red;
+          border: 3px solid $red;
+          padding: 8px 0 8px 0;
+          font-family: "Nexa Bold", sans-serif;
+          font-size: 1.3rem;
+          @include border-radius(15px);
+        }
+      }
+    }
+    .schedule:nth-child(2n) {
+      .title-wrapper {
+        background-color: $blue;
+      }
+      .text-container {
+        p {
+          color: $blue;
+          border: 3px solid $blue;
+        }
+      }
+    }
+  }
+}
