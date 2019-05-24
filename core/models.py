@@ -10,6 +10,7 @@ class Participant(models.Model):
     github_nickname = models.CharField(max_length=200)
     codeforces = models.CharField(max_length=200)
     codeforces_nickname = models.CharField(max_length=200)
+    id = models.IntegerField(primary_key=True)
     created_date = models.DateTimeField(
         default=timezone.now)
     published_date = models.DateTimeField(
