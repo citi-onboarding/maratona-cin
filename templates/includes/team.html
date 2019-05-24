@@ -12,7 +12,7 @@
       {% with forloop.counter as inner_counter %}
       {% if participant.id <= outer_counter|mul:4 and participant.id > outer_counter|mul:4|sub:4 %}
       <div class="participant" id="{{ participant.id }}">
-        <img src="media/{{ participant.picture }}" alt="participant">
+        <img src="media/participant.png" alt="participant">
         <div class="text-container">
           <p>Nome: {{ participant.name }}</p>
           <p>Email: {{ participant.email }}</p>
