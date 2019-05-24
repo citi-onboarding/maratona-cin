@@ -410,16 +410,70 @@
   margin: auto;
   margin-bottom: 100px; }
   .schedule h1 {
+    display: inline-block;
     color: #DE392D;
-    font-size: 2.3rem;
+    font-size: 2rem;
     font-family: "Nexa Bold", sans-serif; }
   .schedule .schedule-container {
+    width: 90%;
     text-align: center; }
     .schedule .schedule-container .schedule-table {
-      width: 90%;
-      height: 200px;
-      background-color: #DE392D;
-      display: inline-block; }
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      border: 5px solid #DE392D; }
+      .schedule .schedule-container .schedule-table .schedule-dayone, .schedule .schedule-container .schedule-table .schedule-daythree {
+        width: 100%;
+        background-color: #DE392D;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: nowrap; }
+        .schedule .schedule-container .schedule-table .schedule-dayone h1, .schedule .schedule-container .schedule-table .schedule-daythree h1 {
+          text-align: left;
+          color: white;
+          margin-left: 20px; }
+        .schedule .schedule-container .schedule-table .schedule-dayone .schedule-dayone-details, .schedule .schedule-container .schedule-table .schedule-dayone .schedule-daythree-details, .schedule .schedule-container .schedule-table .schedule-daythree .schedule-dayone-details, .schedule .schedule-container .schedule-table .schedule-daythree .schedule-daythree-details {
+          margin: 0 100px 0  100px; }
+          .schedule .schedule-container .schedule-table .schedule-dayone .schedule-dayone-details p, .schedule .schedule-container .schedule-table .schedule-dayone .schedule-daythree-details p, .schedule .schedule-container .schedule-table .schedule-daythree .schedule-dayone-details p, .schedule .schedule-container .schedule-table .schedule-daythree .schedule-daythree-details p {
+            padding: 8px 0 8px 0;
+            font-family: "Nexa Bold", sans-serif;
+            font-size: 1.3rem;
+            color: #DE392D;
+            border: 3px;
+            border-style: solid;
+            border-color: #DE392D;
+            border-radius: 15px;
+            -webkit-border-radius: 15px;
+            -moz-border-radius: 15px;
+            -ms-border-radius: 15px; }
+      .schedule .schedule-container .schedule-table .schedule-daytwo {
+        background-color: #479EFC;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: nowrap; }
+        .schedule .schedule-container .schedule-table .schedule-daytwo h1 {
+          text-align: left;
+          color: white;
+          margin-left: 20px; }
+        .schedule .schedule-container .schedule-table .schedule-daytwo .schedule-daytwo-details {
+          margin: 0 100px 0  100px;
+          color: #479EFC; }
+          .schedule .schedule-container .schedule-table .schedule-daytwo .schedule-daytwo-details p {
+            padding: 8px 0 8px 0;
+            font-family: "Nexa Bold", sans-serif;
+            font-size: 1.3rem;
+            color: #479EFC;
+            border: 3px;
+            border-style: solid;
+            border-color: #479EFC;
+            border-radius: 20px;
+            -webkit-border-radius: 20px;
+            -moz-border-radius: 20px;
+            -ms-border-radius: 20px; }
 
 body, html {
   margin: 0;

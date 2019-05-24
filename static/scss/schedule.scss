@@ -4,18 +4,76 @@
   margin-bottom: 100px;
   
   h1 {
+    display: inline-block;
     color: $red;
-    font-size: 2.3rem;
+    font-size: 2rem;
     font-family: "Nexa Bold", sans-serif;
   }
   .schedule-container{
+    width: 90%;
     text-align: center;
 
     .schedule-table{
-      width:90%;
-      height: 200px;
-      background-color:$red;
-      display: inline-block;
+      padding: 0;
+      margin: 0;
+      width:100%;
+      border: 5px solid $red;
+      // @include border-radius(20px);
+      
+      .schedule-dayone, .schedule-daythree{
+        width: 100%;
+        background-color: $red;
+        @include flex (flex-start,center);
+        h1{
+          text-align: left;
+          color: white;
+          margin-left: 20px;
+        }
+
+        .schedule-dayone-details, .schedule-daythree-details{
+          margin: 0 100px 0  100px;
+  
+          p{
+          padding: 8px 0 8px 0;
+          font-family: "Nexa Bold", sans-serif;
+          font-size: 1.3rem;
+          color: $red;
+          border: 3px;
+          border-style: solid;
+          border-color:$red;
+          @include border-radius(15px);
+          }
+        }
+      }
+
+      .schedule-daytwo{
+        background-color: $blue;
+        @include flex (flex-start,center);
+
+        h1{
+          text-align: left;
+          color: white;
+          margin-left: 20px;
+        }
+
+        .schedule-daytwo-details{
+          margin: 0 100px 0  100px;
+          color: $blue;
+          p{
+            padding: 8px 0 8px 0;
+            font-family: "Nexa Bold", sans-serif;
+            font-size: 1.3rem;
+            color: $blue;
+            border: 3px;
+            border-style: solid;
+            border-color:$blue;
+            @include border-radius(20px);
+          }
+        }
+      }
+      
+      
+      
     }
   }
 }
