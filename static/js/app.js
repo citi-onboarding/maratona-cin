@@ -36,3 +36,37 @@ $('.carousel-team').slick({
   prevArrow: '<a class="prev arrow fa fa-angle-left"></a>',
   nextArrow: '<a class="next arrow fa fa-angle-right"></a>',
 });
+
+// Navbar
+
+const gel = element => document.querySelector(element);
+const getHeight = element => gel(element).clientHeight;
+
+let heights = {
+  navbar: getHeight('.navbar'),
+  banner: getHeight('.banner'),
+  about: getHeight('.about'),
+  cards: getHeight('#cards'),
+  team: getHeight('#team'),
+}
+
+const navbar =gel('nav');
+const menu = gel('.menu-container');
+
+// Show menu animation
+gel('.show-menu').addEventListener('click', () => {
+  menu.clientHeight === 0 ?  menu.style.height = '200px' : menu.style.height = '0px' ;
+  gel('.navbar-ghost').style.height = heights.navbar + 'px';
+})
+
+// Fix navbar to top of the page
+document.addEventListener('scroll', event => {
+  if (window.scrollY >= heights.banner) {
+    if (navbar.className.indexOf('fixed') == -1) {
+      gel('.navbar-ghost').style.height = getHeight('.navbar') + 'px';
+      navbar.className += ' fixed';
+    }
+  } else {
+    navbar.className = navbar.className.split('fixed').join('');
+  }
+})

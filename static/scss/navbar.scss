@@ -1,50 +1,94 @@
-.navbar{
+.navbar {
+  display: flex;
+  .navbar-ghost {
+    width: 0px;
+  }
+}
+nav {
 	@include flex(center, center);
-  background-color: #E63838;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  position:relative;
-
-  .logo{
-		float:left;
-		
+  background-color: $red;
+  width: 100%;
+  .logo-container{
 		#navbar-logo{
 			width: 180px;
 			height: 90px;
 		}
 	}
-	.menu{
-		ul{
+	.show-menu {
+    @include flex(center, center);
+    color: white;
+  }
+	.menu-container{
+		@include flex(center, center);
+		.menu {
 			display: flex;
 			align-items: center;
-			flex-direction: row;
 			li{
-				list-style-type: none;
+        list-style-type: none;
+        margin: 5px 0 5px 0;
 				a {
-					display: block;
-					padding: 0 40px 0 40px;
+					padding: 10px 20px 10px 20px;
 					text-decoration: none;	
 					color: white;
 					font-size: 1.2rem;
-					font-family: "Nexa Light", sans-serif;
+          font-family: "Nexa Light", sans-serif;
+          cursor: pointer;
 				&:hover {
-					opacity: 0.7;
-					font-family: "Nexa Bold", sans-serif;
-				}	
+          font-family: "Nexa Bold", sans-serif;
+				  }	
 				}
 			}
-		}    
+		}   
 	}
 }
 
+.fixed {
+	width: 100%;
+	z-index: 1;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
 
+@media only screen and (max-width: 1050px) {
+	nav {
+		@include flex(space-between, center, column);
+		.menu-wrapper {
+			@include flex(space-between, center);
+      width: 100%;
+			.logo-container {
+				margin: 0 30px 0 30px;
+			}
+			> a {
+				margin: 0 30px 0 30px;
+				display: block;
+				font-size: 2rem;
+				cursor: pointer;
+			}
+		}
+		.menu-container {	
+			height: 0;
+			width: 100%;
+  		left: 0;
+  		background-color: $red;
+			overflow-y: hidden;
+			-webkit-transition: height 0.5s;
+      transition: height 0.5s;
+      @include flex(center);
+			.menu {
+      @include flex(flex-start, center, column);
+        padding: 0;
+			}
+		}
+	}
+}
 
-
-
-
-
-
-
-
-
-
+@media screen and (min-width: 1050px) {
+	nav {
+		.menu-wrapper {
+			> a {
+				display: none;
+			}
+		}
+	}
+}
