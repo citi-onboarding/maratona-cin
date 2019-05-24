@@ -7,6 +7,7 @@ django-mathfilters==0.4.0
 django-sass-processor==0.7.3
 gunicorn==19.9.0
 libsass==0.18.0
+Pillow==5.1.0
 psycopg2==2.8.2
 psycopg2-binary==2.8.2
 pytz==2019.1
