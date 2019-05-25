@@ -445,7 +445,7 @@ nav {
         .schedule-container .schedule-table .schedule .title-wrapper h1 {
           text-align: left;
           color: white;
-          margin-left: 20px; }
+          margin: 20px 0 20px 20px; }
       .schedule-container .schedule-table .schedule .text-container {
         width: 50%; }
         .schedule-container .schedule-table .schedule .text-container p {
