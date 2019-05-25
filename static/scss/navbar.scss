@@ -3,34 +3,36 @@
   .navbar-ghost {
     width: 0px;
   }
-}
-nav {
-	@include flex(center, center);
-  background-color: $red;
-  width: 100%;
-  .logo-container{
-		#navbar-logo{
-			width: 180px;
-			height: 90px;
+	nav {
+		@include flex(center, center);
+		background-color: $red;
+		width: 100%;
+		.logo-container{
+			#navbar-logo{
+				width: 180px;
+				height: 90px;
+			}
+		}
+		.show-menu {
+			@include flex(center, center);
+			color: white;
 		}
 	}
-	.show-menu {
-    @include flex(center, center);
-    color: white;
-  }
 }
-.menu-container{
+.menu-container {
 	.menu {
+		display: flex;
 		justify-content: flex-start;
 		align-items: center;
 		li{
 			list-style-type: none;
 			margin: 5px 0 5px 0;
+      text-align: center;
 			a {
-				padding: 10px 20px 10px 20px;
+				padding: 10px;
 				text-decoration: none;	
 				color: white;
-				font-size: 1.2rem;
+				font-size: 1rem;
 				font-family: "Nexa Light", sans-serif;
 				cursor: pointer;
 			&:hover {
@@ -49,50 +51,73 @@ nav {
 	left: 0;
 }
 
-@media only screen and (max-width: 1050px) {
+@media only screen and (max-width: 1024px) {
 	nav {
 		@include flex(space-between, center, column);
 		.menu-wrapper {
 			@include flex(space-between, center);
       width: 100%;
-			.logo-container {
-				margin: 0 30px 0 30px;
-        #navbar-logo{
-          width: 140px;
-          height: 70px;
-        }
-      }
+		.logo-container {
+			margin: 0 30px 0 30px;
+		}
 			> a {
 				margin: 0 30px 0 30px;
 				display: block;
-				font-size: 2rem;
+        font-size: 2rem;
 				cursor: pointer;
 			}
 		}
+		.menu-container-navbar {	
+			position: fixed;
+			height: 100%;
+			width: 0;
+			top: 0;
+			right: 0;
+			z-index: 2;
+			margin: auto;
+			overflow-x: hidden;
+			background-color: $red; 		
+			.menu {
+			@include flex(flex-start, center, column);
+				padding: 0;
+			}
+		}
 	}
-	.menu-container {	
+	.menu-container-side {	
 		position: fixed;
 		height: 100%;
-		width: 60%;
+		width: 0;
 		top: 0;
 		right: 0;
 		z-index: 2;
 		margin: auto;
 		overflow-x: hidden;
-		background-color: $red; 		
-		.menu {
-		@include flex(flex-start, center, column);
-			padding: 0;
+		background-color: $dark-red; 
+		-webkit-transition: width 0.5s;
+		transition: width 0.5s;		
+		.menu-side {
+      @include flex(space-around, center, column);
+      height: 80%;
+      padding: 0;
+      a {
+        white-space: nowrap;
+      }
 		}
 	}
 }
 
-@media screen and (min-width: 1050px) {
+@media screen and (min-width: 1025px) {
 	nav {
 		.menu-wrapper {
-			> a {
+			.show-menu {
 				display: none;
 			}
+		}
+	}
+	.menu-container-side {
+		display: none;
+		.menu-side {
+			display: none;
 		}
 	}
 }

@@ -22,19 +22,19 @@ const initCards = () => {
   
   [...document.querySelectorAll('.card')].forEach(card => {
     let childrenHeight = 0;
-    console.log('===============****');
+    // console.log('===============****');
     [...card.childNodes].forEach(text => {
       if (text.clientHeight) {
         childrenHeight += text.clientHeight;
-        console.log(text);
-        console.log(`text height: ${text.clientHeight}`);
-        console.log(`childrenHeight: ${childrenHeight}`);
-        console.log('===================&&&&');
+        // console.log(text);
+        // console.log(`text height: ${text.clientHeight}`);
+        // console.log(`childrenHeight: ${childrenHeight}`);
+        // console.log('===================&&&&');
       }
     })
-    console.log('===============()()()');
+    // console.log('===============()()()');
     childrenHeight += 60;
-    console.log(`childrenHeight + 60: ${childrenHeight}`);
+    // console.log(`childrenHeight + 60: ${childrenHeight}`);
     
     if (childrenHeight >= maxHeight) {
       maxHeight = childrenHeight;
@@ -43,11 +43,11 @@ const initCards = () => {
   });
   [...document.querySelectorAll('.card')].forEach(card => {
     card.style.height = `${maxHeight}px`;
-    console.log('==============++++');
-    console.log(`maxHeight: ${maxHeight}`);
-    console.log(card);
-    console.log(`card height: ${card.clientHeight}`);
-    console.log('==============----');
+    // console.log('==============++++');
+    // console.log(`maxHeight: ${maxHeight}`);
+    // console.log(card);
+    // console.log(`card height: ${card.clientHeight}`);
+    // console.log('==============----');
   });
 
   let carousel = $('.carousel-cards');
@@ -91,17 +91,11 @@ let heights = {
 }
 
 const navbar = gel('nav');
-const menu = gel('.menu-container');
 
-// // Show menu animation
-// gel('.show-menu').addEventListener('click', () => {
-//   menu.clientHeight === 0 ? menu.style.height = '200px' : menu.style.height = '0px';
-// })
-// 
 // Fix navbar to top of the page
 document.addEventListener('scroll', () => {
   if (window.scrollY >= getHeight('.banner')) {
-    if (navbar.className.indexOf('fixed') == -1) {
+    if (navbar.className.indexOf('fixed') === -1) {
       gel('.navbar-ghost').style.height = getHeight('.navbar') + 'px';
       navbar.className += ' fixed';
     }
@@ -110,13 +104,22 @@ document.addEventListener('scroll', () => {
   }
   gel('.navbar-ghost').style.height = heights.navbar + 'px';
 })
-// 
-// // Hide navbar if page is scrolled down
-// let lastScrollTop = 0;
-// document.addEventListener('scroll', () => {
-//   let st = $(this).scrollTop();
-//   if (st > lastScrollTop && gel('nav').clientHeight > 200) {
-//     gel('.show-menu').click();
-//   }
-//   lastScrollTop = st;
-// });
+
+const menu = gel('.menu-container-side');
+
+// Show menu animation
+gel('.show-menu').addEventListener('click', () => {
+  if (window.scrollY < getHeight('.banner')) {
+    window.scrollTo(0, getHeight('.banner'));
+  } else {
+    menu.style.width = menu.clientWidth === 0 ? '60%' : '0px';
+    menu.style.marginTop = `${getHeight('.navbar')}px`;
+  }
+})
+
+// Hide navbar if page is scrolled down
+document.addEventListener('scroll', () => {
+  if (menu.clientWidth > 0) {
+    gel('.show-menu').click();
+  }
+});
