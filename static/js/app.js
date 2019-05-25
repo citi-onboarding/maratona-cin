@@ -26,27 +26,28 @@ const initCards = () => {
     [...card.childNodes].forEach(text => {
       if (text.clientHeight) {
         childrenHeight += text.clientHeight;
-        console.log(text.clientHeight);
+        console.log(text);
+        console.log(`text height: ${text.clientHeight}`);
+        console.log(`childrenHeight: ${childrenHeight}`);
+        console.log('===================&&&&');
       }
     })
     console.log('===============()()()');
-    console.log(childrenHeight);
     childrenHeight += 60;
-    console.log(childrenHeight);
+    console.log(`childrenHeight + 60: ${childrenHeight}`);
     
     if (childrenHeight >= maxHeight) {
       maxHeight = childrenHeight;
     }
     
-    [...document.querySelectorAll('.card')].forEach(card => {
-      // gel('.carousel-cards').style.height = `${maxHeight}px`
-      card.style.minHeight = `${maxHeight}px`;
-      card.style.maxHeight = `${maxHeight}px`;
-      console.log('==============++++');
-      console.log(maxHeight);
-      console.log(card.clientHeight);
-      console.log('==============----');
-    });
+  });
+  [...document.querySelectorAll('.card')].forEach(card => {
+    card.style.height = `${maxHeight}px`;
+    console.log('==============++++');
+    console.log(`maxHeight: ${maxHeight}`);
+    console.log(card);
+    console.log(`card height: ${card.clientHeight}`);
+    console.log('==============----');
   });
 
   let carousel = $('.carousel-cards');
