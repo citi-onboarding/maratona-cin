@@ -423,7 +423,7 @@ nav {
   margin-bottom: 100px; }
   .schedule-container h1 {
     color: #DE392D;
-    font-size: 2rem;
+    font-size: 1.7rem;
     font-family: "Nexa Bold", sans-serif; }
   .schedule-container .schedule-table {
     width: 100%;
@@ -447,14 +447,14 @@ nav {
           color: white;
           margin: 20px 0 20px 20px; }
       .schedule-container .schedule-table .schedule .text-container {
-        width: 50%; }
+        width: 80%; }
         .schedule-container .schedule-table .schedule .text-container p {
           text-align: center;
           color: #DE392D;
           border: 3px solid #DE392D;
           padding: 8px 0 8px 0;
           font-family: "Nexa Bold", sans-serif;
-          font-size: 1.3rem;
+          font-size: 1.1rem;
           border-radius: 15px;
           -webkit-border-radius: 15px;
           -moz-border-radius: 15px;
