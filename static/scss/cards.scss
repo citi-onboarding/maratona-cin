@@ -83,6 +83,14 @@
 @media screen and (max-width: 960px) {
   #cards {
     width: 100%;
+    .text-container {
+      text-align: center;
+      width: 90%;
+      margin: auto;
+      h1 {
+        display: none;
+      }
+    }
   }
   .card{
     margin: 20px;
@@ -92,8 +100,5 @@
     p {
       font-size: 0.8rem;
     }
-  }
-  .text-container {
-    text-align: center;
   }
 }

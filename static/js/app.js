@@ -1,8 +1,9 @@
 const gel = element => document.querySelector(element);
 const getHeight = element => gel(element).clientHeight;
 
-
+// =================================////=====================================//
 // About section
+
 $('.carousel-about').slick({
   slidesToShow: 1,
   dots: true,
@@ -12,8 +13,42 @@ $('.carousel-about').slick({
   arrows: false,
 });
 
+// =================================////=====================================//
 // Cards section
-const addSlick = () => {
+
+const initCards = () => { 
+
+  let maxHeight = 0;
+  
+  [...document.querySelectorAll('.card')].forEach(card => {
+    let childrenHeight = 0;
+    console.log('===============****');
+    [...card.childNodes].forEach(text => {
+      if (text.clientHeight) {
+        childrenHeight += text.clientHeight;
+        console.log(text.clientHeight);
+      }
+    })
+    console.log('===============()()()');
+    console.log(childrenHeight);
+    childrenHeight += 60;
+    console.log(childrenHeight);
+    
+    if (childrenHeight >= maxHeight) {
+      maxHeight = childrenHeight;
+    }
+    
+    [...document.querySelectorAll('.card')].forEach(card => {
+      // gel('.carousel-cards').style.height = `${maxHeight}px`
+      card.style.minHeight = `${maxHeight}px`;
+      card.style.maxHeight = `${maxHeight}px`;
+      console.log('==============++++');
+      console.log(maxHeight);
+      console.log(card.clientHeight);
+      console.log('==============----');
+    });
+  });
+
   let carousel = $('.carousel-cards');
   if (window.innerWidth < 960) {
     carousel.slick({
@@ -25,29 +60,16 @@ const addSlick = () => {
       arrows: false,
     });
   } else if (carousel.slick) {
-    carousel.slick('unslick');
+    try {carousel.slick('unslick');} catch(err) {return;};
   }
-  let maxHeight = 0;
-  
-  [...document.querySelectorAll('.card')].forEach(card => {
-    let childrenHeight = 0;
-    [...card.childNodes].forEach(text => {
-      if (text.clientHeight) childrenHeight += text.clientHeight + 20;
-    })
-    if (childrenHeight >= maxHeight) maxHeight = childrenHeight;
-  });
-  
-  [...document.querySelectorAll('.card')].forEach(each => {
-    console.log(maxHeight);
-    each.style.minHeight = `${maxHeight}px`;
-  });
 };
 
-window.addEventListener('resize', addSlick);
-window.addEventListener('load', addSlick);
+window.addEventListener('resize', initCards);
+window.addEventListener('load', initCards);
 
-
+// =================================////=====================================//
 // Team section
+
 $('.carousel-team').slick({
   slidesToShow: 1,
   slidesToScroll: 1,
@@ -56,8 +78,8 @@ $('.carousel-team').slick({
   nextArrow: '<a class="next arrow fa fa-angle-right"></a>',
 });
 
+// =================================////=====================================//
 // Navbar
-
 
 let heights = {
   navbar: getHeight('.navbar'),
@@ -73,12 +95,11 @@ const menu = gel('.menu-container');
 // Show menu animation
 gel('.show-menu').addEventListener('click', () => {
   menu.clientHeight === 0 ? menu.style.height = '200px' : menu.style.height = '0px';
-  gel('.navbar-ghost').style.height = heights.navbar + 'px';
 })
 
 // Fix navbar to top of the page
 document.addEventListener('scroll', () => {
-  if (window.scrollY >= heights.banner) {
+  if (window.scrollY >= getHeight('.banner')) {
     if (navbar.className.indexOf('fixed') == -1) {
       gel('.navbar-ghost').style.height = getHeight('.navbar') + 'px';
       navbar.className += ' fixed';
@@ -86,9 +107,10 @@ document.addEventListener('scroll', () => {
   } else {
     navbar.className = navbar.className.split('fixed').join('');
   }
-
+  gel('.navbar-ghost').style.height = heights.navbar + 'px';
 })
 
+// Hide navbar if page is scrolled down
 let lastScrollTop = 0;
 document.addEventListener('scroll', () => {
   let st = $(this).scrollTop();

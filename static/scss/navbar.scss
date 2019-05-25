@@ -58,7 +58,11 @@ nav {
       width: 100%;
 			.logo-container {
 				margin: 0 30px 0 30px;
-			}
+        #navbar-logo{
+          width: 140px;
+          height: 70px;
+        }
+      }
 			> a {
 				margin: 0 30px 0 30px;
 				display: block;

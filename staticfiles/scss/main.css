@@ -124,6 +124,9 @@ nav {
       width: 100%; }
       nav .menu-wrapper .logo-container {
         margin: 0 30px 0 30px; }
+        nav .menu-wrapper .logo-container #navbar-logo {
+          width: 140px;
+          height: 70px; }
       nav .menu-wrapper > a {
         margin: 0 30px 0 30px;
         display: block;
@@ -195,7 +198,9 @@ nav {
       margin: 0; }
       .about #carousel-wrapper .carousel-about .slick-slide {
         margin: 0;
-        overflow: hidden; }
+        overflow: hidden;
+        height: 100%;
+        width: 50%; }
         .about #carousel-wrapper .carousel-about .slick-slide img {
           height: 100%;
           width: 100%; }
@@ -235,15 +240,15 @@ nav {
         .about #carousel-wrapper .carousel-about .slick-dots .slick-active .dot {
           background-color: transparent !important; }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1050px) {
   .about {
     flex-direction: column-reverse; } }
 
-@media only screen and (min-width: 600px) {
-  .text-wrapper {
-    width: 50%; }
+@media only screen and (min-width: 1050px) {
+  .about .text-wrapper {
+    width: 40%; }
   .about #carousel-wrapper {
-    width: 50%; } }
+    width: 60%; } }
 
 #cards {
   width: 80%;
@@ -345,14 +350,18 @@ nav {
 @media screen and (max-width: 960px) {
   #cards {
     width: 100%; }
+    #cards .text-container {
+      text-align: center;
+      width: 90%;
+      margin: auto; }
+      #cards .text-container h1 {
+        display: none; }
   .card {
     margin: 20px; }
     .card h2 {
       font-size: 2rem; }
     .card p {
-      font-size: 0.8rem; }
-  .text-container {
-    text-align: center; } }
+      font-size: 0.8rem; } }
 
 #team {
   width: 80%;
