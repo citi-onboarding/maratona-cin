@@ -18,28 +18,27 @@ nav {
     @include flex(center, center);
     color: white;
   }
-	.menu-container{
-		@include flex(center, center);
-		.menu {
-			display: flex;
-			align-items: center;
-			li{
-        list-style-type: none;
-        margin: 5px 0 5px 0;
-				a {
-					padding: 10px 20px 10px 20px;
-					text-decoration: none;	
-					color: white;
-					font-size: 1.2rem;
-          font-family: "Nexa Light", sans-serif;
-          cursor: pointer;
-				&:hover {
-          font-family: "Nexa Bold", sans-serif;
-				  }	
-				}
+}
+.menu-container{
+	.menu {
+		justify-content: flex-start;
+		align-items: center;
+		li{
+			list-style-type: none;
+			margin: 5px 0 5px 0;
+			a {
+				padding: 10px 20px 10px 20px;
+				text-decoration: none;	
+				color: white;
+				font-size: 1.2rem;
+				font-family: "Nexa Light", sans-serif;
+				cursor: pointer;
+			&:hover {
+				font-family: "Nexa Bold", sans-serif;
+				}	
 			}
-		}   
-	}
+		}
+	}   
 }
 
 .fixed {
@@ -70,19 +69,20 @@ nav {
 				cursor: pointer;
 			}
 		}
-		.menu-container {	
-			height: 0;
-			width: 100%;
-  		left: 0;
-  		background-color: $red;
-			overflow-y: hidden;
-			-webkit-transition: height 0.5s;
-      transition: height 0.5s;
-      @include flex(center);
-			.menu {
-      @include flex(flex-start, center, column);
-        padding: 0;
-			}
+	}
+	.menu-container {	
+		position: fixed;
+		height: 100%;
+		width: 60%;
+		top: 0;
+		right: 0;
+		z-index: 2;
+		margin: auto;
+		overflow-x: hidden;
+		background-color: $red; 		
+		.menu {
+		@include flex(flex-start, center, column);
+			padding: 0;
 		}
 	}
 }

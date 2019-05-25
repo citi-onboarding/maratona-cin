@@ -79,27 +79,22 @@ nav {
     flex-direction: row;
     flex-wrap: nowrap;
     color: white; }
-  nav .menu-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    flex-wrap: nowrap; }
-    nav .menu-container .menu {
-      display: flex;
-      align-items: center; }
-      nav .menu-container .menu li {
-        list-style-type: none;
-        margin: 5px 0 5px 0; }
-        nav .menu-container .menu li a {
-          padding: 10px 20px 10px 20px;
-          text-decoration: none;
-          color: white;
-          font-size: 1.2rem;
-          font-family: "Nexa Light", sans-serif;
-          cursor: pointer; }
-          nav .menu-container .menu li a:hover {
-            font-family: "Nexa Bold", sans-serif; }
+
+.menu-container .menu {
+  justify-content: flex-start;
+  align-items: center; }
+  .menu-container .menu li {
+    list-style-type: none;
+    margin: 5px 0 5px 0; }
+    .menu-container .menu li a {
+      padding: 10px 20px 10px 20px;
+      text-decoration: none;
+      color: white;
+      font-size: 1.2rem;
+      font-family: "Nexa Light", sans-serif;
+      cursor: pointer; }
+      .menu-container .menu li a:hover {
+        font-family: "Nexa Bold", sans-serif; }
 
 .fixed {
   width: 100%;
@@ -132,26 +127,23 @@ nav {
         display: block;
         font-size: 2rem;
         cursor: pointer; }
-    nav .menu-container {
-      height: 0;
-      width: 100%;
-      left: 0;
-      background-color: #DE392D;
-      overflow-y: hidden;
-      -webkit-transition: height 0.5s;
-      transition: height 0.5s;
+  .menu-container {
+    position: fixed;
+    height: 100%;
+    width: 60%;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    margin: auto;
+    overflow-x: hidden;
+    background-color: #DE392D; }
+    .menu-container .menu {
       display: flex;
-      justify-content: center;
-      align-items: stretch;
-      flex-direction: row;
-      flex-wrap: nowrap; }
-      nav .menu-container .menu {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        padding: 0; } }
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      padding: 0; } }
 
 @media screen and (min-width: 1050px) {
   nav .menu-wrapper > a {

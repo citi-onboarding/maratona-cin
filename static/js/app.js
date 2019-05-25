@@ -93,11 +93,11 @@ let heights = {
 const navbar = gel('nav');
 const menu = gel('.menu-container');
 
-// Show menu animation
-gel('.show-menu').addEventListener('click', () => {
-  menu.clientHeight === 0 ? menu.style.height = '200px' : menu.style.height = '0px';
-})
-
+// // Show menu animation
+// gel('.show-menu').addEventListener('click', () => {
+//   menu.clientHeight === 0 ? menu.style.height = '200px' : menu.style.height = '0px';
+// })
+// 
 // Fix navbar to top of the page
 document.addEventListener('scroll', () => {
   if (window.scrollY >= getHeight('.banner')) {
@@ -110,13 +110,13 @@ document.addEventListener('scroll', () => {
   }
   gel('.navbar-ghost').style.height = heights.navbar + 'px';
 })
-
-// Hide navbar if page is scrolled down
-let lastScrollTop = 0;
-document.addEventListener('scroll', () => {
-  let st = $(this).scrollTop();
-  if (st > lastScrollTop && gel('nav').clientHeight > 200) {
-    gel('.show-menu').click();
-  }
-  lastScrollTop = st;
-});
+// 
+// // Hide navbar if page is scrolled down
+// let lastScrollTop = 0;
+// document.addEventListener('scroll', () => {
+//   let st = $(this).scrollTop();
+//   if (st > lastScrollTop && gel('nav').clientHeight > 200) {
+//     gel('.show-menu').click();
+//   }
+//   lastScrollTop = st;
+// });
