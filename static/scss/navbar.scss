@@ -9,8 +9,8 @@
 		width: 100%;
 		.logo-container{
 			#navbar-logo{
-				width: 180px;
-				height: 90px;
+				width: 140px;
+				height: 70px;
 			}
 		}
 		.show-menu {
@@ -78,7 +78,7 @@
 			overflow-x: hidden;
 			background-color: $red; 		
 			.menu {
-			@include flex(flex-start, center, column);
+			  @include flex(flex-start, center, column);
 				padding: 0;
 			}
 		}
@@ -93,12 +93,11 @@
 		margin: auto;
 		overflow-x: hidden;
 		background-color: $dark-red; 
-		-webkit-transition: width 0.5s;
 		transition: width 0.5s;		
 		.menu-side {
-      @include flex(space-around, center, column);
-      height: 80%;
-      padding: 0;
+      @include flex(space-around, flex-start, column);
+      height: 60%;
+      padding-left: 20px;
       a {
         white-space: nowrap;
       }

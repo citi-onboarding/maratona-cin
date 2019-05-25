@@ -1,4 +1,4 @@
-#team {
+.team {
   width: 80%;
   margin: auto;
   h1 {
@@ -41,7 +41,7 @@
 }
 
 @media screen and (max-width: 960px) {
-  #team {
+  .team {
     width: 90%;
     .carousel-team {
       width: 100%;
@@ -72,7 +72,7 @@
 }
 
 @media screen and (max-width: 440px) {
-  #team {
+  .team {
     width: 100%;
   }
   .participant {

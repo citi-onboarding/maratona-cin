@@ -1,4 +1,4 @@
-#cards {
+.cards {
   width: 80%;
   margin: auto;
   .text-container {
@@ -81,7 +81,7 @@
 }
 
 @media screen and (max-width: 960px) {
-  #cards {
+  .cards {
     width: 100%;
     .text-container {
       text-align: center;

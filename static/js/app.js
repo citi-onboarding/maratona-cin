@@ -66,7 +66,7 @@ const initCards = () => {
 };
 
 window.addEventListener('resize', initCards);
-window.addEventListener('load', initCards);
+$(document).ready(initCards);
 
 // =================================////=====================================//
 // Team section
@@ -82,15 +82,10 @@ $('.carousel-team').slick({
 // =================================////=====================================//
 // Navbar
 
-let heights = {
-  navbar: getHeight('.navbar'),
-  banner: getHeight('.banner'),
-  about: getHeight('.about'),
-  cards: getHeight('#cards'),
-  team: getHeight('#team'),
-}
+let navbarAutoOpen = false;
 
 const navbar = gel('nav');
+let navbarHeight = getHeight('.navbar')
 
 // Fix navbar to top of the page
 document.addEventListener('scroll', () => {
@@ -102,24 +97,63 @@ document.addEventListener('scroll', () => {
   } else {
     navbar.className = navbar.className.split('fixed').join('');
   }
-  gel('.navbar-ghost').style.height = heights.navbar + 'px';
+  gel('.navbar-ghost').style.height = navbarHeight + 'px';
 })
 
 const menu = gel('.menu-container-side');
 
 // Show menu animation
 gel('.show-menu').addEventListener('click', () => {
+  // If user is above navbar
+  menu.style.transition = 'width 0.5s';
   if (window.scrollY < getHeight('.banner')) {
     window.scrollTo(0, getHeight('.banner'));
+    navbarAutoOpen = true;
   } else {
-    menu.style.width = menu.clientWidth === 0 ? '60%' : '0px';
     menu.style.marginTop = `${getHeight('.navbar')}px`;
+    menu.style.width = menu.clientWidth === 0 ? '60%' : '0px';
   }
 })
 
 // Hide navbar if page is scrolled down
 document.addEventListener('scroll', () => {
-  if (menu.clientWidth > 0) {
+  if(menu.clientWidth > 0 && window.scrollY < getHeight('.banner')) {
+    menu.style.transition = 'width 0s';
+    menu.style.width = '0px';
+    return;
+  }
+  if(navbarAutoOpen && window.scrollY === getHeight('.banner')) {
+    gel('.show-menu').click();
+    navbarAutoOpen = false;
+  }
+  if(menu.clientWidth > 0) {
     gel('.show-menu').click();
   }
 });
+
+// Navbar links
+
+
+menu.addEventListener('click', event => {
+  const heights = {
+    banner: getHeight('.banner'),
+    navbar: getHeight('.navbar-ghost'),
+    about: getHeight('.about'),
+    cards: getHeight('section.cards'),
+    team: getHeight('section.team'),
+    schedule: getHeight('.schedule'),
+  };
+
+  let height = 0;
+  let heightSum = 0;
+  let eventClass = event.target.className;
+
+  if(eventClass.split(' ')[0] !== 'menu') {
+    Object.entries(heights).map( each => {
+      each[0] === event.target.className ? heightSum = height : height += each[1];
+      console.log(`${each[0]}: ${each[1]}`);
+    });
+    window.scrollTo(0, heightSum);
+    menu.style.width = '0px';
+  }
+})

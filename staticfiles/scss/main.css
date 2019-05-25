@@ -69,8 +69,8 @@
     background-color: #DE392D;
     width: 100%; }
     .navbar nav .logo-container #navbar-logo {
-      width: 180px;
-      height: 90px; }
+      width: 140px;
+      height: 70px; }
     .navbar nav .show-menu {
       display: flex;
       justify-content: center;
@@ -152,16 +152,15 @@
     margin: auto;
     overflow-x: hidden;
     background-color: #C43227;
-    -webkit-transition: width 0.5s;
     transition: width 0.5s; }
     .menu-container-side .menu-side {
       display: flex;
       justify-content: space-around;
-      align-items: center;
+      align-items: flex-start;
       flex-direction: column;
       flex-wrap: nowrap;
-      height: 80%;
-      padding: 0; }
+      height: 60%;
+      padding-left: 20px; }
       .menu-container-side .menu-side a {
         white-space: nowrap; } }
 
@@ -266,16 +265,16 @@
   .about #carousel-wrapper {
     width: 60%; } }
 
-#cards {
+.cards {
   width: 80%;
   margin: auto; }
-  #cards .text-container .title-wrapper {
+  .cards .text-container .title-wrapper {
     color: #DE392D;
     font-family: "Nexa Bold", sans-serif; }
-    #cards .text-container .title-wrapper h1 {
+    .cards .text-container .title-wrapper h1 {
       margin-bottom: 0;
       font-size: 2.3rem; }
-  #cards .text-container .text-wrapper {
+  .cards .text-container .text-wrapper {
     width: 100%;
     font-family: "Avenir", sans-serif;
     display: flex;
@@ -283,17 +282,17 @@
     align-items: center;
     flex-direction: row;
     flex-wrap: nowrap; }
-    #cards .text-container .text-wrapper p {
+    .cards .text-container .text-wrapper p {
       max-width: 45%; }
-  #cards .carousel-wrapper {
+  .cards .carousel-wrapper {
     margin: 50px auto; }
-    #cards .carousel-wrapper .carousel-cards {
+    .cards .carousel-wrapper .carousel-cards {
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-direction: row;
       flex-wrap: wrap; }
-      #cards .carousel-wrapper .carousel-cards .card {
+      .cards .carousel-wrapper .carousel-cards .card {
         text-align: center;
         flex-direction: column;
         border-radius: 25px;
@@ -301,48 +300,48 @@
         -moz-border-radius: 25px;
         -ms-border-radius: 25px;
         max-width: 25%; }
-        #cards .carousel-wrapper .carousel-cards .card h2 {
+        .cards .carousel-wrapper .carousel-cards .card h2 {
           margin: 20px 0 20px 0;
           font-size: 2.1rem;
           font-family: "Nexa Bold", sans-serif; }
-        #cards .carousel-wrapper .carousel-cards .card p {
+        .cards .carousel-wrapper .carousel-cards .card p {
           width: 90%;
           margin: 0 auto 0 auto;
           padding-bottom: 30px;
           font-family: "Avenir", sans-serif; }
-      #cards .carousel-wrapper .carousel-cards .blue {
+      .cards .carousel-wrapper .carousel-cards .blue {
         -webkit-box-shadow: 0 0 0 0.3em #479EFC;
         -moz-box-shadow: 0 0 0 0.3em #479EFC;
         box-shadow: 0 0 0 0.3em #479EFC; }
-        #cards .carousel-wrapper .carousel-cards .blue h2 {
+        .cards .carousel-wrapper .carousel-cards .blue h2 {
           color: #479EFC; }
-      #cards .carousel-wrapper .carousel-cards .yellow {
+      .cards .carousel-wrapper .carousel-cards .yellow {
         -webkit-box-shadow: 0 0 0 0.3em #FCDA33;
         -moz-box-shadow: 0 0 0 0.3em #FCDA33;
         box-shadow: 0 0 0 0.3em #FCDA33; }
-        #cards .carousel-wrapper .carousel-cards .yellow h2 {
+        .cards .carousel-wrapper .carousel-cards .yellow h2 {
           color: #FCDA33; }
-      #cards .carousel-wrapper .carousel-cards .red {
+      .cards .carousel-wrapper .carousel-cards .red {
         -webkit-box-shadow: 0 0 0 0.3em #DE392D;
         -moz-box-shadow: 0 0 0 0.3em #DE392D;
         box-shadow: 0 0 0 0.3em #DE392D; }
-        #cards .carousel-wrapper .carousel-cards .red h2 {
+        .cards .carousel-wrapper .carousel-cards .red h2 {
           color: #DE392D; }
-      #cards .carousel-wrapper .carousel-cards .slick-dots {
+      .cards .carousel-wrapper .carousel-cards .slick-dots {
         max-height: 20px;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: row;
         flex-wrap: nowrap; }
-        #cards .carousel-wrapper .carousel-cards .slick-dots li {
+        .cards .carousel-wrapper .carousel-cards .slick-dots li {
           display: flex;
           justify-content: center;
           align-items: center;
           flex-direction: row;
           flex-wrap: nowrap;
           margin: 15px; }
-          #cards .carousel-wrapper .carousel-cards .slick-dots li .dot {
+          .cards .carousel-wrapper .carousel-cards .slick-dots li .dot {
             min-width: 1.3rem;
             max-width: 1.3rem;
             min-height: 1.3rem;
@@ -351,26 +350,26 @@
             -webkit-border-radius: 50%;
             -moz-border-radius: 50%;
             -ms-border-radius: 50%; }
-        #cards .carousel-wrapper .carousel-cards .slick-dots li:nth-child(1) .dot {
+        .cards .carousel-wrapper .carousel-cards .slick-dots li:nth-child(1) .dot {
           border: 4px solid #479EFC;
           background-color: #479EFC; }
-        #cards .carousel-wrapper .carousel-cards .slick-dots li:nth-child(2) .dot {
+        .cards .carousel-wrapper .carousel-cards .slick-dots li:nth-child(2) .dot {
           border: 4px solid #FCDA33;
           background-color: #FCDA33; }
-        #cards .carousel-wrapper .carousel-cards .slick-dots li:nth-child(3) .dot {
+        .cards .carousel-wrapper .carousel-cards .slick-dots li:nth-child(3) .dot {
           border: 4px solid #DE392D;
           background-color: #DE392D; }
-        #cards .carousel-wrapper .carousel-cards .slick-dots .slick-active .dot {
+        .cards .carousel-wrapper .carousel-cards .slick-dots .slick-active .dot {
           background-color: transparent !important; }
 
 @media screen and (max-width: 960px) {
-  #cards {
+  .cards {
     width: 100%; }
-    #cards .text-container {
+    .cards .text-container {
       text-align: center;
       width: 90%;
       margin: auto; }
-      #cards .text-container h1 {
+      .cards .text-container h1 {
         display: none; }
   .card {
     margin: 20px; }
@@ -379,24 +378,24 @@
     .card p {
       font-size: 0.8rem; } }
 
-#team {
+.team {
   width: 80%;
   margin: auto; }
-  #team h1 {
+  .team h1 {
     color: #DE392D;
     font-size: 2.3rem;
     font-family: "Nexa Bold", sans-serif; }
-  #team .carousel-team {
+  .team .carousel-team {
     width: 95%;
     margin: auto;
     display: flex;
     align-items: center; }
-    #team .carousel-team .participant-container {
+    .team .carousel-team .participant-container {
       display: flex; }
-      #team .carousel-team .participant-container .participant {
+      .team .carousel-team .participant-container .participant {
         margin: 0 auto 0 auto;
         max-width: 20%; }
-        #team .carousel-team .participant-container .participant img {
+        .team .carousel-team .participant-container .participant img {
           width: 100%;
           max-width: 200px;
           border-radius: 50%;
@@ -404,37 +403,37 @@
           -moz-border-radius: 50%;
           -ms-border-radius: 50%;
           margin: auto; }
-        #team .carousel-team .participant-container .participant .text-container p {
+        .team .carousel-team .participant-container .participant .text-container p {
           margin: 10px 0 10px 0;
           font-family: "Avenir", sans-serif;
           text-align: left; }
-    #team .carousel-team .arrow {
+    .team .carousel-team .arrow {
       color: #DE392D;
       margin: 10px;
       cursor: pointer;
       font-size: 5rem; }
 
 @media screen and (max-width: 960px) {
-  #team {
+  .team {
     width: 90%; }
-    #team .carousel-team {
+    .team .carousel-team {
       width: 100%; }
-      #team .carousel-team .participant-container {
+      .team .carousel-team .participant-container {
         display: flex;
         flex-wrap: wrap;
         flex-direction: column; }
-        #team .carousel-team .participant-container .participant {
+        .team .carousel-team .participant-container .participant {
           display: flex;
           max-height: 150px !important;
           align-items: center;
           max-width: 100%; }
-          #team .carousel-team .participant-container .participant img {
+          .team .carousel-team .participant-container .participant img {
             max-width: 100px; }
-        #team .carousel-team .participant-container .participant:nth-child(2n+0) {
+        .team .carousel-team .participant-container .participant:nth-child(2n+0) {
           flex-direction: row-reverse; } }
 
 @media screen and (max-width: 440px) {
-  #team {
+  .team {
     width: 100%; }
   .participant img {
     width: 30%; }
