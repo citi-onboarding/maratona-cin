@@ -423,8 +423,10 @@ nav {
   margin-bottom: 100px; }
   .schedule-container h1 {
     color: #DE392D;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     font-family: "Nexa Bold", sans-serif; }
+  .schedule-container .schedule-title {
+    font-size: 2.3rem; }
   .schedule-container .schedule-table {
     width: 100%;
     border: 5px solid #DE392D;
@@ -445,7 +447,7 @@ nav {
         .schedule-container .schedule-table .schedule .title-wrapper h1 {
           text-align: left;
           color: white;
-          margin: 20px 0 20px 20px; }
+          margin: 10px 0 10px 20px; }
       .schedule-container .schedule-table .schedule .text-container {
         width: 80%; }
         .schedule-container .schedule-table .schedule .text-container p {
