@@ -151,7 +151,6 @@ menu.addEventListener('click', event => {
   if(eventClass.split(' ')[0] !== 'menu') {
     Object.entries(heights).map( each => {
       each[0] === event.target.className ? heightSum = height : height += each[1];
-      console.log(`${each[0]}: ${each[1]}`);
     });
     heightSum -= heights.navbar;
     window.scrollTo(0, heightSum);
