@@ -100,7 +100,6 @@ document.addEventListener('scroll', () => {
   gel('.navbar-ghost').style.height = navbarHeight + 'px';
 })
 
-<<<<<<< HEAD
 const menu = gel('.menu-container-side');
 
 // Show menu animation
@@ -158,7 +157,6 @@ menu.addEventListener('click', event => {
     menu.style.width = '0px';
   }
 })
-=======
 var lastScrollTop = 0;
 $(window).scroll(function(event){
    var st = $(this).scrollTop();
@@ -182,4 +180,3 @@ let prevEach = '';
   }
 })
 
->>>>>>> develop

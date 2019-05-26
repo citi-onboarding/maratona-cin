@@ -141,16 +141,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-# import django_heroku
+import django_heroku
 
 # Activate Django-Heroku.
-<<<<<<< HEAD
-# django_heroku.settings(locals())
-=======
 django_heroku.settings(locals())
 
 DATE_INPUT_FORMATS = ['%d-%m-%Y']
 
 USE_L10N = True
 USE_THOUSAND_SEPARATOR = True
->>>>>>> develop
