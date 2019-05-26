@@ -139,7 +139,7 @@ menu.addEventListener('click', event => {
     banner: getHeight('.banner'),
     navbar: getHeight('.navbar-ghost'),
     about: getHeight('.about'),
-    cards: getHeight('section.cards'),
+    cards: getHeight('section.cards') + 70,
     team: getHeight('section.team'),
     schedule: getHeight('.schedule'),
   };
@@ -153,6 +153,7 @@ menu.addEventListener('click', event => {
       each[0] === event.target.className ? heightSum = height : height += each[1];
       console.log(`${each[0]}: ${each[1]}`);
     });
+    heightSum -= heights.navbar;
     window.scrollTo(0, heightSum);
     menu.style.width = '0px';
   }
