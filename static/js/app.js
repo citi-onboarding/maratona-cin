@@ -42,7 +42,10 @@ const initCards = () => {
     
   });
   [...document.querySelectorAll('.card')].forEach(card => {
-    card.style.height = `${maxHeight}px`;
+    if(card.clientHeight >= maxHeight) {
+      card.className += ' text-fi'
+    }
+    card.style.height = `${maxHeight}px !important`;
     // console.log('==============++++');
     // console.log(`maxHeight: ${maxHeight}`);
     // console.log(card);
@@ -157,26 +160,33 @@ menu.addEventListener('click', event => {
     menu.style.width = '0px';
   }
 })
-var lastScrollTop = 0;
-$(window).scroll(function(event){
-   var st = $(this).scrollTop();
-   if (st > lastScrollTop && gel('nav').clientHeight > 200){
-      gel('.show-menu').click();
-   } 
-   lastScrollTop = st;
-});
 
 // Schedule section
 
 
 let prevEach = '';
+let i = 1;
+let titleBlue = false;
 [...gel('.schedule').childNodes].map(each => {
   if (each.className === 'title-wrapper') {
     let eachTitle = [...each.childNodes][1].innerText;
     if (eachTitle === prevEach) {
       each.style.display = 'none';
+      each.className += ' displayNone'
     }
     prevEach = eachTitle;
   }
-})
+  if(each.className && each.className.indexOf('displayNone') === -1) {
+    if(each.className === 'title-wrapper') {
+      if (i%2 === 0) {
+        each.className += ' title-blue';
+        titleBlue = true;
+      } else titleBlue = false;
+      i++;
+    }
+    if(each.className === 'text-container' && titleBlue) {
+      each.className += ' text-blue';
+    }
+  }
+});
 

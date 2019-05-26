@@ -1,4 +1,6 @@
 .cards {
+
+
   width: 80%;
   margin: auto;
   .text-container {
@@ -101,4 +103,7 @@
       font-size: 0.8rem;
     }
   }
+}
+.text-fit {
+  min-height: fit-content;
 }

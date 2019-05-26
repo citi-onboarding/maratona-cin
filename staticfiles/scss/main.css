@@ -378,6 +378,9 @@
     .card p {
       font-size: 0.8rem; } }
 
+.text-fit {
+  min-height: fit-content; }
+
 .team {
   width: 80%;
   margin: auto; }
@@ -486,6 +489,13 @@
           -webkit-border-radius: 15px;
           -moz-border-radius: 15px;
           -ms-border-radius: 15px; }
+
+.title-blue {
+  background-color: #479EFC !important; }
+
+.text-blue p {
+  color: #479EFC !important;
+  border: 3px solid #479EFC !important; }
 
 body, html {
   margin: 0;
