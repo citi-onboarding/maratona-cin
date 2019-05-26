@@ -1,4 +1,6 @@
 from django.contrib import admin
-from .models import Post
+from .models import Participant
+from .models import Schedule
 
-admin.site.register(Post)
+admin.site.register(Participant)
+admin.site.register(Schedule)

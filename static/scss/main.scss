@@ -3,9 +3,12 @@
 @import 'navbar.scss';
 @import 'about.scss';
 @import 'cards.scss';
+@import 'team.scss';
+@import 'schedule.scss';
 
 body, html {
   margin: 0;
+  scroll-behavior: smooth;
 }
 
 @font-face {

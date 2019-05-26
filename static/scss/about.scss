@@ -31,7 +31,7 @@
   }
   #carousel-wrapper {
     max-width: 100%;
-    .carousel {
+    .carousel-about {
       display: flex;
       flex-wrap: wrap;  
       margin: 0;
@@ -53,10 +53,10 @@
           margin: 15px;
           .dot {
             @include absolutewh(1.3rem,1.3rem);
-            @include border-radius(50%, border);
+            @include border-radius(50%);
           }
         }
-        $dot-colors: ('1': $blue, '2': $yellow, '3': $red);
+        $dot-colors: ("1": $blue, "2": $yellow, "3": $red);
         @each $num, $color in $dot-colors {
           li:nth-child(#{$num}) .dot {
             border: 4px solid $color;
@@ -81,8 +81,10 @@
   .text-wrapper {
     width: 50%;
   }
-  #carousel-wrapper {
-    width: 50%;
+  .about {
+    #carousel-wrapper {
+      width: 50%;
+    }
   }
 }
 
