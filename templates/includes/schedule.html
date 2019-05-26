@@ -1,33 +1,18 @@
 {% load static %}
 <section class="schedule-container">
-  <h1>Cronograma</h1>
+  <h1 class="schedule-title">Cronograma</h1>
   <div class="schedule-table">
     <div class="schedule">
+      {% for event in Schedule %}
+      {% if event.activity_date not in Schedule %}
       <div class="title-wrapper">
-        <h1>18 de Maio</h1>
+        <h1>{{ event.activity_date|date:"d"}} de {{ event.activity_date|date:"F"}}</h1>
       </div>
       <div class="text-container">
-        <p>Início dos desafios</p>
-        <p>Check-in</p>
+        <p>{{ event.activity }}</p>
       </div>
-    </div>
-    <div class="schedule">
-      <div class="title-wrapper">
-        <h1>23 de Junho</h1>
-      </div>
-      <div class="text-container">
-        <p>Premiações</p>
-        <p>Check-out</p>
-      </div>
-    </div>
-    <div class="schedule">
-      <div class="title-wrapper">
-        <h1>23 de Julho</h1>
-      </div>
-      <div class="text-container">
-        <p>Medalhas de Honra e Hall da Fama</p>
-        <p>Encerramento</p>
-      </div>
+        {% endif %}
+      {% endfor %}
     </div>
   </div>
 </section>

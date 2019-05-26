@@ -446,8 +446,10 @@
   margin-bottom: 100px; }
   .schedule-container h1 {
     color: #DE392D;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-family: "Nexa Bold", sans-serif; }
+  .schedule-container .schedule-title {
+    font-size: 2.3rem; }
   .schedule-container .schedule-table {
     width: 100%;
     border: 5px solid #DE392D;
@@ -464,29 +466,26 @@
       flex-wrap: nowrap; }
       .schedule-container .schedule-table .schedule .title-wrapper {
         width: 100%;
-        background-color: #DE392D; }
+        background-color: #DE392D;
+        margin-bottom: 17.6px; }
         .schedule-container .schedule-table .schedule .title-wrapper h1 {
           text-align: left;
           color: white;
-          margin-left: 20px; }
+          margin: 10px 0 10px 20px; }
       .schedule-container .schedule-table .schedule .text-container {
-        width: 50%; }
+        width: 80%; }
         .schedule-container .schedule-table .schedule .text-container p {
+          margin-top: 0px;
           text-align: center;
           color: #DE392D;
           border: 3px solid #DE392D;
           padding: 8px 0 8px 0;
           font-family: "Nexa Bold", sans-serif;
-          font-size: 1.3rem;
+          font-size: 1.1rem;
           border-radius: 15px;
           -webkit-border-radius: 15px;
           -moz-border-radius: 15px;
           -ms-border-radius: 15px; }
-    .schedule-container .schedule-table .schedule:nth-child(2n) .title-wrapper {
-      background-color: #479EFC; }
-    .schedule-container .schedule-table .schedule:nth-child(2n) .text-container p {
-      color: #479EFC;
-      border: 3px solid #479EFC; }
 
 body, html {
   margin: 0;

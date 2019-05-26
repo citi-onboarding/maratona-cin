@@ -4,46 +4,41 @@
   margin-bottom: 100px;
   h1 {
     color: $red;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-family: "Nexa Bold", sans-serif;
   }
+  .schedule-title{
+    font-size: 2.3rem;
+  }
+  
   .schedule-table{
     width:100%;
     border: 5px solid $red;
     @include border-radius(20px);
     .schedule {
       width: 100%;
-      @include flex (flex-start,center, column);
+      @include flex(flex-start, center, column);
       .title-wrapper {
         width: 100%;
         background-color: $red;
+        margin-bottom: 17.6px;
         h1{
           text-align: left;
           color: white;
-          margin-left: 20px;
+          margin: 10px 0 10px 20px;
         }
       }
       .text-container {
-        width: 50%;
+        width: 80%;
         p {
+          margin-top: 0px;  
           text-align: center;
           color: $red;
           border: 3px solid $red;
           padding: 8px 0 8px 0;
           font-family: "Nexa Bold", sans-serif;
-          font-size: 1.3rem;
+          font-size: 1.1rem;
           @include border-radius(15px);
-        }
-      }
-    }
-    .schedule:nth-child(2n) {
-      .title-wrapper {
-        background-color: $blue;
-      }
-      .text-container {
-        p {
-          color: $blue;
-          border: 3px solid $blue;
         }
       }
     }

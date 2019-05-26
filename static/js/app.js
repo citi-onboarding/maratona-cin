@@ -100,6 +100,7 @@ document.addEventListener('scroll', () => {
   gel('.navbar-ghost').style.height = navbarHeight + 'px';
 })
 
+<<<<<<< HEAD
 const menu = gel('.menu-container-side');
 
 // Show menu animation
@@ -157,3 +158,28 @@ menu.addEventListener('click', event => {
     menu.style.width = '0px';
   }
 })
+=======
+var lastScrollTop = 0;
+$(window).scroll(function(event){
+   var st = $(this).scrollTop();
+   if (st > lastScrollTop && gel('nav').clientHeight > 200){
+      gel('.show-menu').click();
+   } 
+   lastScrollTop = st;
+});
+
+// Schedule section
+
+
+let prevEach = '';
+[...gel('.schedule').childNodes].map(each => {
+  if (each.className === 'title-wrapper') {
+    let eachTitle = [...each.childNodes][1].innerText;
+    if (eachTitle === prevEach) {
+      each.style.display = 'none';
+    }
+    prevEach = eachTitle;
+  }
+})
+
+>>>>>>> develop
