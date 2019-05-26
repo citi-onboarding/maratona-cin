@@ -9,6 +9,7 @@
       .image-container {
         width: 70%;
         margin: 10px auto 10px auto; 
+        @include flex(center);
         img {
           width: 100%;
           max-width: 400px;
@@ -35,13 +36,14 @@
       display: flex;
       flex-wrap: wrap;  
       margin: 0;
-      // display: flex;
       .slick-slide {
         margin: 0;
+        overflow: hidden;
+        height: 100%;
+        width: 50%;
         img {
           height: 100%;
           width: 100%;
-          margin: auto;
         }
       }
       .slick-dots{
@@ -71,19 +73,19 @@
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1050px) {
   .about {
     flex-direction: column-reverse;
   }
 }
 
-@media only screen and (min-width: 600px) {
-  .text-wrapper {
-    width: 50%;
-  }
+@media only screen and (min-width: 1050px) {
   .about {
+    .text-wrapper {
+      width: 40%;
+    }
     #carousel-wrapper {
-      width: 50%;
+      width: 60%;
     }
   }
 }
