@@ -6,12 +6,11 @@
       {% for event in Schedule %}
       {% if event.activity_date not in Schedule %}
       <div class="title-wrapper">
-        <h1>{{ event.activity_date|date:"d F"}}</h1>
+        <h1>{{ event.activity_date|date:"d"}} de {{ event.activity_date|date:"F"}}</h1>
       </div>
       <div class="text-container">
         <p>{{ event.activity }}</p>
       </div>
-
         {% endif %}
       {% endfor %}
     </div>

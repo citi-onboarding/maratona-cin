@@ -80,3 +80,18 @@ $(window).scroll(function(event){
    } 
    lastScrollTop = st;
 });
+
+// Schedule section
+
+
+let prevEach = '';
+[...gel('.schedule').childNodes].map(each => {
+  if (each.className === 'title-wrapper') {
+    let eachTitle = [...each.childNodes][1].innerText;
+    if (eachTitle === prevEach) {
+      each.style.display = 'none';
+    }
+    prevEach = eachTitle;
+  }
+})
+

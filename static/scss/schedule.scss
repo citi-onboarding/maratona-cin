@@ -17,10 +17,11 @@
     @include border-radius(20px);
     .schedule {
       width: 100%;
-      @include flex (flex-start,center, column);
+      @include flex(flex-start, center, column);
       .title-wrapper {
         width: 100%;
         background-color: $red;
+        margin-bottom: 17.6px;
         h1{
           text-align: left;
           color: white;
@@ -30,6 +31,7 @@
       .text-container {
         width: 80%;
         p {
+          margin-top: 0px;  
           text-align: center;
           color: $red;
           border: 3px solid $red;
@@ -37,17 +39,6 @@
           font-family: "Nexa Bold", sans-serif;
           font-size: 1.1rem;
           @include border-radius(15px);
-        }
-      }
-    }
-    .schedule:nth-child(2n) {
-      .title-wrapper {
-        background-color: $blue;
-      }
-      .text-container {
-        p {
-          color: $blue;
-          border: 3px solid $blue;
         }
       }
     }
