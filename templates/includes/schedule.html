@@ -3,13 +3,16 @@
   <h1 class="schedule-title">Cronograma</h1>
   <div class="schedule-table">
     <div class="schedule">
-      {% for post in Schedule %}
+      {% for event in Schedule %}
+      {% if event.activity_date not in Schedule %}
       <div class="title-wrapper">
-        <h1>{{ post.activity_date|date:"d F"}}</h1>
+        <h1>{{ event.activity_date|date:"d F"}}</h1>
       </div>
       <div class="text-container">
-        <p>{{ post.activity }}</p>
+        <p>{{ event.activity }}</p>
       </div>
+
+        {% endif %}
       {% endfor %}
     </div>
   </div>

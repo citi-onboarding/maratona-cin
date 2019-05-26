@@ -8,7 +8,7 @@
 
     {% if outer_counter <= containers_num %}
     <div class="participant-container">
-      {% for participant in Participants %}
+      {% for participant in participants %}
       {% with forloop.counter as inner_counter %}
       {% if participant.id <= outer_counter|mul:4 and participant.id > outer_counter|mul:4|sub:4 %}
       <div class="participant" id="{{ participant.id }}">
