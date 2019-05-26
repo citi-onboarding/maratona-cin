@@ -6,7 +6,7 @@ import math
 
 def index(request):
   return render(request, 'index.html', {
-    'schedule': Schedule.objects.all(),
+    'Schedule': Schedule.objects.all(),
     'participants':Participant.objects.all(),
     'containers_num':math.ceil(len(Participant.objects.all())/4)
     })

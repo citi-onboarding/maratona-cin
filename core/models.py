@@ -23,7 +23,7 @@ class Participant(models.Model):
 
 class Schedule(models.Model):
   activity = models.CharField(max_length=150)
-  activity_date = models.DateTimeField(default=timezone.now)
+  activity_date = models.DateTimeField(blank = False, default=timezone.now)
   published_date = models.DateTimeField(blank=True, null=True)
 
   def publish(self):
