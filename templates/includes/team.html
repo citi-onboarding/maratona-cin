@@ -1,0 +1,32 @@
+{% load static %}
+{% load mathfilters %}
+<section id="team">
+  <h1>Time Atual</h1>
+  <div class="carousel-team">
+    {% for participant in participants %}
+    {% with forloop.counter as outer_counter %}
+
+    {% if outer_counter <= containers_num %}
+    <div class="participant-container">
+      {% for participant in participants %}
+      {% with forloop.counter as inner_counter %}
+      {% if participant.id <= outer_counter|mul:4 and participant.id > outer_counter|mul:4|sub:4 %}
+      <div class="participant" id="{{ participant.id }}">
+        <img src="media/participant.png" alt="participant">
+        <div class="text-container">
+          <p>Nome: {{ participant.name }}</p>
+          <p>Email: {{ participant.email }}</p>
+          <p>Github: <a href="{{ participant.github }}" target="_blank">{{ participant.github_nickname }}</a></p>
+          <p>CodeForces: <a href="{{ participant.codeforces }}"
+              target="_blank">{{ participant.codeforces_nickname }}</a></p>
+        </div>
+      </div>
+      {% endif %}
+      {% endwith %}
+      {% endfor %}
+    </div>
+    {% endif %}
+    {% endwith %}
+    {% endfor %}
+  </div>
+</section>

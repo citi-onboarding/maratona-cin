@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core',
     'sass_processor',
+    'mathfilters',
 ]
 
 MIDDLEWARE = [
@@ -96,9 +97,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt-br'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Recife'
 
 USE_I18N = True
 
@@ -136,7 +137,6 @@ SASS_PROCESSOR_INCLUDE_DIRS = [
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
-
 # Media files
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
@@ -145,3 +145,8 @@ import django_heroku
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
+
+DATE_INPUT_FORMATS = ['%d-%m-%Y']
+
+USE_L10N = True
+USE_THOUSAND_SEPARATOR = True
