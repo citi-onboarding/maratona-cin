@@ -1,6 +1,4 @@
 .cards {
-
-
   width: 80%;
   margin: auto;
   .text-container {
@@ -74,8 +72,10 @@
             background-color: $color;
           }
         }
-        .slick-active .dot {
-          background-color: transparent !important;
+        .slick-active {
+          .dot {
+            background-color: transparent !important;
+          }
         }
       }
     }
@@ -103,7 +103,4 @@
       font-size: 0.8rem;
     }
   }
-}
-.text-fit {
-  min-height: fit-content;
 }

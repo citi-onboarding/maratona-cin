@@ -3,33 +3,22 @@
 <section class="team">
   <h1>Time Atual</h1>
   <div class="carousel-team">
-    {% for participant in participants %}
-    {% with forloop.counter as outer_counter %}
-
-    {% if outer_counter <= containers_num %}
+    {% for slide in object_list %}
     <div class="participant-container">
-      {% for participant in participants %}
-      {% with forloop.counter as inner_counter %}
-      {% if participant.id <= outer_counter|mul:4 and participant.id > outer_counter|mul:4|sub:4 %}
+      {% for participant in slide %}
       <div class="participant" id="{{ participant.id }}">
-        <img src="media/participant.png" alt="participant">
+        <img src="media/participant.png" alt="participant"> 
         <div class="text-container">
-          <p id="title">{{ participant.name }}</p>
-          <p id="email">Email: {{ participant.email }}</p>
-          <div id="github">
-            <p>Github</p> 
-            <a href="{{ participant.github }}" target="_blank">{{ participant.github_nickname }}</a>
-          </div>
-          <p id="code-forces">CodeForces: <a href="{{ participant.codeforces }}"
-              target="_blank">{{ participant.codeforces_nickname }}</a></p>
+          <p id="name">{{ participant.name }}</p>
+          <p id="email">{{ participant.email }}</p>
+          <p id="github">Github:</p>
+          <a href="{{ participant.github }}" target="_blank">{{ participant.github_nickname }}</a>
+          <p id="code-forces">CodeForces:</p>
+          <a href="{{ participant.codeforces }}" target="_blank">{{ participant.codeforces_nickname }}</a>
         </div>
       </div>
-      {% endif %}
-      {% endwith %}
       {% endfor %}
     </div>
-    {% endif %}
-    {% endwith %}
     {% endfor %}
   </div>
 </section>

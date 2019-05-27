@@ -378,9 +378,6 @@
     .card p {
       font-size: 0.8rem; } }
 
-.text-fit {
-  min-height: fit-content; }
-
 .team {
   width: 80%;
   margin: auto; }
@@ -389,7 +386,7 @@
     font-size: 2.3rem;
     font-family: "Nexa Bold", sans-serif; }
   .team .carousel-team {
-    width: 95%;
+    width: 100%;
     margin: auto;
     display: flex;
     align-items: center; }
@@ -406,10 +403,19 @@
           -moz-border-radius: 50%;
           -ms-border-radius: 50%;
           margin: auto; }
-        .team .carousel-team .participant-container .participant .text-container p {
-          margin: 10px 0 10px 0;
-          font-family: "Avenir", sans-serif;
-          text-align: left; }
+        .team .carousel-team .participant-container .participant .text-container {
+          font-family: "Nexa Bold", sans-serif;
+          text-align: center;
+          margin-top: 15px; }
+          .team .carousel-team .participant-container .participant .text-container * {
+            padding: 0;
+            margin: 5px 0 5px 0; }
+          .team .carousel-team .participant-container .participant .text-container a, .team .carousel-team .participant-container .participant .text-container #email {
+            color: #DE392D; }
+          .team .carousel-team .participant-container .participant .text-container #name, .team .carousel-team .participant-container .participant .text-container #github, .team .carousel-team .participant-container .participant .text-container #code-forces {
+            color: #479EFC; }
+          .team .carousel-team .participant-container .participant .text-container #name {
+            font-size: 1.2rem; }
     .team .carousel-team .arrow {
       color: #DE392D;
       margin: 10px;
@@ -431,8 +437,10 @@
           align-items: center;
           max-width: 100%; }
           .team .carousel-team .participant-container .participant img {
+            margin-left: 10px;
+            margin-right: 10px;
             max-width: 100px; }
-        .team .carousel-team .participant-container .participant:nth-child(2n+0) {
+        .team .carousel-team .participant-container .participant:nth-child(2n) {
           flex-direction: row-reverse; } }
 
 @media screen and (max-width: 440px) {
