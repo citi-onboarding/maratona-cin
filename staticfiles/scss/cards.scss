@@ -1,0 +1,106 @@
+.cards {
+  width: 80%;
+  margin: auto;
+  .text-container {
+    .title-wrapper {
+      color: $red;
+      font-family: "Nexa Bold", sans-serif;
+      h1 {
+        margin-bottom: 0;
+        font-size: 2.3rem;
+      }
+    }
+    .text-wrapper {
+      width: 100%;
+      font-family: "Avenir", sans-serif;
+      @include flex(space-between, center);
+      p {
+        max-width: 45%;
+      }
+    }
+  }
+  .carousel-wrapper {
+    margin:50px auto;
+    .carousel-cards {
+      @include flex(space-between, center, row, wrap);
+      .card {
+        text-align: center;
+        flex-direction: column;
+        @include border-radius(25px);
+        max-width: 25%;
+        h2 {
+          margin: 20px 0 20px 0; 
+          font-size: 2.1rem;
+          font-family: "Nexa Bold", sans-serif;
+        }
+        p {
+          width: 90%;
+          margin: 0 auto 0 auto;
+          padding-bottom: 30px;
+          font-family: "Avenir", sans-serif;
+        }
+      }
+      $card-colors: (
+        "blue": $blue, 
+        "yellow": $yellow, 
+        "red": $red
+      );
+
+      @each $class, $color in $card-colors {
+        .#{$class} {
+          @include box-shadow(0 0 0 .3em #{$color});
+          h2 {
+            color: #{$color};
+          }
+        }
+      }
+      .slick-dots{
+        max-height: 20px;
+        @include flex(center, center);
+        li {
+          @include flex(center, center);
+          margin: 15px;
+          .dot {
+            @include absolutewh(1.3rem,1.3rem);
+            @include border-radius(50%);
+          }
+        }
+        $dot-colors: ('1': $blue, '2': $yellow, '3': $red);
+        @each $num, $color in $dot-colors {
+          li:nth-child(#{$num}) .dot {
+            border: 4px solid $color;
+            background-color: $color;
+          }
+        }
+        .slick-active {
+          .dot {
+            background-color: transparent !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .cards {
+    width: 100%;
+    .text-container {
+      text-align: center;
+      width: 90%;
+      margin: auto;
+      h1 {
+        display: none;
+      }
+    }
+  }
+  .card{
+    margin: 20px;
+    h2 {
+      font-size: 2rem;
+    }
+    p {
+      font-size: 0.8rem;
+    }
+  }
+}

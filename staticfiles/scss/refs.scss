@@ -1,0 +1,43 @@
+$blue: #479EFC;
+$yellow: #FCDA33;
+$red: #DE392D;
+$dark-red: #C43227;
+
+@mixin test(){
+  margin: 1px solid red;
+}
+
+@mixin border-radius($radius, $args: border) {
+  #{$args}-radius: $radius;
+  -webkit-#{$args}-radius: $radius;
+  -moz-#{$args}-radius: $radius;
+  -ms-#{$args}-radius: $radius;
+}
+
+@mixin flex($justify: flex-start, $align: stretch, $direction: row, $wrap: nowrap) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+}
+
+@mixin box-shadow($args...) {
+  -webkit-box-shadow: $args;
+  -moz-box-shadow: $args;
+  box-shadow: $args;
+}
+
+@mixin absolutewh($width, $height) {
+  min-width: $width;
+  max-width: $width;
+  min-height: $height;
+  max-height: $height;
+}
+
+@mixin transitionwh($transw: 0s, $transh: 0s) {
+  -webkit-transition: width $transw, height $transh;
+  -moz-transition: width $transw, height $transh;
+  -o-transition: width $transw, height $transh;
+  transition: width $transw, height $transh;
+}
