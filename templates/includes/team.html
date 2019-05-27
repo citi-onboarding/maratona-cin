@@ -9,11 +9,11 @@
       <div class="participant" id="{{ participant.id }}">
         <img src="media/participant.png" alt="participant"> 
         <div class="text-container">
-          <p id="name">{{ participant.name }}</p>
-          <p id="email">{{ participant.email }}</p>
-          <p id="github">Github:</p>
+          <p class="name">{{ participant.name }}</p>
+          <p class="email">{{ participant.email }}</p>
+          <p class="github">Github:</p>
           <a href="{{ participant.github }}" target="_blank">{{ participant.github_nickname }}</a>
-          <p id="code-forces">CodeForces:</p>
+          <p class="code-forces">CodeForces:</p>
           <a href="{{ participant.codeforces }}" target="_blank">{{ participant.codeforces_nickname }}</a>
         </div>
       </div>

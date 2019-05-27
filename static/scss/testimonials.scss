@@ -1,27 +1,78 @@
-.testimonials {
-  h1 {
-
-  }
-  .carousel-testimonials {
-    .message {
-      width: 90% !important;
-      border: 5px solid $blue;
-      @include border-radius(30px);
-      left: 0;
-      #content {
-
-      }
-      #author {
-
-      }
+#testimonials-news {
+  width: 80%;
+  margin: auto;
+  .testimonials {
+    width: 50%;
+    h1 {
+      color: $red;
+      font-size: 2.3rem;
+      font-family: "Nexa Bold", sans-serif;
     }
-    .message:nth-child(2n + 1) {
-      border: 5px solid $red;
-      right: 0;
-    }
-    .message:nth-child(3n) {
-      border: 5px solid $yellow;
-      
+    .carousel-testimonials {
+      .message-container {
+        display: flex;
+        flex-direction: column;
+        margin: -15px auto 15px auto;
+        .message {
+          width: 80% !important;
+          border: 5px solid $blue;
+          @include border-radius(30px);
+          left: 0;
+          .content {
+            margin: 20px 40px 50px 20px;
+            color: $red;
+            font-family: "Nexa Bold", sans-serif;
+          }
+          .author {
+            margin: 0 auto 10px auto;
+            font-size: 0.8rem;
+            font-family: "Nexa Light", sans-serif;
+            width: 90%;
+            text-align: right;
+          }
+        }
+        svg {
+          margin: -5px 15px 0 0;
+          .triangle {
+            fill:white;
+            stroke:$blue;
+            stroke-width:5;
+          }
+        }
+      }
+      .message-container:nth-child(2n) {
+        svg {
+          margin: -5px 0 0 15px;
+          -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+        }
+      }
+      .message-container:nth-child(2n + 1) {
+        align-items: flex-end;
+        .message {
+          border: 5px solid $red;
+        }
+        svg {
+          margin: -5px 15px 0 0;
+          .triangle {
+            fill:white;
+            stroke: $red;
+            stroke-width:5;
+          }
+        }
+      }
+      .message-container:nth-child(3n) {
+        .message {
+          border: 5px solid $yellow;
+        }
+        svg {
+          .triangle {
+            fill:white;
+            stroke: $yellow;
+            stroke-width:5;
+          }
+        }
+      }
     }
   }
 }
