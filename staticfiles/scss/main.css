@@ -505,6 +505,22 @@
   color: #479EFC !important;
   border: 3px solid #479EFC !important; }
 
+.testimonials .carousel-testimonials .message {
+  width: 90% !important;
+  border: 5px solid #479EFC;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  left: 0; }
+
+.testimonials .carousel-testimonials .message:nth-child(2n + 1) {
+  border: 5px solid #DE392D;
+  right: 0; }
+
+.testimonials .carousel-testimonials .message:nth-child(3n) {
+  border: 5px solid #FCDA33; }
+
 body, html {
   margin: 0;
   scroll-behavior: smooth; }

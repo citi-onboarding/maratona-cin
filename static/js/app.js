@@ -173,3 +173,13 @@ let titleBlue = false;
   }
 });
 
+// Testimonials section
+
+$('.carousel-testimonials').slick({
+  slidesToShow: 3,
+  slidesToScroll: 3,
+  vertical: true,
+  verticalSwiping: true,
+  dots: false,
+  arrows: false,
+});

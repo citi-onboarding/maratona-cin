@@ -1,0 +1,27 @@
+.testimonials {
+  h1 {
+
+  }
+  .carousel-testimonials {
+    .message {
+      width: 90% !important;
+      border: 5px solid $blue;
+      @include border-radius(30px);
+      left: 0;
+      #content {
+
+      }
+      #author {
+
+      }
+    }
+    .message:nth-child(2n + 1) {
+      border: 5px solid $red;
+      right: 0;
+    }
+    .message:nth-child(3n) {
+      border: 5px solid $yellow;
+      
+    }
+  }
+}
