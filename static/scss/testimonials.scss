@@ -10,16 +10,19 @@
     }
     .carousel-testimonials {
       .message-container {
+        align-items: flex-end;
         display: flex;
         flex-direction: column;
-        margin: -15px auto 15px auto;
+        margin: 30px auto -25px auto;
         .message {
           width: 80% !important;
-          border: 5px solid $blue;
           @include border-radius(30px);
-          left: 0;
+          min-height: 90px;
+          max-height: 90px;
+          @include flex(space-between, center, column);
           .content {
-            margin: 20px 40px 50px 20px;
+            margin: 15px 0 0 20px;
+            width: 100%;
             color: $red;
             font-family: "Nexa Bold", sans-serif;
           }
@@ -33,6 +36,15 @@
         }
         svg {
           margin: -5px 15px 0 0;
+        }
+      }
+      .invert {
+        align-items: flex-start;
+        svg {
+          fill: white;
+          margin: -5px 0 0 15px;
+          -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
           .triangle {
             fill:white;
             stroke:$blue;
@@ -40,39 +52,57 @@
           }
         }
       }
-      .message-container:nth-child(2n) {
-        svg {
-          margin: -5px 0 0 15px;
-          -webkit-transform: scaleX(-1);
-          transform: scaleX(-1);
-        }
-      }
-      .message-container:nth-child(2n + 1) {
-        align-items: flex-end;
-        .message {
-          border: 5px solid $red;
-        }
-        svg {
-          margin: -5px 15px 0 0;
-          .triangle {
-            fill:white;
-            stroke: $red;
-            stroke-width:5;
+      $svg-colors: ('blue': $blue, 'red': $red, 'yellow': $yellow);
+      @each $class, $color in $svg-colors {
+        .#{$class}-message {
+          .message {
+            border: 5px solid $color;
+          }
+          svg {
+            .triangle {
+              fill:white;
+              stroke:$color;
+              stroke-width:5;
+            }
           }
         }
       }
-      .message-container:nth-child(3n) {
-        .message {
-          border: 5px solid $yellow;
-        }
-        svg {
-          .triangle {
-            fill:white;
-            stroke: $yellow;
-            stroke-width:5;
-          }
-        }
-      }
+      // .blue-message {
+      //   .message {
+      //     border: 5px solid $blue;
+      //   }
+      //   svg {
+      //     .triangle {
+      //       fill:white;
+      //       stroke:$blue;
+      //       stroke-width:5;
+      //     }
+      //   }
+      // }
+      // .red-message {
+      //   .message {
+      //     border: 5px solid $red;
+      //   }
+      //   svg {
+      //     .triangle {
+      //       fill:white;
+      //       stroke: $red;
+      //       stroke-width:5;
+      //     }
+      //   }
+      // }
+      // .yellow-message {
+      //   .message {
+      //     border: 5px solid $yellow;
+      //   }
+      //   svg {
+      //     .triangle {
+      //       fill:white;
+      //       stroke: $yellow;
+      //       stroke-width:5;
+      //     }
+      //   }
+      // }
     }
   }
 }

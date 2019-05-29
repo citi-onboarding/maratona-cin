@@ -513,19 +513,26 @@
       font-size: 2.3rem;
       font-family: "Nexa Bold", sans-serif; }
     #testimonials-news .testimonials .carousel-testimonials .message-container {
+      align-items: flex-end;
       display: flex;
       flex-direction: column;
-      margin: -15px auto 15px auto; }
+      margin: 30px auto -25px auto; }
       #testimonials-news .testimonials .carousel-testimonials .message-container .message {
         width: 80% !important;
-        border: 5px solid #479EFC;
         border-radius: 30px;
         -webkit-border-radius: 30px;
         -moz-border-radius: 30px;
         -ms-border-radius: 30px;
-        left: 0; }
+        min-height: 90px;
+        max-height: 90px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: nowrap; }
         #testimonials-news .testimonials .carousel-testimonials .message-container .message .content {
-          margin: 20px 40px 50px 20px;
+          margin: 15px 0 0 20px;
+          width: 100%;
           color: #DE392D;
           font-family: "Nexa Bold", sans-serif; }
         #testimonials-news .testimonials .carousel-testimonials .message-container .message .author {
@@ -536,27 +543,32 @@
           text-align: right; }
       #testimonials-news .testimonials .carousel-testimonials .message-container svg {
         margin: -5px 15px 0 0; }
-        #testimonials-news .testimonials .carousel-testimonials .message-container svg .triangle {
+    #testimonials-news .testimonials .carousel-testimonials .invert {
+      align-items: flex-start; }
+      #testimonials-news .testimonials .carousel-testimonials .invert svg {
+        fill: white;
+        margin: -5px 0 0 15px;
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1); }
+        #testimonials-news .testimonials .carousel-testimonials .invert svg .triangle {
           fill: white;
           stroke: #479EFC;
           stroke-width: 5; }
-    #testimonials-news .testimonials .carousel-testimonials .message-container:nth-child(2n) svg {
-      margin: -5px 0 0 15px;
-      -webkit-transform: scaleX(-1);
-      transform: scaleX(-1); }
-    #testimonials-news .testimonials .carousel-testimonials .message-container:nth-child(2n + 1) {
-      align-items: flex-end; }
-      #testimonials-news .testimonials .carousel-testimonials .message-container:nth-child(2n + 1) .message {
-        border: 5px solid #DE392D; }
-      #testimonials-news .testimonials .carousel-testimonials .message-container:nth-child(2n + 1) svg {
-        margin: -5px 15px 0 0; }
-        #testimonials-news .testimonials .carousel-testimonials .message-container:nth-child(2n + 1) svg .triangle {
-          fill: white;
-          stroke: #DE392D;
-          stroke-width: 5; }
-    #testimonials-news .testimonials .carousel-testimonials .message-container:nth-child(3n) .message {
+    #testimonials-news .testimonials .carousel-testimonials .blue-message .message {
+      border: 5px solid #479EFC; }
+    #testimonials-news .testimonials .carousel-testimonials .blue-message svg .triangle {
+      fill: white;
+      stroke: #479EFC;
+      stroke-width: 5; }
+    #testimonials-news .testimonials .carousel-testimonials .red-message .message {
+      border: 5px solid #DE392D; }
+    #testimonials-news .testimonials .carousel-testimonials .red-message svg .triangle {
+      fill: white;
+      stroke: #DE392D;
+      stroke-width: 5; }
+    #testimonials-news .testimonials .carousel-testimonials .yellow-message .message {
       border: 5px solid #FCDA33; }
-    #testimonials-news .testimonials .carousel-testimonials .message-container:nth-child(3n) svg .triangle {
+    #testimonials-news .testimonials .carousel-testimonials .yellow-message svg .triangle {
       fill: white;
       stroke: #FCDA33;
       stroke-width: 5; }

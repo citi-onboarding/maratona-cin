@@ -2,11 +2,13 @@ from django.shortcuts import render
 from django.views.generic import TemplateView
 from .models import Participant
 from .models import Schedule
+from .models import Testimonial
 import math
 
 
 
 def index(request):
+  # Organize participants by id
   i = 0
   object_list = list(Participant.objects.all().order_by('id'))
   object_sublist = list()
@@ -27,4 +29,5 @@ def index(request):
     'participants':Participant.objects.all(),
     'object_list':object_sublist,
     'containers_num':math.ceil(len(Participant.objects.all())/4),
+    'testimonials': Testimonial.objects.all(),
     })

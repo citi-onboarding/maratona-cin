@@ -1,14 +1,24 @@
 <section class="testimonials">
   <h1>Depoimentos</h1>
   <div class="carousel-testimonials">
+    {% for testimonial in testimonials %}
+    <div class="message-container">
+        <div class="message {{ testimonial.message_color }}">
+          <p class="content">"{{ testimonial.content }}"</p>
+          <p class="author">{{ testimonial.author }} estudante de {{ testimonial.program }}</p>
+        </div>
+        <svg height="45" width="115">
+          <polygon class="triangle" points="50,-5 100,-5 110,40" />
+        </svg>
+    </div>
+    {% endfor %}
     <div class="message-container">
       <div class="message">
-        <p class="content">Melhor fase da minha vida Melhor fase da minha vida Melhor fase da minha vida Melhor fase da minha vida Melhor fase da minha vida Melhor fase da minha vida Melhor fase da minha vida </p>
+        <p class="content">Melhor fase da minha vida Melhor fase da minha vida Melhor fase da minha vida </p>
         <p class="author">Maria Aluna de Ciência da Computação</p>
       </div>
       <svg height="45" width="115">
         <polygon class="triangle" points="50,-5 100,-5 110,40" />
-        Sorry, your browser does not support inline SVG.
       </svg>
     </div>
     <div class="message-container">
@@ -18,7 +28,6 @@
       </div>
       <svg height="45" width="115">
         <polygon class="triangle" points="50,-5 100,-5 110,40" />
-        Sorry, your browser does not support inline SVG.
       </svg>
     </div>
     <div class="message-container">
@@ -28,7 +37,6 @@
       </div>
       <svg height="45" width="115">
         <polygon class="triangle" points="50,-5 100,-5 110,40" />
-        Sorry, your browser does not support inline SVG.
       </svg>
     </div>
     <div class="message-container">
@@ -38,7 +46,6 @@
       </div>
       <svg height="45" width="115">
         <polygon class="triangle" points="50,-5 100,-5 110,40" />
-        Sorry, your browser does not support inline SVG.
       </svg>
     </div>
     <div class="message-container">
@@ -48,17 +55,6 @@
       </div>
       <svg height="45" width="115">
         <polygon class="triangle" points="50,-5 100,-5 110,40" />
-        Sorry, your browser does not support inline SVG.
-      </svg>
-    </div>
-    <div class="message-container">
-      <div class="message">
-        <p class="content">Melhor fase da minha vida</p>
-        <p class="author">Maria Aluna de Ciência da Computação</p>
-      </div>
-      <svg height="45" width="115">
-        <polygon class="triangle" points="50,-5 100,-5 110,40" />
-        Sorry, your browser does not support inline SVG.
       </svg>
     </div>
   </div>

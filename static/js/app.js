@@ -16,10 +16,10 @@ $('.carousel-about').slick({
 // =================================////=====================================//
 // Cards section
 
-const initCards = () => { 
+const initCards = () => {
 
   let maxHeight = 0;
-  
+
   [...document.querySelectorAll('.card')].forEach(card => {
     let childrenHeight = 0;
     [...card.childNodes].forEach(text => {
@@ -27,10 +27,10 @@ const initCards = () => {
         childrenHeight += text.clientHeight;
       }
     })
-    childrenHeight += 60;   
+    childrenHeight += 60;
     if (childrenHeight >= maxHeight) {
       maxHeight = childrenHeight;
-    }   
+    }
   });
   [...document.querySelectorAll('.card')].forEach(card => {
     card.style.height = `${maxHeight}px`;
@@ -47,7 +47,7 @@ const initCards = () => {
       arrows: false,
     });
   } else if (carousel.slick) {
-    try {carousel.slick('unslick');} catch(err) {return;};
+    try { carousel.slick('unslick'); } catch (err) { return; };
   }
 };
 
@@ -103,16 +103,16 @@ gel('.show-menu').addEventListener('click', () => {
 
 // Hide navbar if page is scrolled down
 document.addEventListener('scroll', () => {
-  if(menu.clientWidth > 0 && window.scrollY < getHeight('.banner')) {
+  if (menu.clientWidth > 0 && window.scrollY < getHeight('.banner')) {
     menu.style.transition = 'width 0s';
     menu.style.width = '0px';
     return;
   }
-  if(navbarAutoOpen && window.scrollY === getHeight('.banner')) {
+  if (navbarAutoOpen && window.scrollY === getHeight('.banner')) {
     gel('.show-menu').click();
     navbarAutoOpen = false;
   }
-  if(menu.clientWidth > 0) {
+  if (menu.clientWidth > 0) {
     gel('.show-menu').click();
   }
 });
@@ -134,8 +134,8 @@ menu.addEventListener('click', event => {
   let heightSum = 0;
   let eventClass = event.target.className;
 
-  if(eventClass.split(' ')[0] !== 'menu') {
-    Object.entries(heights).map( each => {
+  if (eventClass.split(' ')[0] !== 'menu') {
+    Object.entries(heights).map(each => {
       each[0] === event.target.className ? heightSum = height : height += each[1];
     });
     heightSum -= heights.navbar;
@@ -144,8 +144,8 @@ menu.addEventListener('click', event => {
   }
 })
 
+// =================================////=====================================//
 // Schedule section
-
 
 let prevEach = '';
 let i = 1;
@@ -159,28 +159,80 @@ let titleBlue = false;
     }
     prevEach = eachTitle;
   }
-  if(each.className && each.className.indexOf('displayNone') === -1) {
-    if(each.className === 'title-wrapper') {
-      if (i%2 === 0) {
+  if (each.className && each.className.indexOf('displayNone') === -1) {
+    if (each.className === 'title-wrapper') {
+      if (i % 2 === 0) {
         each.className += ' title-blue';
         titleBlue = true;
       } else titleBlue = false;
       i++;
     }
-    if(each.className === 'text-container' && titleBlue) {
+    if (each.className === 'text-container' && titleBlue) {
       each.className += ' text-blue';
     }
   }
 });
 
+// =================================////=====================================//
 // Testimonials section
 
 $('.carousel-testimonials').slick({
-  slidesToShow: 2,
+  slidesToShow: 3,
   slidesToScroll: 1,
   vertical: true,
+  // centerMode: true,
   dots: false,
   arrows: false,
   autoplay: true,
-  autoplaySpeed: 2000,
+  autoplaySpeed: 3000,
+  pauseOnFocus: false,
+  pauseOnHover: false,
 });
+
+// Set height
+// let maxHeight = -1;
+// $('.slick-slide').each(function () {
+//   if ($(this).height() > maxHeight) {
+//     maxHeight = $(this).height();
+//   }
+// });
+// $('.slick-slide').each(function () {
+//   if ($(this).height() < maxHeight) {
+//     $(this).css('margin', Math.ceil((maxHeight - $(this).height()) / 2) - 170 + 'px 0');
+//   }
+// });
+
+// Organize by colors
+
+const invert = subj => {
+  subj.className.indexOf('invert') === -1 ? subj.className += ' invert' : subj.className.split('invert').join('');
+}
+let prevSlide;
+let firstClone = false;
+let j = 0;
+[...gel('.message-container').parentElement.childNodes].forEach(each => {
+  if (each.className.indexOf('cloned') !== -1 && prevSlide === 'real') {
+    console.log('first clone');
+    firstClone = true;
+  }
+  if (each.className.indexOf('cloned') === -1 || firstClone) {
+    if (j % 2 !== 0) {
+      invert(each);
+    }
+    if (j % 3 === 1) {
+      each.className += ' blue-message';
+    }
+    if (j % 3 === 2) {
+      each.className += ' red-message';
+    }
+    if (j % 3 === 0) {
+      each.className += ' yellow-message';
+    }
+    console.log(each);
+    prevSlide = 'real';
+    j++;
+  } else {
+    prevSlide = 'cloned';
+    firstClone = false;
+  }
+})
