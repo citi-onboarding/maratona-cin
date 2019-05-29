@@ -487,6 +487,32 @@
           -moz-border-radius: 15px;
           -ms-border-radius: 15px; }
 
+.leaderboards-container {
+  width: 80%;
+  margin: auto;
+  margin-bottom: 100px; }
+  .leaderboards-container h1 {
+    color: #DE392D;
+    font-size: 2.3rem;
+    font-family: "Nexa Bold", sans-serif; }
+  .leaderboards-container h2 {
+    color: #DE392D;
+    font-size: 1.7rem;
+    font-family: "Nexa Bold", sans-serif; }
+  .leaderboards-container .leaderboards-table {
+    display: flex;
+    flex-direction: row; }
+    .leaderboards-container .leaderboards-table .leaderboards-national {
+      display: flex;
+      flex-direction: column;
+      width: 35%;
+      background-color: #DE392D; }
+    .leaderboards-container .leaderboards-table .leaderboards-international {
+      display: flex;
+      flex-direction: column;
+      width: 65%;
+      background-color: #479EFC; }
+
 body, html {
   margin: 0;
   scroll-behavior: smooth; }
