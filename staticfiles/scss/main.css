@@ -843,6 +843,8 @@
   .leaderboards-container .leaderboards-table {
     display: flex;
     flex-direction: row; }
+    .leaderboards-container .leaderboards-table .leaderboards-type-title {
+      color: white; }
     .leaderboards-container .leaderboards-table .leaderboards-national {
       display: flex;
       flex-direction: column;

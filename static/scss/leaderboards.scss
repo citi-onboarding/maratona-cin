@@ -18,6 +18,10 @@
   .leaderboards-table{
     display: flex;
     flex-direction: row;
+
+    .leaderboards-type-title{
+      color: white;
+    }
     
     .leaderboards-national{
       display: flex;
