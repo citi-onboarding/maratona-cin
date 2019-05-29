@@ -13,18 +13,18 @@
         align-items: flex-end;
         display: flex;
         flex-direction: column;
-        margin: 30px auto -25px auto;
+        margin: 30px auto -20px auto;
         .message {
           width: 80% !important;
           @include border-radius(30px);
-          min-height: 90px;
-          max-height: 90px;
+          min-height: 95px;
+          max-height: 95px;
           @include flex(space-between, center, column);
           .content {
-            margin: 15px 0 0 20px;
-            width: 100%;
+            margin: 15px auto 0 auto;
             color: $red;
             font-family: "Nexa Bold", sans-serif;
+            width: 90%;
           }
           .author {
             margin: 0 auto 10px auto;
@@ -67,42 +67,6 @@
           }
         }
       }
-      // .blue-message {
-      //   .message {
-      //     border: 5px solid $blue;
-      //   }
-      //   svg {
-      //     .triangle {
-      //       fill:white;
-      //       stroke:$blue;
-      //       stroke-width:5;
-      //     }
-      //   }
-      // }
-      // .red-message {
-      //   .message {
-      //     border: 5px solid $red;
-      //   }
-      //   svg {
-      //     .triangle {
-      //       fill:white;
-      //       stroke: $red;
-      //       stroke-width:5;
-      //     }
-      //   }
-      // }
-      // .yellow-message {
-      //   .message {
-      //     border: 5px solid $yellow;
-      //   }
-      //   svg {
-      //     .triangle {
-      //       fill:white;
-      //       stroke: $yellow;
-      //       stroke-width:5;
-      //     }
-      //   }
-      // }
     }
   }
 }
