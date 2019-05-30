@@ -32,18 +32,28 @@
             margin: 20px 0 20px 0;
             width: 90%;
             padding: 5px;
+            text-decoration: none;
+            color: black;
             img {
               width: 60px;
               height: 60px;
               margin: 10px;
             }
-            h2 {
-              font-size: 0.8rem;
-              font-family: "Nexa Light", sans-serif;
+            .text-container {
+              max-width: 60%;
+              min-width: 60%;
+              h2 {
+                font-size: 0.8rem;
+                font-family: "Nexa Light", sans-serif;
+              }
+              h3 {
+                font-size: 0.6rem;
+                font-family: "Nexa Light", sans-serif;
+                text-align: center;
+              }
             }
-            h3 {
-              font-size: 0.6rem;
-              font-family: "Nexa Light", sans-serif;
+            &:hover {
+              opacity: 0.7;
             }
           }
         }
@@ -86,6 +96,7 @@
 @media screen and (max-width: 900px) {
   #testimonials-news {
     .news {
+      margin-top: 50px;
       width: 100%;
     }
   }

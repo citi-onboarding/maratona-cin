@@ -379,12 +379,15 @@
       font-size: 0.8rem; } }
 
 .team {
-  width: 80%;
-  margin: auto; }
-  .team h1 {
-    color: #DE392D;
-    font-size: 2.3rem;
-    font-family: "Nexa Bold", sans-serif; }
+  width: 100%;
+  margin: 0 auto 160px auto; }
+  .team .title-container {
+    width: 80%;
+    margin: auto; }
+    .team .title-container h1 {
+      color: #DE392D;
+      font-size: 2.3rem;
+      font-family: "Nexa Bold", sans-serif; }
   .team .carousel-team {
     width: 100%;
     margin: auto;
@@ -462,6 +465,8 @@
   .schedule-container .schedule-table {
     width: 100%;
     border: 5px solid #DE392D;
+    max-height: 450px;
+    overflow: auto;
     border-radius: 20px;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
@@ -476,7 +481,8 @@
       .schedule-container .schedule-table .schedule .title-wrapper {
         width: 100%;
         background-color: #DE392D;
-        margin-bottom: 17.6px; }
+        margin-bottom: 17.6px;
+        font-family: "Nexa Bold", sans-serif; }
         .schedule-container .schedule-table .schedule .title-wrapper h1 {
           text-align: left;
           color: white;
@@ -641,17 +647,25 @@
           background-color: white;
           margin: 20px 0 20px 0;
           width: 90%;
-          padding: 5px; }
+          padding: 5px;
+          text-decoration: none;
+          color: black; }
           #testimonials-news .news .news-wrapper .carousel-news .new-container .new img {
             width: 60px;
             height: 60px;
             margin: 10px; }
-          #testimonials-news .news .news-wrapper .carousel-news .new-container .new h2 {
-            font-size: 0.8rem;
-            font-family: "Nexa Light", sans-serif; }
-          #testimonials-news .news .news-wrapper .carousel-news .new-container .new h3 {
-            font-size: 0.6rem;
-            font-family: "Nexa Light", sans-serif; }
+          #testimonials-news .news .news-wrapper .carousel-news .new-container .new .text-container {
+            max-width: 60%;
+            min-width: 60%; }
+            #testimonials-news .news .news-wrapper .carousel-news .new-container .new .text-container h2 {
+              font-size: 0.8rem;
+              font-family: "Nexa Light", sans-serif; }
+            #testimonials-news .news .news-wrapper .carousel-news .new-container .new .text-container h3 {
+              font-size: 0.6rem;
+              font-family: "Nexa Light", sans-serif;
+              text-align: center; }
+          #testimonials-news .news .news-wrapper .carousel-news .new-container .new:hover {
+            opacity: 0.7; }
       #testimonials-news .news .news-wrapper .carousel-news .slick-dots {
         max-height: 20px;
         display: flex;
@@ -693,7 +707,13 @@
 
 @media screen and (max-width: 900px) {
   #testimonials-news .news {
+    margin-top: 50px;
     width: 100%; } }
+
+.slick-slide {
+  outline: none !important; }
+  .slick-slide * {
+    outline: none !important; }
 
 body, html {
   margin: 0;

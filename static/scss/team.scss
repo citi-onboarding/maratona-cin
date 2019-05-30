@@ -1,10 +1,14 @@
 .team {
-  width: 80%;
-  margin: auto;
-  h1 {
-    color: $red;
-    font-size: 2.3rem;
-    font-family: "Nexa Bold", sans-serif;
+  width: 100%;
+  margin: 0 auto 160px auto;
+  .title-container {
+    width: 80%;
+    margin: auto;
+    h1 {
+      color: $red;
+      font-size: 2.3rem;
+      font-family: "Nexa Bold", sans-serif;
+    }
   }
   .carousel-team {
     width: 100%;

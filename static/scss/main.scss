@@ -8,6 +8,13 @@
 @import 'testimonials.scss';
 @import 'news.scss';
 
+.slick-slide {
+  outline: none !important;
+  * {
+    outline: none !important;
+  }
+}
+
 body, html {
   margin: 0;
   scroll-behavior: smooth;

@@ -7,10 +7,11 @@
     color: $red;
     font-family: "Nexa Bold", sans-serif;
   }
-  
   .schedule-table{
     width:100%;
     border: 5px solid $red;
+    max-height: 450px;
+    overflow: auto;
     @include border-radius(20px);
     .schedule {
       width: 100%;
@@ -19,6 +20,7 @@
         width: 100%;
         background-color: $red;
         margin-bottom: 17.6px;
+        font-family: "Nexa Bold", sans-serif;
         h1{
           text-align: left;
           color: white;
