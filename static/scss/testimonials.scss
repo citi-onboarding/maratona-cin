@@ -1,5 +1,6 @@
 #testimonials-news {
   width: 80%;
+  @include flex(center, center);
   margin: auto;
   .testimonials {
     width: 50%;
@@ -64,6 +65,31 @@
               stroke:$color;
               stroke-width:5;
             }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1025px) {
+  #testimonials-news {
+    flex-direction: column;
+    .testimonials{
+      width: 80%;
+    }
+  }
+}
+@media screen and (max-width: 900px) {
+  #testimonials-news {
+    .testimonials{
+      width: 100%;
+      .carousel-testimonials {
+        .message-container {
+          margin: 30px auto -20px auto;
+          .message {
+            min-height: 130px;
+            max-height: 130px;
           }
         }
       }

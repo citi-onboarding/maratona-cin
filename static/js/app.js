@@ -180,7 +180,6 @@ $('.carousel-testimonials').slick({
   slidesToShow: 3,
   slidesToScroll: 1,
   vertical: true,
-  // centerMode: true,
   dots: false,
   arrows: false,
   autoplay: true,
@@ -199,7 +198,6 @@ let firstClone = false;
 let j = 0;
 [...gel('.message-container').parentElement.childNodes].forEach(each => {
   if (each.className.indexOf('cloned') !== -1 && prevSlide === 'real') {
-    console.log('first clone');
     firstClone = true;
   }
   if (each.className.indexOf('cloned') === -1 || firstClone) {
@@ -215,7 +213,6 @@ let j = 0;
     if (j % 3 === 0) {
       each.className += ' yellow-message';
     }
-    console.log(each);
     prevSlide = 'real';
     j++;
   } else {
@@ -223,3 +220,14 @@ let j = 0;
     firstClone = false;
   }
 })
+
+// =================================////=====================================//
+// News Section
+
+$('.carousel-news').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  dots: true,
+  customPaging: (slider, i) => `<div class="dot" id=${i}></div>`,
+  arrows: false,
+});

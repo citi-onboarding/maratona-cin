@@ -505,6 +505,11 @@
 
 #testimonials-news {
   width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
   margin: auto; }
   #testimonials-news .testimonials {
     width: 50%; }
@@ -572,6 +577,123 @@
       fill: white;
       stroke: #FCDA33;
       stroke-width: 5; }
+
+@media screen and (max-width: 1025px) {
+  #testimonials-news {
+    flex-direction: column; }
+    #testimonials-news .testimonials {
+      width: 80%; } }
+
+@media screen and (max-width: 900px) {
+  #testimonials-news .testimonials {
+    width: 100%; }
+    #testimonials-news .testimonials .carousel-testimonials .message-container {
+      margin: 30px auto -20px auto; }
+      #testimonials-news .testimonials .carousel-testimonials .message-container .message {
+        min-height: 130px;
+        max-height: 130px; } }
+
+#testimonials-news .news {
+  width: 50%; }
+  #testimonials-news .news .news-wrapper {
+    padding: 1px;
+    min-height: 500px;
+    background-color: #DE392D;
+    width: 90%;
+    margin: auto;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px; }
+    #testimonials-news .news .news-wrapper h1 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: white;
+      font-size: 2.3rem;
+      font-family: "Nexa Bold", sans-serif; }
+    #testimonials-news .news .news-wrapper .carousel-news {
+      height: 75%;
+      width: 90%;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      flex-wrap: nowrap; }
+      #testimonials-news .news .news-wrapper .carousel-news .new-container {
+        min-height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        margin: -10px 0 0px 0; }
+        #testimonials-news .news .news-wrapper .carousel-news .new-container .new {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          border-radius: 20px;
+          -webkit-border-radius: 20px;
+          -moz-border-radius: 20px;
+          -ms-border-radius: 20px;
+          background-color: white;
+          margin: 20px 0 20px 0;
+          width: 90%;
+          padding: 5px; }
+          #testimonials-news .news .news-wrapper .carousel-news .new-container .new img {
+            width: 60px;
+            height: 60px;
+            margin: 10px; }
+          #testimonials-news .news .news-wrapper .carousel-news .new-container .new h2 {
+            font-size: 0.8rem;
+            font-family: "Nexa Light", sans-serif; }
+          #testimonials-news .news .news-wrapper .carousel-news .new-container .new h3 {
+            font-size: 0.6rem;
+            font-family: "Nexa Light", sans-serif; }
+      #testimonials-news .news .news-wrapper .carousel-news .slick-dots {
+        max-height: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: nowrap; }
+        #testimonials-news .news .news-wrapper .carousel-news .slick-dots li {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          margin: -50px 5px 0 5px; }
+          #testimonials-news .news .news-wrapper .carousel-news .slick-dots li .dot {
+            min-width: 1rem;
+            max-width: 1rem;
+            min-height: 1rem;
+            max-height: 1rem;
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%; }
+        #testimonials-news .news .news-wrapper .carousel-news .slick-dots li:nth-child(1) .dot {
+          border: 2px solid #479EFC;
+          background-color: #479EFC; }
+        #testimonials-news .news .news-wrapper .carousel-news .slick-dots li:nth-child(2) .dot {
+          border: 2px solid #FCDA33;
+          background-color: #FCDA33; }
+        #testimonials-news .news .news-wrapper .carousel-news .slick-dots li:nth-child(3) .dot {
+          border: 2px solid white;
+          background-color: white; }
+        #testimonials-news .news .news-wrapper .carousel-news .slick-dots .slick-active .dot {
+          background-color: transparent !important; }
+
+@media screen and (max-width: 1025px) {
+  #testimonials-news .news {
+    width: 90%; } }
+
+@media screen and (max-width: 900px) {
+  #testimonials-news .news {
+    width: 100%; } }
 
 body, html {
   margin: 0;
