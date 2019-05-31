@@ -1,7 +1,8 @@
 #testimonials-news {
   .news {
     width: 50%;
-    // padding: 5px;
+    display: flex;
+    align-items: center;
     .news-wrapper {
       padding: 1px;
       min-height: 500px;
@@ -89,6 +90,7 @@
 @media screen and (max-width: 1025px) {
   #testimonials-news {
     .news {
+      margin-top: 50px;
       width: 90%;
     }
   }

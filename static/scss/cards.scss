@@ -1,6 +1,6 @@
 .cards {
   width: 80%;
-  margin: auto;
+  margin: 0 auto 5% auto;
   .text-container {
     .title-wrapper {
       color: $red;
@@ -13,10 +13,7 @@
     .text-wrapper {
       width: 100%;
       font-family: "Avenir", sans-serif;
-      @include flex(space-between, center);
-      p {
-        max-width: 45%;
-      }
+      text-align: left;
     }
   }
   .carousel-wrapper {

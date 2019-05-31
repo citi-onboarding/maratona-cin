@@ -1,20 +1,23 @@
 .banner {
-  height: 100vh;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  height: 100vh !important; }
   .banner #icons {
     flex: 1;
-    display: flex; }
+    display: flex;
+    width: 90%;
+    margin: auto; }
     .banner #icons .fa {
-      text-decoration: none; }
+      text-decoration: none;
+      margin-top: 30px; }
       .banner #icons .fa:hover {
         opacity: 0.7; }
     .banner #icons .fa-facebook-square {
-      margin: 10px;
+      margin-left: 0;
+      margin-right: 20px;
       font-size: 4rem;
       color: #479EFC; }
     .banner #icons .fa-instagram {
-      margin: 10px;
       font-size: 4rem;
       color: #FCDA33; }
   .banner #image-container {
@@ -52,50 +55,63 @@
     margin: 40px 0 0 0;
     justify-content: center; } }
 
-@media only screen and (min-width: 600px) {
-  #icons {
-    margin: 40px 0 0 80px; } }
-
 .navbar {
-  display: flex; }
+  display: flex;
+  background-color: #DE392D; }
   .navbar .navbar-ghost {
     width: 0px; }
-  .navbar nav {
+  .navbar .navbar-container {
+    margin: auto;
+    width: 100%;
+    background-color: #DE392D; }
+    .navbar .navbar-container nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      background-color: #DE392D;
+      width: 90%;
+      margin: auto; }
+      .navbar .navbar-container nav .menu-wrapper {
+        width: 14%; }
+        .navbar .navbar-container nav .menu-wrapper .logo-container {
+          width: 100%; }
+          .navbar .navbar-container nav .menu-wrapper .logo-container #navbar-logo {
+            width: 140px;
+            height: 70px; }
+        .navbar .navbar-container nav .menu-wrapper .show-menu {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          color: white; }
+
+.menu-container {
+  width: 86%; }
+  .menu-container .menu {
+    width: 100%;
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    flex-wrap: nowrap;
-    background-color: #DE392D;
-    width: 100%; }
-    .navbar nav .logo-container #navbar-logo {
-      width: 140px;
-      height: 70px; }
-    .navbar nav .show-menu {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      color: white; }
-
-.menu-container .menu {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center; }
-  .menu-container .menu li {
-    list-style-type: none;
-    margin: 5px 0 5px 0;
-    text-align: center; }
-    .menu-container .menu li a {
-      padding: 10px;
-      text-decoration: none;
-      color: white;
-      font-size: 1rem;
-      font-family: "Nexa Light", sans-serif;
-      cursor: pointer; }
-      .menu-container .menu li a:hover {
-        font-family: "Nexa Bold", sans-serif; }
+    flex-wrap: nowrap; }
+    .menu-container .menu li {
+      width: auto;
+      list-style-type: none;
+      margin: 5px 3% 5px 3%;
+      text-align: center; }
+      .menu-container .menu li a {
+        text-decoration: none;
+        color: white;
+        font-size: 1rem;
+        font-family: "Nexa Light", sans-serif;
+        cursor: pointer; }
+        .menu-container .menu li a:hover {
+          font-family: "Nexa Bold", sans-serif; }
 
 .fixed {
   width: 100%;
@@ -117,11 +133,11 @@
       align-items: center;
       flex-direction: row;
       flex-wrap: nowrap;
-      width: 100%; }
+      width: 100% !important; }
       nav .menu-wrapper .logo-container {
-        margin: 0 30px 0 30px; }
+        margin: 0 30px 0 0; }
       nav .menu-wrapper > a {
-        margin: 0 30px 0 30px;
+        margin: 0 0 0 30px;
         display: block;
         font-size: 2rem;
         cursor: pointer; }
@@ -165,8 +181,8 @@
         white-space: nowrap; } }
 
 @media screen and (min-width: 1025px) {
-  nav .menu-wrapper .show-menu {
-    display: none; }
+  .navbar-container nav .menu-wrapper .show-menu {
+    display: none !important; }
   .menu-container-side {
     display: none; }
     .menu-container-side .menu-side {
@@ -183,91 +199,98 @@
     flex-direction: row;
     flex-wrap: nowrap;
     margin: auto; }
-    .about .text-wrapper .text-container .image-container {
-      width: 70%;
-      margin: 10px auto 10px auto;
+    .about .text-wrapper .text-container {
+      width: 75%; }
+      .about .text-wrapper .text-container .image-container {
+        width: 70%;
+        margin: 10px auto 10px auto;
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        flex-direction: row;
+        flex-wrap: nowrap; }
+        .about .text-wrapper .text-container .image-container img {
+          width: 100%;
+          max-width: 400px; }
+      .about .text-wrapper .text-container h1 {
+        margin: 20px auto 20px auto;
+        text-align: left;
+        color: #DE392D;
+        font-size: 2.3rem;
+        font-family: "Nexa Bold", sans-serif; }
+      .about .text-wrapper .text-container p {
+        margin: 20px auto 20px auto;
+        font-family: "Avenir", sans-serif; }
+  .about #carousel-wrapper .carousel-about {
+    min-height: 100%;
+    display: flex; }
+    .about #carousel-wrapper .carousel-about .slick-slide {
+      overflow: hidden;
+      height: auto;
+      width: 50%; }
+    .about #carousel-wrapper .carousel-about .slick-dots {
+      bottom: 50px;
+      max-height: 20px;
       display: flex;
       justify-content: center;
-      align-items: stretch;
+      align-items: center;
       flex-direction: row;
       flex-wrap: nowrap; }
-      .about .text-wrapper .text-container .image-container img {
-        width: 100%;
-        max-width: 400px; }
-    .about .text-wrapper .text-container h1 {
-      margin: 20px auto 20px auto;
-      text-align: center;
-      color: #DE392D;
-      font-size: 2.3rem;
-      width: 80%;
-      font-family: "Nexa Bold", sans-serif; }
-    .about .text-wrapper .text-container p {
-      margin: 20px auto 20px auto;
-      width: 80%;
-      font-family: "Avenir", sans-serif; }
-  .about #carousel-wrapper {
-    max-width: 100%; }
-    .about #carousel-wrapper .carousel-about {
-      display: flex;
-      flex-wrap: wrap;
-      margin: 0; }
-      .about #carousel-wrapper .carousel-about .slick-slide {
-        margin: 0;
-        overflow: hidden;
-        height: 100%;
-        width: 50%; }
-        .about #carousel-wrapper .carousel-about .slick-slide img {
-          height: 100%;
-          width: 100%; }
-      .about #carousel-wrapper .carousel-about .slick-dots {
-        bottom: 50px;
-        max-height: 20px;
+      .about #carousel-wrapper .carousel-about .slick-dots li {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: row;
-        flex-wrap: nowrap; }
-        .about #carousel-wrapper .carousel-about .slick-dots li {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          flex-direction: row;
-          flex-wrap: nowrap;
-          margin: 15px; }
-          .about #carousel-wrapper .carousel-about .slick-dots li .dot {
-            min-width: 1.3rem;
-            max-width: 1.3rem;
-            min-height: 1.3rem;
-            max-height: 1.3rem;
-            border-radius: 50%;
-            -webkit-border-radius: 50%;
-            -moz-border-radius: 50%;
-            -ms-border-radius: 50%; }
-        .about #carousel-wrapper .carousel-about .slick-dots li:nth-child(1) .dot {
-          border: 4px solid #479EFC;
-          background-color: #479EFC; }
-        .about #carousel-wrapper .carousel-about .slick-dots li:nth-child(2) .dot {
-          border: 4px solid #FCDA33;
-          background-color: #FCDA33; }
-        .about #carousel-wrapper .carousel-about .slick-dots li:nth-child(3) .dot {
-          border: 4px solid #DE392D;
-          background-color: #DE392D; }
-        .about #carousel-wrapper .carousel-about .slick-dots .slick-active .dot {
-          background-color: transparent !important; }
+        flex-wrap: nowrap;
+        margin: 15px; }
+        .about #carousel-wrapper .carousel-about .slick-dots li .dot {
+          min-width: 1.3rem;
+          max-width: 1.3rem;
+          min-height: 1.3rem;
+          max-height: 1.3rem;
+          border-radius: 50%;
+          -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          -ms-border-radius: 50%; }
+      .about #carousel-wrapper .carousel-about .slick-dots li:nth-child(1) .dot {
+        border: 4px solid #479EFC;
+        background-color: #479EFC; }
+      .about #carousel-wrapper .carousel-about .slick-dots li:nth-child(2) .dot {
+        border: 4px solid #FCDA33;
+        background-color: #FCDA33; }
+      .about #carousel-wrapper .carousel-about .slick-dots li:nth-child(3) .dot {
+        border: 4px solid #DE392D;
+        background-color: #DE392D; }
+      .about #carousel-wrapper .carousel-about .slick-dots .slick-active .dot {
+        background-color: transparent !important; }
 
-@media only screen and (max-width: 1050px) {
+@media only screen and (max-width: 1025px) {
   .about {
-    flex-direction: column-reverse; } }
+    flex-direction: column-reverse; }
+    .about .text-wrapper {
+      width: 100% !important; }
+      .about .text-wrapper .text-container {
+        width: 90% !important; }
+    .about #carousel-wrapper .carousel-about {
+      max-width: 100vw !important; }
+      .about #carousel-wrapper .carousel-about .slick-slide {
+        max-width: 100vw !important; }
+        .about #carousel-wrapper .carousel-about .slick-slide img {
+          max-height: 100%;
+          width: auto;
+          max-width: 100vw !important; } }
 
-@media only screen and (min-width: 1050px) {
+@media only screen and (min-width: 1025px) {
   .about .text-wrapper {
     width: 40%; }
   .about #carousel-wrapper {
-    width: 60%; } }
+    width: 60%; }
+    .about #carousel-wrapper .carousel-about .slick-slide img {
+      height: 93vh !important; } }
 
 .cards {
   width: 80%;
-  margin: auto; }
+  margin: 0 auto 5% auto; }
   .cards .text-container .title-wrapper {
     color: #DE392D;
     font-family: "Nexa Bold", sans-serif; }
@@ -277,13 +300,7 @@
   .cards .text-container .text-wrapper {
     width: 100%;
     font-family: "Avenir", sans-serif;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    flex-wrap: nowrap; }
-    .cards .text-container .text-wrapper p {
-      max-width: 45%; }
+    text-align: left; }
   .cards .carousel-wrapper {
     margin: 50px auto; }
     .cards .carousel-wrapper .carousel-cards {
@@ -379,8 +396,8 @@
       font-size: 0.8rem; } }
 
 .team {
-  width: 100%;
-  margin: 0 auto 160px auto; }
+  width: 90%;
+  margin: 0 auto 0 auto; }
   .team .title-container {
     width: 80%;
     margin: auto; }
@@ -455,9 +472,8 @@
     font-size: 3vw; } }
 
 .schedule-container {
-  width: 80%;
-  margin: auto;
-  margin-bottom: 100px; }
+  width: 85%;
+  margin: 0 auto 0 auto; }
   .schedule-container .schedule-title {
     font-size: 2.3rem;
     color: #DE392D;
@@ -516,7 +532,7 @@
   align-items: center;
   flex-direction: row;
   flex-wrap: nowrap;
-  margin: auto; }
+  margin: 50px auto; }
   #testimonials-news .testimonials {
     width: 50%; }
     #testimonials-news .testimonials h1 {
@@ -600,7 +616,9 @@
         max-height: 130px; } }
 
 #testimonials-news .news {
-  width: 50%; }
+  width: 50%;
+  display: flex;
+  align-items: center; }
   #testimonials-news .news .news-wrapper {
     padding: 1px;
     min-height: 500px;
@@ -703,12 +721,22 @@
 
 @media screen and (max-width: 1025px) {
   #testimonials-news .news {
+    margin-top: 50px;
     width: 90%; } }
 
 @media screen and (max-width: 900px) {
   #testimonials-news .news {
     margin-top: 50px;
     width: 100%; } }
+
+@media screen and (min-width: 1050px) {
+  section:not(.navbar) {
+    height: 85vh !important;
+    max-width: 100vw !important; }
+    section:not(.navbar).about {
+      height: 93vh !important; }
+    section:not(.navbar).banner {
+      height: 100vh !important; } }
 
 .slick-slide {
   outline: none !important; }

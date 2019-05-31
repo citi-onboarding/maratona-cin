@@ -8,6 +8,25 @@
 @import 'testimonials.scss';
 @import 'news.scss';
 
+@media screen and (min-width: 1050px) {
+  section:not(.navbar) {
+    height: 85vh !important;
+    max-width: 100vw !important;
+    &.about {
+     height: 93vh !important; 
+    }
+    &.banner {
+      height: 100vh !important;
+    }
+  }
+}
+
+@media screen and (max-width: 1025px) {
+  section.cards {
+    // height: 85vh;
+  }
+}
+
 .slick-slide {
   outline: none !important;
   * {

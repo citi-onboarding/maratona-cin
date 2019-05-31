@@ -70,7 +70,7 @@ $('.carousel-team').slick({
 
 let navbarAutoOpen = false;
 
-const navbar = gel('nav');
+const navbar = gel('.navbar-container');
 let navbarHeight = getHeight('.navbar')
 
 // Fix navbar to top of the page
@@ -231,3 +231,14 @@ $('.carousel-news').slick({
   customPaging: (slider, i) => `<div class="dot" id=${i}></div>`,
   arrows: false,
 });
+
+[...gel('.carousel-news').querySelector('.slick-list').querySelector('.slick-track').childNodes].map(slide => {
+  if(slide.className.indexOf('slick-cloned') === -1) {
+    [...slide.childNodes].map(news => {
+      if (news.href) {
+        let siteHome = news.href.split('/').slice(0, 3).join('/')
+        news.querySelector('img').src = `${siteHome}/favicon.ico`
+      }
+    })
+  }
+})
