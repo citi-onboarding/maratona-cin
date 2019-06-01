@@ -7,9 +7,10 @@
 @import 'schedule.scss';
 @import 'testimonials.scss';
 @import 'news.scss';
+@import 'partners.scss';
 
 @media screen and (min-width: 1050px) {
-  section:not(.navbar) {
+  section:not(.navbar):not(.partners) {
     height: 85vh !important;
     max-width: 100vw !important;
     &.about {

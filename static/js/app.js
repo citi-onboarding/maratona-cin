@@ -91,7 +91,7 @@ const menu = gel('.menu-container-side');
 // Show menu animation
 gel('.show-menu').addEventListener('click', () => {
   // If user is above navbar
-  menu.style.transition = 'width 0.5s';
+  menu.style.transition = 'width 1s';
   if (window.scrollY < getHeight('.banner')) {
     window.scrollTo(0, getHeight('.banner'));
     navbarAutoOpen = true;
@@ -232,13 +232,21 @@ $('.carousel-news').slick({
   arrows: false,
 });
 
+// Getting favicon.ico from pages
 [...gel('.carousel-news').querySelector('.slick-list').querySelector('.slick-track').childNodes].map(slide => {
-  if(slide.className.indexOf('slick-cloned') === -1) {
-    [...slide.childNodes].map(news => {
-      if (news.href) {
-        let siteHome = news.href.split('/').slice(0, 3).join('/')
-        news.querySelector('img').src = `${siteHome}/favicon.ico`
-      }
-    })
-  }
+  [...slide.childNodes].map(news => {
+    if (news.href) {
+      let siteHome = news.href.split('/').slice(0, 3).join('/');
+      news.querySelector('img').src = `${siteHome}/favicon.ico`;
+    }
+  })
+})
+
+// =================================////=====================================//
+// Parterns Section
+$('.carousel-partners').slick({
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  // centerMode: true,
+  dots: false,
 })

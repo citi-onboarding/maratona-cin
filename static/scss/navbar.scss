@@ -106,7 +106,8 @@
 		z-index: 2;
 		margin: auto;
 		overflow-x: hidden;
-		background-color: $dark-red; 
+    background-color: $dark-red; 
+    transition-timing-function: ease-in-out;
 		transition: width 0.5s;		
 		.menu-side {
       @include flex(space-around, flex-start, column);

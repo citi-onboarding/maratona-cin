@@ -1,0 +1,44 @@
+.partners { 
+  display: flex;
+  height: 50vh !important;
+  width: 90%;
+  margin: auto;
+  .text-container {
+    h1 {
+
+    }
+    p {
+
+    }
+  }
+  .carousel-partners {
+    width: 50%;
+    height: 50%;
+    .slick-list {
+      // margin: auto;
+      height: 100%;
+      .slick-track {
+        height: 100%;
+        .partner-container {
+          @include flex(center, center);
+          img {
+            @include border-radius(50%);
+            margin: auto;
+            width: 100%;
+          }
+          .plus {
+            
+          }
+        }
+        .slick-slide {
+          margin-bottom: 0;
+          img {
+            margin-bottom: 0;
+            -webkit-transition: width 1s height 1s;		
+            transition: width 1s height 1s;		
+          }
+        }
+      }
+    }
+  }
+}

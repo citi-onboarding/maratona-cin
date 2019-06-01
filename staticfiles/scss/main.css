@@ -168,6 +168,7 @@
     margin: auto;
     overflow-x: hidden;
     background-color: #C43227;
+    transition-timing-function: ease-in-out;
     transition: width 0.5s; }
     .menu-container-side .menu-side {
       display: flex;
@@ -729,13 +730,45 @@
     margin-top: 50px;
     width: 100%; } }
 
+.partners {
+  display: flex;
+  height: 50vh !important;
+  width: 90%;
+  margin: auto; }
+  .partners .carousel-partners {
+    width: 50%;
+    height: 50%; }
+    .partners .carousel-partners .slick-list {
+      height: 100%; }
+      .partners .carousel-partners .slick-list .slick-track {
+        height: 100%; }
+        .partners .carousel-partners .slick-list .slick-track .partner-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: row;
+          flex-wrap: nowrap; }
+          .partners .carousel-partners .slick-list .slick-track .partner-container img {
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            margin: auto;
+            width: 100%; }
+        .partners .carousel-partners .slick-list .slick-track .slick-slide {
+          margin-bottom: 0; }
+          .partners .carousel-partners .slick-list .slick-track .slick-slide img {
+            margin-bottom: 0;
+            -webkit-transition: width 1s height 1s;
+            transition: width 1s height 1s; }
+
 @media screen and (min-width: 1050px) {
-  section:not(.navbar) {
+  section:not(.navbar):not(.partners) {
     height: 85vh !important;
     max-width: 100vw !important; }
-    section:not(.navbar).about {
+    section:not(.navbar):not(.partners).about {
       height: 93vh !important; }
-    section:not(.navbar).banner {
+    section:not(.navbar):not(.partners).banner {
       height: 100vh !important; } }
 
 .slick-slide {
