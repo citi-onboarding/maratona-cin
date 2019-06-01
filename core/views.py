@@ -4,8 +4,7 @@ from .models import Participant
 from .models import Schedule
 from .models import Testimonial
 from .models import New
-import math
-
+from .models import Medal
 
 
 def index(request):
@@ -42,6 +41,7 @@ def index(request):
   new_sublist.append(slide)
 
   return render(request, 'index.html', {
+    'Medal': Medal.objects.all().order_by('type'),
     'Schedule': Schedule.objects.all().order_by('activity_date'),
     'participants':Participant.objects.all(),
     'object_list':object_sublist,

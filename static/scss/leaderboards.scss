@@ -15,9 +15,31 @@
     font-family: "Nexa Bold", sans-serif;
   }
 
+  h3{
+    color: $red;
+    font-size: 1.3rem;
+    font-family: "Nexa Bold", sans-serif;
+    text-align: center;
+    vertical-align: center;
+  }
+
+  #medal{
+    height: 150px;
+  }
+
   .leaderboards-table{
     display: flex;
     flex-direction: row;
+
+    .medal-title-container{
+      display: flex;
+      flex-direction: row;
+      
+      .subtitle-cotainer{
+        align-items: center;
+        vertical-align: center;
+      }
+    }
 
     .leaderboards-type-title{
       color: white;
@@ -27,15 +49,20 @@
       display: flex;
       flex-direction: column;
       width: 35%;
-      background-color: $red;
+      background-color: yellow;
     }
 
     .leaderboards-international{
       display: flex;
       flex-direction: column;
       width: 65%;
-      background-color: $blue;
+      background-color: green;
     }
+  }
 
+  @media only screen and (max-width: 1024px) {
+    .leaderboards-table{
+      flex-direction: column;
+    }
   }
 }
