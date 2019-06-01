@@ -247,6 +247,9 @@ $('.carousel-news').slick({
 $('.carousel-partners').slick({
   slidesToShow: 3,
   slidesToScroll: 1,
-  // centerMode: true,
+  centerMode: true,
+  centerPadding: 0,
   dots: false,
+  prevArrow: '<a class="prev arrow fa fa-angle-left"></a>',
+  nextArrow: '<a class="next arrow fa fa-angle-right"></a>',
 })

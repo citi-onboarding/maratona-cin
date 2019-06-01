@@ -535,7 +535,12 @@
   flex-wrap: nowrap;
   margin: 50px auto; }
   #testimonials-news .testimonials {
-    width: 50%; }
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap; }
     #testimonials-news .testimonials h1 {
       color: #DE392D;
       font-size: 2.3rem;
@@ -735,8 +740,19 @@
   height: 50vh !important;
   width: 90%;
   margin: auto; }
+  .partners .text-container h1 {
+    color: #DE392D;
+    font-family: "Nexa Bold", sans-serif;
+    font-size: 2.3rem; }
+  .partners .text-container p {
+    font-family: "Avenir", sans-serif; }
   .partners .carousel-partners {
-    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 60%;
     height: 50%; }
     .partners .carousel-partners .slick-list {
       height: 100%; }
@@ -745,22 +761,21 @@
         .partners .carousel-partners .slick-list .slick-track .partner-container {
           display: flex;
           justify-content: center;
-          align-items: center;
+          align-items: flex-end;
           flex-direction: row;
-          flex-wrap: nowrap; }
+          flex-wrap: nowrap;
+          vertical-align: text-bottom !important;
+          overflow: hidden;
+          height: 100%; }
           .partners .carousel-partners .slick-list .slick-track .partner-container img {
-            border-radius: 50%;
-            -webkit-border-radius: 50%;
-            -moz-border-radius: 50%;
-            -ms-border-radius: 50%;
-            margin: auto;
-            width: 100%; }
-        .partners .carousel-partners .slick-list .slick-track .slick-slide {
-          margin-bottom: 0; }
-          .partners .carousel-partners .slick-list .slick-track .slick-slide img {
-            margin-bottom: 0;
-            -webkit-transition: width 1s height 1s;
-            transition: width 1s height 1s; }
+            height: 100%;
+            margin: 0 auto;
+            bottom: 0 !important; }
+    .partners .carousel-partners .arrow {
+      color: #DE392D;
+      margin: 10px;
+      cursor: pointer;
+      font-size: 5rem; }
 
 @media screen and (min-width: 1050px) {
   section:not(.navbar):not(.partners) {

@@ -4,6 +4,7 @@
   margin: 50px auto;
   .testimonials {
     width: 50%;
+    @include flex(center, center, column);
     h1 {
       color: $red;
       font-size: 2.3rem;
