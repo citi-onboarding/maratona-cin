@@ -499,21 +499,99 @@
     color: #DE392D;
     font-size: 1.7rem;
     font-family: "Nexa Bold", sans-serif; }
+  .leaderboards-container h3 {
+    color: #DE392D;
+    font-size: 1.3rem;
+    font-family: "Nexa Bold", sans-serif;
+    text-align: center;
+    vertical-align: center; }
+  .leaderboards-container #medal {
+    height: 150px; }
   .leaderboards-container .leaderboards-table {
     display: flex;
     flex-direction: row; }
+    .leaderboards-container .leaderboards-table .medal-title-container {
+      display: flex;
+      flex-direction: row; }
+      .leaderboards-container .leaderboards-table .medal-title-container .subtitle-cotainer {
+        align-items: center;
+        vertical-align: center; }
     .leaderboards-container .leaderboards-table .leaderboards-type-title {
       color: white; }
     .leaderboards-container .leaderboards-table .leaderboards-national {
       display: flex;
       flex-direction: column;
       width: 35%;
-      background-color: #DE392D; }
+      background-color: yellow; }
     .leaderboards-container .leaderboards-table .leaderboards-international {
       display: flex;
       flex-direction: column;
       width: 65%;
-      background-color: #479EFC; }
+      background-color: green; }
+  @media only screen and (max-width: 1024px) {
+    .leaderboards-container .leaderboards-table {
+      flex-direction: column; } }
+
+.footer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  background-color: #DE392D;
+  display: flex;
+  flex-direction: row; }
+  .footer-container a, .footer-container p {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    font-size: 1.2rem;
+    color: white;
+    font-family: "Nexa Light", sans-serif; }
+  .footer-container .footer-title {
+    font-size: 1.3rem;
+    font-family: "Nexa Bold", sans-serif; }
+  .footer-container .logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    display: flex;
+    flex-direction: column; }
+    .footer-container .logo-container #navbar-logo {
+      width: 380px;
+      height: 120px; }
+  .footer-container .contact-container #message-icon {
+    width: 100px;
+    height: 140px; }
+  .footer-container .social-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    flex-direction: column; }
+    .footer-container .social-container #social-icon {
+      width: 100px;
+      height: 140px; }
+    .footer-container .social-container #signature-icon {
+      color: white;
+      width: 100px;
+      height: 40px; }
+    .footer-container .social-container .social-medias {
+      display: flex;
+      flex-direction: row; }
+    .footer-container .social-container .signature {
+      display: flex;
+      flex-direction: column; }
+
+@media only screen and (max-width: 1024px) {
+  .footer-container {
+    display: flex;
+    flex-direction: column; } }
 
 body, html {
   margin: 0;

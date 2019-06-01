@@ -32,3 +32,28 @@ class Schedule(models.Model):
 
   def __str__(self):
     return self.activity
+
+class Medal(models.Model):
+
+  Primeiro = 'Primeiro Lugar'
+  Segundo = 'Segundo Segundo'
+  Terceiro = 'Terceiro Lugar'
+
+  POSITION_CHOICES = [(Primeiro, 'Primeiro Lugar'),(Segundo, 'Segundo Lugar'),(Terceiro, 'Terceiro Lugar')]
+
+  Nacional = 'Nacional'
+  Internacional = 'Internacional'
+
+  TYPE_CHOICES = [(Nacional, 'Nacional'),(Internacional, 'Internacional')]
+
+  type = models.CharField(max_length=50, choices = TYPE_CHOICES) 
+  position = models.CharField(max_length=50, choices=POSITION_CHOICES)
+  title_name = models.CharField(max_length=150)
+  published_date = models.DateTimeField(blank=True, null=True)
+
+  def publish(self):
+    self.published_date = timezone.now()
+    self.save()
+
+  def __str__(self):
+    return self.title_name

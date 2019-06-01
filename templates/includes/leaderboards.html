@@ -2,15 +2,31 @@
 
 <section class="leaderboards-container">
   <h1 class="leaderboards-title">Quadro de Medalhas</h1>
+  <h2 class="title-container">Nacionais</h2>
+  <h2 class="title-container">Internacionais</h2>  
   <div class="leaderboards-table">
+    {% for medal in Medal %}
+    {% if medal.type == 'Nacional' %}
+    
     <div class="leaderboards-national">
-      <h2 class="leaderboards-type-title">Nacionais</h1>
 
-      
+      <div class = "medal-title-container">
+        <img src="media/medal-national.svg" alt="National Medal" id="medal">
+        <div class = "subtitle-container">
+          <h3 class = "subtitle-container">{{medal.title_name}}</h3>
+        </div>
+      </div>
     </div>
+
+    {% else %}
     <div class="leaderboards-international">
-      <h2 class="leaderboards-type-title">Internacionais</h1>  
+
+      <div class = "medal-title-container">
+        <img src="media/medal-latinamerica.svg" alt="World Medal" id="medal">
+        <h3 class = "subtitle-container">{{medal.title_name}}</h3>
+      </div>
     </div>
-  </div>
+    {% endif %}
+    {% endfor %}
   </div>
 </section>
