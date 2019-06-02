@@ -10,14 +10,22 @@
 @import 'partners.scss';
 
 @media screen and (min-width: 1050px) {
-  section:not(.navbar):not(.partners) {
-    height: 85vh !important;
-    max-width: 100vw !important;
+  section:not(.navbar) {
+    &:nth-child(2n) {
+      height: 85vh !important;
+      max-width: 100vw !important;
+    }
     &.about {
      height: 93vh !important; 
     }
     &.banner {
       height: 100vh !important;
+    }
+    &.cards {
+      height: 90vh !important;
+    }
+    &.team {
+      margin: -20vh auto -20vh auto;
     }
   }
 }

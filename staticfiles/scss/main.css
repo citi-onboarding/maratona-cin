@@ -317,7 +317,8 @@
         -webkit-border-radius: 25px;
         -moz-border-radius: 25px;
         -ms-border-radius: 25px;
-        max-width: 25%; }
+        max-width: 27%;
+        padding: 10px; }
         .cards .carousel-wrapper .carousel-cards .card h2 {
           margin: 20px 0 20px 0;
           font-size: 2.1rem;
@@ -380,7 +381,7 @@
         .cards .carousel-wrapper .carousel-cards .slick-dots .slick-active .dot {
           background-color: transparent !important; }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 1025px) {
   .cards {
     width: 100%; }
     .cards .text-container {
@@ -398,7 +399,7 @@
 
 .team {
   width: 90%;
-  margin: 0 auto 0 auto; }
+  margin: auto; }
   .team .title-container {
     width: 80%;
     margin: auto; }
@@ -755,22 +756,55 @@
     width: 60%;
     height: 50%; }
     .partners .carousel-partners .slick-list {
-      height: 100%; }
+      height: 90%; }
       .partners .carousel-partners .slick-list .slick-track {
-        height: 100%; }
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        height: 90%; }
         .partners .carousel-partners .slick-list .slick-track .partner-container {
           display: flex;
           justify-content: center;
           align-items: flex-end;
-          flex-direction: row;
+          flex-direction: column;
           flex-wrap: nowrap;
-          vertical-align: text-bottom !important;
+          border-radius: 50px;
+          -webkit-border-radius: 50px;
+          -moz-border-radius: 50px;
+          -ms-border-radius: 50px;
+          transition: all .5s ease;
           overflow: hidden;
-          height: 100%; }
+          height: 80%;
+          width: 60%;
+          max-width: 80%; }
           .partners .carousel-partners .slick-list .slick-track .partner-container img {
             height: 100%;
             margin: 0 auto;
             bottom: 0 !important; }
+          .partners .carousel-partners .slick-list .slick-track .partner-container .plus {
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            background-color: #FCDA33;
+            padding: 5px;
+            padding-bottom: 2px;
+            cursor: pointer;
+            text-align: center;
+            margin-top: -1.6rem;
+            margin-right: 25%; }
+            .partners .carousel-partners .slick-list .slick-track .partner-container .plus i {
+              color: white;
+              font-size: 1rem; }
+        .partners .carousel-partners .slick-list .slick-track .slick-center {
+          -webkit-transform: scale(1.25);
+          -moz-transform: scale(1.25);
+          transform: scale(1.25); }
+          .partners .carousel-partners .slick-list .slick-track .slick-center .partner-container {
+            height: 100%;
+            width: 100%; }
     .partners .carousel-partners .arrow {
       color: #DE392D;
       margin: 10px;
@@ -778,13 +812,17 @@
       font-size: 5rem; }
 
 @media screen and (min-width: 1050px) {
-  section:not(.navbar):not(.partners) {
+  section:not(.navbar):nth-child(2n) {
     height: 85vh !important;
     max-width: 100vw !important; }
-    section:not(.navbar):not(.partners).about {
-      height: 93vh !important; }
-    section:not(.navbar):not(.partners).banner {
-      height: 100vh !important; } }
+  section:not(.navbar).about {
+    height: 93vh !important; }
+  section:not(.navbar).banner {
+    height: 100vh !important; }
+  section:not(.navbar).cards {
+    height: 90vh !important; }
+  section:not(.navbar).team {
+    margin: -20vh auto -20vh auto; } }
 
 .slick-slide {
   outline: none !important; }

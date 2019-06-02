@@ -180,6 +180,7 @@ $('.carousel-testimonials').slick({
   slidesToShow: 3,
   slidesToScroll: 1,
   vertical: true,
+  swipe: false,
   dots: false,
   arrows: false,
   autoplay: true,
@@ -250,6 +251,7 @@ $('.carousel-partners').slick({
   centerMode: true,
   centerPadding: 0,
   dots: false,
+  // variableWidth: true,
   prevArrow: '<a class="prev arrow fa fa-angle-left"></a>',
   nextArrow: '<a class="next arrow fa fa-angle-right"></a>',
 })

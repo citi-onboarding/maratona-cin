@@ -24,7 +24,8 @@
         text-align: center;
         flex-direction: column;
         @include border-radius(25px);
-        max-width: 25%;
+        max-width: 27%;
+        padding: 10px;
         h2 {
           margin: 20px 0 20px 0; 
           font-size: 2.1rem;
@@ -79,7 +80,7 @@
   }
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 1025px) {
   .cards {
     width: 100%;
     .text-container {
