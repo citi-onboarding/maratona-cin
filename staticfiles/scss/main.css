@@ -527,6 +527,60 @@
   color: #479EFC !important;
   border: 3px solid #479EFC !important; }
 
+.leaderboards-container {
+  width: 80%;
+  max-width: 80%;
+  margin: auto;
+  margin-bottom: 100px; }
+  .leaderboards-container h1 {
+    color: #DE392D;
+    font-size: 2.3rem;
+    font-family: "Nexa Bold", sans-serif; }
+  .leaderboards-container h2 {
+    color: #DE392D;
+    font-size: 1.7rem;
+    font-family: "Nexa Bold", sans-serif; }
+  .leaderboards-container h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    color: #DE392D;
+    font-size: 1.3rem;
+    font-family: "Nexa Bold", sans-serif;
+    text-align: center;
+    vertical-align: center;
+    margin-left: -25px; }
+  .leaderboards-container #medal {
+    height: 150px;
+    margin-left: -25px; }
+  .leaderboards-container .leaderboards-table {
+    max-width: 80%;
+    display: flex;
+    flex-direction: row; }
+    .leaderboards-container .leaderboards-table .medal-title-container {
+      display: flex;
+      flex-direction: row; }
+      .leaderboards-container .leaderboards-table .medal-title-container .subtitle-cotainer {
+        align-items: center;
+        vertical-align: center; }
+    .leaderboards-container .leaderboards-table .leaderboards-type-title {
+      color: white; }
+    .leaderboards-container .leaderboards-table .leaderboards-national {
+      display: flex;
+      flex-direction: row;
+      width: 35%; }
+    .leaderboards-container .leaderboards-table .leaderboards-international {
+      display: flex;
+      flex-direction: row;
+      width: 65%; }
+  @media only screen and (max-width: 1024px) {
+    .leaderboards-container .leaderboards-table {
+      flex-direction: column; }
+      .leaderboards-container .leaderboards-table .leaderboards-national, .leaderboards-container .leaderboards-table .leaderboards-international {
+        flex-direction: column; } }
+
 #testimonials-news {
   width: 80%;
   display: flex;
@@ -811,77 +865,6 @@
       cursor: pointer;
       font-size: 5rem; }
 
-@media screen and (min-width: 1050px) {
-  section:not(.navbar):nth-child(2n) {
-    height: 85vh !important;
-    max-width: 100vw !important; }
-  section:not(.navbar).about {
-    height: 93vh !important; }
-  section:not(.navbar).banner {
-    height: 100vh !important; }
-  section:not(.navbar).cards {
-    height: 90vh !important; }
-  section:not(.navbar).team {
-    margin: -20vh auto -20vh auto; } }
-
-.slick-slide {
-  outline: none !important; }
-  .slick-slide * {
-    outline: none !important; }
-.leaderboards-container {
-  width: 80%;
-  max-width: 80%;
-  margin: auto;
-  margin-bottom: 100px; }
-  .leaderboards-container h1 {
-    color: #DE392D;
-    font-size: 2.3rem;
-    font-family: "Nexa Bold", sans-serif; }
-  .leaderboards-container h2 {
-    color: #DE392D;
-    font-size: 1.7rem;
-    font-family: "Nexa Bold", sans-serif; }
-  .leaderboards-container h3 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    color: #DE392D;
-    font-size: 1.3rem;
-    font-family: "Nexa Bold", sans-serif;
-    text-align: center;
-    vertical-align: center;
-    margin-left: -25px; }
-  .leaderboards-container #medal {
-    height: 150px;
-    margin-left: -25px; }
-  .leaderboards-container .leaderboards-table {
-    max-width: 80%;
-    display: flex;
-    flex-direction: row; }
-    .leaderboards-container .leaderboards-table .medal-title-container {
-      display: flex;
-      flex-direction: row; }
-      .leaderboards-container .leaderboards-table .medal-title-container .subtitle-cotainer {
-        align-items: center;
-        vertical-align: center; }
-    .leaderboards-container .leaderboards-table .leaderboards-type-title {
-      color: white; }
-    .leaderboards-container .leaderboards-table .leaderboards-national {
-      display: flex;
-      flex-direction: row;
-      width: 35%; }
-    .leaderboards-container .leaderboards-table .leaderboards-international {
-      display: flex;
-      flex-direction: row;
-      width: 65%; }
-  @media only screen and (max-width: 1024px) {
-    .leaderboards-container .leaderboards-table {
-      flex-direction: column; }
-      .leaderboards-container .leaderboards-table .leaderboards-national, .leaderboards-container .leaderboards-table .leaderboards-international {
-        flex-direction: column; } }
-
 .footer-container {
   display: flex;
   justify-content: center;
@@ -953,6 +936,24 @@
     flex-direction: column; }
     .footer-container .logo-container {
       display: none; } }
+
+@media screen and (min-width: 1050px) {
+  section:not(.navbar):nth-child(2n) {
+    height: 85vh !important;
+    max-width: 100vw !important; }
+  section:not(.navbar).about {
+    height: 93vh !important; }
+  section:not(.navbar).banner {
+    height: 100vh !important; }
+  section:not(.navbar).cards {
+    height: 90vh !important; }
+  section:not(.navbar).team {
+    margin: -20vh auto -20vh auto; } }
+
+.slick-slide {
+  outline: none !important; }
+  .slick-slide * {
+    outline: none !important; }
 
 body, html {
   margin: 0;

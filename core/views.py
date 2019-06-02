@@ -80,6 +80,5 @@ def index(request):
     'participants':Participant.objects.all(),
     'object_list':object_sublist,
     'new_list':new_sublist,
-    'containers_num':math.ceil(len(Participant.objects.all())/4),
     'testimonials': Testimonial.objects.all(),
     })
