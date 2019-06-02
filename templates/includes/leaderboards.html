@@ -1,0 +1,36 @@
+{% load static %}
+
+<section class="leaderboards-container">
+  <h1 class="leaderboards-title">Quadro de Medalhas</h1> 
+  <div class="leaderboards-table">
+    <div class = "national-table">
+      <h2 class="title-container">Nacional</h2>
+      
+      {% for new_container in nacional_list %}
+      
+      <div class="leaderboards-national">
+        {% for medal in new_container %}
+        <div class = "medal-title-container">
+          <img src="media/medal-latinamerica.svg" alt="World Medal" id="medal">
+          <h3 class = "subtitle-container">{{medal.title_name}}</h3>
+        </div>
+        {% endfor %}
+      </div>
+      {% endfor %}
+  </div>
+  
+  <div class = "international-table">
+    <h2 class="title-container">Internacional</h2> 
+    {% for new_container in internacional_list %}
+    <div class="leaderboards-international">
+      {% for medal in new_container %}
+      <div class = "medal-title-container">
+        <img src="media/medal-national.svg" alt="International Medal" id="medal">
+        <h3 class = "subtitle-container">{{medal.title_name}}</h3>
+      </div>
+      {% endfor %}
+    </div>
+    {% endfor %}
+  </div>
+  </div>
+</section>

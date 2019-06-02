@@ -527,6 +527,60 @@
   color: #479EFC !important;
   border: 3px solid #479EFC !important; }
 
+.leaderboards-container {
+  width: 80%;
+  max-width: 80%;
+  margin: auto;
+  margin-bottom: 100px; }
+  .leaderboards-container h1 {
+    color: #DE392D;
+    font-size: 2.3rem;
+    font-family: "Nexa Bold", sans-serif; }
+  .leaderboards-container h2 {
+    color: #DE392D;
+    font-size: 1.7rem;
+    font-family: "Nexa Bold", sans-serif; }
+  .leaderboards-container h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    color: #DE392D;
+    font-size: 1.3rem;
+    font-family: "Nexa Bold", sans-serif;
+    text-align: center;
+    vertical-align: center;
+    margin-left: -25px; }
+  .leaderboards-container #medal {
+    height: 150px;
+    margin-left: -25px; }
+  .leaderboards-container .leaderboards-table {
+    max-width: 80%;
+    display: flex;
+    flex-direction: row; }
+    .leaderboards-container .leaderboards-table .medal-title-container {
+      display: flex;
+      flex-direction: row; }
+      .leaderboards-container .leaderboards-table .medal-title-container .subtitle-cotainer {
+        align-items: center;
+        vertical-align: center; }
+    .leaderboards-container .leaderboards-table .leaderboards-type-title {
+      color: white; }
+    .leaderboards-container .leaderboards-table .leaderboards-national {
+      display: flex;
+      flex-direction: row;
+      width: 35%; }
+    .leaderboards-container .leaderboards-table .leaderboards-international {
+      display: flex;
+      flex-direction: row;
+      width: 65%; }
+  @media only screen and (max-width: 1024px) {
+    .leaderboards-container .leaderboards-table {
+      flex-direction: column; }
+      .leaderboards-container .leaderboards-table .leaderboards-national, .leaderboards-container .leaderboards-table .leaderboards-international {
+        flex-direction: column; } }
+
 #testimonials-news {
   width: 80%;
   display: flex;
@@ -810,6 +864,78 @@
       margin: 10px;
       cursor: pointer;
       font-size: 5rem; }
+
+.footer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 30px 0 30px 0;
+  background-color: #DE392D;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly; }
+  .footer-container a, .footer-container p {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    font-size: 1.2rem;
+    color: white;
+    font-family: "Nexa Light", sans-serif; }
+  .footer-container .footer-title {
+    font-size: 1.7rem;
+    font-family: "Nexa Bold", sans-serif; }
+  .footer-container .logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    display: flex;
+    flex-direction: column; }
+    .footer-container .logo-container #navbar-logo {
+      width: 380px;
+      height: 120px; }
+  .footer-container .contact-container #contact-icon {
+    width: 100px;
+    height: 80px; }
+  .footer-container .contact-container h2 {
+    color: white; }
+  .footer-container .contact-container p {
+    margin-top: -5px; }
+  .footer-container .social-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    flex-direction: column; }
+    .footer-container .social-container #social-icon {
+      width: 100px;
+      height: 100px; }
+    .footer-container .social-container #signature-icon {
+      color: white;
+      width: 100px;
+      height: 35px;
+      display: block; }
+    .footer-container .social-container .social-medias {
+      display: flex;
+      flex-direction: row; }
+    .footer-container .social-container .signature {
+      flex-direction: column; }
+      .footer-container .social-container .signature a {
+        margin-left: -20px;
+        margin-right: -20px; }
+
+@media only screen and (max-width: 1024px) {
+  .footer-container {
+    display: flex;
+    flex-direction: column; }
+    .footer-container .logo-container {
+      display: none; } }
 
 @media screen and (min-width: 1050px) {
   section:not(.navbar):nth-child(2n) {

@@ -1,0 +1,78 @@
+.leaderboards-container {
+  width: 80%;
+  max-width: 80%;
+  margin: auto;
+  margin-bottom: 100px;
+
+  h1 {
+    color: $red;
+    font-size: 2.3rem;
+    font-family: "Nexa Bold", sans-serif;
+  }
+
+  h2 {
+    color: $red;
+    font-size: 1.7rem;
+    font-family: "Nexa Bold", sans-serif;
+  }
+
+  h3{
+    @include flex(center, center);
+    color: $red;
+    font-size: 1.3rem;
+    font-family: "Nexa Bold", sans-serif;
+    text-align: center;
+    vertical-align: center;
+    margin-left: -25px;
+  }
+
+  #medal{
+    height: 150px;
+    margin-left: -25px;
+  }
+
+  .leaderboards-table{
+    max-width:80%;
+    display: flex;
+    flex-direction: row;
+
+
+    .medal-title-container{
+      display: flex;
+      flex-direction: row;
+      
+      .subtitle-cotainer{
+        align-items: center;
+        vertical-align: center;
+      }
+    }
+
+    .leaderboards-type-title{
+      color: white;
+    }
+    
+    .leaderboards-national{
+      display: flex;
+      flex-direction: row;
+      width: 35%;
+
+    }
+
+    .leaderboards-international{
+      display: flex;
+      flex-direction: row;
+      width: 65%;
+
+    }
+  }
+
+  @media only screen and (max-width: 1024px) {
+    .leaderboards-table{
+      flex-direction: column;
+
+      .leaderboards-national, .leaderboards-international{
+        flex-direction: column;
+      }
+    }
+  }
+}
