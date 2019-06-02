@@ -1,0 +1,20 @@
+<section class="news">
+  <div class="news-wrapper">
+    <h1>Notícias</h1>
+    <div class="carousel-news">
+      {% for new_container in new_list %}
+      <div class="new-container">
+        {% for new in new_container %}
+        <a class="new" href="{{ new.link }}" target="_blank">
+          <img src="https://image.flaticon.com/icons/png/512/36/36154.png" alt="news-symbol" onerror="this.onerror=null;this.src='data:image/png;base64,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'">
+          <div class="text-container">
+            <h2 class="new-title">{{ new.title }}</h2>
+            <h3 class="new-subtitle">{{ new.subtitle }}</h3>
+          </div>
+        </a>
+        {% endfor %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

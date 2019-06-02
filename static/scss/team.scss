@@ -1,13 +1,17 @@
 .team {
-  width: 80%;
+  width: 90%;
   margin: auto;
-  h1 {
-    color: $red;
-    font-size: 2.3rem;
-    font-family: "Nexa Bold", sans-serif;
+  .title-container {
+    width: 80%;
+    margin: auto;
+    h1 {
+      color: $red;
+      font-size: 2.3rem;
+      font-family: "Nexa Bold", sans-serif;
+    }
   }
   .carousel-team {
-    width: 95%;
+    width: 100%;
     margin: auto;
     display: flex;
     align-items: center;
@@ -23,10 +27,21 @@
           margin: auto;
         }
         .text-container {
-          p {
-            margin: 10px 0 10px 0;
-            font-family: "Avenir", sans-serif;
-            text-align: left;
+          font-family: "Nexa Bold", sans-serif;
+          text-align: center;
+          margin-top: 15px;
+          * {
+            padding: 0;
+            margin: 5px 0 5px 0;
+          }
+          a, .email {
+            color: $red;
+          }
+          .name, .github, .code-forces {
+            color: $blue;
+          }
+          .name {
+            font-size: 1.2rem; 
           }
         }
       }
@@ -55,15 +70,12 @@
           align-items: center;
           max-width: 100%;
           img {
+            margin-left: 10px;
+            margin-right: 10px;
             max-width: 100px;
           }
-          .text-container {
-            p {
-              
-            }
-          }
         }
-        .participant:nth-child(2n+0) {
+        .participant:nth-child(2n) {
           flex-direction: row-reverse;
         }
       }

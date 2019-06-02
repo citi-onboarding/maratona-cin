@@ -1,0 +1,71 @@
+.partners { 
+  display: flex;
+  height: 50vh !important;
+  width: 90%;
+  margin: auto;
+  .text-container {
+    h1 {
+      color: $red;
+      font-family: "Nexa Bold", sans-serif;
+      font-size: 2.3rem;
+    }
+    p {
+      font-family: "Avenir", sans-serif;
+    }
+  }
+  .carousel-partners {
+    @include flex(center, center);
+    width: 60%;
+    height: 50%;
+    .slick-list {
+      height: 90%;
+      .slick-track {
+        @include flex(center, center);
+        height: 90%;
+        .partner-container {
+          @include flex(center, flex-end, column);
+          @include border-radius(50px);
+          transition: all .5s ease;
+          overflow: hidden;
+          height: 80%;
+          width: 60%;
+          max-width: 80%;
+          img {
+            height: 100%;
+            margin: 0 auto;
+            bottom: 0 !important;
+          }
+          .plus {
+            @include border-radius(50%);
+            background-color: $yellow;
+            padding: 5px;
+            padding-bottom: 2px;
+            cursor: pointer;
+            text-align: center;
+            margin-top: -1.6rem;
+            margin-right: 25%;
+            i {
+              color: white;
+              font-size: 1rem;
+            }
+          }
+        }
+        .slick-center {
+          -webkit-transform: scale(1.25);
+          -moz-transform: scale(1.25);
+          transform: scale(1.25);
+          .partner-container {
+            height: 100%;
+            width: 100%;
+          }
+        }
+      }
+    }
+    .arrow {
+      color: $red;
+      margin: 10px;
+      cursor: pointer;
+      font-size: 5rem;
+    }
+  }
+}

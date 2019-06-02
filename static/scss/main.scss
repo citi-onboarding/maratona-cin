@@ -5,6 +5,43 @@
 @import 'cards.scss';
 @import 'team.scss';
 @import 'schedule.scss';
+@import 'testimonials.scss';
+@import 'news.scss';
+@import 'partners.scss';
+
+@media screen and (min-width: 1050px) {
+  section:not(.navbar) {
+    &:nth-child(2n) {
+      height: 85vh !important;
+      max-width: 100vw !important;
+    }
+    &.about {
+     height: 93vh !important; 
+    }
+    &.banner {
+      height: 100vh !important;
+    }
+    &.cards {
+      height: 90vh !important;
+    }
+    &.team {
+      margin: -20vh auto -20vh auto;
+    }
+  }
+}
+
+@media screen and (max-width: 1025px) {
+  section.cards {
+    // height: 85vh;
+  }
+}
+
+.slick-slide {
+  outline: none !important;
+  * {
+    outline: none !important;
+  }
+}
 
 body, html {
   margin: 0;

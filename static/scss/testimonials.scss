@@ -1,0 +1,99 @@
+#testimonials-news {
+  width: 80%;
+  @include flex(center, center);
+  margin: 50px auto;
+  .testimonials {
+    width: 50%;
+    @include flex(center, center, column);
+    h1 {
+      color: $red;
+      font-size: 2.3rem;
+      font-family: "Nexa Bold", sans-serif;
+    }
+    .carousel-testimonials {
+      .message-container {
+        align-items: flex-end;
+        display: flex;
+        flex-direction: column;
+        margin: 30px auto -20px auto;
+        .message {
+          width: 80% !important;
+          @include border-radius(30px);
+          min-height: 95px;
+          max-height: 95px;
+          @include flex(space-between, center, column);
+          .content {
+            margin: 15px auto 0 auto;
+            color: $red;
+            font-family: "Nexa Bold", sans-serif;
+            width: 90%;
+          }
+          .author {
+            margin: 0 auto 10px auto;
+            font-size: 0.8rem;
+            font-family: "Nexa Light", sans-serif;
+            width: 90%;
+            text-align: right;
+          }
+        }
+        svg {
+          margin: -5px 15px 0 0;
+        }
+      }
+      .invert {
+        align-items: flex-start;
+        svg {
+          fill: white;
+          margin: -5px 0 0 15px;
+          -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+          .triangle {
+            fill:white;
+            stroke:$blue;
+            stroke-width:5;
+          }
+        }
+      }
+      $svg-colors: ('blue': $blue, 'red': $red, 'yellow': $yellow);
+      @each $class, $color in $svg-colors {
+        .#{$class}-message {
+          .message {
+            border: 5px solid $color;
+          }
+          svg {
+            .triangle {
+              fill:white;
+              stroke:$color;
+              stroke-width:5;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1025px) {
+  #testimonials-news {
+    flex-direction: column;
+    .testimonials{
+      width: 80%;
+    }
+  }
+}
+@media screen and (max-width: 900px) {
+  #testimonials-news {
+    .testimonials{
+      width: 100%;
+      .carousel-testimonials {
+        .message-container {
+          margin: 30px auto -20px auto;
+          .message {
+            min-height: 130px;
+            max-height: 130px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,105 @@
+#testimonials-news {
+  .news {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    .news-wrapper {
+      padding: 1px;
+      min-height: 500px;
+      h1 {
+        text-align: center;
+        margin-bottom: 25px;
+        color:white;
+        font-size: 2.3rem;
+        font-family: "Nexa Bold", sans-serif;
+      }
+      background-color: $red;
+      width: 90%;
+      margin: auto;
+      @include border-radius(30px);
+      .carousel-news {
+        height: 75%;
+        width: 90%;
+        margin: auto;
+        @include flex(center, center);
+        .new-container {
+          min-height: 100%;
+          @include flex(space-between, center, column);
+          margin: -10px 0 0px 0;
+          .new {
+            @include flex(space-around, center);
+            @include border-radius(20px);
+            background-color: white;
+            margin: 20px 0 20px 0;
+            width: 90%;
+            padding: 5px;
+            text-decoration: none;
+            color: black;
+            img {
+              width: 60px;
+              height: 60px;
+              margin: 10px;
+            }
+            .text-container {
+              max-width: 60%;
+              min-width: 60%;
+              h2 {
+                font-size: 0.8rem;
+                font-family: "Nexa Light", sans-serif;
+              }
+              h3 {
+                font-size: 0.6rem;
+                font-family: "Nexa Light", sans-serif;
+                text-align: center;
+              }
+            }
+            &:hover {
+              opacity: 0.7;
+            }
+          }
+        }
+        .slick-dots{
+          max-height: 20px;
+          @include flex(center, center);
+          li {
+            @include flex(center, center);
+            margin: -50px 5px 0 5px;
+            .dot {
+              @include absolutewh(1rem,1rem);
+              @include border-radius(50%);
+            }
+          }
+          $dot-colors: ('1': $blue, '2': $yellow, '3': white);
+          @each $num, $color in $dot-colors {
+            li:nth-child(#{$num}) .dot {
+              border: 2px solid $color;
+              background-color: $color;
+            }
+          }
+          .slick-active {
+            .dot {
+              background-color: transparent !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1025px) {
+  #testimonials-news {
+    .news {
+      margin-top: 50px;
+      width: 90%;
+    }
+  }
+}
+@media screen and (max-width: 900px) {
+  #testimonials-news {
+    .news {
+      margin-top: 50px;
+      width: 100%;
+    }
+  }
+}

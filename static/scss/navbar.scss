@@ -1,35 +1,49 @@
 .navbar {
   display: flex;
+  background-color: $red;
   .navbar-ghost {
     width: 0px;
   }
-	nav {
-		@include flex(center, center);
-		background-color: $red;
-		width: 100%;
-		.logo-container{
-			#navbar-logo{
-				width: 140px;
-				height: 70px;
-			}
-		}
-		.show-menu {
-			@include flex(center, center);
-			color: white;
-		}
-	}
+  .navbar-container {
+    margin: auto;
+    width: 100%;
+    background-color: $red;
+    nav {
+      @include flex(space-between, center);
+      background-color: $red;
+      width: 90%;
+      margin:auto;
+      .menu-wrapper {
+        width: 14%;
+        .logo-container{
+          width: 100%;
+          #navbar-logo{
+            width: 140px;
+            height: 70px;
+          }
+        }
+        .show-menu {
+          @include flex(center, center);
+          color: white;
+        }
+      }
+    }
+  }
 }
 .menu-container {
+  width: 86%;
 	.menu {
-		display: flex;
-		justify-content: flex-start;
-		align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    @include flex(center, center);
 		li{
+      width: auto;
 			list-style-type: none;
-			margin: 5px 0 5px 0;
+			margin: 5px 3% 5px 3%;
       text-align: center;
 			a {
-				padding: 10px;
+				// padding: 10%;
 				text-decoration: none;	
 				color: white;
 				font-size: 1rem;
@@ -56,12 +70,12 @@
 		@include flex(space-between, center, column);
 		.menu-wrapper {
 			@include flex(space-between, center);
-      width: 100%;
+      width: 100% !important;
 		.logo-container {
-			margin: 0 30px 0 30px;
+			margin: 0 30px 0 0;
 		}
 			> a {
-				margin: 0 30px 0 30px;
+				margin: 0 0 0 30px;
 				display: block;
         font-size: 2rem;
 				cursor: pointer;
@@ -92,7 +106,8 @@
 		z-index: 2;
 		margin: auto;
 		overflow-x: hidden;
-		background-color: $dark-red; 
+    background-color: $dark-red; 
+    transition-timing-function: ease-in-out;
 		transition: width 0.5s;		
 		.menu-side {
       @include flex(space-around, flex-start, column);
@@ -106,13 +121,15 @@
 }
 
 @media screen and (min-width: 1025px) {
-	nav {
-		.menu-wrapper {
-			.show-menu {
-				display: none;
-			}
-		}
-	}
+  .navbar-container {
+    nav {
+      .menu-wrapper {
+        .show-menu {
+          display: none !important;
+        }
+      }
+    }
+  }
 	.menu-container-side {
 		display: none;
 		.menu-side {

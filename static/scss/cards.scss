@@ -1,6 +1,6 @@
 .cards {
   width: 80%;
-  margin: auto;
+  margin: 0 auto 5% auto;
   .text-container {
     .title-wrapper {
       color: $red;
@@ -13,10 +13,7 @@
     .text-wrapper {
       width: 100%;
       font-family: "Avenir", sans-serif;
-      @include flex(space-between, center);
-      p {
-        max-width: 45%;
-      }
+      text-align: left;
     }
   }
   .carousel-wrapper {
@@ -27,7 +24,8 @@
         text-align: center;
         flex-direction: column;
         @include border-radius(25px);
-        max-width: 25%;
+        max-width: 27%;
+        padding: 10px;
         h2 {
           margin: 20px 0 20px 0; 
           font-size: 2.1rem;
@@ -72,15 +70,17 @@
             background-color: $color;
           }
         }
-        .slick-active .dot {
-          background-color: transparent !important;
+        .slick-active {
+          .dot {
+            background-color: transparent !important;
+          }
         }
       }
     }
   }
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 1025px) {
   .cards {
     width: 100%;
     .text-container {

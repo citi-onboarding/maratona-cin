@@ -16,38 +16,24 @@ $('.carousel-about').slick({
 // =================================////=====================================//
 // Cards section
 
-const initCards = () => { 
+const initCards = () => {
 
   let maxHeight = 0;
-  
+
   [...document.querySelectorAll('.card')].forEach(card => {
     let childrenHeight = 0;
-    // console.log('===============****');
     [...card.childNodes].forEach(text => {
       if (text.clientHeight) {
         childrenHeight += text.clientHeight;
-        // console.log(text);
-        // console.log(`text height: ${text.clientHeight}`);
-        // console.log(`childrenHeight: ${childrenHeight}`);
-        // console.log('===================&&&&');
       }
     })
-    // console.log('===============()()()');
     childrenHeight += 60;
-    // console.log(`childrenHeight + 60: ${childrenHeight}`);
-    
     if (childrenHeight >= maxHeight) {
       maxHeight = childrenHeight;
     }
-    
   });
   [...document.querySelectorAll('.card')].forEach(card => {
     card.style.height = `${maxHeight}px`;
-    // console.log('==============++++');
-    // console.log(`maxHeight: ${maxHeight}`);
-    // console.log(card);
-    // console.log(`card height: ${card.clientHeight}`);
-    // console.log('==============----');
   });
 
   let carousel = $('.carousel-cards');
@@ -61,7 +47,7 @@ const initCards = () => {
       arrows: false,
     });
   } else if (carousel.slick) {
-    try {carousel.slick('unslick');} catch(err) {return;};
+    try { carousel.slick('unslick'); } catch (err) { return; };
   }
 };
 
@@ -84,7 +70,7 @@ $('.carousel-team').slick({
 
 let navbarAutoOpen = false;
 
-const navbar = gel('nav');
+const navbar = gel('.navbar-container');
 let navbarHeight = getHeight('.navbar')
 
 // Fix navbar to top of the page
@@ -105,7 +91,7 @@ const menu = gel('.menu-container-side');
 // Show menu animation
 gel('.show-menu').addEventListener('click', () => {
   // If user is above navbar
-  menu.style.transition = 'width 0.5s';
+  menu.style.transition = 'width 1s';
   if (window.scrollY < getHeight('.banner')) {
     window.scrollTo(0, getHeight('.banner'));
     navbarAutoOpen = true;
@@ -117,16 +103,16 @@ gel('.show-menu').addEventListener('click', () => {
 
 // Hide navbar if page is scrolled down
 document.addEventListener('scroll', () => {
-  if(menu.clientWidth > 0 && window.scrollY < getHeight('.banner')) {
+  if (menu.clientWidth > 0 && window.scrollY < getHeight('.banner')) {
     menu.style.transition = 'width 0s';
     menu.style.width = '0px';
     return;
   }
-  if(navbarAutoOpen && window.scrollY === getHeight('.banner')) {
+  if (navbarAutoOpen && window.scrollY === getHeight('.banner')) {
     gel('.show-menu').click();
     navbarAutoOpen = false;
   }
-  if(menu.clientWidth > 0) {
+  if (menu.clientWidth > 0) {
     gel('.show-menu').click();
   }
 });
@@ -148,8 +134,8 @@ menu.addEventListener('click', event => {
   let heightSum = 0;
   let eventClass = event.target.className;
 
-  if(eventClass.split(' ')[0] !== 'menu') {
-    Object.entries(heights).map( each => {
+  if (eventClass.split(' ')[0] !== 'menu') {
+    Object.entries(heights).map(each => {
       each[0] === event.target.className ? heightSum = height : height += each[1];
     });
     heightSum -= heights.navbar;
@@ -157,26 +143,115 @@ menu.addEventListener('click', event => {
     menu.style.width = '0px';
   }
 })
-var lastScrollTop = 0;
-$(window).scroll(function(event){
-   var st = $(this).scrollTop();
-   if (st > lastScrollTop && gel('nav').clientHeight > 200){
-      gel('.show-menu').click();
-   } 
-   lastScrollTop = st;
-});
 
+// =================================////=====================================//
 // Schedule section
 
-
 let prevEach = '';
+let i = 1;
+let titleBlue = false;
 [...gel('.schedule').childNodes].map(each => {
   if (each.className === 'title-wrapper') {
     let eachTitle = [...each.childNodes][1].innerText;
     if (eachTitle === prevEach) {
       each.style.display = 'none';
+      each.className += ' displayNone'
     }
     prevEach = eachTitle;
   }
+  if (each.className && each.className.indexOf('displayNone') === -1) {
+    if (each.className === 'title-wrapper') {
+      if (i % 2 === 0) {
+        each.className += ' title-blue';
+        titleBlue = true;
+      } else titleBlue = false;
+      i++;
+    }
+    if (each.className === 'text-container' && titleBlue) {
+      each.className += ' text-blue';
+    }
+  }
+});
+
+// =================================////=====================================//
+// Testimonials section
+
+$('.carousel-testimonials').slick({
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  vertical: true,
+  swipe: false,
+  dots: false,
+  arrows: false,
+  autoplay: true,
+  autoplaySpeed: 3000,
+  pauseOnFocus: false,
+  pauseOnHover: false,
+});
+
+// Organize by colors
+
+const invert = subj => {
+  subj.className.indexOf('invert') === -1 ? subj.className += ' invert' : subj.className.split('invert').join('');
+}
+let prevSlide;
+let firstClone = false;
+let j = 0;
+[...gel('.message-container').parentElement.childNodes].forEach(each => {
+  if (each.className.indexOf('cloned') !== -1 && prevSlide === 'real') {
+    firstClone = true;
+  }
+  if (each.className.indexOf('cloned') === -1 || firstClone) {
+    if (j % 2 !== 0) {
+      invert(each);
+    }
+    if (j % 3 === 1) {
+      each.className += ' blue-message';
+    }
+    if (j % 3 === 2) {
+      each.className += ' red-message';
+    }
+    if (j % 3 === 0) {
+      each.className += ' yellow-message';
+    }
+    prevSlide = 'real';
+    j++;
+  } else {
+    prevSlide = 'cloned';
+    firstClone = false;
+  }
 })
 
+// =================================////=====================================//
+// News Section
+
+$('.carousel-news').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  dots: true,
+  customPaging: (slider, i) => `<div class="dot" id=${i}></div>`,
+  arrows: false,
+});
+
+// Getting favicon.ico from pages
+[...gel('.carousel-news').querySelector('.slick-list').querySelector('.slick-track').childNodes].map(slide => {
+  [...slide.childNodes].map(news => {
+    if (news.href) {
+      let siteHome = news.href.split('/').slice(0, 3).join('/');
+      news.querySelector('img').src = `${siteHome}/favicon.ico`;
+    }
+  })
+})
+
+// =================================////=====================================//
+// Parterns Section
+$('.carousel-partners').slick({
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  centerMode: true,
+  centerPadding: 0,
+  dots: false,
+  // variableWidth: true,
+  prevArrow: '<a class="prev arrow fa fa-angle-left"></a>',
+  nextArrow: '<a class="next arrow fa fa-angle-right"></a>',
+})
