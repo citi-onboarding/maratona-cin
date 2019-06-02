@@ -830,6 +830,7 @@
     outline: none !important; }
 .leaderboards-container {
   width: 80%;
+  max-width: 80%;
   margin: auto;
   margin-bottom: 100px; }
   .leaderboards-container h1 {
@@ -841,14 +842,22 @@
     font-size: 1.7rem;
     font-family: "Nexa Bold", sans-serif; }
   .leaderboards-container h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
     color: #DE392D;
     font-size: 1.3rem;
     font-family: "Nexa Bold", sans-serif;
     text-align: center;
-    vertical-align: center; }
+    vertical-align: center;
+    margin-left: -25px; }
   .leaderboards-container #medal {
-    height: 150px; }
+    height: 150px;
+    margin-left: -25px; }
   .leaderboards-container .leaderboards-table {
+    max-width: 80%;
     display: flex;
     flex-direction: row; }
     .leaderboards-container .leaderboards-table .medal-title-container {
@@ -861,17 +870,17 @@
       color: white; }
     .leaderboards-container .leaderboards-table .leaderboards-national {
       display: flex;
-      flex-direction: column;
-      width: 35%;
-      background-color: yellow; }
+      flex-direction: row;
+      width: 35%; }
     .leaderboards-container .leaderboards-table .leaderboards-international {
       display: flex;
-      flex-direction: column;
-      width: 65%;
-      background-color: green; }
+      flex-direction: row;
+      width: 65%; }
   @media only screen and (max-width: 1024px) {
     .leaderboards-container .leaderboards-table {
-      flex-direction: column; } }
+      flex-direction: column; }
+      .leaderboards-container .leaderboards-table .leaderboards-national, .leaderboards-container .leaderboards-table .leaderboards-international {
+        flex-direction: column; } }
 
 .footer-container {
   display: flex;
@@ -941,7 +950,9 @@
 @media only screen and (max-width: 1024px) {
   .footer-container {
     display: flex;
-    flex-direction: column; } }
+    flex-direction: column; }
+    .footer-container .logo-container {
+      display: none; } }
 
 body, html {
   margin: 0;

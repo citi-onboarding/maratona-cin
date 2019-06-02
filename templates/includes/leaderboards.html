@@ -1,32 +1,36 @@
 {% load static %}
 
 <section class="leaderboards-container">
-  <h1 class="leaderboards-title">Quadro de Medalhas</h1>
-  <h2 class="title-container">Nacionais</h2>
-  <h2 class="title-container">Internacionais</h2>  
+  <h1 class="leaderboards-title">Quadro de Medalhas</h1> 
   <div class="leaderboards-table">
-    {% for medal in Medal %}
-    {% if medal.type == 'Nacional' %}
-    
-    <div class="leaderboards-national">
-
-      <div class = "medal-title-container">
-        <img src="media/medal-national.svg" alt="National Medal" id="medal">
-        <div class = "subtitle-container">
+    <div class = "national-table">
+      <h2 class="title-container">Nacional</h2>
+      
+      {% for new_container in nacional_list %}
+      
+      <div class="leaderboards-national">
+        {% for medal in new_container %}
+        <div class = "medal-title-container">
+          <img src="media/medal-latinamerica.svg" alt="World Medal" id="medal">
           <h3 class = "subtitle-container">{{medal.title_name}}</h3>
         </div>
+        {% endfor %}
       </div>
-    </div>
-
-    {% else %}
+      {% endfor %}
+  </div>
+  
+  <div class = "international-table">
+    <h2 class="title-container">Internacional</h2> 
+    {% for new_container in internacional_list %}
     <div class="leaderboards-international">
-
+      {% for medal in new_container %}
       <div class = "medal-title-container">
-        <img src="media/medal-latinamerica.svg" alt="World Medal" id="medal">
+        <img src="media/medal-national.svg" alt="International Medal" id="medal">
         <h3 class = "subtitle-container">{{medal.title_name}}</h3>
       </div>
+      {% endfor %}
     </div>
-    {% endif %}
     {% endfor %}
+  </div>
   </div>
 </section>
