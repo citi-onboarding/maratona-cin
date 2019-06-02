@@ -538,9 +538,11 @@
   align-items: center;
   flex-direction: row;
   flex-wrap: nowrap;
+  padding: 30px 0 30px 0;
   background-color: #DE392D;
   display: flex;
-  flex-direction: row; }
+  flex-direction: row;
+  justify-content: space-evenly; }
   .footer-container a, .footer-container p {
     display: flex;
     justify-content: left;
@@ -551,7 +553,7 @@
     color: white;
     font-family: "Nexa Light", sans-serif; }
   .footer-container .footer-title {
-    font-size: 1.3rem;
+    font-size: 1.7rem;
     font-family: "Nexa Bold", sans-serif; }
   .footer-container .logo-container {
     display: flex;
@@ -564,9 +566,13 @@
     .footer-container .logo-container #navbar-logo {
       width: 380px;
       height: 120px; }
-  .footer-container .contact-container #message-icon {
+  .footer-container .contact-container #contact-icon {
     width: 100px;
-    height: 140px; }
+    height: 80px; }
+  .footer-container .contact-container h2 {
+    color: white; }
+  .footer-container .contact-container p {
+    margin-top: -5px; }
   .footer-container .social-container {
     display: flex;
     justify-content: center;
@@ -576,17 +582,20 @@
     flex-direction: column; }
     .footer-container .social-container #social-icon {
       width: 100px;
-      height: 140px; }
+      height: 100px; }
     .footer-container .social-container #signature-icon {
       color: white;
       width: 100px;
-      height: 40px; }
+      height: 35px;
+      display: block; }
     .footer-container .social-container .social-medias {
       display: flex;
       flex-direction: row; }
     .footer-container .social-container .signature {
-      display: flex;
       flex-direction: column; }
+      .footer-container .social-container .signature a {
+        margin-left: -20px;
+        margin-right: -20px; }
 
 @media only screen and (max-width: 1024px) {
   .footer-container {

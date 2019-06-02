@@ -1,8 +1,10 @@
 .footer-container{
   @include flex(center, center);
+  padding: 30px 0 30px 0;
   background-color: $red;
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
 
   a,p{
     @include flex(left, center);
@@ -12,7 +14,7 @@
   }
 
   .footer-title{
-    font-size: 1.3rem;
+    font-size: 1.7rem;
     font-family: "Nexa Bold", sans-serif;
   }
   .logo-container{
@@ -27,33 +29,46 @@
   }
 
   .contact-container{
-    #message-icon{
+    #contact-icon{
       width: 100px;
-      height: 140px;
+      height: 80px;
+    }
+
+    h2{
+      color:white;
+    }
+
+    p{
+      margin-top: -5px;
     }
   }
 
   .social-container{
     @include flex(center, center);
     flex-direction: column;
+
     #social-icon{
       width: 100px;
-      height: 140px;
+      height: 100px;
     }
 
     #signature-icon{
       color: white;
       width:100px;
-      height: 40px;
+      height: 35px;
+      display: block;
     }
-
+    
     .social-medias{
       display: flex;
       flex-direction: row;
     }
     .signature{
-      display: flex;
       flex-direction: column;
+      a {
+        margin-left: -20px;
+        margin-right: -20px;
+      }
     }
   }
 }
