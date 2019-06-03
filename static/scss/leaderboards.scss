@@ -28,11 +28,11 @@
 
   #medal{
     height: 150px;
-    margin-left: -25px;
+
   }
 
   .leaderboards-table{
-    max-width:80%;
+    max-width:100%;
     display: flex;
     flex-direction: row;
 
@@ -40,6 +40,8 @@
     .medal-title-container{
       display: flex;
       flex-direction: row;
+      width: 50%;
+      margin-right: 30px;
       
       .subtitle-cotainer{
         align-items: center;
@@ -54,14 +56,12 @@
     .leaderboards-national{
       display: flex;
       flex-direction: row;
-      width: 35%;
 
     }
 
     .leaderboards-international{
       display: flex;
       flex-direction: row;
-      width: 65%;
 
     }
   }

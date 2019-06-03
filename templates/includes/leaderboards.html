@@ -10,8 +10,9 @@
       
       <div class="leaderboards-national">
         {% for medal in new_container %}
+
         <div class = "medal-title-container">
-          <img src="media/medal-latinamerica.svg" alt="World Medal" id="medal">
+          <img src="{{medal.getImage}}" alt="World Medal" id="medal">
           <h3 class = "subtitle-container">{{medal.title_name}}</h3>
         </div>
         {% endfor %}
@@ -24,8 +25,9 @@
     {% for new_container in internacional_list %}
     <div class="leaderboards-international">
       {% for medal in new_container %}
+
       <div class = "medal-title-container">
-        <img src="media/medal-national.svg" alt="International Medal" id="medal">
+        <img src="{{medal.getImage}}" alt="International Medal" id="medal">
         <h3 class = "subtitle-container">{{medal.title_name}}</h3>
       </div>
       {% endfor %}

@@ -55,7 +55,7 @@ class New(models.Model):
 class Medal(models.Model):
 
   Primeiro = 'Primeiro Lugar'
-  Segundo = 'Segundo Segundo'
+  Segundo = 'Segundo Lugar'
   Terceiro = 'Terceiro Lugar'
 
   POSITION_CHOICES = [(Primeiro, 'Primeiro Lugar'),(Segundo, 'Segundo Lugar'),(Terceiro, 'Terceiro Lugar')]
@@ -69,6 +69,24 @@ class Medal(models.Model):
   position = models.CharField(max_length=50, choices=POSITION_CHOICES)
   title_name = models.CharField(max_length=150)
   published_date = models.DateTimeField(blank=True, null=True)
+
+  def getImage(self):
+    if self.type == 'Nacional' and self.position == 'Primeiro Lugar':
+      self.image = 'media/medal-national-gold.svg'
+    elif self.type == 'Nacional' and self.position == 'Segundo Lugar':
+      self.image = 'media/medal-national-silver.svg'
+    elif self.type == 'Nacional' and self.position == 'Terceiro Lugar':
+      self.image = 'media/medal-national-bronze.svg'
+    elif self.type == 'Internacional' and self.position == 'Primeiro Lugar':
+      self.image = 'media/medal-international-gold.svg'
+    elif self.type == 'Internacional' and self.position == 'Segundo Lugar':
+      self.image = 'media/medal-international-silver.svg'
+    elif self.type == 'Internacional' and self.position == 'Terceiro Lugar':
+      self.image = 'media/medal-international-bronze.svg'
+    else:
+      self.image = 'None'
+
+    return self.image
 
   def publish(self):
     self.published_date = timezone.now()
