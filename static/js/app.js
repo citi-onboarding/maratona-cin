@@ -234,7 +234,7 @@ $('.carousel-news').slick({
 });
 
 // Getting favicon.ico from pages
-[...gel('.carousel-news').querySelector('.slick-list').querySelector('.slick-track').childNodes].map(slide => {
+[...gel('.new-container').parentElement.childNodes].map(slide => {
   [...slide.childNodes].map(news => {
     if (news.href) {
       let siteHome = news.href.split('/').slice(0, 3).join('/');
@@ -244,14 +244,42 @@ $('.carousel-news').slick({
 })
 
 // =================================////=====================================//
-// Parterns Section
+// Hall of Fame section
+
+$('.carousel-fame').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  dots: false,
+  prevArrow: '<a class="prev arrow fa fa-angle-left"></a>',
+  nextArrow: '<a class="next arrow fa fa-angle-right"></a>',
+});
+
+// =================================////=====================================//
+// Parents Section
 $('.carousel-partners').slick({
   slidesToShow: 3,
   slidesToScroll: 1,
+  swipe: false,
   centerMode: true,
   centerPadding: 0,
   dots: false,
   // variableWidth: true,
   prevArrow: '<a class="prev arrow fa fa-angle-left"></a>',
   nextArrow: '<a class="next arrow fa fa-angle-right"></a>',
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        centerMode: false,
+      }
+    },
+  ],
+});
+
+// Add class by resolution
+[...gel('.partner-container').parentElement.childNodes].forEach(slide => {
+  let img = slide.querySelector('.image-container').querySelector('img');
+  img.clientHeight >= img.clientWidth ? img.className += ' portrait' : img.className += ' landscape' 
 })

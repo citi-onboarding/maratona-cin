@@ -5,6 +5,7 @@ from .models import Schedule
 from .models import Testimonial
 from .models import New
 from .models import Medal
+from .models import Famous
 
 
 def index(request):
@@ -72,12 +73,28 @@ def index(request):
         l = 0
   internacional_sublist.append(slide_internacional)
 
+  m = 0
+  famous_list = list(Famous.objects.all().order_by('id'))
+  famous_sublist = list()
+  slide = []
+  for famous in famous_list:
+    if (m < 3):
+      slide.append(famous)
+      m += 1
+    else:
+      slide.append(famous)
+      famous_sublist.append(slide)
+      slide = []
+      m = 0
+  famous_sublist.append(slide)
+
   return render(request, 'index.html', {
     'Medal': Medal.objects.all().order_by('type'),
     'nacional_list': nacional_sublist,
     'internacional_list': internacional_sublist,
     'Schedule': Schedule.objects.all().order_by('activity_date'),
     'participants':Participant.objects.all(),
+    'famous_list': famous_sublist,
     'object_list':object_sublist,
     'new_list':new_sublist,
     'testimonials': Testimonial.objects.all(),
