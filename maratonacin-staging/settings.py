@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'core',
     'sass_processor',
     'mathfilters',
+    'django_dropbox_storage',
 ]
 
 MIDDLEWARE = [

@@ -2,8 +2,8 @@ from django.db import models
 from django import forms
 from django.utils import timezone
 
-
 class Participant(models.Model):
+
   author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
   name = models.CharField(max_length=50)
   email = models.CharField(max_length=200)
@@ -52,6 +52,7 @@ class New(models.Model):
   title = models.CharField(max_length=50)
   subtitle = models.CharField(max_length=50)
   link = models.CharField(max_length=50)
+
 class Medal(models.Model):
 
   Primeiro = 'Primeiro Lugar'
