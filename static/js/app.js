@@ -121,6 +121,7 @@ document.addEventListener('scroll', () => {
 
 
 menu.addEventListener('click', event => {
+  // gel('.about').scrollIntoView();
   const heights = {
     banner: getHeight('.banner'),
     navbar: getHeight('.navbar-ghost'),
@@ -172,6 +173,24 @@ let titleBlue = false;
     }
   }
 });
+
+// =================================////=====================================//
+// Journey section
+let lastestEvent;
+let firstFlag = true;
+[...gel('.info').childNodes].forEach(year => {
+  [...year.childNodes].forEach(eventContainer => {
+    if (eventContainer.className === 'event-container' && firstFlag) {
+      let eventList = [...eventContainer.childNodes]
+      lastestEvent = eventList[eventList.length - 2];
+      firstFlag = false;
+    } 
+  })
+})
+
+lastestEvent.addEventListener('mouseover', () => {
+  $('.journey-container').scrollLeft() = 2000000;
+})
 
 // =================================////=====================================//
 // Testimonials section
@@ -281,5 +300,6 @@ $('.carousel-partners').slick({
 // Add class by resolution
 [...gel('.partner-container').parentElement.childNodes].forEach(slide => {
   let img = slide.querySelector('.image-container').querySelector('img');
-  img.clientHeight >= img.clientWidth ? img.className += ' portrait' : img.className += ' landscape' 
+  img.clientHeight >= img.clientWidth ? img.className += ' portrait' : img.className += ' landscape'
 })
+

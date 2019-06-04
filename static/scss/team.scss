@@ -33,12 +33,7 @@
           * {
             padding: 0;
             margin: 5px 0 5px 0;
-          }
-          a, .email {
-            color: $red;
-          }
-          .name, .github, .code-forces {
-            color: $blue;
+            color: $blue !important;
           }
           .name {
             font-size: 1.2rem; 

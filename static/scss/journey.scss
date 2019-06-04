@@ -1,0 +1,72 @@
+.journey {
+  width: 90%;
+  margin: auto;
+  .title-container {
+    h1 {
+      color: $red;
+      font-size: 2.3rem;
+      font-family: "Nexa Bold", sans-serif;
+    }
+  }
+  .journey-container {
+    @include flex(right, center, column);
+    margin: auto;
+    width: 100%;
+    overflow: auto;
+    position: relative;
+    .info {
+      @include flex(flex-end, flex-end, row-reverse);
+      height: 250px;
+      width: 100%;
+      left: 0;  
+      .year-container {
+        .event-container {
+          @include flex(flex-start, flex-end);
+          .event {
+            transition: all .5s ease;
+            background-color: $blue;
+            @include border-radius(50%);
+            width: 100px;
+            height: 100px;
+            margin: 0 20px 0 20px;
+            &:hover {
+              width: 200px;
+              height: 200px;
+            }
+          }
+        }
+        .year {
+          @include flex(center, center);
+          font-size: 2.1rem;
+          font-family: "Nexa Bold", sans-serif;
+          color: white;
+          margin-top: 10px;
+          background-color: $blue;
+          height: 40px;
+        }
+      }
+      .year-container:nth-child(3n + 2) {
+        .event-container {
+          .event {
+            background-color: $yellow;
+          }
+        }
+        .year {
+          background-color: $yellow;
+
+        }
+      }
+      .year-container:nth-child(3n + 1) {
+        .event-container {
+          .event {
+            background-color: $red;
+          }
+        }
+        .year {
+          background-color: $red;
+
+        }
+      }
+    }
+  }
+}

@@ -12,10 +12,8 @@
         <div class="text-container">
           <p class="name">{{ famous.name }}</p>
           <p class="email">{{ famous.email }}</p>
-          <p class="github">Github:</p>
-          <a href="{{ famous.github }}" target="_blank">{{ famous.github_nickname }}</a>
-          <p class="code-forces">CodeForces:</p>
-          <a href="{{ famous.codeforces }}" target="_blank">{{ famous.codeforces_nickname }}</a>
+          <p><a href="{{ famous.github }}" target="_blank">Github</a></p>
+          <p><a href="{{ famous.codeforces }}" target="_blank">CodeForces</a></p>
         </div>
       </div>
       {% endfor %}

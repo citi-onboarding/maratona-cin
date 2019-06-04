@@ -431,11 +431,8 @@
           margin-top: 15px; }
           .team .carousel-team .participant-container .participant .text-container * {
             padding: 0;
-            margin: 5px 0 5px 0; }
-          .team .carousel-team .participant-container .participant .text-container a, .team .carousel-team .participant-container .participant .text-container .email {
-            color: #DE392D; }
-          .team .carousel-team .participant-container .participant .text-container .name, .team .carousel-team .participant-container .participant .text-container .github, .team .carousel-team .participant-container .participant .text-container .code-forces {
-            color: #479EFC; }
+            margin: 5px 0 5px 0;
+            color: #479EFC !important; }
           .team .carousel-team .participant-container .participant .text-container .name {
             font-size: 1.2rem; }
     .team .carousel-team .arrow {
@@ -824,10 +821,7 @@
           margin-top: 15px; }
           .fame .carousel-fame .famous-container .famous .text-container * {
             padding: 0;
-            margin: 5px 0 5px 0; }
-          .fame .carousel-fame .famous-container .famous .text-container a, .fame .carousel-fame .famous-container .famous .text-container .email {
-            color: #DE392D; }
-          .fame .carousel-fame .famous-container .famous .text-container .name, .fame .carousel-fame .famous-container .famous .text-container .github, .fame .carousel-fame .famous-container .famous .text-container .code-forces {
+            margin: 5px 0 5px 0;
             color: #479EFC; }
           .fame .carousel-fame .famous-container .famous .text-container .name {
             font-size: 1.2rem; }
@@ -1048,6 +1042,72 @@
     flex-direction: column; }
     .footer-container .logo-container {
       display: none; } }
+
+.journey {
+  width: 90%;
+  margin: auto; }
+  .journey .title-container h1 {
+    color: #DE392D;
+    font-size: 2.3rem;
+    font-family: "Nexa Bold", sans-serif; }
+  .journey .journey-container {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin: auto;
+    width: 100%;
+    overflow: auto;
+    position: relative; }
+    .journey .journey-container .info {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      flex-direction: row-reverse;
+      flex-wrap: nowrap;
+      height: 250px;
+      width: 100%;
+      left: 0; }
+      .journey .journey-container .info .year-container .event-container {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+        flex-direction: row;
+        flex-wrap: nowrap; }
+        .journey .journey-container .info .year-container .event-container .event {
+          transition: all .5s ease;
+          background-color: #479EFC;
+          border-radius: 50%;
+          -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          -ms-border-radius: 50%;
+          width: 100px;
+          height: 100px;
+          margin: 0 20px 0 20px; }
+          .journey .journey-container .info .year-container .event-container .event:hover {
+            width: 200px;
+            height: 200px; }
+      .journey .journey-container .info .year-container .year {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        font-size: 2.1rem;
+        font-family: "Nexa Bold", sans-serif;
+        color: white;
+        margin-top: 10px;
+        background-color: #479EFC;
+        height: 40px; }
+      .journey .journey-container .info .year-container:nth-child(3n + 2) .event-container .event {
+        background-color: #FCDA33; }
+      .journey .journey-container .info .year-container:nth-child(3n + 2) .year {
+        background-color: #FCDA33; }
+      .journey .journey-container .info .year-container:nth-child(3n + 1) .event-container .event {
+        background-color: #DE392D; }
+      .journey .journey-container .info .year-container:nth-child(3n + 1) .year {
+        background-color: #DE392D; }
 
 @media screen and (min-width: 1050px) {
   section:not(.navbar):nth-child(2n) {
