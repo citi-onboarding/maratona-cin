@@ -7,9 +7,9 @@ class Participant(models.Model):
   author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
   name = models.CharField(max_length=50)
   email = models.CharField(max_length=200)
-  github = models.CharField(max_length=200)
+  github = models.CharField(max_length=2000)
   github_nickname = models.CharField(max_length=200)
-  codeforces = models.CharField(max_length=200)
+  codeforces = models.CharField(max_length=2000)
   codeforces_nickname = models.CharField(max_length=200)
   created_date = models.DateTimeField(default=timezone.now)
   published_date = models.DateTimeField(blank=True, null=True)
@@ -51,7 +51,38 @@ class Testimonial(models.Model):
 class New(models.Model):
   title = models.CharField(max_length=50)
   subtitle = models.CharField(max_length=50)
-  link = models.CharField(max_length=50)
+  link = models.CharField(max_length=5000)
+  published_date = models.DateTimeField(blank=True, null=True)
+  
+
+  def publish(self):
+    self.published_date = timezone.now()
+    self.save()
+
+  def __str__(self):
+    return self.title
+
+class Famous(models.Model):
+  author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+  name = models.CharField(max_length=50)
+  email = models.CharField(max_length=200)
+  github = models.CharField(max_length=2000)
+  github_nickname = models.CharField(max_length=200)
+  codeforces = models.CharField(max_length=2000)
+  codeforces_nickname = models.CharField(max_length=200)
+  created_date = models.DateTimeField(default=timezone.now)
+  published_date = models.DateTimeField(blank=True, null=True)
+
+  class Meta:
+    verbose_name_plural = 'Famous'
+
+  def publish(self):
+    self.published_date = timezone.now()
+    self.save()
+
+  def __str__(self):
+    return self.name
+
 class Medal(models.Model):
 
   Primeiro = 'Primeiro Lugar'
@@ -76,3 +107,18 @@ class Medal(models.Model):
 
   def __str__(self):
     return self.title_name
+
+class Event(models.Model):
+  semester = models.CharField(max_length=50)
+  title = models.CharField(max_length=50)
+  content = models.CharField(max_length=50)
+  published_date = models.DateTimeField(blank=True, null=True)
+
+
+  def publish(self):
+    self.published_date = timezone.now()
+    self.save()
+
+  def __str__(self):
+    return self.title
+

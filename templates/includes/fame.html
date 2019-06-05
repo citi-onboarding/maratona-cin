@@ -1,0 +1,23 @@
+{% load static %}
+<section class="fame">
+  <div class="title-container">
+    <h1>Hall da Fama</h1>
+  </div>
+  <div class="carousel-fame">
+    {% for slide in famous_list %}
+    <div class="famous-container">
+      {% for famous in slide %}
+      <div class="famous" id="{{ famous.id }}">
+        <img src="media/participant.png" alt="famous"> 
+        <div class="text-container">
+          <p class="name">{{ famous.name }}</p>
+          <p class="email">{{ famous.email }}</p>
+          <p><a href="{{ famous.github }}" target="_blank">Github</a></p>
+          <p><a href="{{ famous.codeforces }}" target="_blank">CodeForces</a></p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endfor %}
+  </div>
+</section>
