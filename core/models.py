@@ -52,6 +52,15 @@ class New(models.Model):
   title = models.CharField(max_length=50)
   subtitle = models.CharField(max_length=50)
   link = models.CharField(max_length=5000)
+  published_date = models.DateTimeField(blank=True, null=True)
+  
+
+  def publish(self):
+    self.published_date = timezone.now()
+    self.save()
+
+  def __str__(self):
+    return self.title
 
 class Famous(models.Model):
   author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
@@ -98,3 +107,18 @@ class Medal(models.Model):
 
   def __str__(self):
     return self.title_name
+
+class Event(models.Model):
+  title = models.CharField(max_length=50)
+  subtitle = models.CharField(max_length=50)
+  link = models.CharField(max_length=5000)
+  published_date = models.DateTimeField(blank=True, null=True)
+
+
+  def publish(self):
+    self.published_date = timezone.now()
+    self.save()
+
+  def __str__(self):
+    return self.title
+

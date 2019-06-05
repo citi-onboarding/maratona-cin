@@ -182,9 +182,9 @@ let firstFlag = true;
   [...year.childNodes].forEach(eventContainer => {
     if (eventContainer.className === 'event-container' && firstFlag) {
       let eventList = [...eventContainer.childNodes]
-      lastestEvent = eventList[eventList.length - 2];
+      lastestEvent = eventList[1];
       firstFlag = false;
-    } 
+    }
   })
 })
 
@@ -200,11 +200,38 @@ $('.carousel-journey').slick({
   rtl: true,
 });
 
-$('div[data-slide]').click(function(e) {
+$('div[data-slide]').click(function (e) {
   e.preventDefault();
   var slideno = $(this).data('slide');
   $('.carousel-journey').slick('slickGoTo', slideno - 1);
 });
+
+
+[...document.querySelectorAll('div.event-dot')].forEach(eventDot => {
+  eventDot.addEventListener('click', () => {
+    [...document.querySelectorAll('div.event-dot')].forEach(dot => {
+      if (dot.className.indexOf('active')) {
+        dot.className = dot.className.split('active').join('');
+      }
+    })
+    eventDot.className += ' active';
+  })
+})
+
+$.fn.extend({
+  scrollRight: function (val) {
+    if (val === undefined) {
+      return this[0].scrollWidth - (this[0].scrollLeft + this[0].clientWidth) + 1;
+    }
+    return this.scrollLeft(this[0].scrollWidth - this[0].clientWidth - val);
+  }
+});
+
+$(document).ready(() => {
+  lastestEvent.click();
+})
+$('.info').scrollRight(0);
+console.log($('.info').scrollRight());
 
 // =================================////=====================================//
 // Testimonials section
@@ -267,11 +294,26 @@ $('.carousel-news').slick({
 });
 
 // Getting favicon.ico from pages
+
+const logoUrls = {
+  'www.youtube.com': 'http://assets.stickpng.com/thumbs/580b57fcd9996e24bc43c545.png',
+  'medium.com': 'http://www.stickpng.com/assets/images/5841c47ba6515b1e0ad75aa3.png',
+  'pt-br.facebook.com': 'http://www.stickpng.com/assets/images/584ac2d03ac3a570f94a666d.png',
+  'www.instagram.com': 'http://pluspng.com/img-png/instagram-png-instagram-png-logo-1455.png',
+  'twitter.com': 'http://www.stickpng.com/assets/images/580b57fcd9996e24bc43c53e.png',
+  'br.pinsterest.com': 'http://www.stickpng.com/assets/images/580b57fcd9996e24bc43c52e.png',
+  'www.ufpe.br': 'https://www3.ufpe.br/ufpenova/images/brasao/logoufpe.jpg',
+  'www2.cin.ufpe.br': 'https://www2.cin.ufpe.br/site/uploads/arquivos/18/20120530161145_marca_cin_2012_producao.jpg',
+};
+
 [...gel('.new-container').parentElement.childNodes].map(slide => {
   [...slide.childNodes].map(news => {
     if (news.href) {
+      let siteName = news.href.split('/')[2];
       let siteHome = news.href.split('/').slice(0, 3).join('/');
-      news.querySelector('img').src = `${siteHome}/favicon.ico`;
+      if (siteName in logoUrls) {
+        news.querySelector('img').src = logoUrls[siteName];
+      } else news.querySelector('img').src = `${siteHome}/favicon.ico`;
     }
   })
 })

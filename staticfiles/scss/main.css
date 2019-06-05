@@ -727,7 +727,6 @@
           text-decoration: none;
           color: black; }
           #testimonials-news .news .news-wrapper .carousel-news .new-container .new img {
-            width: 60px;
             height: 60px;
             margin: 10px; }
           #testimonials-news .news .news-wrapper .carousel-news .new-container .new .text-container {
@@ -1058,7 +1057,6 @@
     flex-direction: column;
     flex-wrap: nowrap;
     margin: auto;
-    width: 100%;
     overflow: auto;
     position: relative; }
     .journey .journey-container .info {
@@ -1067,7 +1065,8 @@
       align-items: flex-end;
       flex-direction: row-reverse;
       flex-wrap: nowrap;
-      height: 170px;
+      display: inline-flex;
+      height: 120px;
       width: 100%;
       left: 0; }
       .journey .journey-container .info .year-container .event-container {
@@ -1076,45 +1075,44 @@
         align-items: flex-end;
         flex-direction: row-reverse;
         flex-wrap: nowrap; }
-        .journey .journey-container .info .year-container .event-container .event {
+        .journey .journey-container .info .year-container .event-container .event-dot {
           transition: all .5s ease;
           background-color: #479EFC;
           border-radius: 50%;
           -webkit-border-radius: 50%;
           -moz-border-radius: 50%;
           -ms-border-radius: 50%;
-          width: 70px;
-          height: 70px;
+          width: 50px;
+          height: 50px;
           margin: 0 20px 0 20px; }
-          .journey .journey-container .info .year-container .event-container .event:hover {
-            width: 120px;
-            height: 120px; }
+        .journey .journey-container .info .year-container .event-container .active {
+          width: 80px;
+          height: 80px; }
       .journey .journey-container .info .year-container .year {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: row;
         flex-wrap: nowrap;
-        font-size: 2.1rem;
+        font-size: 1.3rem;
         font-family: "Nexa Bold", sans-serif;
         color: white;
         margin-top: 10px;
         background-color: #479EFC;
-        height: 40px; }
-      .journey .journey-container .info .year-container:nth-child(3n + 2) .event-container .event {
+        height: 25px; }
+      .journey .journey-container .info .year-container:nth-child(3n + 2) .event-container .event-dot {
         background-color: #FCDA33; }
       .journey .journey-container .info .year-container:nth-child(3n + 2) .year {
         background-color: #FCDA33; }
-      .journey .journey-container .info .year-container:nth-child(3n + 1) .event-container .event {
+      .journey .journey-container .info .year-container:nth-child(3n + 1) .event-container .event-dot {
         background-color: #DE392D; }
       .journey .journey-container .info .year-container:nth-child(3n + 1) .year {
         background-color: #DE392D; }
   .journey .carousel-journey {
     width: 30%;
-    margin: auto; }
+    margin: 20px auto; }
     .journey .carousel-journey .slick-list .slick-track .event {
       margin: auto 20px auto 20px;
-      width: 100%;
       border: 5px solid #DE392D;
       border-radius: 40px;
       -webkit-border-radius: 40px;
@@ -1137,6 +1135,10 @@
           margin: 8px 0 0 0; }
         .journey .carousel-journey .slick-list .slick-track .event .text-container p {
           font-family: "Avenir", sans-serif; }
+
+@media screen and (max-width: 1025px) {
+  .carousel-journey {
+    width: 80% !important; } }
 
 @media screen and (min-width: 1050px) {
   section:not(.navbar):nth-child(2n) {
