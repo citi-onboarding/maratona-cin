@@ -7,6 +7,9 @@
     display: flex;
     width: 90%;
     margin: auto; }
+    .banner #icons #social-icon {
+      width: 100px;
+      height: 75px; }
     .banner #icons .fa {
       text-decoration: none;
       margin-top: 30px; }
