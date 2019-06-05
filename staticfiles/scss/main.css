@@ -1049,7 +1049,8 @@
   .journey .title-container h1 {
     color: #DE392D;
     font-size: 2.3rem;
-    font-family: "Nexa Bold", sans-serif; }
+    font-family: "Nexa Bold", sans-serif;
+    margin-bottom: 0; }
   .journey .journey-container {
     display: flex;
     justify-content: right;
@@ -1066,14 +1067,14 @@
       align-items: flex-end;
       flex-direction: row-reverse;
       flex-wrap: nowrap;
-      height: 250px;
+      height: 170px;
       width: 100%;
       left: 0; }
       .journey .journey-container .info .year-container .event-container {
         display: flex;
         justify-content: flex-start;
         align-items: flex-end;
-        flex-direction: row;
+        flex-direction: row-reverse;
         flex-wrap: nowrap; }
         .journey .journey-container .info .year-container .event-container .event {
           transition: all .5s ease;
@@ -1082,12 +1083,12 @@
           -webkit-border-radius: 50%;
           -moz-border-radius: 50%;
           -ms-border-radius: 50%;
-          width: 100px;
-          height: 100px;
+          width: 70px;
+          height: 70px;
           margin: 0 20px 0 20px; }
           .journey .journey-container .info .year-container .event-container .event:hover {
-            width: 200px;
-            height: 200px; }
+            width: 120px;
+            height: 120px; }
       .journey .journey-container .info .year-container .year {
         display: flex;
         justify-content: center;
@@ -1108,6 +1109,34 @@
         background-color: #DE392D; }
       .journey .journey-container .info .year-container:nth-child(3n + 1) .year {
         background-color: #DE392D; }
+  .journey .carousel-journey {
+    width: 30%;
+    margin: auto; }
+    .journey .carousel-journey .slick-list .slick-track .event {
+      margin: auto 20px auto 20px;
+      width: 100%;
+      border: 5px solid #DE392D;
+      border-radius: 40px;
+      -webkit-border-radius: 40px;
+      -moz-border-radius: 40px;
+      -ms-border-radius: 40px;
+      overflow: hidden; }
+      .journey .carousel-journey .slick-list .slick-track .event img {
+        width: 100%; }
+      .journey .carousel-journey .slick-list .slick-track .event .text-container {
+        width: 80%;
+        margin: auto; }
+        .journey .carousel-journey .slick-list .slick-track .event .text-container h2 {
+          font-family: "Nexa Light", sans-serif;
+          color: #DE392D;
+          margin: 8px 0 0 0; }
+        .journey .carousel-journey .slick-list .slick-track .event .text-container h3 {
+          font-family: "Nexa Bold", sans-serif;
+          font-size: 1.8rem;
+          color: #DE392D;
+          margin: 8px 0 0 0; }
+        .journey .carousel-journey .slick-list .slick-track .event .text-container p {
+          font-family: "Avenir", sans-serif; }
 
 @media screen and (min-width: 1050px) {
   section:not(.navbar):nth-child(2n) {

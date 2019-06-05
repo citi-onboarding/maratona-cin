@@ -188,9 +188,23 @@ let firstFlag = true;
   })
 })
 
-lastestEvent.addEventListener('mouseover', () => {
-  $('.journey-container').scrollLeft() = 2000000;
-})
+// lastestEvent.addEventListener('mouseover', () => {
+//   $('.journey-container').scrollLeft() = 2000000;
+// })
+
+$('.carousel-journey').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  dots: false,
+  arrows: false,
+  rtl: true,
+});
+
+$('div[data-slide]').click(function(e) {
+  e.preventDefault();
+  var slideno = $(this).data('slide');
+  $('.carousel-journey').slick('slickGoTo', slideno - 1);
+});
 
 // =================================////=====================================//
 // Testimonials section
