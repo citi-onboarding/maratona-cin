@@ -1,0 +1,60 @@
+.study{
+  width: 80%;
+  max-width: 80%;
+  margin: auto;
+  margin-bottom: 100px;
+  h1 {
+    color: $red;
+    font-size: 2.3rem;
+    font-family: "Nexa Bold", sans-serif;
+  }
+  h2 {
+    color: black;
+    font-size: 1.7rem;
+    font-family: "Nexa Light", sans-serif;
+  }
+  .link-wrapper {
+    width: 100%;
+    @include flex(center, center, row);
+    .study-container{
+      @include flex(center, center, column);
+      margin-top: 20px;
+      width: 50%;
+      .study-table{ 
+        @include flex(flex-start, center);
+        width: 100%;
+        margin: 20px 0 20px 0;
+        .circle{ 
+          position: absolute;
+          width: 130px;
+          height: 130px;
+          background:$yellow; 
+          border-radius: 50%;
+          
+        }
+        .rectangle {
+          min-width: 80% !important; 
+          height: 100px;
+          background: $red;
+          border-radius: 75px;
+          z-index: -2;
+        }
+      }
+      .study-table:nth-child(2n) {
+        transform: scaleX(-1);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1025px) {
+  .link-wrapper {
+    flex-direction: column !important;
+    .study-container {
+      width: 100% !important;
+    }
+    .study-container:nth-child(2) {
+      transform: scaleX(-1);
+    }
+  }
+}

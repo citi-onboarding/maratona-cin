@@ -6,7 +6,11 @@
     flex: 1;
     display: flex;
     width: 90%;
-    margin: auto; }
+    margin: auto;
+    margin-top: 50px; }
+    .banner #icons #social-icon {
+      width: 100px;
+      height: 75px; }
     .banner #icons .fa {
       text-decoration: none;
       margin-top: 30px; }
@@ -291,7 +295,7 @@
 
 .cards {
   width: 80%;
-  margin: 0 auto 5% auto; }
+  margin: 100px auto 5% auto; }
   .cards .text-container .title-wrapper {
     color: #DE392D;
     font-family: "Nexa Bold", sans-serif; }
@@ -472,16 +476,17 @@
 
 .schedule-container {
   width: 85%;
-  margin: 0 auto 0 auto; }
+  margin: 0 auto 150px auto; }
   .schedule-container .schedule-title {
     font-size: 2.3rem;
     color: #DE392D;
     font-family: "Nexa Bold", sans-serif; }
   .schedule-container .schedule-table {
-    width: 100%;
+    width: 80%;
     border: 5px solid #DE392D;
     max-height: 450px;
     overflow: auto;
+    margin: auto;
     border-radius: 20px;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
@@ -527,8 +532,7 @@
 .leaderboards-container {
   width: 80%;
   max-width: 80%;
-  margin: auto;
-  margin-bottom: 100px; }
+  margin: auto; }
   .leaderboards-container h1 {
     color: #DE392D;
     font-size: 2.3rem;
@@ -550,15 +554,16 @@
     vertical-align: center;
     margin-left: -25px; }
   .leaderboards-container #medal {
-    height: 150px;
-    margin-left: -25px; }
+    height: 150px; }
   .leaderboards-container .leaderboards-table {
-    max-width: 80%;
+    max-width: 100%;
     display: flex;
     flex-direction: row; }
     .leaderboards-container .leaderboards-table .medal-title-container {
       display: flex;
-      flex-direction: row; }
+      flex-direction: row;
+      width: 50%;
+      margin-right: 30px; }
       .leaderboards-container .leaderboards-table .medal-title-container .subtitle-cotainer {
         align-items: center;
         vertical-align: center; }
@@ -566,12 +571,10 @@
       color: white; }
     .leaderboards-container .leaderboards-table .leaderboards-national {
       display: flex;
-      flex-direction: row;
-      width: 35%; }
+      flex-direction: row; }
     .leaderboards-container .leaderboards-table .leaderboards-international {
       display: flex;
-      flex-direction: row;
-      width: 65%; }
+      flex-direction: row; }
   @media only screen and (max-width: 1024px) {
     .leaderboards-container .leaderboards-table {
       flex-direction: column; }
@@ -1141,6 +1144,65 @@
 @media screen and (max-width: 1025px) {
   .carousel-journey {
     width: 80% !important; } }
+
+.study {
+  width: 80%;
+  max-width: 80%;
+  margin: auto;
+  margin-bottom: 100px; }
+  .study h1 {
+    color: #DE392D;
+    font-size: 2.3rem;
+    font-family: "Nexa Bold", sans-serif; }
+  .study h2 {
+    color: black;
+    font-size: 1.7rem;
+    font-family: "Nexa Light", sans-serif; }
+  .study .link-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap; }
+    .study .link-wrapper .study-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      margin-top: 20px;
+      width: 50%; }
+      .study .link-wrapper .study-container .study-table {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        width: 100%;
+        margin: 20px 0 20px 0; }
+        .study .link-wrapper .study-container .study-table .circle {
+          position: absolute;
+          width: 130px;
+          height: 130px;
+          background: #FCDA33;
+          border-radius: 50%; }
+        .study .link-wrapper .study-container .study-table .rectangle {
+          min-width: 80% !important;
+          height: 100px;
+          background: #DE392D;
+          border-radius: 75px;
+          z-index: -2; }
+      .study .link-wrapper .study-container .study-table:nth-child(2n) {
+        transform: scaleX(-1); }
+
+@media screen and (max-width: 1025px) {
+  .link-wrapper {
+    flex-direction: column !important; }
+    .link-wrapper .study-container {
+      width: 100% !important; }
+    .link-wrapper .study-container:nth-child(2) {
+      transform: scaleX(-1); } }
 
 @media screen and (min-width: 1050px) {
   section:not(.navbar):nth-child(2n) {

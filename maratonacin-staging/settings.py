@@ -32,6 +32,9 @@ INSTALLED_APPS = [
     'mathfilters',
 ]
 
+DROPBOX_ACCESS_TOKEN = 'kNWO_FdCBNAAAAAAAAAAEM_uk1050VZIrsZ6dbZ5RNFvSP18AdWX7c2CjzeEfMOY'
+DROPBOX_ROOT_FOLDER = '/media'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

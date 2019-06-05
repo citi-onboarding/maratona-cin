@@ -121,7 +121,6 @@ document.addEventListener('scroll', () => {
 
 
 menu.addEventListener('click', event => {
-  // gel('.about').scrollIntoView();
   const heights = {
     banner: getHeight('.banner'),
     navbar: getHeight('.navbar-ghost'),
@@ -130,11 +129,11 @@ menu.addEventListener('click', event => {
     team: getHeight('section.team'),
     schedule: getHeight('.schedule'),
   };
-
+  
   let height = 0;
   let heightSum = 0;
   let eventClass = event.target.className;
-
+  
   if (eventClass.split(' ')[0] !== 'menu') {
     Object.entries(heights).map(each => {
       each[0] === event.target.className ? heightSum = height : height += each[1];
@@ -214,20 +213,11 @@ $('div[data-slide]').click(function (e) {
   })
 })
 
-$.fn.extend({
-  scrollRight: function (val) {
-    if (val === undefined) {
-      return this[0].scrollWidth - (this[0].scrollLeft + this[0].clientWidth) + 1;
-    }
-    return this.scrollLeft(this[0].scrollWidth - this[0].clientWidth - val);
-  }
-});
 
 $(document).ready(() => {
   lastestEvent.click();
+  window.scrollTo(0,0);
 })
-$('.info').scrollRight(0);
-console.log($('.info').scrollRight());
 
 // =================================////=====================================//
 // Testimonials section

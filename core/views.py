@@ -64,7 +64,7 @@ def index(request):
   slide_internacional = []
   for medal in internacional_list:
     if medal.type == 'Internacional':
-      if (l < 2):
+      if (l < 1):
         slide_internacional.append(medal)
         l += 1
       else:
