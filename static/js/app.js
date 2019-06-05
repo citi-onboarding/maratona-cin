@@ -188,10 +188,6 @@ let firstFlag = true;
   })
 })
 
-// lastestEvent.addEventListener('mouseover', () => {
-//   $('.journey-container').scrollLeft() = 2000000;
-// })
-
 $('.carousel-journey').slick({
   slidesToShow: 1,
   slidesToScroll: 1,
@@ -330,7 +326,7 @@ $('.carousel-fame').slick({
 });
 
 // =================================////=====================================//
-// Parents Section
+// Paretners Section
 $('.carousel-partners').slick({
   slidesToShow: 3,
   slidesToScroll: 1,
@@ -338,7 +334,6 @@ $('.carousel-partners').slick({
   centerMode: true,
   centerPadding: 0,
   dots: false,
-  // variableWidth: true,
   prevArrow: '<a class="prev arrow fa fa-angle-left"></a>',
   nextArrow: '<a class="next arrow fa fa-angle-right"></a>',
   responsive: [
@@ -358,4 +353,3 @@ $('.carousel-partners').slick({
   let img = slide.querySelector('.image-container').querySelector('img');
   img.clientHeight >= img.clientWidth ? img.className += ' portrait' : img.className += ' landscape'
 })
-

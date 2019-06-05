@@ -109,9 +109,9 @@ class Medal(models.Model):
     return self.title_name
 
 class Event(models.Model):
+  semester = models.CharField(max_length=50)
   title = models.CharField(max_length=50)
-  subtitle = models.CharField(max_length=50)
-  link = models.CharField(max_length=5000)
+  content = models.CharField(max_length=50)
   published_date = models.DateTimeField(blank=True, null=True)
 
 

@@ -911,9 +911,9 @@
             .partners .carousel-partners .slick-list .slick-track .partner-container .image-container img {
               margin: 0; }
             .partners .carousel-partners .slick-list .slick-track .partner-container .image-container .landscape {
-              width: 80%; }
+              width: 80% !important; }
             .partners .carousel-partners .slick-list .slick-track .partner-container .image-container .portrait {
-              height: 80%; }
+              width: 70% !important; }
           .partners .carousel-partners .slick-list .slick-track .partner-container .plus {
             border-radius: 50%;
             -webkit-border-radius: 50%;
@@ -968,7 +968,9 @@
 
 @media screen and (max-width: 900px) {
   .carousel-partners {
-    width: 80% !important; } }
+    width: 80% !important; }
+    .carousel-partners .portrait {
+      height: 80% !important; } }
 
 .footer-container {
   display: flex;

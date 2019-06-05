@@ -5,6 +5,7 @@ from .models import Participant
 from .models import Schedule
 from .models import Medal
 from .models import Famous
+from .models import Event
 
 admin.site.register(Testimonial)
 admin.site.register(New)
@@ -12,3 +13,4 @@ admin.site.register(Participant)
 admin.site.register(Schedule)
 admin.site.register(Medal)
 admin.site.register(Famous)
+admin.site.register(Event)

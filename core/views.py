@@ -6,6 +6,7 @@ from .models import Testimonial
 from .models import New
 from .models import Medal
 from .models import Famous
+from .models import Event
 
 
 def index(request):
@@ -88,6 +89,18 @@ def index(request):
       m = 0
   famous_sublist.append(slide)
 
+  events = list(Event.objects.all().order_by('semester'))
+  event_sublist = list()
+  year_pack = {}
+  for event in events:
+    year = event.semester.split('.')[0]
+    if (year in year_pack):
+      year_pack[year].append(event)
+    else:
+      year_pack[year] = [event]
+
+
+
   return render(request, 'index.html', {
     'Medal': Medal.objects.all().order_by('type'),
     'nacional_list': nacional_sublist,
@@ -98,4 +111,5 @@ def index(request):
     'object_list':object_sublist,
     'new_list':new_sublist,
     'testimonials': Testimonial.objects.all(),
+    'events': year_pack,
     })
