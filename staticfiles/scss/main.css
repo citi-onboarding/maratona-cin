@@ -530,8 +530,7 @@
 .leaderboards-container {
   width: 80%;
   max-width: 80%;
-  margin: auto;
-  margin-bottom: 100px; }
+  margin: auto; }
   .leaderboards-container h1 {
     color: #DE392D;
     font-size: 2.3rem;
@@ -935,6 +934,43 @@
     flex-direction: column; }
     .footer-container .logo-container {
       display: none; } }
+
+.study {
+  width: 80%;
+  max-width: 80%;
+  margin: auto;
+  margin-bottom: 100px; }
+  .study h1 {
+    color: #DE392D;
+    font-size: 2.3rem;
+    font-family: "Nexa Bold", sans-serif; }
+  .study h2 {
+    color: black;
+    font-size: 1.7rem;
+    font-family: "Nexa Light", sans-serif; }
+  .study #mirror {
+    transform: scaleX(-1); }
+  .study .study-container {
+    display: flex;
+    margin-top: 20px; }
+    .study .study-container .study-table {
+      width: 100%;
+      margin-right: 100px; }
+      .study .study-container .study-table .study-table-mirror {
+        width: 100%;
+        margin-right: 100px; }
+      .study .study-container .study-table .circle {
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        background: #FCDA33;
+        border-radius: 50%; }
+      .study .study-container .study-table .rectangle {
+        min-width: 30% !important;
+        height: 150px;
+        background: #DE392D;
+        border-radius: 75px;
+        z-index: -2; }
 
 @media screen and (min-width: 1050px) {
   section:not(.navbar):nth-child(2n) {

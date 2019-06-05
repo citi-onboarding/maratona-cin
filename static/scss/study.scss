@@ -1,0 +1,56 @@
+.study{
+  width: 80%;
+  max-width: 80%;
+  margin: auto;
+  margin-bottom: 100px;
+
+  h1 {
+    color: $red;
+    font-size: 2.3rem;
+    font-family: "Nexa Bold", sans-serif;
+  }
+
+  h2 {
+    color: black;
+    font-size: 1.7rem;
+    font-family: "Nexa Light", sans-serif;
+  }
+
+  #mirror{
+    transform: scaleX(-1);
+  }
+
+  .study-container{
+    display: flex;
+    margin-top: 20px;
+    // flex-direction: row;
+
+    .study-table{
+      width: 100%;
+      margin-right: 100px;
+
+    .study-table-mirror{
+      width: 100%;
+      margin-right: 100px;
+      
+    }
+      
+      .circle{ 
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        background:$yellow; 
+        border-radius: 50%;
+        
+      }
+  
+      .rectangle {
+        min-width: 30% !important; 
+        height: 150px;
+        background: $red;
+        border-radius: 75px;
+        z-index: -2;
+      }
+    }
+  }
+}
