@@ -1,6 +1,7 @@
 from django.db import models
 from django import forms
 from django.utils import timezone
+from django_dropbox_storage.storage import DropboxStorage
 
 class Participant(models.Model):
 
@@ -22,6 +23,9 @@ class Participant(models.Model):
     return self.name
 
 class Schedule(models.Model):
+
+  DROPBOX_STORAGE = DropboxStorage()
+
   activity = models.CharField(max_length=150)
   activity_date = models.DateTimeField(blank = False, default=timezone.now)
   published_date = models.DateTimeField(blank=True, null=True)
@@ -95,3 +99,20 @@ class Medal(models.Model):
 
   def __str__(self):
     return self.title_name
+
+class Test(models.Model):
+
+  DROPBOX_STORAGE = DropboxStorage()
+
+  photo = models.ImageField(upload_to='photos', storage=DROPBOX_STORAGE, null=True, blank=True)
+  title = models.CharField(max_length=50)
+
+  def publish(self):
+    self.published_date = timezone.now()
+    self.save()
+
+  def __str__(self):
+    return self.title
+	
+
+  # photo = models.ImageField(upload_to='photos', storage=DROPBOX_STORAGE, null=True, blank=True)

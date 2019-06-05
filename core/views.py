@@ -5,6 +5,7 @@ from .models import Schedule
 from .models import Testimonial
 from .models import New
 from .models import Medal
+from .models import Test
 
 
 def index(request):
@@ -81,4 +82,5 @@ def index(request):
     'object_list':object_sublist,
     'new_list':new_sublist,
     'testimonials': Testimonial.objects.all(),
+    'Test': Test.objects.all(),
     })

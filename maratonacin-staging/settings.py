@@ -31,7 +31,11 @@ INSTALLED_APPS = [
     'sass_processor',
     'mathfilters',
     'django_dropbox_storage',
+    'storages',
 ]
+
+DROPBOX_ACCESS_TOKEN = 'kNWO_FdCBNAAAAAAAAAAEM_uk1050VZIrsZ6dbZ5RNFvSP18AdWX7c2CjzeEfMOY'
+DROPBOX_ROOT_FOLDER = '/media'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
