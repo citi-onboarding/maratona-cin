@@ -4,178 +4,31 @@
   </div>
   <div class="journey-container">
     <div class="info">
-      {% for year, event_array in eventds.items %}
+      {% for year, event_array in events.items %}
       <div class="year-container">
-        <div class="event-container" id="2019">
+        <div class="event-container" id="{{ year }}">
           {% for event in event_array %}
-          <div class="event-dot" data-slide='{{ forloop.parentloop.counter }}'></div>
+          <div class="event-dot">
+            <img src="media/journey-example.png" alt="dot-image">
+          </div>
           {% endfor %}
         </div>
         <div class="year">{{ year }}</div>
       </div>
       {% endfor %}
-      <div class="year-container">
-          <div class="event-container" id="2018">
-            <div class="event-dot" data-slide="1"></div>
-            <div class="event-dot" data-slide="2"></div>
-            <div class="event-dot" data-slide="3"></div>
-            <div class="event-dot" data-slide="4"></div>
-          </div>
-          <div class="year">2019</div>
+    </div>
+    <div class="carousel-journey">
+      {% for year, event_array in events.items %}
+      {% for event in event_array %}
+      <div class="event {{ year }}">
+        <img src="media/journey-example.png" alt="event-image">
+        <div class="text-container">
+          <h2>Maratona {{ event.semester }}</h2>
+          <h3>{{ event.title }}</h3>
+          <p>{{ event.content }}</p>
         </div>
-      <div class="year-container">
-        <div class="event-container" id="2018">
-          <div class="event-dot" data-slide="5"></div>
-          <div class="event-dot" data-slide="6"></div>
-          <div class="event-dot" data-slide="7"></div>
-          <div class="event-dot" data-slide="8"></div>
-        </div>
-        <div class="year">2018</div>
       </div>
-      <div class="year-container">
-        <div class="event-container" id="2017">
-          <div class="event-dot" data-slide="9"></div>
-          <div class="event-dot" data-slide="10"></div>
-          <div class="event-dot" data-slide="11"></div>
-          <div class="event-dot" data-slide="12"></div>
-        </div>
-        <div class="year">2017</div>
-      </div>
-      <div class="year-container">
-        <div class="event-container" id="2017">
-          <div class="event-dot" data-slide="13"></div>
-          <div class="event-dot" data-slide="14"></div>
-        </div>
-        <div class="year">2016</div>
-      </div>
-      <div class="year-container">
-        <div class="event-container" id="2017">
-          <div class="event-dot" data-slide="15"></div>
-        </div>
-        <div class="year">2015</div>
-      </div>
+      {% endfor %}
+      {% endfor %}
     </div>
-  </div>
-  <div class="carousel-journey">
-    <div class="event">
-      <img src="media/journey-example.png" alt="event-image">
-      <div class="text-container">
-        <h2>Maratona 2019.1</h2>
-        <h3>Evento</h3>
-        <p>Texto explicando sobre o evento Texto explicando sobre o evento Texto explicando sobre o evento Texto explicando sobre o evento </p>
-      </div>
-    </div>
-    <div class="event">
-      <img src="media/journey-example.png" alt="event-image">
-      <div class="text-container">
-        <h2>Maratona 2019.1</h2>
-        <h3>Evento</h3>
-        <p>Texto explicando sobre o evento Texto explicando sobre o evento Texto explicando sobre o evento Texto explicando sobre o evento </p>
-      </div>
-    </div>
-    <div class="event">
-      <img src="media/journey-example.png" alt="event-image">
-      <div class="text-container">
-        <h2>Maratona 2019.1</h2>
-        <h3>Evento</h3>
-        <p>Texto explicando sobre o evento Texto explicando sobre o evento Texto explicando sobre o evento Texto explicando sobre o evento </p>
-      </div>
-    </div>
-    <div class="event">
-      <img src="media/journey-example.png" alt="event-image">
-      <div class="text-container">
-        <h2>Maratona 2019.1</h2>
-        <h3>Evento</h3>
-        <p>Texto explicando sobre o evento Texto explicando sobre o evento Texto explicando sobre o evento Texto explicando sobre o evento </p>
-      </div>
-    </div>
-    <div class="event">
-      <img src="media/journey-example.png" alt="event-image">
-      <div class="text-container">
-        <h2>Maratona 2019.1</h2>
-        <h3>Evento</h3>
-        <p>Texto explicando sobre o evento Texto explicando sobre o evento Texto explicando sobre o evento Texto explicando sobre o evento </p>
-      </div>
-    </div>
-    <div class="event">
-      <img src="media/journey-example.png" alt="event-image">
-      <div class="text-container">
-        <h2>Maratona 2019.1</h2>
-        <h3>Evento</h3>
-        <p>Texto explicando sobre o evento Texto explicando sobre o evento Texto explicando sobre o evento Texto explicando sobre o evento </p>
-      </div>
-    </div>
-    <div class="event">
-      <img src="media/journey-example.png" alt="event-image">
-      <div class="text-container">
-        <h2>Maratona 2019.1</h2>
-        <h3>Evento</h3>
-        <p>Texto explicando sobre o evento Texto explicando sobre o evento Texto explicando sobre o evento Texto explicando sobre o evento </p>
-      </div>
-    </div>
-    <div class="event">
-      <img src="media/journey-example.png" alt="event-image">
-      <div class="text-container">
-        <h2>Maratona 2019.1</h2>
-        <h3>Evento</h3>
-        <p>Texto explicando sobre o evento Texto explicando sobre o evento Texto explicando sobre o evento Texto explicando sobre o evento </p>
-      </div>
-    </div>
-    <div class="event">
-      <img src="media/journey-example.png" alt="event-image">
-      <div class="text-container">
-        <h2>Maratona 2019.1</h2>
-        <h3>Evento</h3>
-        <p>Texto explicando sobre o evento Texto explicando sobre o evento Texto explicando sobre o evento Texto explicando sobre o evento </p>
-      </div>
-    </div>
-    <div class="event">
-      <img src="media/journey-example.png" alt="event-image">
-      <div class="text-container">
-        <h2>Maratona 2019.1</h2>
-        <h3>Evento</h3>
-        <p>Texto explicando sobre o evento Texto explicando sobre o evento Texto explicando sobre o evento Texto explicando sobre o evento </p>
-      </div>
-    </div>
-    <div class="event">
-      <img src="media/journey-example.png" alt="event-image">
-      <div class="text-container">
-        <h2>Maratona 2019.1</h2>
-        <h3>Evento</h3>
-        <p>Texto explicando sobre o evento Texto explicando sobre o evento Texto explicando sobre o evento Texto explicando sobre o evento </p>
-      </div>
-    </div>
-    <div class="event">
-      <img src="media/journey-example.png" alt="event-image">
-      <div class="text-container">
-        <h2>Maratona 2019.1</h2>
-        <h3>Evento</h3>
-        <p>Texto explicando sobre o evento Texto explicando sobre o evento Texto explicando sobre o evento Texto explicando sobre o evento </p>
-      </div>
-    </div>
-    <div class="event">
-      <img src="media/journey-example.png" alt="event-image">
-      <div class="text-container">
-        <h2>Maratona 2019.1</h2>
-        <h3>Evento</h3>
-        <p>Texto explicando sobre o evento Texto explicando sobre o evento Texto explicando sobre o evento Texto explicando sobre o evento </p>
-      </div>
-    </div>
-    <div class="event">
-      <img src="media/journey-example.png" alt="event-image">
-      <div class="text-container">
-        <h2>Maratona 2019.1</h2>
-        <h3>Evento</h3>
-        <p>Texto explicando sobre o evento Texto explicando sobre o evento Texto explicando sobre o evento Texto explicando sobre o evento </p>
-      </div>
-    </div>
-    <div class="event">
-      <img src="media/journey-example.png" alt="event-image">
-      <div class="text-container">
-        <h2>Maratona 2019.1</h2>
-        <h3>Evento</h3>
-        <p>Texto explicando sobre o evento Texto explicando sobre o evento Texto explicando sobre o evento Texto explicando sobre o evento </p>
-      </div>
-    </div>
-  </div>
 </section>

@@ -1066,30 +1066,40 @@
     position: relative; }
     .journey .journey-container .info {
       display: flex;
-      justify-content: flex-end;
+      justify-content: flex-start;
       align-items: flex-end;
-      flex-direction: row-reverse;
+      flex-direction: row;
       flex-wrap: nowrap;
       display: inline-flex;
-      height: 120px;
+      height: 125px;
       width: 100%;
       left: 0; }
       .journey .journey-container .info .year-container .event-container {
         display: flex;
         justify-content: flex-start;
         align-items: flex-end;
-        flex-direction: row-reverse;
+        flex-direction: row;
         flex-wrap: nowrap; }
         .journey .journey-container .info .year-container .event-container .event-dot {
-          transition: all .5s ease;
-          background-color: #479EFC;
+          cursor: pointer;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          width: 50px;
+          height: 50px;
+          border: 3px solid #479EFC;
           border-radius: 50%;
           -webkit-border-radius: 50%;
           -moz-border-radius: 50%;
           -ms-border-radius: 50%;
-          width: 50px;
-          height: 50px;
+          transition: all .5s ease;
+          background-color: #479EFC;
+          overflow: hidden;
           margin: 0 20px 0 20px; }
+          .journey .journey-container .info .year-container .event-container .event-dot img {
+            height: 100%; }
         .journey .journey-container .info .year-container .event-container .active {
           width: 80px;
           height: 80px; }
@@ -1106,10 +1116,12 @@
         background-color: #479EFC;
         height: 25px; }
       .journey .journey-container .info .year-container:nth-child(3n + 2) .event-container .event-dot {
+        border: 3px solid #FCDA33;
         background-color: #FCDA33; }
       .journey .journey-container .info .year-container:nth-child(3n + 2) .year {
         background-color: #FCDA33; }
       .journey .journey-container .info .year-container:nth-child(3n + 1) .event-container .event-dot {
+        border: 3px solid #DE392D;
         background-color: #DE392D; }
       .journey .journey-container .info .year-container:nth-child(3n + 1) .year {
         background-color: #DE392D; }

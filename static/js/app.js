@@ -192,7 +192,28 @@ $('.carousel-journey').slick({
   slidesToScroll: 1,
   dots: false,
   arrows: false,
-  rtl: true,
+});
+
+let dataSlideCounter = 1;
+[...gel('.info').childNodes].forEach(yearContainer => {
+  if (yearContainer.className === 'year-container') {
+    let year = yearContainer.querySelector('.event-container').id;
+    let yearElement = yearContainer.querySelector('.year');
+    let yearColor = window.getComputedStyle(yearElement, null).getPropertyValue("background-color");
+
+    [...document.querySelectorAll('.event')].forEach(event => {
+      if (event.className.indexOf(year) !== -1) {
+        event.style.borderColor = yearColor;
+      }
+    });
+
+    [...yearContainer.querySelector('.event-container').childNodes].forEach(event => {
+      if(event.className && event.className.indexOf('event-dot') !== -1) {
+        event.setAttribute('data-slide', dataSlideCounter);
+        dataSlideCounter++;
+      }
+    })
+  }
 });
 
 $('div[data-slide]').click(function (e) {
