@@ -13,7 +13,7 @@
         @include flex(center);
         img {
           width: 100%;
-          max-width: 400px;
+          max-width: 440px;
         }
       }
       h1 {
@@ -39,7 +39,7 @@
         height: auto;
         width: 50%;
         img {
-          // width: auto;
+          width: 100% !important;
         }
       }
       .slick-dots{
@@ -104,7 +104,7 @@
       .carousel-about {
         .slick-slide {
           img {
-            height: 93vh !important;
+            height: 90vh !important;
           }
         }
       }

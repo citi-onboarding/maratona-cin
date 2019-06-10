@@ -216,7 +216,7 @@
         flex-wrap: nowrap; }
         .about .text-wrapper .text-container .image-container img {
           width: 100%;
-          max-width: 400px; }
+          max-width: 440px; }
       .about .text-wrapper .text-container h1 {
         margin: 20px auto 20px auto;
         text-align: left;
@@ -233,6 +233,8 @@
       overflow: hidden;
       height: auto;
       width: 50%; }
+      .about #carousel-wrapper .carousel-about .slick-slide img {
+        width: 100% !important; }
     .about #carousel-wrapper .carousel-about .slick-dots {
       bottom: 50px;
       max-height: 20px;
@@ -291,7 +293,7 @@
   .about #carousel-wrapper {
     width: 60%; }
     .about #carousel-wrapper .carousel-about .slick-slide img {
-      height: 93vh !important; } }
+      height: 90vh !important; } }
 
 .cards {
   width: 80%;
@@ -529,19 +531,19 @@
   color: #479EFC !important;
   border: 3px solid #479EFC !important; }
 
-.leaderboards-container {
+.leaderboards {
   width: 80%;
   max-width: 80%;
   margin: auto; }
-  .leaderboards-container h1 {
+  .leaderboards h1 {
     color: #DE392D;
     font-size: 2.3rem;
     font-family: "Nexa Bold", sans-serif; }
-  .leaderboards-container h2 {
+  .leaderboards h2 {
     color: #DE392D;
     font-size: 1.7rem;
     font-family: "Nexa Bold", sans-serif; }
-  .leaderboards-container h3 {
+  .leaderboards h3 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -553,35 +555,35 @@
     text-align: center;
     vertical-align: center;
     margin-left: -25px; }
-  .leaderboards-container #medal {
+  .leaderboards #medal {
     height: 150px; }
-  .leaderboards-container .leaderboards-table {
+  .leaderboards .leaderboards-table {
     max-width: 100%;
     display: flex;
     flex-direction: row; }
-    .leaderboards-container .leaderboards-table .medal-title-container {
+    .leaderboards .leaderboards-table .medal-title-container {
       display: flex;
       flex-direction: row;
       width: 50%;
       margin-right: 30px; }
-      .leaderboards-container .leaderboards-table .medal-title-container .subtitle-cotainer {
+      .leaderboards .leaderboards-table .medal-title-container .subtitle-cotainer {
         align-items: center;
         vertical-align: center; }
-    .leaderboards-container .leaderboards-table .leaderboards-type-title {
+    .leaderboards .leaderboards-table .leaderboards-type-title {
       color: white; }
-    .leaderboards-container .leaderboards-table .leaderboards-national {
+    .leaderboards .leaderboards-table .leaderboards-national {
       display: flex;
       flex-direction: row; }
-    .leaderboards-container .leaderboards-table .leaderboards-international {
+    .leaderboards .leaderboards-table .leaderboards-international {
       display: flex;
       flex-direction: row; }
   @media only screen and (max-width: 1024px) {
-    .leaderboards-container .leaderboards-table {
+    .leaderboards .leaderboards-table {
       flex-direction: column; }
-      .leaderboards-container .leaderboards-table .leaderboards-national, .leaderboards-container .leaderboards-table .leaderboards-international {
+      .leaderboards .leaderboards-table .leaderboards-national, .leaderboards .leaderboards-table .leaderboards-international {
         flex-direction: column; } }
 
-#testimonials-news {
+.testimonials-news {
   width: 80%;
   display: flex;
   justify-content: center;
@@ -589,24 +591,24 @@
   flex-direction: row;
   flex-wrap: nowrap;
   margin: 50px auto; }
-  #testimonials-news .testimonials {
+  .testimonials-news .testimonials {
     width: 50%; }
-    #testimonials-news .testimonials h1 {
+    .testimonials-news .testimonials h1 {
       color: #DE392D;
       font-size: 2.3rem;
       font-family: "Nexa Bold", sans-serif; }
-    #testimonials-news .testimonials .carousel-wrapper {
+    .testimonials-news .testimonials .carousel-wrapper {
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
       flex-wrap: nowrap; }
-      #testimonials-news .testimonials .carousel-wrapper .carousel-testimonials .message-container {
+      .testimonials-news .testimonials .carousel-wrapper .carousel-testimonials .message-container {
         align-items: flex-end;
         display: flex;
         flex-direction: column;
         margin: 30px auto -20px auto; }
-        #testimonials-news .testimonials .carousel-wrapper .carousel-testimonials .message-container .message {
+        .testimonials-news .testimonials .carousel-wrapper .carousel-testimonials .message-container .message {
           width: 80% !important;
           border-radius: 30px;
           -webkit-border-radius: 30px;
@@ -618,45 +620,45 @@
           align-items: center;
           flex-direction: column;
           flex-wrap: nowrap; }
-          #testimonials-news .testimonials .carousel-wrapper .carousel-testimonials .message-container .message .content {
+          .testimonials-news .testimonials .carousel-wrapper .carousel-testimonials .message-container .message .content {
             margin: 15px auto 0 auto;
             color: #DE392D;
             font-family: "Nexa Bold", sans-serif;
             width: 90%; }
-          #testimonials-news .testimonials .carousel-wrapper .carousel-testimonials .message-container .message .author {
+          .testimonials-news .testimonials .carousel-wrapper .carousel-testimonials .message-container .message .author {
             margin: 0 auto 10px auto;
             font-size: 0.8rem;
             font-family: "Nexa Light", sans-serif;
             width: 90%;
             text-align: right; }
-        #testimonials-news .testimonials .carousel-wrapper .carousel-testimonials .message-container svg {
+        .testimonials-news .testimonials .carousel-wrapper .carousel-testimonials .message-container svg {
           margin: -5px 15px 0 0; }
-      #testimonials-news .testimonials .carousel-wrapper .carousel-testimonials .invert {
+      .testimonials-news .testimonials .carousel-wrapper .carousel-testimonials .invert {
         align-items: flex-start; }
-        #testimonials-news .testimonials .carousel-wrapper .carousel-testimonials .invert svg {
+        .testimonials-news .testimonials .carousel-wrapper .carousel-testimonials .invert svg {
           fill: white;
           margin: -5px 0 0 15px;
           -webkit-transform: scaleX(-1);
           transform: scaleX(-1); }
-          #testimonials-news .testimonials .carousel-wrapper .carousel-testimonials .invert svg .triangle {
+          .testimonials-news .testimonials .carousel-wrapper .carousel-testimonials .invert svg .triangle {
             fill: white;
             stroke: #479EFC;
             stroke-width: 5; }
-      #testimonials-news .testimonials .carousel-wrapper .carousel-testimonials .blue-message .message {
+      .testimonials-news .testimonials .carousel-wrapper .carousel-testimonials .blue-message .message {
         border: 5px solid #479EFC; }
-      #testimonials-news .testimonials .carousel-wrapper .carousel-testimonials .blue-message svg .triangle {
+      .testimonials-news .testimonials .carousel-wrapper .carousel-testimonials .blue-message svg .triangle {
         fill: white;
         stroke: #479EFC;
         stroke-width: 5; }
-      #testimonials-news .testimonials .carousel-wrapper .carousel-testimonials .red-message .message {
+      .testimonials-news .testimonials .carousel-wrapper .carousel-testimonials .red-message .message {
         border: 5px solid #DE392D; }
-      #testimonials-news .testimonials .carousel-wrapper .carousel-testimonials .red-message svg .triangle {
+      .testimonials-news .testimonials .carousel-wrapper .carousel-testimonials .red-message svg .triangle {
         fill: white;
         stroke: #DE392D;
         stroke-width: 5; }
-      #testimonials-news .testimonials .carousel-wrapper .carousel-testimonials .yellow-message .message {
+      .testimonials-news .testimonials .carousel-wrapper .carousel-testimonials .yellow-message .message {
         border: 5px solid #FCDA33; }
-      #testimonials-news .testimonials .carousel-wrapper .carousel-testimonials .yellow-message svg .triangle {
+      .testimonials-news .testimonials .carousel-wrapper .carousel-testimonials .yellow-message svg .triangle {
         fill: white;
         stroke: #FCDA33;
         stroke-width: 5; }
@@ -676,11 +678,11 @@
         min-height: 130px;
         max-height: 130px; } }
 
-#testimonials-news .news {
+.testimonials-news .news {
   width: 50%;
   display: flex;
   align-items: center; }
-  #testimonials-news .news .news-wrapper {
+  .testimonials-news .news .news-wrapper {
     padding: 1px;
     min-height: 500px;
     background-color: #DE392D;
@@ -690,13 +692,13 @@
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
     -ms-border-radius: 30px; }
-    #testimonials-news .news .news-wrapper h1 {
+    .testimonials-news .news .news-wrapper h1 {
       text-align: center;
       margin-bottom: 25px;
       color: white;
       font-size: 2.3rem;
       font-family: "Nexa Bold", sans-serif; }
-    #testimonials-news .news .news-wrapper .carousel-news {
+    .testimonials-news .news .news-wrapper .carousel-news {
       height: 75%;
       width: 90%;
       margin: auto;
@@ -705,7 +707,7 @@
       align-items: center;
       flex-direction: row;
       flex-wrap: nowrap; }
-      #testimonials-news .news .news-wrapper .carousel-news .new-container {
+      .testimonials-news .news .news-wrapper .carousel-news .new-container {
         min-height: 100%;
         display: flex;
         justify-content: space-between;
@@ -713,7 +715,7 @@
         flex-direction: column;
         flex-wrap: nowrap;
         margin: -10px 0 0px 0; }
-        #testimonials-news .news .news-wrapper .carousel-news .new-container .new {
+        .testimonials-news .news .news-wrapper .carousel-news .new-container .new {
           display: flex;
           justify-content: space-around;
           align-items: center;
@@ -729,36 +731,36 @@
           padding: 5px;
           text-decoration: none;
           color: black; }
-          #testimonials-news .news .news-wrapper .carousel-news .new-container .new img {
+          .testimonials-news .news .news-wrapper .carousel-news .new-container .new img {
             height: 60px;
             margin: 10px; }
-          #testimonials-news .news .news-wrapper .carousel-news .new-container .new .text-container {
+          .testimonials-news .news .news-wrapper .carousel-news .new-container .new .text-container {
             max-width: 60%;
             min-width: 60%; }
-            #testimonials-news .news .news-wrapper .carousel-news .new-container .new .text-container h2 {
+            .testimonials-news .news .news-wrapper .carousel-news .new-container .new .text-container h2 {
               font-size: 0.8rem;
               font-family: "Nexa Light", sans-serif; }
-            #testimonials-news .news .news-wrapper .carousel-news .new-container .new .text-container h3 {
+            .testimonials-news .news .news-wrapper .carousel-news .new-container .new .text-container h3 {
               font-size: 0.6rem;
               font-family: "Nexa Light", sans-serif;
               text-align: center; }
-          #testimonials-news .news .news-wrapper .carousel-news .new-container .new:hover {
+          .testimonials-news .news .news-wrapper .carousel-news .new-container .new:hover {
             opacity: 0.7; }
-      #testimonials-news .news .news-wrapper .carousel-news .slick-dots {
+      .testimonials-news .news .news-wrapper .carousel-news .slick-dots {
         max-height: 20px;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: row;
         flex-wrap: nowrap; }
-        #testimonials-news .news .news-wrapper .carousel-news .slick-dots li {
+        .testimonials-news .news .news-wrapper .carousel-news .slick-dots li {
           display: flex;
           justify-content: center;
           align-items: center;
           flex-direction: row;
           flex-wrap: nowrap;
           margin: -50px 5px 0 5px; }
-          #testimonials-news .news .news-wrapper .carousel-news .slick-dots li .dot {
+          .testimonials-news .news .news-wrapper .carousel-news .slick-dots li .dot {
             min-width: 1rem;
             max-width: 1rem;
             min-height: 1rem;
@@ -767,16 +769,16 @@
             -webkit-border-radius: 50%;
             -moz-border-radius: 50%;
             -ms-border-radius: 50%; }
-        #testimonials-news .news .news-wrapper .carousel-news .slick-dots li:nth-child(1) .dot {
+        .testimonials-news .news .news-wrapper .carousel-news .slick-dots li:nth-child(1) .dot {
           border: 2px solid #479EFC;
           background-color: #479EFC; }
-        #testimonials-news .news .news-wrapper .carousel-news .slick-dots li:nth-child(2) .dot {
+        .testimonials-news .news .news-wrapper .carousel-news .slick-dots li:nth-child(2) .dot {
           border: 2px solid #FCDA33;
           background-color: #FCDA33; }
-        #testimonials-news .news .news-wrapper .carousel-news .slick-dots li:nth-child(3) .dot {
+        .testimonials-news .news .news-wrapper .carousel-news .slick-dots li:nth-child(3) .dot {
           border: 2px solid white;
           background-color: white; }
-        #testimonials-news .news .news-wrapper .carousel-news .slick-dots .slick-active .dot {
+        .testimonials-news .news .news-wrapper .carousel-news .slick-dots .slick-active .dot {
           background-color: transparent !important; }
 
 @media screen and (max-width: 1025px) {
@@ -975,7 +977,7 @@
     .carousel-partners .portrait {
       height: 80% !important; } }
 
-.footer-container {
+.footer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -986,7 +988,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-evenly; }
-  .footer-container a, .footer-container p {
+  .footer a, .footer p {
     display: flex;
     justify-content: left;
     align-items: center;
@@ -995,10 +997,10 @@
     font-size: 1.2rem;
     color: white;
     font-family: "Nexa Light", sans-serif; }
-  .footer-container .footer-title {
+  .footer .footer-title {
     font-size: 1.7rem;
     font-family: "Nexa Bold", sans-serif; }
-  .footer-container .logo-container {
+  .footer .logo-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1006,45 +1008,45 @@
     flex-wrap: nowrap;
     display: flex;
     flex-direction: column; }
-    .footer-container .logo-container #navbar-logo {
+    .footer .logo-container #navbar-logo {
       width: 380px;
       height: 120px; }
-  .footer-container .contact-container #contact-icon {
+  .footer .contact-container #contact-icon {
     width: 100px;
     height: 80px; }
-  .footer-container .contact-container h2 {
+  .footer .contact-container h2 {
     color: white; }
-  .footer-container .contact-container p {
+  .footer .contact-container p {
     margin-top: -5px; }
-  .footer-container .social-container {
+  .footer .social-container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
     flex-wrap: nowrap;
     flex-direction: column; }
-    .footer-container .social-container #social-icon {
+    .footer .social-container #social-icon {
       width: 100px;
       height: 100px; }
-    .footer-container .social-container #signature-icon {
+    .footer .social-container #signature-icon {
       color: white;
       width: 100px;
       height: 35px;
       display: block; }
-    .footer-container .social-container .social-medias {
+    .footer .social-container .social-medias {
       display: flex;
       flex-direction: row; }
-    .footer-container .social-container .signature {
+    .footer .social-container .signature {
       flex-direction: column; }
-      .footer-container .social-container .signature a {
+      .footer .social-container .signature a {
         margin-left: -20px;
         margin-right: -20px; }
 
 @media only screen and (max-width: 1024px) {
-  .footer-container {
+  .footer {
     display: flex;
     flex-direction: column; }
-    .footer-container .logo-container {
+    .footer .logo-container {
       display: none; } }
 
 .journey {
@@ -1236,6 +1238,7 @@
 
 body, html {
   margin: 0;
+  overflow-x: hidden;
   scroll-behavior: smooth; }
 
 @font-face {

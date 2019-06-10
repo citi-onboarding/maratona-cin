@@ -91,7 +91,7 @@ const menu = gel('.menu-container-side');
 // Show menu animation
 gel('.show-menu').addEventListener('click', () => {
   // If user is above navbar
-  menu.style.transition = 'width 1s';
+  menu.style.transition = 'width 0.5s';
   if (window.scrollY < getHeight('.banner')) {
     window.scrollTo(0, getHeight('.banner'));
     navbarAutoOpen = true;
@@ -119,29 +119,28 @@ document.addEventListener('scroll', () => {
 
 // Navbar links
 
+[...document.querySelectorAll('section')].forEach(section => {
+  console.log(section);
+  console.log(getHeight('.navbar-ghost'));
+  $(() => {
+    $(`.${section.className}`).not(gel('.navbar')).not(gel('.banner')).not(gel('.about')).css( 'padding-top', getHeight('.navbar-ghost'));
+  });
+})
 
-menu.addEventListener('click', event => {
-  const heights = {
-    banner: getHeight('.banner'),
-    navbar: getHeight('.navbar-ghost'),
-    about: getHeight('.about'),
-    cards: getHeight('section.cards') + 70,
-    team: getHeight('section.team'),
-    schedule: getHeight('.schedule'),
-  };
-  
-  let height = 0;
-  let heightSum = 0;
-  let eventClass = event.target.className;
-  
-  if (eventClass.split(' ')[0] !== 'menu') {
-    Object.entries(heights).map(each => {
-      each[0] === event.target.className ? heightSum = height : height += each[1];
-    });
-    heightSum -= heights.navbar;
-    window.scrollTo(0, heightSum);
-    menu.style.width = '0px';
-  }
+const menus = [...document.querySelectorAll('.menu')]
+
+menus.forEach(navMenu => {
+  navMenu.addEventListener('click', event => {
+    if (event.target.className && event.target.className !== 'menu') {
+      const scrollToView = (eventTarget, callback) => {
+        gel(`.${eventTarget.className.split('-link').join('')}`).scrollIntoView(true);
+        // callback();
+      }
+      scrollToView(event.target, () => {
+        window.scrollBy(0, -30); 
+      })
+    }
+  })
 })
 
 // =================================////=====================================//
@@ -194,6 +193,11 @@ $('.carousel-journey').slick({
   arrows: false,
 });
 
+$('.carousel-journey').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+  slideIndex = nextSlide + 1;
+  $(`div[data-slide=${slideIndex}]`)[0].click();
+});
+
 let dataSlideCounter = 1;
 [...gel('.info').childNodes].forEach(yearContainer => {
   if (yearContainer.className === 'year-container') {
@@ -208,7 +212,7 @@ let dataSlideCounter = 1;
     });
 
     [...yearContainer.querySelector('.event-container').childNodes].forEach(event => {
-      if(event.className && event.className.indexOf('event-dot') !== -1) {
+      if (event.className && event.className.indexOf('event-dot') !== -1) {
         event.setAttribute('data-slide', dataSlideCounter);
         dataSlideCounter++;
       }
@@ -237,7 +241,7 @@ $('div[data-slide]').click(function (e) {
 
 $(document).ready(() => {
   lastestEvent.click();
-  window.scrollTo(0,0);
+  window.scrollTo(0, 0);
 })
 
 // =================================////=====================================//
