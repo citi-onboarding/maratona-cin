@@ -210,7 +210,7 @@
         width: 70%;
         margin: 10px auto 10px auto;
         display: flex;
-        justify-content: center;
+        justify-content: flex-end;
         align-items: stretch;
         flex-direction: row;
         flex-wrap: nowrap; }
@@ -229,11 +229,12 @@
   .about #carousel-wrapper .carousel-about {
     min-height: 100%;
     display: flex; }
-    .about #carousel-wrapper .carousel-about .slick-slide {
+    .about #carousel-wrapper .carousel-about .image-container {
       overflow: hidden;
       height: auto;
-      width: 50%; }
-      .about #carousel-wrapper .carousel-about .slick-slide img {
+      width: 100%;
+      max-height: 100% !important; }
+      .about #carousel-wrapper .carousel-about .image-container img {
         width: 100% !important; }
     .about #carousel-wrapper .carousel-about .slick-dots {
       bottom: 50px;
@@ -283,17 +284,13 @@
       .about #carousel-wrapper .carousel-about .slick-slide {
         max-width: 100vw !important; }
         .about #carousel-wrapper .carousel-about .slick-slide img {
-          max-height: 100%;
-          width: auto;
-          max-width: 100vw !important; } }
+          max-height: 100%; } }
 
 @media only screen and (min-width: 1025px) {
   .about .text-wrapper {
     width: 40%; }
   .about #carousel-wrapper {
-    width: 60%; }
-    .about #carousel-wrapper .carousel-about .slick-slide img {
-      height: 90vh !important; } }
+    width: 60%; } }
 
 .cards {
   width: 80%;
@@ -421,16 +418,25 @@
     .team .carousel-team .participant-container {
       display: flex; }
       .team .carousel-team .participant-container .participant {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         margin: 0 auto 0 auto;
         max-width: 20%; }
-        .team .carousel-team .participant-container .participant img {
-          width: 100%;
-          max-width: 200px;
+        .team .carousel-team .participant-container .participant .image-container {
+          width: 150px;
+          height: 150px;
           border-radius: 50%;
           -webkit-border-radius: 50%;
           -moz-border-radius: 50%;
           -ms-border-radius: 50%;
-          margin: auto; }
+          overflow: hidden; }
+          .team .carousel-team .participant-container .participant .image-container img {
+            margin: auto; }
+          .team .carousel-team .participant-container .participant .image-container .landscape {
+            height: 100% !important; }
+          .team .carousel-team .participant-container .participant .image-container .portrait {
+            width: 100% !important; }
         .team .carousel-team .participant-container .participant .text-container {
           font-family: "Nexa Bold", sans-serif;
           text-align: center;
@@ -458,21 +464,27 @@
         flex-direction: column; }
         .team .carousel-team .participant-container .participant {
           display: flex;
-          max-height: 150px !important;
+          justify-content: space-around;
           align-items: center;
-          max-width: 100%; }
-          .team .carousel-team .participant-container .participant img {
-            margin-left: 10px;
-            margin-right: 10px;
-            max-width: 100px; }
+          flex-direction: row;
+          max-height: 150px !important;
+          max-width: 100%;
+          min-width: 60%; }
+          .team .carousel-team .participant-container .participant .image-container {
+            width: 100px;
+            height: 100px; }
+            .team .carousel-team .participant-container .participant .image-container img {
+              margin: auto; }
+            .team .carousel-team .participant-container .participant .image-container .landscape {
+              height: 100% !important; }
+            .team .carousel-team .participant-container .participant .image-container .portrait {
+              width: 100% !important; }
         .team .carousel-team .participant-container .participant:nth-child(2n) {
           flex-direction: row-reverse; } }
 
 @media screen and (max-width: 440px) {
   .team {
     width: 100%; }
-  .participant-container .participant img {
-    width: 30%; }
   .participant-container .participant .text-container p {
     font-size: 3vw; } }
 
@@ -829,6 +841,8 @@
             color: #479EFC; }
           .fame .carousel-fame .famous-container .famous .text-container .name {
             font-size: 1.2rem; }
+          .fame .carousel-fame .famous-container .famous .text-container .description {
+            text-align: left; }
     .fame .carousel-fame .arrow {
       color: #DE392D;
       margin: 10px;
@@ -892,7 +906,8 @@
         align-items: center;
         flex-direction: row;
         flex-wrap: nowrap;
-        height: 90%; }
+        height: 90%;
+        overflow: visible; }
         .partners .carousel-partners .slick-list .slick-track .partner-container {
           display: flex;
           justify-content: center;
@@ -911,14 +926,14 @@
             -webkit-border-radius: 50%;
             -moz-border-radius: 50%;
             -ms-border-radius: 50%;
-            max-height: 100%;
             margin: auto; }
             .partners .carousel-partners .slick-list .slick-track .partner-container .image-container img {
+              overflow: visible;
               margin: 0; }
             .partners .carousel-partners .slick-list .slick-track .partner-container .image-container .landscape {
               width: 80% !important; }
             .partners .carousel-partners .slick-list .slick-track .partner-container .image-container .portrait {
-              width: 70% !important; }
+              width: 60% !important; }
           .partners .carousel-partners .slick-list .slick-track .partner-container .plus {
             border-radius: 50%;
             -webkit-border-radius: 50%;
@@ -1229,7 +1244,9 @@
   section:not(.navbar).cards {
     height: 90vh !important; }
   section:not(.navbar).team {
-    margin: -20vh auto -20vh auto; } }
+    margin: -20vh auto -20vh auto; }
+  section:not(.navbar).footer {
+    height: 40vh !important; } }
 
 .slick-slide {
   outline: none !important; }

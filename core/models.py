@@ -3,9 +3,9 @@ from django import forms
 from django.utils import timezone
 
 class Participant(models.Model):
-
   author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
   name = models.CharField(max_length=50)
+  image = models.FileField(upload_to='participants')
   email = models.CharField(max_length=200)
   github = models.CharField(max_length=2000)
   codeforces = models.CharField(max_length=2000)

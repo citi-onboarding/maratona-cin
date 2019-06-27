@@ -18,13 +18,25 @@
     .participant-container {
       display: flex;
       .participant {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         margin: 0 auto 0 auto;
         max-width: 20%;
-        img {
-          width: 100%;
-          max-width: 200px;
+        .image-container {
+          width: 150px;
+          height: 150px;
           @include border-radius(50%);
-          margin: auto;
+          overflow: hidden;
+          img {
+            margin: auto;
+          }
+          .landscape {
+            height: 100% !important;
+          }
+          .portrait {
+            width: 100% !important;
+          }
         }
         .text-container {
           font-family: "Nexa Bold", sans-serif;
@@ -61,13 +73,24 @@
         flex-direction: column;
         .participant {
           display: flex;
-          max-height: 150px !important;
+          justify-content: space-around;
           align-items: center;
+          flex-direction: row;
+          max-height: 150px !important;
           max-width: 100%;
-          img {
-            margin-left: 10px;
-            margin-right: 10px;
-            max-width: 100px;
+          min-width: 60%;
+          .image-container {
+            width: 100px;
+            height: 100px;
+            img {
+              margin: auto;
+            }
+            .landscape {
+              height: 100% !important;
+            }
+            .portrait {
+              width: 100% !important;
+            }
           }
         }
         .participant:nth-child(2n) {
@@ -85,7 +108,7 @@
   .participant-container {
     .participant {
       img {
-        width: 30%;
+        // width: 30%;
       }
       .text-container {
         p {

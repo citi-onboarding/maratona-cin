@@ -10,7 +10,7 @@
       .image-container {
         width: 70%;
         margin: 10px auto 10px auto; 
-        @include flex(center);
+        @include flex(flex-end);
         img {
           width: 100%;
           max-width: 440px;
@@ -33,11 +33,11 @@
     .carousel-about {
       min-height: 100%;
       display: flex;
-      // flex-wrap: wrap;  
-      .slick-slide {
+      .image-container {
         overflow: hidden;
         height: auto;
-        width: 50%;
+        width: 100%;
+        max-height: 100% !important;
         img {
           width: 100% !important;
         }
@@ -85,8 +85,6 @@
           max-width: 100vw !important;
           img {
             max-height: 100%;
-            width: auto;
-            max-width: 100vw !important;
           }
         }
       }
@@ -103,8 +101,9 @@
       width: 60%;
       .carousel-about {
         .slick-slide {
+          // height: 90vh !important;
+          // max-height: 100%;
           img {
-            height: 90vh !important;
           }
         }
       }

@@ -65,6 +65,21 @@ $('.carousel-team').slick({
   nextArrow: '<a class="next arrow fa fa-angle-right"></a>',
 });
 
+[...gel('.participant-container').parentElement.childNodes].forEach(slide => {
+  if (slide.hasChildNodes() && slide.className.indexOf('cloned') === -1) {
+    [...slide.childNodes].forEach(participant => {
+      if (participant.className === 'participant') {
+        let img = participant.querySelector('img');
+        setTimeout(() => {
+          if (img) {
+            img.className = img.clientHeight >= img.clientWidth ? 'portrait' : 'landscape';
+          };
+        }, 500);
+      };
+    });
+  };
+});
+
 // =================================////=====================================//
 // Navbar
 
@@ -120,10 +135,8 @@ document.addEventListener('scroll', () => {
 // Navbar links
 
 [...document.querySelectorAll('section')].forEach(section => {
-  console.log(section);
-  console.log(getHeight('.navbar-ghost'));
   $(() => {
-    $(`.${section.className}`).not(gel('.navbar')).not(gel('.banner')).not(gel('.about')).css( 'padding-top', getHeight('.navbar-ghost'));
+    $(`.${section.className}`).not(gel('.navbar')).not(gel('.banner')).not(gel('.about')).css('padding-top', getHeight('.navbar-ghost'));
   });
 })
 
@@ -137,7 +150,7 @@ menus.forEach(navMenu => {
         // callback();
       }
       scrollToView(event.target, () => {
-        window.scrollBy(0, -30); 
+        window.scrollBy(0, -30);
       })
     }
   })
@@ -191,6 +204,7 @@ $('.carousel-journey').slick({
   slidesToScroll: 1,
   dots: false,
   arrows: false,
+  accessibility: false,
 });
 
 $('.carousel-journey').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
@@ -241,7 +255,6 @@ $('div[data-slide]').click(function (e) {
 
 $(document).ready(() => {
   lastestEvent.click();
-  window.scrollTo(0, 0);
 })
 
 // =================================////=====================================//
@@ -345,10 +358,13 @@ $('.carousel-fame').slick({
 $('.carousel-partners').slick({
   slidesToShow: 3,
   slidesToScroll: 1,
+  initialSlide: 1,
   swipe: false,
+  accessibility: false,
   centerMode: true,
   centerPadding: 0,
   dots: false,
+  infinite: false,
   prevArrow: '<a class="prev arrow fa fa-angle-left"></a>',
   nextArrow: '<a class="next arrow fa fa-angle-right"></a>',
   responsive: [

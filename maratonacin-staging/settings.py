@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'core',
     'sass_processor',
     'mathfilters',
+    'storages',
 ]
 
 DROPBOX_ACCESS_TOKEN = 'kNWO_FdCBNAAAAAAAAAAEM_uk1050VZIrsZ6dbZ5RNFvSP18AdWX7c2CjzeEfMOY'
@@ -153,3 +154,15 @@ DATE_INPUT_FORMATS = ['%d-%m-%Y']
 
 USE_L10N = True
 USE_THOUSAND_SEPARATOR = True
+
+# Dropbox storage set
+
+import dropbox
+
+DEFAULT_FILE_STORAGE = 'storages.backends.dropbox.DropBoxStorage'
+DROPBOX_OAUTH2_TOKEN = '-xI_CFv1d8AAAAAAAAAADnCbC3_vuvFRuQcra_422SQak9eDd72SxVDqxNQtX8dd'
+
+dbx = dropbox.Dropbox('-xI_CFv1d8AAAAAAAAAADnCbC3_vuvFRuQcra_422SQak9eDd72SxVDqxNQtX8dd')
+dbx.users_get_current_account()
+for entry in dbx.files_list_folder('').entries:
+  print(entry.name)

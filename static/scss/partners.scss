@@ -23,6 +23,7 @@
       .slick-track {
         @include flex(center, center);
         height: 90%;
+        overflow: visible;
         .partner-container {
           @include flex(center, flex-end, column);
           transition: all .5s ease;
@@ -30,16 +31,16 @@
           .image-container {
             @include flex(center, flex-end);
             @include border-radius(50%);
-            max-height: 100%;
             margin: auto;
             img {
+              overflow: visible;
               margin: 0;
             }
             .landscape {
               width: 80% !important;
             }
             .portrait {
-              width: 70% !important;
+              width: 60% !important;
             }
           }
           .plus {
