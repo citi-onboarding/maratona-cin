@@ -8,12 +8,16 @@
     <div class="famous-container">
       {% for famous in slide %}
       <div class="famous" id="{{ famous.id }}">
-        <img src="media/participant.png" alt="famous"> 
+        <div class="image-container">
+          <img src="{{ famous.image.url }}" alt="famous"> 
+        </div>
         <div class="text-container">
           <p class="name">{{ famous.name }}</p>
           <p class="email">{{ famous.email }}</p>
           <p><a href="{{ famous.github }}" target="_blank">Github</a></p>
           <p><a href="{{ famous.codeforces }}" target="_blank">CodeForces</a></p>
+        </div>
+        <div class="description-container">
           <p class="description">{{ famous.description }}</p>
         </div>
       </div>

@@ -30,7 +30,7 @@
       display: block;
       margin: 0 auto 0 auto;
       width: 80%;
-      max-width: 400px; }
+      max-width: 300px; }
   .banner .ball-container {
     flex: 1;
     display: flex;
@@ -83,7 +83,7 @@
           width: 100%; }
           .navbar .navbar-container nav .menu-wrapper .logo-container #navbar-logo {
             width: 140px;
-            height: 70px; }
+            height: 60px; }
         .navbar .navbar-container nav .menu-wrapper .show-menu {
           display: flex;
           justify-content: center;
@@ -207,8 +207,8 @@
     .about .text-wrapper .text-container {
       width: 75%; }
       .about .text-wrapper .text-container .image-container {
-        width: 70%;
-        margin: 10px auto 10px auto;
+        width: 80%;
+        margin: 10px 0 10px 0;
         display: flex;
         justify-content: flex-end;
         align-items: stretch;
@@ -230,12 +230,15 @@
     min-height: 100%;
     display: flex; }
     .about #carousel-wrapper .carousel-about .image-container {
-      overflow: hidden;
-      height: auto;
-      width: 100%;
-      max-height: 100% !important; }
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      height: 95vh !important;
+      overflow: hidden; }
       .about #carousel-wrapper .carousel-about .image-container img {
-        width: 100% !important; }
+        height: 100% !important; }
     .about #carousel-wrapper .carousel-about .slick-dots {
       bottom: 50px;
       max-height: 20px;
@@ -821,18 +824,27 @@
     .fame .carousel-fame .famous-container {
       display: flex; }
       .fame .carousel-fame .famous-container .famous {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         margin: 0 auto 0 auto;
-        max-width: 20%; }
-        .fame .carousel-fame .famous-container .famous img {
-          width: 100%;
-          max-width: 200px;
+        max-width: 20%;
+        font-family: "Nexa Bold", sans-serif; }
+        .fame .carousel-fame .famous-container .famous .image-container {
+          width: 150px;
+          height: 150px;
           border-radius: 50%;
           -webkit-border-radius: 50%;
           -moz-border-radius: 50%;
           -ms-border-radius: 50%;
-          margin: auto; }
+          overflow: hidden; }
+          .fame .carousel-fame .famous-container .famous .image-container img {
+            margin: auto; }
+          .fame .carousel-fame .famous-container .famous .image-container .landscape {
+            height: 100% !important; }
+          .fame .carousel-fame .famous-container .famous .image-container .portrait {
+            width: 100% !important; }
         .fame .carousel-fame .famous-container .famous .text-container {
-          font-family: "Nexa Bold", sans-serif;
           text-align: center;
           margin-top: 15px; }
           .fame .carousel-fame .famous-container .famous .text-container * {
@@ -841,8 +853,15 @@
             color: #479EFC; }
           .fame .carousel-fame .famous-container .famous .text-container .name {
             font-size: 1.2rem; }
-          .fame .carousel-fame .famous-container .famous .text-container .description {
-            text-align: left; }
+        .fame .carousel-fame .famous-container .famous .description-container {
+          max-width: 100%; }
+          .fame .carousel-fame .famous-container .famous .description-container .description {
+            word-wrap: break-word;
+            padding: 0;
+            margin: 5px 0 5px 0;
+            color: #479EFC;
+            text-align: left;
+            font-size: 0.8rem; }
     .fame .carousel-fame .arrow {
       color: #DE392D;
       margin: 10px;
@@ -1040,10 +1059,10 @@
     flex-direction: row;
     flex-wrap: nowrap;
     flex-direction: column; }
-    .footer .social-container #social-icon {
+    .footer .social-container .social-icon {
       width: 100px;
       height: 100px; }
-    .footer .social-container #signature-icon {
+    .footer .social-container .signature-icon {
       color: white;
       width: 100px;
       height: 35px;
@@ -1164,7 +1183,7 @@
           margin: 8px 0 0 0; }
         .journey .carousel-journey .slick-list .slick-track .event .text-container h3 {
           font-family: "Nexa Bold", sans-serif;
-          font-size: 1.8rem;
+          font-size: 1.6rem;
           color: #DE392D;
           margin: 8px 0 0 0; }
         .journey .carousel-journey .slick-list .slick-track .event .text-container p {
@@ -1210,18 +1229,19 @@
         flex-wrap: nowrap;
         width: 100%;
         margin: 20px 0 20px 0; }
-        .study .link-wrapper .study-container .study-table .circle {
+        .study .link-wrapper .study-container .study-table .image-container {
           position: absolute;
-          width: 130px;
-          height: 130px;
+          width: 100px;
+          height: 100px;
           background: #FCDA33;
           border-radius: 50%; }
-        .study .link-wrapper .study-container .study-table .rectangle {
+        .study .link-wrapper .study-container .study-table .text-container {
           min-width: 80% !important;
-          height: 100px;
+          height: 70px;
           background: #DE392D;
-          border-radius: 75px;
-          z-index: -2; }
+          border-radius: 50px;
+          z-index: -2;
+          text-align: center; }
       .study .link-wrapper .study-container .study-table:nth-child(2n) {
         transform: scaleX(-1); }
 

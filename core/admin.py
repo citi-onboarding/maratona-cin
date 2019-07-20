@@ -6,6 +6,9 @@ from .models import Schedule
 from .models import Medal
 from .models import Famous
 from .models import Event
+from .models import Link
+from .models import Information
+from .models import Partner
 
 admin.site.register(Testimonial)
 admin.site.register(New)
@@ -14,3 +17,6 @@ admin.site.register(Schedule)
 admin.site.register(Medal)
 admin.site.register(Famous)
 admin.site.register(Event)
+admin.site.register(Link)
+admin.site.register(Information)
+admin.site.register(Partner)

@@ -2,6 +2,20 @@ from django.db import models
 from django import forms
 from django.utils import timezone
 
+class Information(models.Model):
+  author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+  facebook = models.CharField(max_length=50)
+  instagram = models.CharField(max_length=50)
+  email = models.CharField(max_length=50)
+  verbose_name_plural = 'Information'
+
+  def publish(self):
+    self.published_date = timezone.now()
+    self.save()
+
+  def __str__(self):
+    return 'Information'
+
 class Participant(models.Model):
   author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
   name = models.CharField(max_length=50)
@@ -52,7 +66,7 @@ class New(models.Model):
   author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
   title = models.CharField(max_length=50)
   subtitle = models.CharField(max_length=50)
-  link = models.CharField(max_length=5000)
+  link = models.CharField(max_length=100)
   published_date = models.DateTimeField(blank=True, null=True)
   
 
@@ -65,6 +79,7 @@ class New(models.Model):
 
 class Famous(models.Model):
   author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+  image = models.FileField(upload_to='famous')
   name = models.CharField(max_length=50)
   email = models.CharField(max_length=200)
   github = models.CharField(max_length=200)
@@ -129,6 +144,7 @@ class Medal(models.Model):
 
 class Event(models.Model):
   author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+  image = models.FileField(upload_to='events')
   semester = models.CharField(max_length=50)
   title = models.CharField(max_length=50)
   content = models.CharField(max_length=50)
@@ -140,3 +156,28 @@ class Event(models.Model):
 
   def __str__(self):
     return self.title
+
+class Partner(models.Model):
+  author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+  name = models.CharField(max_length=50)
+  logo = models.FileField(upload_to='partners')
+
+  def publish(self):
+    self.published_date = timezone.now()
+    self.save()
+
+  def __str__(self):
+    return self.name
+
+class Link(models.Model):
+  author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+  title = models.CharField(max_length= 50)
+  link = models.CharField(max_length=100)
+
+  def publish(self):
+    self.published_date = timezone.now()
+    self.save()
+
+  def __str__(self):
+    return self.title
+

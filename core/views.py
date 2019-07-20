@@ -7,6 +7,9 @@ from .models import New
 from .models import Medal
 from .models import Famous
 from .models import Event
+from .models import Link
+from .models import Information
+from .models import Partner
 
 
 def index(request):
@@ -112,4 +115,7 @@ def index(request):
     'new_list':new_sublist,
     'testimonials': Testimonial.objects.all(),
     'events': year_pack,
+    'partners': Partner.objects.all(),
+    'links': Link.objects.all(),
+    'info': Information.objects.all(),
     })

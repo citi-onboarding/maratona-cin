@@ -9,7 +9,7 @@
         <div class="event-container" id="{{ year }}">
           {% for event in event_array %}
           <div class="event-dot">
-            <img src="media/journey-example.png" alt="dot-image">
+            <img src="{{ event.image.url }}" alt="dot-image">
           </div>
           {% endfor %}
         </div>
@@ -21,7 +21,7 @@
       {% for year, event_array in events.items %}
       {% for event in event_array %}
       <div class="event {{ year }}">
-        <img src="media/journey-example.png" alt="event-image">
+        <img src="{{ event.image.url }}" alt="event-image">
         <div class="text-container">
           <h2>Maratona {{ event.semester }}</h2>
           <h3>{{ event.title }}</h3>

@@ -18,16 +18,28 @@
     .famous-container {
       display: flex;
       .famous {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         margin: 0 auto 0 auto;
         max-width: 20%;
-        img {
-          width: 100%;
-          max-width: 200px;
+        font-family: "Nexa Bold", sans-serif;
+        .image-container {
+          width: 150px;
+          height: 150px;
           @include border-radius(50%);
-          margin: auto;
+          overflow: hidden;
+          img {
+            margin: auto;
+          }
+          .landscape {
+            height: 100% !important;
+          }
+          .portrait {
+            width: 100% !important;
+          }
         }
         .text-container {
-          font-family: "Nexa Bold", sans-serif;
           text-align: center;
           margin-top: 15px;
           * {
@@ -38,8 +50,17 @@
           .name {
             font-size: 1.2rem; 
           }
+        }
+        .description-container {
+          max-width: 100%;
           .description {
+            word-wrap: break-word;
+            padding: 0;
+            margin: 5px 0 5px 0;
+            color: $blue;
             text-align: left;
+            font-size: 0.8rem;
+            // max-width: 100%;
           }
         }
       }

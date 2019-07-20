@@ -47,12 +47,12 @@
     @include flex(center, center);
     flex-direction: column;
 
-    #social-icon{
+    .social-icon{
       width: 100px;
       height: 100px;
     }
 
-    #signature-icon{
+    .signature-icon{
       color: white;
       width:100px;
       height: 35px;

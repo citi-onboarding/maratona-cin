@@ -24,20 +24,20 @@
         @include flex(flex-start, center);
         width: 100%;
         margin: 20px 0 20px 0;
-        .circle{ 
+        .image-container { 
           position: absolute;
-          width: 130px;
-          height: 130px;
-          background:$yellow; 
-          border-radius: 50%;
-          
-        }
-        .rectangle {
-          min-width: 80% !important; 
+          width: 100px;
           height: 100px;
+          background: $yellow; 
+          border-radius: 50%;
+        }
+        .text-container {
+          min-width: 80% !important; 
+          height: 70px;
           background: $red;
-          border-radius: 75px;
+          border-radius: 50px;
           z-index: -2;
+          text-align: center;
         }
       }
       .study-table:nth-child(2n) {

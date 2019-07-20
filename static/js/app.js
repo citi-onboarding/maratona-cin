@@ -353,6 +353,21 @@ $('.carousel-fame').slick({
   nextArrow: '<a class="next arrow fa fa-angle-right"></a>',
 });
 
+[...gel('.famous-container').parentElement.childNodes].forEach(slide => {
+  if (slide.hasChildNodes() && slide.className.indexOf('cloned') === -1) {
+    [...slide.childNodes].forEach(famous => {
+      if (famous.className === 'famous') {
+        let img = famous.querySelector('img');
+        setTimeout(() => {
+          if (img) {
+            img.className = img.clientHeight >= img.clientWidth ? 'portrait' : 'landscape';
+          };
+        }, 500);
+      };
+    });
+  };
+});
+
 // =================================////=====================================//
 // Paretners Section
 $('.carousel-partners').slick({

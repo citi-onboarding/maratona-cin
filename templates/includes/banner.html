@@ -1,8 +1,14 @@
 {% load static %}
 <section class="banner">
   <div id="icons">
-    <img src="media/facebook-banner.svg" alt ="Facebook" id="social-icon">
-    <img src="media/instagram-banner.svg" alt ="Instagram" id="social-icon">
+    {% for i in info %}
+    <a href="{{ i.facebook }}" target="_blank">
+      <img src="media/facebook-banner.svg" alt="Facebook" id="social-icon">
+    </a>
+    <a href="{{ i.instagram }}" target="_blank">
+      <img src="media/instagram-banner.svg" alt="Instagram" id="social-icon">
+    </a>
+    {% endfor %}
   </div>
   <div id="image-container">
     <img src="media/logo-small.svg" alt="logo" id="logo">
