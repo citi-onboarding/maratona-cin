@@ -12,12 +12,14 @@
     .carousel-wrapper {
       @include flex(center, center, column);
       .carousel-testimonials {
+        max-width: 100% !important;
         .message-container {
           align-items: flex-end;
           display: flex;
           flex-direction: column;
           margin: 30px auto -20px auto;
           .message {
+            word-break: break-all;
             width: 80% !important;
             @include border-radius(30px);
             height: 95px;
@@ -75,15 +77,18 @@
 }
 
 @media screen and (max-width: 1025px) {
-  #testimonials-news {
+  .testimonials-news {
     flex-direction: column;
     .testimonials{
       width: 80%;
     }
+    .news {
+      width: 80% !important;
+    }
   }
 }
 @media screen and (max-width: 900px) {
-  #testimonials-news {
+  .testimonials-news {
     .testimonials{
       width: 100%;
       .carousel-testimonials {
@@ -95,6 +100,9 @@
           }
         }
       }
+    }
+    .news {
+      width: 100% !important;
     }
   }
 }

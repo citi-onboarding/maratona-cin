@@ -39,28 +39,31 @@
             width: 100% !important;
           }
         }
-        .text-container {
-          text-align: center;
-          margin-top: 15px;
-          * {
-            padding: 0;
-            margin: 5px 0 5px 0;
-            color: $blue;
-          }
-          .name {
-            font-size: 1.2rem; 
-          }
-        }
-        .description-container {
+        .text-wrapper {
           max-width: 100%;
-          .description {
-            word-wrap: break-word;
-            padding: 0;
-            margin: 5px 0 5px 0;
-            color: $blue;
-            text-align: left;
-            font-size: 0.8rem;
-            // max-width: 100%;
+          .text-container {
+            text-align: center;
+            margin-top: 15px;
+            * {
+              padding: 0;
+              margin: 5px 0 5px 0;
+              color: $blue;
+            }
+            .name {
+              font-size: 1.2rem; 
+            }
+          }
+          .description-container {
+            max-width: 100%;
+            .description {
+              word-wrap: break-word;
+              padding: 0;
+              margin: 5px 0 5px 0;
+              color: $blue;
+              text-align: left;
+              font-size: 0.8rem;
+              max-width: 100%;
+            }
           }
         }
       }
@@ -85,13 +88,28 @@
         flex-direction: column;
         .famous {
           display: flex;
-          max-height: 150px !important;
+          justify-content: space-around;
           align-items: center;
+          flex-direction: row;
+          max-height: 150px !important;
           max-width: 100%;
-          img {
-            margin-left: 10px;
-            margin-right: 10px;
-            max-width: 100px;
+          min-width: 60%;
+          margin: 10px 0;
+          .image-container {
+            width: 100px;
+            height: 100px;
+            img {
+              margin: auto;
+            }
+            .landscape {
+              height: 100% !important;
+            }
+            .portrait {
+              width: 100% !important;
+            }
+          }
+          .description {
+            display: none;
           }
         }
         .famous:nth-child(2n) {
@@ -109,7 +127,7 @@
   .famous-container {
     .famous {
       img {
-        width: 30%;
+        // width: 30%;
       }
       .text-container {
         p {

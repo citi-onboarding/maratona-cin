@@ -4,35 +4,17 @@
   <h1 class="study-title">Ficou interessado?</h1> 
   <h2 class="study-subtitle">Aqui vão alguns materiais de estudo:</h2>
   <div class="link-wrapper">
+    {% for slide in links %}
     <div class="study-container">
+      {% for link in slide %}
       <div class="study-table">
         <div class="image-container"></div>
         <div class="text-container">
-          <h2>Curso de React</h2>
+          <a href="{{ link.link }}" target="_blank"><h4>{{ link.title }}</h4></a>
         </div>
       </div>
-      <div class="study-table">
-        <div class="image-container"></div>
-        <div class="text-container"></div>
-      </div>
-      <div class="study-table">
-        <div class="image-container"></div>
-        <div class="text-container"></div>
-      </div>
+      {% endfor %}
     </div>
-    <div class = "study-container">
-      <div class = "study-table">
-        <div class="image-container"></div>
-        <div class="text-container"></div>
-      </div>
-      <div class = "study-table">
-        <div class="image-container"></div>
-        <div class="text-container"></div>
-      </div>
-      <div class = "study-table">
-        <div class="image-container"></div>
-        <div class="text-container"></div>
-      </div>  
-    </div>
+    {% endfor %} 
   </div>
 </section>

@@ -281,7 +281,7 @@ const invert = subj => {
 let prevSlide;
 let firstClone = false;
 let j = 0;
-[...gel('.message-container').parentElement.childNodes].forEach(each => {
+[...gel('.carousel-testimonials').querySelector('.slick-list').querySelector('.slick-track').childNodes].forEach(each => {
   if (each.className.indexOf('cloned') !== -1 && prevSlide === 'real') {
     firstClone = true;
   }
@@ -333,10 +333,10 @@ const logoUrls = {
 [...gel('.new-container').parentElement.childNodes].map(slide => {
   [...slide.childNodes].map(news => {
     if (news.href) {
-      let siteName = news.href.split('/')[2];
-      let siteHome = news.href.split('/').slice(0, 3).join('/');
+      const siteName = news.href.split('/')[2];
+      const siteHome = news.href.split('/').slice(0, 3).join('/');
       if (siteName in logoUrls) {
-        news.querySelector('img').src = logoUrls[siteName];
+          news.querySelector('img').src = logoUrls[siteName];
       } else news.querySelector('img').src = `${siteHome}/favicon.ico`;
     }
   })

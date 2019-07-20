@@ -32,16 +32,33 @@
           border-radius: 50%;
         }
         .text-container {
-          min-width: 80% !important; 
+          @include flex(cc);
+          font-family: "Nexa Bold", sans-serif;
+          text-decoration: none;
+          width: 80% !important; 
           height: 70px;
           background: $red;
           border-radius: 50px;
           z-index: -2;
-          text-align: center;
+          a {
+            color: black !important;
+            text-decoration: none !important;
+          }
+          h4 {
+            margin: 0 0 0 130px;
+            width: 50%;
+          }
         }
       }
       .study-table:nth-child(2n) {
         transform: scaleX(-1);
+        .text-container {
+          transform: scaleX(-1);
+          h4 {
+            margin: 0 0 0 50px;
+            width: 50%;
+          }
+        }
       }
     }
   }
@@ -55,6 +72,9 @@
     }
     .study-container:nth-child(2) {
       transform: scaleX(-1);
+      .text-container {
+        transform: scaleX(-1);
+      }
     }
   }
 }

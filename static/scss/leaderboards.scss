@@ -1,20 +1,19 @@
+@import './refs.scss';
+
 .leaderboards {
   width: 80%;
   max-width: 80%;
   margin: auto;
-
   h1 {
     color: $red;
     font-size: 2.3rem;
     font-family: "Nexa Bold", sans-serif;
   }
-
   h2 {
     color: $red;
     font-size: 1.7rem;
     font-family: "Nexa Bold", sans-serif;
   }
-
   h3{
     @include flex(center, center);
     color: $red;
@@ -24,52 +23,34 @@
     vertical-align: center;
     margin-left: -25px;
   }
-
   #medal{
     height: 150px;
-
   }
-
   .leaderboards-table{
     max-width:100%;
     display: flex;
-    flex-direction: row;
-
-
     .medal-title-container{
       display: flex;
-      flex-direction: row;
       width: 50%;
       margin-right: 30px;
-      
       .subtitle-cotainer{
         align-items: center;
         vertical-align: center;
       }
     }
-
     .leaderboards-type-title{
       color: white;
     }
-    
-    .leaderboards-national{
+    .leaderboards-wrapper{
       display: flex;
-      flex-direction: row;
-
-    }
-
-    .leaderboards-international{
-      display: flex;
-      flex-direction: row;
-
+      flex-wrap: wrap;
     }
   }
 
   @media only screen and (max-width: 1024px) {
     .leaderboards-table{
       flex-direction: column;
-
-      .leaderboards-national, .leaderboards-international{
+      .leaderboards-wrapper{
         flex-direction: column;
       }
     }

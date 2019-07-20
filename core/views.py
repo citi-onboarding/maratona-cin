@@ -102,6 +102,21 @@ def index(request):
     else:
       year_pack[year] = [event]
 
+  # Organize news by groups of 3
+  n = 0
+  link_list = list(Link.objects.all())
+  link_sublist = list()
+  slide = []
+  for link in link_list:
+    if (n < 2):
+      slide.append(link)
+      n += 1
+    else:
+      slide.append(link)
+      link_sublist.append(slide)
+      slide = []
+      n = 0
+
 
 
   return render(request, 'index.html', {
@@ -116,6 +131,6 @@ def index(request):
     'testimonials': Testimonial.objects.all(),
     'events': year_pack,
     'partners': Partner.objects.all(),
-    'links': Link.objects.all(),
+    'links': link_sublist,
     'info': Information.objects.all(),
     })

@@ -16,14 +16,17 @@
   }
   .carousel-partners {
     @include flex(center, center);
-    width: 60%;
+    min-width: 60%; 
+    max-width: 60%;
     height: 50%;
     .slick-list {
       height: 90%;
+      width: 100%;
       .slick-track {
         @include flex(center, center);
         height: 90%;
         overflow: visible;
+        width: 100%;
         .partner-container {
           @include flex(center, flex-end, column);
           transition: all .5s ease;
@@ -33,7 +36,6 @@
             @include border-radius(50%);
             margin: auto;
             img {
-              overflow: visible;
               margin: 0;
             }
             .landscape {

@@ -15,11 +15,17 @@ $dark-red: #C43227;
 }
 
 @mixin flex($justify: flex-start, $align: stretch, $direction: row, $wrap: nowrap) {
-  display: flex;
-  justify-content: $justify;
-  align-items: $align;
-  flex-direction: $direction;
-  flex-wrap: $wrap;
+  @if ($justify == cc) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  } @else {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+  }
 }
 
 @mixin box-shadow($args...) {
