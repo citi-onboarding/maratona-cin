@@ -30,6 +30,7 @@
           height: 100px;
           background: $yellow; 
           border-radius: 50%;
+          z-index: 1;
         }
         .text-container {
           @include flex(cc);
@@ -39,14 +40,13 @@
           height: 70px;
           background: $red;
           border-radius: 50px;
-          z-index: -2;
           a {
             color: black !important;
             text-decoration: none !important;
-          }
-          h4 {
-            margin: 0 0 0 130px;
-            width: 50%;
+            h4 {
+              margin: 0 0 0 130px;
+              width: 50%;
+            }
           }
         }
       }

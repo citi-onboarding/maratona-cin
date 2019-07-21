@@ -66,7 +66,7 @@ $('.carousel-team').slick({
 });
 
 [...gel('.participant-container').parentElement.childNodes].forEach(slide => {
-  if (slide.hasChildNodes() && slide.className.indexOf('cloned') === -1) {
+  if (slide.hasChildNodes()) {
     [...slide.childNodes].forEach(participant => {
       if (participant.className === 'participant') {
         let img = participant.querySelector('img');
@@ -328,6 +328,7 @@ const logoUrls = {
   'br.pinsterest.com': 'http://www.stickpng.com/assets/images/580b57fcd9996e24bc43c52e.png',
   'www.ufpe.br': 'https://www3.ufpe.br/ufpenova/images/brasao/logoufpe.jpg',
   'www2.cin.ufpe.br': 'https://www2.cin.ufpe.br/site/uploads/arquivos/18/20120530161145_marca_cin_2012_producao.jpg',
+  'veja.abril.com.br':'https://seeklogo.com/images/E/Editora_Abril-logo-D63B707335-seeklogo.com.png',
 };
 
 [...gel('.new-container').parentElement.childNodes].map(slide => {
@@ -354,7 +355,7 @@ $('.carousel-fame').slick({
 });
 
 [...gel('.famous-container').parentElement.childNodes].forEach(slide => {
-  if (slide.hasChildNodes() && slide.className.indexOf('cloned') === -1) {
+  if (slide.hasChildNodes()) {
     [...slide.childNodes].forEach(famous => {
       if (famous.className === 'famous') {
         let img = famous.querySelector('img');
@@ -399,3 +400,6 @@ $('.carousel-partners').slick({
   let img = slide.querySelector('.image-container').querySelector('img');
   img.clientHeight >= img.clientWidth ? img.className += ' portrait' : img.className += ' landscape'
 })
+
+// =================================////=====================================//
+// Study Section
