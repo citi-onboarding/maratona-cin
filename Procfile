@@ -1,1 +1,1 @@
-web: gunicorn maratonacin-staging.wsgi
+web: gunicorn maratonacin.wsgi
