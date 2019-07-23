@@ -27,10 +27,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'core.apps.CoreConfig',
     'sass_processor',
     'mathfilters',
     'storages',
+    'core.apps.CoreConfig',
 ]
 
 DROPBOX_ACCESS_TOKEN = 'kNWO_FdCBNAAAAAAAAAAEM_uk1050VZIrsZ6dbZ5RNFvSP18AdWX7c2CjzeEfMOY'
@@ -46,7 +46,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'maratonacin-staging.urls'
+ROOT_URLCONF = 'maratonacin.urls'
 
 TEMPLATES = [
     {
@@ -64,7 +64,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'maratonacin-staging.wsgi.application'
+WSGI_APPLICATION = 'maratonacin.wsgi.application'
 
 
 # Database
