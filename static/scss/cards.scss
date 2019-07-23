@@ -82,6 +82,8 @@
 
 @media screen and (max-width: 1025px) {
   .cards {
+    margin-top: 0;
+    padding-top: 0 !important;
     width: 100%;
     .text-container {
       text-align: center;

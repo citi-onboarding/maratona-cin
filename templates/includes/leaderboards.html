@@ -5,35 +5,31 @@
     <div class="national-table">
       <h2 class="title-container">Nacional</h2>
       {% for new_container in nacional_list %}
-
       <div class="leaderboards-wrapper">
         {% for medal in new_container %}
-
         <div class="medal-title-container">
           <img src="{{ medal.getImage }}" alt="World Medal" id="medal">
-          <h3 class="subtitle-container">{{ medal.title_name }}</h3>
+          <div class="text-container">
+            <h3 class="subtitle-container">{{ medal.title_name }}</h3>
+          </div>
         </div>
-
         {% endfor %}
       </div>
-
       {% endfor %}
     </div>
     <div class="international-table">
       <h2 class="title-container">Internacional</h2>
       {% for new_container in internacional_list %}
-
       <div class="leaderboards-wrapper">
-
         {% for medal in new_container %}
         <div class="medal-title-container">
           <img src="{{ medal.getImage }}" alt="International Medal" id="medal">
-          <h3 class="subtitle-container">{{ medal.title_name }}</h3>
+          <div class="text-container">
+            <h3 class="subtitle-container">{{ medal.title_name }}</h3>
+          </div>
         </div>
-
         {% endfor %}
       </div>
-
       {% endfor %}
     </div>
   </div>

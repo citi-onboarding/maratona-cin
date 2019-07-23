@@ -39,20 +39,24 @@
             width: 100% !important;
           }
         }
+        .text-container {
+          max-width: 120%;
+          text-align: center;
+          margin-top: 15px;
+          * {
+            padding: 0;
+            margin: 5px 0 5px 0;
+            color: $blue;
+          }
+          .name {
+            font-size: 1.2rem; 
+          }
+          .email {
+            font-size: .8rem; 
+          }
+        }
         .text-wrapper {
           max-width: 100%;
-          .text-container {
-            text-align: center;
-            margin-top: 15px;
-            * {
-              padding: 0;
-              margin: 5px 0 5px 0;
-              color: $blue;
-            }
-            .name {
-              font-size: 1.2rem; 
-            }
-          }
           .description-container {
             max-width: 100%;
             .description {

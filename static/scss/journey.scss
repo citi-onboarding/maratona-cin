@@ -92,21 +92,23 @@
             width: 100%;
           }
           .text-container {
-            width: 80%;
+            width: 90%;
             margin: auto;
             h2 {
               font-family: "Nexa Light", sans-serif;
+              font-size: 1.2rem;
               color: $red;
               margin: 8px 0 0 0;
             }
             h3 {
               font-family: "Nexa Bold", sans-serif;
-              font-size: 1.6rem;
+              font-size: 1.4rem;
               color: $red;
               margin: 8px 0 0 0;
             }
             p {
               font-family: "Avenir", sans-serif;
+              font-size: 1rem;
             }
           }
         }

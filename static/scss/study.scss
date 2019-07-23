@@ -28,34 +28,38 @@
           position: absolute;
           width: 100px;
           height: 100px;
-          background: $yellow; 
+          background: white; 
           border-radius: 50%;
-          z-index: 1;
-        }
-        .text-container {
           @include flex(cc);
-          font-family: "Nexa Bold", sans-serif;
-          text-decoration: none;
+          overflow: hidden;
+          img {
+            max-width: 90% !important;
+            max-height: 90% !important;
+          }
+        }
+        a {
+          color: black !important;
+          text-decoration: none !important;
           width: 80% !important; 
           height: 70px;
-          background: $red;
-          border-radius: 50px;
-          a {
-            color: black !important;
-            text-decoration: none !important;
+          .text-container {
+            @include flex(cc);
+            font-family: "Nexa Bold", sans-serif;
+            text-decoration: none;
+            height: 70px;
+            border-radius: 50px;
             h4 {
-              margin: 0 0 0 130px;
+              margin: 0 0 0 110px;
               width: 50%;
             }
           }
         }
       }
       .study-table:nth-child(2n) {
-        transform: scaleX(-1);
+        justify-content: flex-end;
         .text-container {
-          transform: scaleX(-1);
           h4 {
-            margin: 0 0 0 50px;
+            margin: 0 40px 0 0;
             width: 50%;
           }
         }
@@ -64,16 +68,85 @@
   }
 }
 
+.study-container:nth-child(n) {
+
+  .study-table:nth-child(n) {
+    .image-container {
+      border: 2px solid $yellow;
+    }
+    .text-container {
+      background-color: $red;
+    }
+  }
+  .study-table:nth-child(2n) {
+    .image-container {
+      border: 2px solid $blue;
+    }
+    .text-container {
+      background-color: $yellow;
+    }    
+  }
+  .study-table:nth-child(3n) {
+    .image-container {
+      border: 2px solid $red;
+    }
+    .text-container {
+      background-color: $blue;
+    }
+  }
+}
+.study-container:nth-child(2n) {
+  .study-table:nth-child(n) {
+    .image-container {
+      border: 2px solid $red;
+    }
+    .text-container {
+      background-color: $blue;
+    }
+  }
+  .study-table:nth-child(2n) {
+    .image-container {
+      border: 2px solid $yellow;
+    }
+    .text-container {
+      background-color: $red;
+    }    
+  }
+  .study-table:nth-child(3n) {
+    .image-container {
+      border: 2px solid $blue;
+    }
+    .text-container {
+      background-color: $yellow;
+    }
+  }
+}
+
+
 @media screen and (max-width: 1025px) {
   .link-wrapper {
     flex-direction: column !important;
     .study-container {
       width: 100% !important;
     }
-    .study-container:nth-child(2) {
-      transform: scaleX(-1);
-      .text-container {
-        transform: scaleX(-1);
+    .study-container:nth-child(2n) {
+      .study-table:nth-child(2n) {
+        justify-content: flex-start !important;
+        .text-container {
+          h4 {
+            margin: 0 0 0 80px;
+            width: 50%;
+          }
+        }
+      }
+      .study-table:nth-child(2n + 1) {
+        justify-content: flex-end !important;
+        .text-container {
+          h4 {
+            margin: 0 80px 0 0;
+            width: 50%;
+          }
+        }
       }
     }
   }

@@ -16,8 +16,7 @@
   }
   .carousel-partners {
     @include flex(center, center);
-    min-width: 60%; 
-    max-width: 60%;
+    width: 60%;
     height: 50%;
     .slick-list {
       height: 90%;
@@ -81,7 +80,7 @@
     flex-direction: column;
     height: 100vh !important;
     .carousel-partners {
-      // height: 100%;
+      width: 100% !important;
       .slick-list {
         height: 100%;
         .slick-track {
@@ -92,13 +91,10 @@
             .image-container {
               @include flex(center, center);
               display: block;
-              // height: auto;
-              // width: auto;
               img {
                 margin: auto;
               }
               .plus {
-                // bottom: 0;  
                 margin: 0 0 0 90%;
               }
             }
@@ -111,7 +107,7 @@
 
 @media screen and (max-width: 900px) {
   .carousel-partners {
-    width: 80% !important;
+    width: 100% !important;
     .portrait {
       height: 80% !important;
     }

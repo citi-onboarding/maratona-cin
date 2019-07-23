@@ -19,7 +19,6 @@
           flex-direction: column;
           margin: 30px auto -20px auto;
           .message {
-            word-break: break-all;
             width: 80% !important;
             @include border-radius(30px);
             height: 95px;

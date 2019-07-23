@@ -399,7 +399,23 @@ $('.carousel-partners').slick({
 [...gel('.partner-container').parentElement.childNodes].forEach(slide => {
   let img = slide.querySelector('.image-container').querySelector('img');
   img.clientHeight >= img.clientWidth ? img.className += ' portrait' : img.className += ' landscape'
-})
+});
 
 // =================================////=====================================//
 // Study Section
+
+[...gel('.link-wrapper').childNodes].forEach(container => {
+  [...container.childNodes].forEach(table => {
+    if (table.className && table.className.indexOf('study-table') !== -1) {
+      const img = table.querySelector('.image-container').querySelector('img');
+      const link = table.querySelector('a').href;
+      if (link) {
+        const siteName = link.split('/')[2];
+        const siteHome = link.split('/').slice(0, 3).join('/');
+        if (siteName in logoUrls) {
+            img.src = logoUrls[siteName];
+        } else img.src = `${siteHome}/favicon.ico`;
+      }
+    }
+  })
+})

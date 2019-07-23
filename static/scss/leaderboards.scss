@@ -14,6 +14,10 @@
     font-size: 1.7rem;
     font-family: "Nexa Bold", sans-serif;
   }
+  .text-container {
+    width: 60%;
+    @include flex(flex-start, center);
+  }
   h3{
     @include flex(center, center);
     color: $red;
@@ -24,14 +28,14 @@
     margin-left: -25px;
   }
   #medal{
-    height: 150px;
+    height: 130px;
   }
   .leaderboards-table{
     max-width:100%;
     display: flex;
     .medal-title-container{
       display: flex;
-      width: 50%;
+      width: 100%;
       margin-right: 30px;
       .subtitle-cotainer{
         align-items: center;
@@ -52,6 +56,9 @@
       flex-direction: column;
       .leaderboards-wrapper{
         flex-direction: column;
+        #medal {
+          margin-left: -30px;
+        }
       }
     }
   }
