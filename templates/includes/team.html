@@ -1,0 +1,25 @@
+{% load static %}
+<section class="team">
+  <div class="title-container">
+    <h1>Time Atual</h1>
+  </div>
+  <div class="carousel-team">
+    {% for slide in object_list %}
+    <div class="participant-container">
+      {% for participant in slide %}
+      <div class="participant" id="{{ participant.id }}">
+        <div class="image-container">
+          <img src="{{ participant.image.url }}" alt="participant"> 
+        </div>
+        <div class="text-container">
+          <p class="name">{{ participant.name }}</p>
+          <p class="email">{{ participant.email }}</p>
+          <p><a href="{{ participant.github }}" target="_blank">Github</a></p>
+          <p><a href="{{ participant.codeforces }}" target="_blank">CodeForces</a></p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endfor %}
+  </div>
+</section>

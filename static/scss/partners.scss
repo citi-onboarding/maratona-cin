@@ -1,0 +1,115 @@
+.partners { 
+  display: flex;
+  align-items: center;
+  height: 50vh !important;
+  width: 90%;
+  margin: auto;
+  .text-container {
+    h1 {
+      color: $red;
+      font-family: "Nexa Bold", sans-serif;
+      font-size: 2.3rem;
+    }
+    p {
+      font-family: "Avenir", sans-serif;
+    }
+  }
+  .carousel-partners {
+    @include flex(center, center);
+    width: 60%;
+    height: 50%;
+    .slick-list {
+      height: 90%;
+      width: 100%;
+      .slick-track {
+        @include flex(center, center);
+        height: 90%;
+        overflow: visible;
+        width: 100%;
+        .partner-container {
+          @include flex(center, flex-end, column);
+          transition: all .5s ease;
+          overflow: hidden;
+          .image-container {
+            @include flex(center, flex-end);
+            @include border-radius(50%);
+            margin: auto;
+            img {
+              margin: 0;
+            }
+            .landscape {
+              width: 80% !important;
+            }
+            .portrait {
+              width: 60% !important;
+            }
+          }
+          .plus {
+            @include border-radius(50%);
+            background-color: $yellow;
+            height: 15px;
+            width: 15px;
+            padding: 4px;
+            cursor: pointer;
+            text-align: center;
+            margin-left: -15%;
+            i {
+              color: white;
+              font-size: 1rem;
+            }
+          }
+        }
+        .slick-center {
+          -webkit-transform: scale(1.2);
+          -moz-transform: scale(1.2);
+          transform: scale(1.2);
+        }
+      }
+    }
+    .arrow {
+      color: $red;
+      margin: 10px;
+      cursor: pointer;
+      font-size: 5rem;
+    }
+  }
+}
+
+@media screen and (max-width: 1025px) {
+  .partners {
+    flex-direction: column;
+    height: 100vh !important;
+    .carousel-partners {
+      width: 100% !important;
+      .slick-list {
+        height: 100%;
+        .slick-track {
+          height: 100%;
+          .partner-container {
+            @include flex(center, center, column);
+            height: 100%;
+            .image-container {
+              @include flex(center, center);
+              display: block;
+              img {
+                margin: auto;
+              }
+              .plus {
+                margin: 0 0 0 90%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .carousel-partners {
+    width: 100% !important;
+    .portrait {
+      height: 80% !important;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+<section class="testimonials">
+  <h1>Depoimentos</h1>
+  <div class="carousel-wrapper">
+    <div class="carousel-testimonials">
+      {% for testimonial in testimonials %}
+      <div class="message-container">
+          <div class="message {{ testimonial.message_color }}">
+            <p class="content">"{{ testimonial.content }}"</p>
+            <p class="author">{{ testimonial.student }}, estudante de {{ testimonial.program }}</p>
+          </div>
+          <svg height="45" width="115">
+            <polygon class="triangle" points="50,-5 100,-5 110,40" />
+          </svg>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

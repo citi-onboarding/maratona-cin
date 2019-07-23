@@ -1,0 +1,34 @@
+<section class="journey">
+  <div class="title-container">
+    <h1>Nossa Jornada</h1>
+  </div>
+  <div class="journey-container">
+    <div class="info">
+      {% for year, event_array in events.items %}
+      <div class="year-container">
+        <div class="event-container" id="{{ year }}">
+          {% for event in event_array %}
+          <div class="event-dot">
+            <img src="{{ event.image.url }}" alt="dot-image">
+          </div>
+          {% endfor %}
+        </div>
+        <div class="year">{{ year }}</div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="carousel-journey">
+      {% for year, event_array in events.items %}
+      {% for event in event_array %}
+      <div class="event {{ year }}">
+        <img src="{{ event.image.url }}" alt="event-image">
+        <div class="text-container">
+          <h2>Maratona {{ event.semester }}</h2>
+          <h3>{{ event.title }}</h3>
+          <p>{{ event.content }}</p>
+        </div>
+      </div>
+      {% endfor %}
+      {% endfor %}
+    </div>
+</section>

@@ -1,0 +1,143 @@
+.fame {
+  width: 90%;
+  margin: auto;
+  .title-container {
+    width: 80%;
+    margin: auto;
+    h1 {
+      color: $red;
+      font-size: 2.3rem;
+      font-family: "Nexa Bold", sans-serif;
+    }
+  }
+  .carousel-fame {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    .famous-container {
+      display: flex;
+      .famous {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto 0 auto;
+        max-width: 20%;
+        font-family: "Nexa Bold", sans-serif;
+        .image-container {
+          width: 150px;
+          height: 150px;
+          @include border-radius(50%);
+          overflow: hidden;
+          img {
+            margin: auto;
+          }
+          .landscape {
+            height: 100% !important;
+          }
+          .portrait {
+            width: 100% !important;
+          }
+        }
+        .text-container {
+          max-width: 120%;
+          text-align: center;
+          margin-top: 15px;
+          * {
+            padding: 0;
+            margin: 5px 0 5px 0;
+            color: $blue;
+          }
+          .name {
+            font-size: 1.2rem; 
+          }
+          .email {
+            font-size: .8rem; 
+          }
+        }
+        .text-wrapper {
+          max-width: 100%;
+          .description-container {
+            max-width: 100%;
+            .description {
+              word-wrap: break-word;
+              padding: 0;
+              margin: 5px 0 5px 0;
+              color: $blue;
+              text-align: left;
+              font-size: 0.8rem;
+              max-width: 100%;
+            }
+          }
+        }
+      }
+    }
+    .arrow {
+      color: $red;
+      margin: 10px;
+      cursor: pointer;
+      font-size: 5rem;
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .fame {
+    width: 90%;
+    .carousel-fame {
+      width: 100%;
+      .famous-container {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        .famous {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          flex-direction: row;
+          max-height: 150px !important;
+          max-width: 100%;
+          min-width: 60%;
+          margin: 10px 0;
+          .image-container {
+            width: 100px;
+            height: 100px;
+            img {
+              margin: auto;
+            }
+            .landscape {
+              height: 100% !important;
+            }
+            .portrait {
+              width: 100% !important;
+            }
+          }
+          .description {
+            display: none;
+          }
+        }
+        .famous:nth-child(2n) {
+          flex-direction: row-reverse;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .fame {
+    width: 100%;
+  }
+  .famous-container {
+    .famous {
+      img {
+        // width: 30%;
+      }
+      .text-container {
+        p {
+          font-size: 3vw;
+        }
+      }
+    }
+  }
+}

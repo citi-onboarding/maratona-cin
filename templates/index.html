@@ -1,0 +1,46 @@
+{% load sass_tags %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Maratona CIn</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick-theme.css" />
+  <link href="{% sass_src 'scss/main.scss' %}" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  {% block CONTENT %}
+  <header>
+    {% include "includes/banner.html" %}
+    {% include "includes/navbar.html" %}
+  </header>
+  {% include "includes/about.html" %}
+  {% include "includes/cards.html" %}
+  {% include "includes/team.html" %}
+  {% include "includes/schedule.html" %}
+  {% include "includes/leaderboards.html" %}
+  {% include "includes/journey.html" %}
+  <div class="testimonials-news">
+    {% include "includes/testimonials.html" %}
+    {% include "includes/news.html" %}
+  </div>
+  {% include "includes/fame.html" %}
+  {% include "includes/partners.html" %}
+  {% include "includes/study.html" %}
+  {% include "includes/footer.html" %}
+
+  {% endblock CONTENT %}
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script type="text/javascript" src="{% static 'js/slick-carousel/slick.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/app.js' %}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,124 @@
+.journey {
+  width: 90%;
+  margin: auto;
+  .title-container {
+    h1 {
+      color: $red;
+      font-size: 2.3rem;
+      font-family: "Nexa Bold", sans-serif;
+      margin-bottom: 0;
+    }
+  }
+  .journey-container {
+    @include flex(right, center, column);
+    margin: auto;
+    overflow: auto;
+    position: relative;
+    .info {
+      @include flex(flex-start, flex-end);
+      display: inline-flex;
+      height: 125px;
+      width: 100%;
+      left: 0;
+      .year-container {
+        .event-container {
+          @include flex(flex-start, flex-end);
+          .event-dot {
+            cursor: pointer;  
+            @include flex(center, center);
+            width: 50px;
+            height: 50px;
+            border: 3px solid $blue;
+            @include border-radius(50%);
+            transition: all .5s ease;
+            background-color: $blue;
+            overflow: hidden;
+            margin: 0 20px 0 20px;
+            img {
+              height: 100%;
+            }
+          }
+          .active {
+            width: 80px;
+            height: 80px;
+          }
+        }
+        .year {
+          @include flex(center, center);
+          font-size: 1.3rem;
+          font-family: "Nexa Bold", sans-serif;
+          color: white;
+          margin-top: 10px;
+          background-color: $blue;
+          height: 25px;
+        }
+      }
+      .year-container:nth-child(3n + 2) {
+        .event-container {
+          .event-dot {
+            border: 3px solid $yellow;
+            background-color: $yellow;
+          }
+        }
+        .year {
+          background-color: $yellow;
+
+        }
+      }
+      .year-container:nth-child(3n + 1) {
+        .event-container {
+          .event-dot {
+            border: 3px solid $red;
+            background-color: $red;
+          }
+        }
+        .year {
+          background-color: $red;
+        }
+      }
+    }
+  }
+  .carousel-journey {
+    width: 30%;
+    margin: 20px auto;
+    .slick-list {
+      .slick-track {
+        .event {
+          margin: auto 20px auto 20px;
+          border: 5px solid $red;
+          @include border-radius(40px);
+          overflow: hidden;
+          img {
+            width: 100%;
+          }
+          .text-container {
+            width: 90%;
+            margin: auto;
+            h2 {
+              font-family: "Nexa Light", sans-serif;
+              font-size: 1.2rem;
+              color: $red;
+              margin: 8px 0 0 0;
+            }
+            h3 {
+              font-family: "Nexa Bold", sans-serif;
+              font-size: 1.4rem;
+              color: $red;
+              margin: 8px 0 0 0;
+            }
+            p {
+              font-family: "Avenir", sans-serif;
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1025px) {
+  .carousel-journey {
+    width: 80% !important;
+  }
+}

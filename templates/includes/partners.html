@@ -1,0 +1,17 @@
+{% load static %}
+<section class="partners">
+  <div class="text-container">
+    <h1>Parceiros</h1>
+    <p>Texto dos parceiros Texto dos parceiros Texto dos parceiros Texto dos parceiros Texto dos parceiros Texto dos parceiros Texto dos parceiros Texto dos parceiros Texto dos parceiros Texto dos parceiros Texto dos parceiros Texto dos parceiros Texto dos parceiros Texto dos parceiros </p>
+  </div>
+  <div class="carousel-partners">
+    {% for partner in partners %}
+    <div class="partner-container">
+      <div class="image-container">
+        <img src="{{ partner.logo.url }}" alt="partnerX" class="partner">
+        <div class="plus"><i class="fa fa-plus"></i></div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>

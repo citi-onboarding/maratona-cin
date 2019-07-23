@@ -1,0 +1,20 @@
+<section class="news">
+  <div class="news-wrapper">
+    <h1>Notícias</h1>
+    <div class="carousel-news">
+      {% for new_container in new_list %}
+      <div class="new-container">
+        {% for new in new_container %}
+        <a class="new" href="{{ new.link }}" target="_blank">
+          <img src="https://image.flaticon.com/icons/png/512/21/21601.png" alt="news-symbol" onerror="this.onerror=null;this.src='https://image.flaticon.com/icons/png/512/21/21601.png'">
+          <div class="text-container">
+            <h2 class="new-title">{{ new.title }}</h2>
+            <h3 class="new-subtitle">{{ new.subtitle }}</h3>
+          </div>
+        </a>
+        {% endfor %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

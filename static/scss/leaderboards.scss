@@ -1,0 +1,65 @@
+@import './refs.scss';
+
+.leaderboards {
+  width: 80%;
+  max-width: 80%;
+  margin: auto;
+  h1 {
+    color: $red;
+    font-size: 2.3rem;
+    font-family: "Nexa Bold", sans-serif;
+  }
+  h2 {
+    color: $red;
+    font-size: 1.7rem;
+    font-family: "Nexa Bold", sans-serif;
+  }
+  .text-container {
+    width: 60%;
+    @include flex(flex-start, center);
+  }
+  h3{
+    @include flex(center, center);
+    color: $red;
+    font-size: 1.3rem;
+    font-family: "Nexa Bold", sans-serif;
+    text-align: center;
+    vertical-align: center;
+    margin-left: -25px;
+  }
+  #medal{
+    height: 130px;
+  }
+  .leaderboards-table{
+    max-width:100%;
+    display: flex;
+    .medal-title-container{
+      display: flex;
+      width: 100%;
+      margin-right: 30px;
+      .subtitle-cotainer{
+        align-items: center;
+        vertical-align: center;
+      }
+    }
+    .leaderboards-type-title{
+      color: white;
+    }
+    .leaderboards-wrapper{
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  @media only screen and (max-width: 1024px) {
+    .leaderboards-table{
+      flex-direction: column;
+      .leaderboards-wrapper{
+        flex-direction: column;
+        #medal {
+          margin-left: -30px;
+        }
+      }
+    }
+  }
+}

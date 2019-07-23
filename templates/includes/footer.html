@@ -1,0 +1,31 @@
+{% load static %}
+<section class="footer">
+  <div class ="logo-container">
+    <img src="media/logo-navbar.svg" alt="logo" id="navbar-logo">
+    <p>Todos os direitos reservados.</p>
+  </div>
+  <div class ="contact-container">
+    <h2 class="footer-title">Contato:</h2>
+    <p>maratonacin@gmail.com<a><img src="media/message.svg" alt="Ícone de uma mensagem" id="contact-icon"></a></p>
+    <p>Avenida Jornalista Aníbal Fernandes,</p>
+    <p>Cidade Universitária, Recife, PE.</p>
+  </div>
+  <div class ="social-container">
+    <div class = "social-medias">
+      {% for i in info %}
+        <a href="{{ i.facebook }}" target="_blank">
+          <img src="media/facebook-icon.svg" alt="Facebook icon" class="social-icon">
+        </a>
+        <a href="{{ i.instagram }}" target="_blank">
+        <img src="media/instagram-icon.svg" alt="Instagram icon" class="social-icon">
+      </a>
+      <a href="" target="_blank">
+        <img src="media/whatsapp-icon.svg" alt="Ícone de uma mensagem" class="social-icon">
+      </a>
+      {% endfor %}
+    </div>
+    <div class = "signature">
+      <p>Made with <a><img src="media/brackets.svg" alt="Brackets" class="signature-icon"></a>and <a><img src="media/heart.svg" alt="Heart" class="signature-icon"></a></p>
+    </div>
+  </div>
+</section>
