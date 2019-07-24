@@ -7,7 +7,10 @@ class Information(models.Model):
   facebook = models.CharField(max_length=50)
   instagram = models.CharField(max_length=50)
   email = models.CharField(max_length=50)
-  verbose_name_plural = 'Information'
+
+  class Meta:
+    verbose_name = 'Informação'
+    verbose_name_plural = 'Informações'
 
   def publish(self):
     self.published_date = timezone.now()
@@ -19,12 +22,16 @@ class Information(models.Model):
 class Participant(models.Model):
   author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
   name = models.CharField(max_length=50)
-  image = models.FileField(upload_to='participants')
+  image = models.FileField(upload_to='time/')
   email = models.CharField(max_length=200)
   github = models.CharField(max_length=2000)
   codeforces = models.CharField(max_length=2000)
   created_date = models.DateTimeField(default=timezone.now)
   published_date = models.DateTimeField(blank=True, null=True)
+  
+  class Meta:
+    verbose_name = 'Participante'
+    verbose_name_plural = 'Participantes'
 
   def publish(self):
     self.published_date = timezone.now()
@@ -38,6 +45,10 @@ class Schedule(models.Model):
   activity = models.CharField(max_length=150)
   activity_date = models.DateTimeField(blank = False, default=timezone.now)
   published_date = models.DateTimeField(blank=True, null=True)
+
+  class Meta:
+    verbose_name = 'Ativitade'
+    verbose_name_plural = 'Atividades'
 
   def publish(self):
     self.published_date = timezone.now()
@@ -54,6 +65,9 @@ class Testimonial(models.Model):
   created_date = models.DateTimeField(default=timezone.now)
   published_date = models.DateTimeField(blank=True, null=True)
   
+  class Meta:
+    verbose_name = 'Depoimento'
+    verbose_name_plural = 'Depoimentos'
 
   def publish(self):
     self.published_date = timezone.now()
@@ -68,7 +82,10 @@ class New(models.Model):
   subtitle = models.CharField(max_length=50)
   link = models.CharField(max_length=100)
   published_date = models.DateTimeField(blank=True, null=True)
-  
+
+  class Meta:
+    verbose_name = 'Notícia'
+    verbose_name_plural = 'Notícias'
 
   def publish(self):
     self.published_date = timezone.now()
@@ -79,7 +96,7 @@ class New(models.Model):
 
 class Famous(models.Model):
   author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
-  image = models.FileField(upload_to='famous')
+  image = models.FileField(upload_to='hall-da-fama/')
   name = models.CharField(max_length=50)
   email = models.CharField(max_length=200)
   github = models.CharField(max_length=200)
@@ -89,7 +106,8 @@ class Famous(models.Model):
   published_date = models.DateTimeField(blank=True, null=True)
 
   class Meta:
-    verbose_name_plural = 'Famous'
+    verbose_name = 'Hall da Fama'
+    verbose_name_plural = 'Famoso'
 
   def publish(self):
     self.published_date = timezone.now()
@@ -116,6 +134,10 @@ class Medal(models.Model):
   position = models.CharField(max_length=50, choices=POSITION_CHOICES)
   title_name = models.CharField(max_length=150)
   published_date = models.DateTimeField(blank=True, null=True)
+
+  class Meta:
+    verbose_name = 'Medalha'
+    verbose_name_plural = 'Medalhas'
 
   def getImage(self):
     if self.type == 'Nacional' and self.position == 'Primeiro Lugar':
@@ -144,11 +166,15 @@ class Medal(models.Model):
 
 class Event(models.Model):
   author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
-  image = models.FileField(upload_to='events')
+  image = models.FileField(upload_to='eventos/')
   semester = models.CharField(max_length=50)
   title = models.CharField(max_length=50)
   content = models.CharField(max_length=50)
   published_date = models.DateTimeField(blank=True, null=True)
+
+  class Meta:
+    verbose_name = 'Evento'
+    verbose_name_plural = 'Eventos'
 
   def publish(self):
     self.published_date = timezone.now()
@@ -160,7 +186,11 @@ class Event(models.Model):
 class Partner(models.Model):
   author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
   name = models.CharField(max_length=50)
-  logo = models.FileField(upload_to='partners')
+  logo = models.FileField(upload_to='parceiros/')
+
+  class Meta:
+    verbose_name = 'Parceiro'
+    verbose_name_plural = 'Parceiros'
 
   def publish(self):
     self.published_date = timezone.now()
@@ -173,6 +203,10 @@ class Link(models.Model):
   author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
   title = models.CharField(max_length= 50)
   link = models.CharField(max_length=100)
+
+  class Meta:
+    verbose_name = 'Link'
+    verbose_name_plural = 'Links'
 
   def publish(self):
     self.published_date = timezone.now()
