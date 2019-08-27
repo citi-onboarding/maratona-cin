@@ -185,6 +185,23 @@ let titleBlue = false;
   }
 });
 
+$('.schedule-detail-carousel').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  dots: false,
+  arrows: false,
+  fade: true,
+  swipe: false,
+});
+
+const handleScheduleClick = (target) => {
+  gel('.schedule-detail-carousel').querySelectorAll('.slick-slide').forEach((slide, i) => {
+    if (slide.getAttribute('data-slide') === target.getAttribute('data-slide')) {
+      $('.schedule-detail-carousel').slick('slickGoTo', i);
+    }
+  })
+}
+
 // =================================////=====================================//
 // Journey section
 let lastestEvent;
@@ -219,13 +236,13 @@ let dataSlideCounter = 1;
     let yearElement = yearContainer.querySelector('.year');
     let yearColor = window.getComputedStyle(yearElement, null).getPropertyValue("background-color");
 
-    [...document.querySelectorAll('.event')].forEach(event => {
+    [...document.querySelectorAll('.event')].forEach((event) => {
       if (event.className.indexOf(year) !== -1) {
         event.style.borderColor = yearColor;
       }
     });
 
-    [...yearContainer.querySelector('.event-container').childNodes].forEach(event => {
+    [...yearContainer.querySelector('.event-container').childNodes].forEach((event) => {
       if (event.className && event.className.indexOf('event-dot') !== -1) {
         event.setAttribute('data-slide', dataSlideCounter);
         dataSlideCounter++;

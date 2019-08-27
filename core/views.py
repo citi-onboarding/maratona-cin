@@ -15,7 +15,7 @@ from .models import Partner
 def index(request):
   # Organize participants by id
   i = 0
-  object_list = list(Participant.objects.all().order_by('id'))
+  object_list = list(Participant.objects.all().order_by('name'))
   object_sublist = list()
   slide = []
   for obj in object_list:
@@ -78,7 +78,7 @@ def index(request):
   internacional_sublist.append(slide_internacional)
 
   m = 0
-  famous_list = list(Famous.objects.all().order_by('id'))
+  famous_list = list(Famous.objects.all().order_by('name'))
   famous_sublist = list()
   slide = []
   for famous in famous_list:
@@ -124,7 +124,6 @@ def index(request):
     'nacional_list': nacional_sublist,
     'internacional_list': internacional_sublist,
     'Schedule': Schedule.objects.all().order_by('activity_date'),
-    'participants':Participant.objects.all(),
     'famous_list': famous_sublist,
     'object_list':object_sublist,
     'new_list':new_sublist,
@@ -132,5 +131,5 @@ def index(request):
     'events': year_pack,
     'partners': Partner.objects.all(),
     'links': link_sublist,
-    'info': Information.objects.all(),
+    'info': Information.objects.all()[0],
     })

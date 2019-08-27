@@ -9,13 +9,14 @@
       {% for famous in slide %}
       <div class="famous" id="{{ famous.id }}">
         <div class="image-container">
-          <img src="{{ famous.image.url }}" alt="famous"> 
+          <img src="{{ famous.image.url }}" alt="famous">
         </div>
         <div class="text-container">
           <p class="name">{{ famous.name }}</p>
           <p class="email">{{ famous.email }}</p>
-          <p><a href="{{ famous.github }}" target="_blank">Github</a></p>
-          <p><a href="{{ famous.codeforces }}" target="_blank">CodeForces</a></p>
+          {% if famous.codeforces %}
+          <p><a href="https://codeforces.com/profile/{{ famous.codeforces }}" target="_blank">CodeForces</a></p>
+          {% endif %}
         </div>
         <div class="text-wrapper">
           <div class="description-container">

@@ -1,43 +1,81 @@
 .schedule-container {
-  width: 85%;
+  width: 90%;
   margin: 0 auto 150px auto;
   .schedule-title{
     font-size: 2.3rem;
     color: $red;
     font-family: "Nexa Bold", sans-serif;
   }
-  .schedule-table{
-    width:80%;
-    border: 5px solid $red;
-    max-height: 450px;
-    overflow: auto;
-    margin: auto;
-    @include border-radius(20px);
-    .schedule {
-      width: 100%;
-      @include flex(flex-start, center, column);
-      .title-wrapper {
+  .schedule-table-wrapper {
+    @include flex(space-between , center);
+    .schedule-table{
+      width: 55%;
+      border: 5px solid $red;
+      max-height: 450px;
+      overflow: auto;
+      margin: auto 0;
+      @include border-radius(20px);
+      .schedule {
         width: 100%;
-        background-color: $red;
-        margin-bottom: 17.6px;
-        font-family: "Nexa Bold", sans-serif;
-        h1{
-          text-align: left;
-          color: white;
-          margin: 10px 0 10px 20px;
+        @include flex(flex-start, center, column);
+        .title-wrapper {
+          width: 100%;
+          background-color: $red;
+          margin-bottom: 17.6px;
+          font-family: "Nexa Bold", sans-serif;
+          h1{
+            text-align: left;
+            color: white;
+            margin: 10px 0 10px 20px;
+          }
+        }
+        .text-container {
+          width: 80%;
+          cursor: pointer;
+          p {
+            margin-top: 0px;
+            text-align: center;
+            color: $red;
+            border: 3px solid $red;
+            padding: 8px 0 8px 0;
+            font-family: "Nexa Bold", sans-serif;
+            font-size: 1.1rem;
+            @include border-radius(15px);
+          }
         }
       }
-      .text-container {
-        width: 80%;
-        p {
-          margin-top: 0px;  
-          text-align: center;
+    }
+    .schedule-detail-carousel {
+      width:40%;
+      height: 300px !important;
+      font-family: "Nexa Bold", sans-serif;
+      display: flex;
+      align-items: center;
+      .slick-list, .slick-track {
+        margin: auto !important;
+      }
+      .schedule-detail-container {
+        width:100%;
+        border: 5px solid $red;
+        @include border-radius(20px);
+        padding: 30px 10px;
+        margin: auto;
+        h1 {
+          font-size: 1.2rem;
           color: $red;
-          border: 3px solid $red;
-          padding: 8px 0 8px 0;
-          font-family: "Nexa Bold", sans-serif;
-          font-size: 1.1rem;
-          @include border-radius(15px);
+        }
+        p {
+          font-size: .8rem;
+          color: $red;
+        }
+      }
+      .schedule-detail-container:nth-child(2) {
+        border: 5px solid $blue;
+        h1 {
+          color: $blue;
+        }
+        p {
+          color: $blue;
         }
       }
     }
@@ -53,3 +91,15 @@
   }
 }
 
+@media only screen and (max-width: 1050px) {
+  .schedule-table-wrapper{
+    flex-direction: column !important;
+    .schedule-table {
+      width: 100% !important;
+    }
+    .schedule-detail-carousel {
+      margin-top: 10px;
+      width: 80% !important;
+    }
+  }
+}
