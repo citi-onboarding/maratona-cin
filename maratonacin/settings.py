@@ -33,9 +33,6 @@ INSTALLED_APPS = [
     'core.apps.CoreConfig',
 ]
 
-DROPBOX_ACCESS_TOKEN = 'kNWO_FdCBNAAAAAAAAAAEM_uk1050VZIrsZ6dbZ5RNFvSP18AdWX7c2CjzeEfMOY'
-DROPBOX_ROOT_FOLDER = '/media'
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -160,9 +157,10 @@ USE_THOUSAND_SEPARATOR = True
 import dropbox
 
 DEFAULT_FILE_STORAGE = 'storages.backends.dropbox.DropBoxStorage'
-DROPBOX_OAUTH2_TOKEN = '-xI_CFv1d8AAAAAAAAAADnCbC3_vuvFRuQcra_422SQak9eDd72SxVDqxNQtX8dd'
+DROPBOX_OAUTH2_TOKEN = 'tC7j8-r7ZnAAAAAAAAAADOGGSveVSUK-A-iEyG7ic7tsCTglI3PR4BdfAbaV946N'
+DROPBOX_ROOT_FOLDER = '/media'
 
-dbx = dropbox.Dropbox('-xI_CFv1d8AAAAAAAAAADnCbC3_vuvFRuQcra_422SQak9eDd72SxVDqxNQtX8dd')
+dbx = dropbox.Dropbox(DROPBOX_OAUTH2_TOKEN)
 dbx.users_get_current_account()
 for entry in dbx.files_list_folder('').entries:
   print(entry.name)

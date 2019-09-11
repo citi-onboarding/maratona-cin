@@ -334,32 +334,6 @@ $('.carousel-news').slick({
   arrows: false,
 });
 
-// Getting favicon.ico from pages
-
-const logoUrls = {
-  'www.youtube.com': 'http://assets.stickpng.com/thumbs/580b57fcd9996e24bc43c545.png',
-  'medium.com': 'http://www.stickpng.com/assets/images/5841c47ba6515b1e0ad75aa3.png',
-  'pt-br.facebook.com': 'http://www.stickpng.com/assets/images/584ac2d03ac3a570f94a666d.png',
-  'www.instagram.com': 'http://pluspng.com/img-png/instagram-png-instagram-png-logo-1455.png',
-  'twitter.com': 'http://www.stickpng.com/assets/images/580b57fcd9996e24bc43c53e.png',
-  'br.pinsterest.com': 'http://www.stickpng.com/assets/images/580b57fcd9996e24bc43c52e.png',
-  'www.ufpe.br': 'https://www3.ufpe.br/ufpenova/images/brasao/logoufpe.jpg',
-  'www2.cin.ufpe.br': 'https://www2.cin.ufpe.br/site/uploads/arquivos/18/20120530161145_marca_cin_2012_producao.jpg',
-  'veja.abril.com.br':'https://seeklogo.com/images/E/Editora_Abril-logo-D63B707335-seeklogo.com.png',
-};
-
-[...gel('.new-container').parentElement.childNodes].map(slide => {
-  [...slide.childNodes].map(news => {
-    if (news.href) {
-      const siteName = news.href.split('/')[2];
-      const siteHome = news.href.split('/').slice(0, 3).join('/');
-      if (siteName in logoUrls) {
-          news.querySelector('img').src = logoUrls[siteName];
-      } else news.querySelector('img').src = `${siteHome}/favicon.ico`;
-    }
-  })
-})
-
 // =================================////=====================================//
 // Hall of Fame section
 
@@ -387,7 +361,7 @@ $('.carousel-fame').slick({
 });
 
 // =================================////=====================================//
-// Paretners Section
+// Partners Section
 $('.carousel-partners').slick({
   slidesToShow: 3,
   slidesToScroll: 1,
@@ -417,22 +391,3 @@ $('.carousel-partners').slick({
   let img = slide.querySelector('.image-container').querySelector('img');
   img.clientHeight >= img.clientWidth ? img.className += ' portrait' : img.className += ' landscape'
 });
-
-// =================================////=====================================//
-// Study Section
-
-[...gel('.link-wrapper').childNodes].forEach(container => {
-  [...container.childNodes].forEach(table => {
-    if (table.className && table.className.indexOf('study-table') !== -1) {
-      const img = table.querySelector('.image-container').querySelector('img');
-      const link = table.querySelector('a').href;
-      if (link) {
-        const siteName = link.split('/')[2];
-        const siteHome = link.split('/').slice(0, 3).join('/');
-        if (siteName in logoUrls) {
-            img.src = logoUrls[siteName];
-        } else img.src = `${siteHome}/favicon.ico`;
-      }
-    }
-  })
-})

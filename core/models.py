@@ -24,10 +24,10 @@ class Participant(models.Model):
   name = models.CharField(max_length=50)
   image = models.FileField(upload_to='time/')
   email = models.CharField(max_length=200)
-  codeforces = models.CharField(max_length=2000)
+  codeforces_user = models.CharField(max_length=2000)
   created_date = models.DateTimeField(default=timezone.now)
   published_date = models.DateTimeField(blank=True, null=True)
-  
+
   class Meta:
     verbose_name = 'Participante'
     verbose_name_plural = 'Participantes'
@@ -64,7 +64,7 @@ class Testimonial(models.Model):
   content = models.CharField(max_length=100)
   created_date = models.DateTimeField(default=timezone.now)
   published_date = models.DateTimeField(blank=True, null=True)
-  
+
   class Meta:
     verbose_name = 'Depoimento'
     verbose_name_plural = 'Depoimentos'
@@ -80,6 +80,7 @@ class New(models.Model):
   author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
   title = models.CharField(max_length=50)
   subtitle = models.CharField(max_length=50)
+  icon = models.FileField(upload_to='noticias-icones/')
   link = models.CharField(max_length=100)
   published_date = models.DateTimeField(blank=True, null=True)
 
@@ -200,6 +201,7 @@ class Partner(models.Model):
 
 class Link(models.Model):
   author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+  icon = models.FileField(upload_to='link-icons/')
   title = models.CharField(max_length= 50)
   link = models.CharField(max_length=100)
 
@@ -213,4 +215,3 @@ class Link(models.Model):
 
   def __str__(self):
     return self.title
-
