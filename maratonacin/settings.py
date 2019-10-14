@@ -15,7 +15,7 @@ SECRET_KEY = '*%1)_4js25^cyo(*ybh7y*5m9+jyxuclgno=9q!307&j0rij_p'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['localhost']
 
 
 # Application definition
@@ -33,9 +33,6 @@ INSTALLED_APPS = [
     'core.apps.CoreConfig',
 ]
 
-DROPBOX_ACCESS_TOKEN = 'kNWO_FdCBNAAAAAAAAAAEM_uk1050VZIrsZ6dbZ5RNFvSP18AdWX7c2CjzeEfMOY'
-DROPBOX_ROOT_FOLDER = '/media'
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -51,7 +48,7 @@ ROOT_URLCONF = 'maratonacin.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates/')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -124,16 +121,16 @@ STATICFILES_FINDERS = [
 ]
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'static/'),
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles/')
 
 # Django Sass
 
 SASS_PROCESSOR_INCLUDE_DIRS = [
-    os.path.join(BASE_DIR, 'extra-styles/scss'),
-    os.path.join(BASE_DIR, 'node_modules'),
+    os.path.join(BASE_DIR, 'extra-styles/scss/'),
+    os.path.join(BASE_DIR, 'node_modules/'),
 ]
 
 # print(SASS_PROCESSOR_ROOT)
@@ -142,7 +139,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
 # Media files
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 MEDIA_URL = '/media/'
 
 import django_heroku
@@ -160,9 +157,10 @@ USE_THOUSAND_SEPARATOR = True
 import dropbox
 
 DEFAULT_FILE_STORAGE = 'storages.backends.dropbox.DropBoxStorage'
-DROPBOX_OAUTH2_TOKEN = '-xI_CFv1d8AAAAAAAAAADnCbC3_vuvFRuQcra_422SQak9eDd72SxVDqxNQtX8dd'
+DROPBOX_OAUTH2_TOKEN = 'BtvYYj2JXPAAAAAAAAAADbhPD1yj5W2Xos4QZoa5iAuJTsMM3UscNp_iMLC_sCE-'
+DROPBOX_ROOT_FOLDER = '/media/'
 
-dbx = dropbox.Dropbox('-xI_CFv1d8AAAAAAAAAADnCbC3_vuvFRuQcra_422SQak9eDd72SxVDqxNQtX8dd')
+dbx = dropbox.Dropbox(DROPBOX_OAUTH2_TOKEN)
 dbx.users_get_current_account()
 for entry in dbx.files_list_folder('').entries:
   print(entry.name)

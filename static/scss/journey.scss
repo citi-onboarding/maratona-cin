@@ -15,7 +15,7 @@
     overflow: auto;
     position: relative;
     .info {
-      @include flex(flex-start, flex-end);
+      @include flex(center, flex-end);
       display: inline-flex;
       height: 125px;
       width: 100%;

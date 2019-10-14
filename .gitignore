@@ -2,3 +2,4 @@ venv/
 *.pyc
 .vscode
 *.sqlite3
+.bashrc

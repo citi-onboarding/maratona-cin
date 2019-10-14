@@ -14,8 +14,7 @@
         <div class="text-container">
           <p class="name">{{ participant.name }}</p>
           <p class="email">{{ participant.email }}</p>
-          <p><a href="{{ participant.github }}" target="_blank">Github</a></p>
-          <p><a href="{{ participant.codeforces }}" target="_blank">CodeForces</a></p>
+          <p><a href="https://codeforces.com/profile/{{ participant.codeforces }}" target="_blank">CodeForces</a></p>
         </div>
       </div>
       {% endfor %}

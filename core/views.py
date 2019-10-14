@@ -15,7 +15,7 @@ from .models import Partner
 def index(request):
   # Organize participants by id
   i = 0
-  object_list = list(Participant.objects.all().order_by('id'))
+  object_list = list(Participant.objects.all().order_by('name'))
   object_sublist = list()
   slide = []
   for obj in object_list:
@@ -78,7 +78,7 @@ def index(request):
   internacional_sublist.append(slide_internacional)
 
   m = 0
-  famous_list = list(Famous.objects.all().order_by('id'))
+  famous_list = list(Famous.objects.all().order_by('name'))
   famous_sublist = list()
   slide = []
   for famous in famous_list:
@@ -102,7 +102,6 @@ def index(request):
     else:
       year_pack[year] = [event]
 
-  # Organize news by groups of 3
   n = 0
   link_list = list(Link.objects.all())
   link_sublist = list()
@@ -117,20 +116,27 @@ def index(request):
       slide = []
       n = 0
 
+  t = list(Testimonial.objects.all())
 
+  if (len(t) % 2 != 0):
+    testimonials = t + t
+  else:
+    testimonials = t
+
+  if (len(testimonials) % 3 != 0):
+    testimonials = testimonials + testimonials + testimonials
 
   return render(request, 'index.html', {
     'Medal': Medal.objects.all().order_by('type'),
     'nacional_list': nacional_sublist,
     'internacional_list': internacional_sublist,
     'Schedule': Schedule.objects.all().order_by('activity_date'),
-    'participants':Participant.objects.all(),
     'famous_list': famous_sublist,
     'object_list':object_sublist,
     'new_list':new_sublist,
-    'testimonials': Testimonial.objects.all(),
+    'testimonials': testimonials,
     'events': year_pack,
     'partners': Partner.objects.all(),
     'links': link_sublist,
-    'info': Information.objects.all(),
+    'info': Information.objects.all()[0],
     })

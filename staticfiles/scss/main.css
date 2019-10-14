@@ -494,52 +494,88 @@
     font-size: 3vw; } }
 
 .schedule-container {
-  width: 85%;
+  width: 90%;
   margin: 0 auto 150px auto; }
   .schedule-container .schedule-title {
     font-size: 2.3rem;
     color: #DE392D;
     font-family: "Nexa Bold", sans-serif; }
-  .schedule-container .schedule-table {
-    width: 80%;
-    border: 5px solid #DE392D;
-    max-height: 450px;
-    overflow: auto;
-    margin: auto;
-    border-radius: 20px;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px; }
-    .schedule-container .schedule-table .schedule {
-      width: 100%;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      flex-direction: column;
-      flex-wrap: nowrap; }
-      .schedule-container .schedule-table .schedule .title-wrapper {
+  .schedule-container .schedule-table-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap; }
+    .schedule-container .schedule-table-wrapper .schedule-table {
+      width: 55%;
+      border: 5px solid #DE392D;
+      max-height: 450px;
+      overflow: auto;
+      margin: auto 0;
+      border-radius: 20px;
+      -webkit-border-radius: 20px;
+      -moz-border-radius: 20px;
+      -ms-border-radius: 20px; }
+      .schedule-container .schedule-table-wrapper .schedule-table .schedule {
         width: 100%;
-        background-color: #DE392D;
-        margin-bottom: 17.6px;
-        font-family: "Nexa Bold", sans-serif; }
-        .schedule-container .schedule-table .schedule .title-wrapper h1 {
-          text-align: left;
-          color: white;
-          margin: 10px 0 10px 20px; }
-      .schedule-container .schedule-table .schedule .text-container {
-        width: 80%; }
-        .schedule-container .schedule-table .schedule .text-container p {
-          margin-top: 0px;
-          text-align: center;
-          color: #DE392D;
-          border: 3px solid #DE392D;
-          padding: 8px 0 8px 0;
-          font-family: "Nexa Bold", sans-serif;
-          font-size: 1.1rem;
-          border-radius: 15px;
-          -webkit-border-radius: 15px;
-          -moz-border-radius: 15px;
-          -ms-border-radius: 15px; }
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: nowrap; }
+        .schedule-container .schedule-table-wrapper .schedule-table .schedule .title-wrapper {
+          width: 100%;
+          background-color: #DE392D;
+          margin-bottom: 17.6px;
+          font-family: "Nexa Bold", sans-serif; }
+          .schedule-container .schedule-table-wrapper .schedule-table .schedule .title-wrapper h1 {
+            text-align: left;
+            color: white;
+            margin: 10px 0 10px 20px; }
+        .schedule-container .schedule-table-wrapper .schedule-table .schedule .text-container {
+          width: 80%;
+          cursor: pointer; }
+          .schedule-container .schedule-table-wrapper .schedule-table .schedule .text-container p {
+            margin-top: 0px;
+            text-align: center;
+            color: #DE392D;
+            border: 3px solid #DE392D;
+            padding: 8px 0 8px 0;
+            font-family: "Nexa Bold", sans-serif;
+            font-size: 1.1rem;
+            border-radius: 15px;
+            -webkit-border-radius: 15px;
+            -moz-border-radius: 15px;
+            -ms-border-radius: 15px; }
+    .schedule-container .schedule-table-wrapper .schedule-detail-carousel {
+      width: 40%;
+      height: 300px !important;
+      font-family: "Nexa Bold", sans-serif;
+      display: flex;
+      align-items: center; }
+      .schedule-container .schedule-table-wrapper .schedule-detail-carousel .slick-list, .schedule-container .schedule-table-wrapper .schedule-detail-carousel .slick-track {
+        margin: auto !important; }
+      .schedule-container .schedule-table-wrapper .schedule-detail-carousel .schedule-detail-container {
+        width: 100%;
+        border: 5px solid #DE392D;
+        border-radius: 20px;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        -ms-border-radius: 20px;
+        padding: 30px 10px;
+        margin: auto; }
+        .schedule-container .schedule-table-wrapper .schedule-detail-carousel .schedule-detail-container h1 {
+          font-size: 1.2rem;
+          color: #DE392D; }
+        .schedule-container .schedule-table-wrapper .schedule-detail-carousel .schedule-detail-container p {
+          font-size: .8rem;
+          color: #DE392D; }
+      .schedule-container .schedule-table-wrapper .schedule-detail-carousel .schedule-detail-container:nth-child(2) {
+        border: 5px solid #479EFC; }
+        .schedule-container .schedule-table-wrapper .schedule-detail-carousel .schedule-detail-container:nth-child(2) h1 {
+          color: #479EFC; }
+        .schedule-container .schedule-table-wrapper .schedule-detail-carousel .schedule-detail-container:nth-child(2) p {
+          color: #479EFC; }
 
 .title-blue {
   background-color: #479EFC !important; }
@@ -548,9 +584,17 @@
   color: #479EFC !important;
   border: 3px solid #479EFC !important; }
 
+@media only screen and (max-width: 1050px) {
+  .schedule-table-wrapper {
+    flex-direction: column !important; }
+    .schedule-table-wrapper .schedule-table {
+      width: 100% !important; }
+    .schedule-table-wrapper .schedule-detail-carousel {
+      margin-top: 10px;
+      width: 80% !important; } }
+
 .leaderboards {
-  width: 80%;
-  max-width: 80%;
+  width: 90%;
   margin: auto; }
   .leaderboards h1 {
     color: #DE392D;
@@ -583,7 +627,8 @@
     height: 130px; }
   .leaderboards .leaderboards-table {
     max-width: 100%;
-    display: flex; }
+    display: flex;
+    flex-direction: column; }
     .leaderboards .leaderboards-table .medal-title-container {
       display: flex;
       width: 100%;
@@ -605,7 +650,7 @@
           margin-left: -30px; } }
 
 .testimonials-news {
-  width: 80%;
+  width: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1134,7 +1179,7 @@
     position: relative; }
     .journey .journey-container .info {
       display: flex;
-      justify-content: flex-start;
+      justify-content: center;
       align-items: flex-end;
       flex-direction: row;
       flex-wrap: nowrap;
