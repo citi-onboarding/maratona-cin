@@ -15,7 +15,7 @@ SECRET_KEY = '*%1)_4js25^cyo(*ybh7y*5m9+jyxuclgno=9q!307&j0rij_p'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['localhost']
 
 
 # Application definition
@@ -48,7 +48,7 @@ ROOT_URLCONF = 'maratonacin.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates/')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -121,16 +121,16 @@ STATICFILES_FINDERS = [
 ]
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'static/'),
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles/')
 
 # Django Sass
 
 SASS_PROCESSOR_INCLUDE_DIRS = [
-    os.path.join(BASE_DIR, 'extra-styles/scss'),
-    os.path.join(BASE_DIR, 'node_modules'),
+    os.path.join(BASE_DIR, 'extra-styles/scss/'),
+    os.path.join(BASE_DIR, 'node_modules/'),
 ]
 
 # print(SASS_PROCESSOR_ROOT)
@@ -139,7 +139,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
 # Media files
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 MEDIA_URL = '/media/'
 
 import django_heroku
@@ -157,8 +157,8 @@ USE_THOUSAND_SEPARATOR = True
 import dropbox
 
 DEFAULT_FILE_STORAGE = 'storages.backends.dropbox.DropBoxStorage'
-DROPBOX_OAUTH2_TOKEN = 'tC7j8-r7ZnAAAAAAAAAADOGGSveVSUK-A-iEyG7ic7tsCTglI3PR4BdfAbaV946N'
-DROPBOX_ROOT_FOLDER = '/media'
+DROPBOX_OAUTH2_TOKEN = 'BtvYYj2JXPAAAAAAAAAADbhPD1yj5W2Xos4QZoa5iAuJTsMM3UscNp_iMLC_sCE-'
+DROPBOX_ROOT_FOLDER = '/media/'
 
 dbx = dropbox.Dropbox(DROPBOX_OAUTH2_TOKEN)
 dbx.users_get_current_account()

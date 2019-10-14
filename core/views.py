@@ -102,7 +102,6 @@ def index(request):
     else:
       year_pack[year] = [event]
 
-  # Organize news by groups of 3
   n = 0
   link_list = list(Link.objects.all())
   link_sublist = list()
@@ -117,7 +116,15 @@ def index(request):
       slide = []
       n = 0
 
+  t = list(Testimonial.objects.all())
 
+  if (len(t) % 2 != 0):
+    testimonials = t + t
+  else:
+    testimonials = t
+
+  if (len(testimonials) % 3 != 0):
+    testimonials = testimonials + testimonials + testimonials
 
   return render(request, 'index.html', {
     'Medal': Medal.objects.all().order_by('type'),
@@ -127,7 +134,7 @@ def index(request):
     'famous_list': famous_sublist,
     'object_list':object_sublist,
     'new_list':new_sublist,
-    'testimonials': Testimonial.objects.all(),
+    'testimonials': testimonials,
     'events': year_pack,
     'partners': Partner.objects.all(),
     'links': link_sublist,

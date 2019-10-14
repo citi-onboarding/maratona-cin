@@ -307,13 +307,13 @@ let j = 0;
       invert(each);
     }
     if (j % 3 === 1) {
-      each.className += ' blue-message';
+      each.classList.add('blue-message');
     }
     if (j % 3 === 2) {
-      each.className += ' red-message';
+      each.classList.add('red-message');
     }
     if (j % 3 === 0) {
-      each.className += ' yellow-message';
+      each.classList.add('yellow-message');
     }
     prevSlide = 'real';
     j++;
